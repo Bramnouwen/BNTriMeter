@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F94E00FA1F912CB60025648A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E00F91F912CB60025648A /* AppDelegate.swift */; };
+		F94E00FC1F912CB60025648A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E00FB1F912CB60025648A /* ViewController.swift */; };
+		F94E00FF1F912CB60025648A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94E00FD1F912CB60025648A /* Main.storyboard */; };
+		F94E01011F912CB60025648A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F94E01001F912CB60025648A /* Assets.xcassets */; };
+		F94E01041F912CB60025648A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94E01021F912CB60025648A /* LaunchScreen.storyboard */; };
+		F94E010F1F912CB60025648A /* TriMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E010E1F912CB60025648A /* TriMeterTests.swift */; };
+		F94E011A1F912CB60025648A /* TriMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E01191F912CB60025648A /* TriMeterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F94E010B1F912CB60025648A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F94E00F51F912CB60025648A;
+			remoteInfo = TriMeter;
+		};
+		F94E01161F912CB60025648A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F94E00F51F912CB60025648A;
+			remoteInfo = TriMeter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F94E00F61F912CB60025648A /* TriMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94E00F91F912CB60025648A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F94E00FB1F912CB60025648A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F94E00FE1F912CB60025648A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F94E01001F912CB60025648A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F94E01031F912CB60025648A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F94E01051F912CB60025648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F94E010A1F912CB60025648A /* TriMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94E010E1F912CB60025648A /* TriMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriMeterTests.swift; sourceTree = "<group>"; };
+		F94E01101F912CB60025648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F94E01151F912CB60025648A /* TriMeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriMeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94E01191F912CB60025648A /* TriMeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriMeterUITests.swift; sourceTree = "<group>"; };
+		F94E011B1F912CB60025648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F94E00F31F912CB60025648A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01071F912CB60025648A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01121F912CB60025648A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F94E00ED1F912CB60025648A = {
+			isa = PBXGroup;
+			children = (
+				F94E00F81F912CB60025648A /* TriMeter */,
+				F94E010D1F912CB60025648A /* TriMeterTests */,
+				F94E01181F912CB60025648A /* TriMeterUITests */,
+				F94E00F71F912CB60025648A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F94E00F71F912CB60025648A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F94E00F61F912CB60025648A /* TriMeter.app */,
+				F94E010A1F912CB60025648A /* TriMeterTests.xctest */,
+				F94E01151F912CB60025648A /* TriMeterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F94E00F81F912CB60025648A /* TriMeter */ = {
+			isa = PBXGroup;
+			children = (
+				F94E00F91F912CB60025648A /* AppDelegate.swift */,
+				F94E00FB1F912CB60025648A /* ViewController.swift */,
+				F94E00FD1F912CB60025648A /* Main.storyboard */,
+				F94E01001F912CB60025648A /* Assets.xcassets */,
+				F94E01021F912CB60025648A /* LaunchScreen.storyboard */,
+				F94E01051F912CB60025648A /* Info.plist */,
+			);
+			path = TriMeter;
+			sourceTree = "<group>";
+		};
+		F94E010D1F912CB60025648A /* TriMeterTests */ = {
+			isa = PBXGroup;
+			children = (
+				F94E010E1F912CB60025648A /* TriMeterTests.swift */,
+				F94E01101F912CB60025648A /* Info.plist */,
+			);
+			path = TriMeterTests;
+			sourceTree = "<group>";
+		};
+		F94E01181F912CB60025648A /* TriMeterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F94E01191F912CB60025648A /* TriMeterUITests.swift */,
+				F94E011B1F912CB60025648A /* Info.plist */,
+			);
+			path = TriMeterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F94E00F51F912CB60025648A /* TriMeter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F94E011E1F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeter" */;
+			buildPhases = (
+				F94E00F21F912CB60025648A /* Sources */,
+				F94E00F31F912CB60025648A /* Frameworks */,
+				F94E00F41F912CB60025648A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TriMeter;
+			productName = TriMeter;
+			productReference = F94E00F61F912CB60025648A /* TriMeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F94E01091F912CB60025648A /* TriMeterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F94E01211F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeterTests" */;
+			buildPhases = (
+				F94E01061F912CB60025648A /* Sources */,
+				F94E01071F912CB60025648A /* Frameworks */,
+				F94E01081F912CB60025648A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F94E010C1F912CB60025648A /* PBXTargetDependency */,
+			);
+			name = TriMeterTests;
+			productName = TriMeterTests;
+			productReference = F94E010A1F912CB60025648A /* TriMeterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F94E01141F912CB60025648A /* TriMeterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F94E01241F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeterUITests" */;
+			buildPhases = (
+				F94E01111F912CB60025648A /* Sources */,
+				F94E01121F912CB60025648A /* Frameworks */,
+				F94E01131F912CB60025648A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F94E01171F912CB60025648A /* PBXTargetDependency */,
+			);
+			name = TriMeterUITests;
+			productName = TriMeterUITests;
+			productReference = F94E01151F912CB60025648A /* TriMeterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F94E00EE1F912CB60025648A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Bram Nouwen";
+				TargetAttributes = {
+					F94E00F51F912CB60025648A = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					F94E01091F912CB60025648A = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F94E00F51F912CB60025648A;
+					};
+					F94E01141F912CB60025648A = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F94E00F51F912CB60025648A;
+					};
+				};
+			};
+			buildConfigurationList = F94E00F11F912CB60025648A /* Build configuration list for PBXProject "TriMeter" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F94E00ED1F912CB60025648A;
+			productRefGroup = F94E00F71F912CB60025648A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F94E00F51F912CB60025648A /* TriMeter */,
+				F94E01091F912CB60025648A /* TriMeterTests */,
+				F94E01141F912CB60025648A /* TriMeterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F94E00F41F912CB60025648A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F94E01041F912CB60025648A /* LaunchScreen.storyboard in Resources */,
+				F94E01011F912CB60025648A /* Assets.xcassets in Resources */,
+				F94E00FF1F912CB60025648A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01081F912CB60025648A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01131F912CB60025648A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F94E00F21F912CB60025648A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F94E00FC1F912CB60025648A /* ViewController.swift in Sources */,
+				F94E00FA1F912CB60025648A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01061F912CB60025648A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F94E010F1F912CB60025648A /* TriMeterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F94E01111F912CB60025648A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F94E011A1F912CB60025648A /* TriMeterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F94E010C1F912CB60025648A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F94E00F51F912CB60025648A /* TriMeter */;
+			targetProxy = F94E010B1F912CB60025648A /* PBXContainerItemProxy */;
+		};
+		F94E01171F912CB60025648A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F94E00F51F912CB60025648A /* TriMeter */;
+			targetProxy = F94E01161F912CB60025648A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F94E00FD1F912CB60025648A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F94E00FE1F912CB60025648A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F94E01021F912CB60025648A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F94E01031F912CB60025648A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F94E011C1F912CB60025648A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F94E011D1F912CB60025648A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F94E011F1F912CB60025648A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F94E01201F912CB60025648A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F94E01221F912CB60025648A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriMeter.app/TriMeter";
+			};
+			name = Debug;
+		};
+		F94E01231F912CB60025648A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriMeter.app/TriMeter";
+			};
+			name = Release;
+		};
+		F94E01251F912CB60025648A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TriMeter;
+			};
+			name = Debug;
+		};
+		F94E01261F912CB60025648A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = TriMeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TriMeter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F94E00F11F912CB60025648A /* Build configuration list for PBXProject "TriMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F94E011C1F912CB60025648A /* Debug */,
+				F94E011D1F912CB60025648A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F94E011E1F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F94E011F1F912CB60025648A /* Debug */,
+				F94E01201F912CB60025648A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F94E01211F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F94E01221F912CB60025648A /* Debug */,
+				F94E01231F912CB60025648A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F94E01241F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F94E01251F912CB60025648A /* Debug */,
+				F94E01261F912CB60025648A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F94E00EE1F912CB60025648A /* Project object */;
+}
