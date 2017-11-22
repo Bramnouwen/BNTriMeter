@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TestViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XNW-vw-nm8">
+                                <rect key="frame" x="112" y="218" width="150" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-OK-8ld">
+                                <rect key="frame" x="160" y="43" width="54" height="30"/>
+                                <state key="normal" title="Upload!"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ru-Qh-1B3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6p-54-fD0">
+                                <rect key="frame" x="154" y="394" width="57" height="30"/>
+                                <state key="normal" title="test add"/>
+                                <connections>
+                                    <action selector="testButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFD-9F-GNf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-k1-hkX">
+                                <rect key="frame" x="160" y="577" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w98-yE-Y82"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0MS-OK-8ld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70T-yF-2Z7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XNW-vw-nm8" secondAttribute="bottom" constant="447" id="CsV-O4-Qma"/>
+                            <constraint firstAttribute="bottom" secondItem="Ir5-k1-hkX" secondAttribute="bottom" constant="20" symbolic="YES" id="VyM-4j-sez"/>
+                            <constraint firstItem="XNW-vw-nm8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="96" id="eUi-cH-deZ"/>
+                            <constraint firstItem="0MS-OK-8ld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="nYK-16-UXF"/>
+                            <constraint firstItem="e6p-54-fD0" firstAttribute="centerX" secondItem="Ir5-k1-hkX" secondAttribute="centerX" id="qKL-Rf-liz"/>
+                            <constraint firstAttribute="bottom" secondItem="e6p-54-fD0" secondAttribute="bottom" constant="243" id="qkR-ZC-yPi"/>
+                            <constraint firstItem="e6p-54-fD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154" id="sUg-Nr-Hxs"/>
+                            <constraint firstItem="XNW-vw-nm8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uQF-ly-XJh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="XNW-vw-nm8" id="OVr-33-10g"/>
+                        <outlet property="uploadButton" destination="0MS-OK-8ld" id="nHL-o7-b8R"/>
+                        <segue destination="Say-zE-1G7" kind="show" identifier="toLogin" id="Kel-T8-orf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="363.86806596701655"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="jCB-bf-Bk6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="Say-zE-1G7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gov-6g-4UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="32"/>
+        </scene>
+    </scenes>
+</document>
