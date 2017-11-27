@@ -6,4 +6,38 @@
   Copyright © 2017 Bram Nouwen. All rights reserved.
 */
 
-"Welcome" = "Welkom";
+// Common
+"Common.continueText" = "Volgende";
+"Common.login" = "Log in";
+"Common.toLogin" = "Heb je al account? Log hier in!";
+"Common.toRegister" = "Nog geen account? Registreer hier!";
+"Common.email" = "E-mail";
+"Common.password" = "Wachtwoord";
+
+// Welcome
+"Welcome.welcome" = "Welkom bij";
+"Welcome.description" = "Dit is de eerste app die het toelaat om activiteiten aan te maken bestaande uit meerdere sporten en doelen, vooral handig voor triatleten maar gemaakt voor iedereen.";
+
+// Connect
+"Connect.description" = "Maak een account aan of connecteer met Facebook of Strava, aan jou de keuze!";
+"Connect.or" = "of";
+
+// Login
+"Login.description" = "Log in met je TriMeter inloggegevens.";
+"Login.forgot" = "Vergeten?";
+"Login.errorOne" = "Er is iets mis, probeer opnieuw.";
+"Login.errorTwo" = "Nog steeds mis, probeer een derde keer?";
+"Login.errorThree" = "Nope, klik maar op \"Vergeten?\".";
+"Login.forgotError" = "Probeer op zijn minst 1 keer in te loggen...";
+
+// Register
+"Register.descriptionOne" = "Om te registreren hebben we wat informatie nodig, te beginnen met een\ne-mailadres en wachtwoord.";
+"Register.descriptionTwo" = "Deze informatie is optioneel, het is wel nodig voor bepaalde functionaliteiten zoals geavanceerd sorteren voor het scorebord en de activiteitenfeed.";
+"Register.password" = "Wachtwoord";
+"Register.firstName" = "Voornaam";
+"Register.lastName" = "Achternaam";
+"Register.dateOfBirth" = "Geboortedatum";
+"Register.weight" = "Gewicht";
+"Register.male" = "Man";
+"Register.female" = "Vrouw";
+"Register.register" = "Registreer";

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ixE-1C-UK6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="FLF-Oe-2h7">
+            <objects>
+                <viewController id="ixE-1C-UK6" customClass="StartViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sf7-VC-h86">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-aa-gdK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-jj-A1I">
+                                <rect key="frame" x="116" y="258" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="DN8-cL-Xe8"/>
+                                    <constraint firstAttribute="width" constant="143" id="ayS-NI-Wk5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bmd-aa-gdK" firstAttribute="top" secondItem="sf7-VC-h86" secondAttribute="top" id="3dP-Xm-bKg"/>
+                            <constraint firstItem="bB8-jj-A1I" firstAttribute="centerY" secondItem="sf7-VC-h86" secondAttribute="centerY" id="G0N-fa-co7"/>
+                            <constraint firstItem="bB8-jj-A1I" firstAttribute="centerX" secondItem="sf7-VC-h86" secondAttribute="centerX" id="Tfc-Hq-miL"/>
+                            <constraint firstItem="bmd-aa-gdK" firstAttribute="bottom" secondItem="6jR-Ta-6Mr" secondAttribute="bottom" id="UZ4-2B-EY4"/>
+                            <constraint firstItem="bmd-aa-gdK" firstAttribute="trailing" secondItem="6jR-Ta-6Mr" secondAttribute="trailing" id="hch-bg-BiN"/>
+                            <constraint firstItem="bmd-aa-gdK" firstAttribute="leading" secondItem="6jR-Ta-6Mr" secondAttribute="leading" id="xhI-An-zpF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6jR-Ta-6Mr"/>
+                    </view>
+                    <connections>
+                        <segue destination="TG3-El-Ngf" kind="show" identifier="startToMain" id="ynV-3a-oNd"/>
+                        <segue destination="dyh-q6-myy" kind="show" identifier="startToLogin" id="tLM-O9-MSz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vx8-sN-Kz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="40"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="dt3-BT-zgO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="TG3-El-Ngf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWe-5l-tfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-63"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="inU-Fg-af9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="dyh-q6-myy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm1-cl-2Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490" y="121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Launchscreen" width="375" height="667"/>
+        <image name="Logo" width="141" height="150"/>
+    </resources>
+</document>

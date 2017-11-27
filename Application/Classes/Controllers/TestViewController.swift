@@ -26,6 +26,12 @@ class TestViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        view.applyGradient()
+        
+    }
+    
     @IBAction func logoutButtonClicked(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {

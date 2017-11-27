@@ -6,4 +6,38 @@
   Copyright © 2017 Bram Nouwen. All rights reserved.
 */
 
-"Welcome" = "Welcome";
+// Common
+"Common.continueText" = "Continue";
+"Common.login" = "Log in";
+"Common.toLogin" = "Already have an account? Log in here!";
+"Common.toRegister" = "No account yet? Register here!";
+"Common.email" = "Email";
+"Common.password" = "Password";
+
+// Welcome
+"Welcome.welcome" = "Welcome to";
+"Welcome.description" = "The first app that lets you create workouts existing of multiple sports and goals, especially handy for triathletes but made for everyone.";
+
+// Connect
+"Connect.description" = "Create an account or connect with Facebook or Strava, it's up to you!";
+"Connect.or" = "or";
+
+// Login
+"Login.description" = "Log in with your TriMeter credentials.";
+"Login.forgot" = "Forgot?";
+"Login.errorOne" = "Something's wrong, try again.";
+"Login.errorTwo" = "Still wrong, try a third time?";
+"Login.errorThree" = "Nope, try clicking on \"Forgot?\".";
+"Login.forgotError" = "Atleast try to log in one time...";
+
+// Register
+"Register.descriptionOne" = "We're going to need some information, let's start with an email address and password.";
+"Register.descriptionTwo" = "This is optional, however it is necessary for some features like advanced filtering and for the leaderboard and activity feed.";
+"Register.password" = "Password";
+"Register.firstName" = "First name";
+"Register.lastName" = "Last name";
+"Register.dateOfBirth" = "Date of birth";
+"Register.weight" = "Weight";
+"Register.male" = "Male";
+"Register.female" = "Female";
+"Register.register" = "Register";

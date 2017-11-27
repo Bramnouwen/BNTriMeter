@@ -19,5 +19,8 @@ struct Color {
 }
 
 struct Segues {
-    static let toMainSegueKey = "toMain"
+    static let toMain = "toMain"
+    static let startToMainSegueKey = "startToMain"
+    static let startToLoginSegueKey = "startToLogin"
+    static let toRegisterTwo = "toRegisterTwo"
 }
