@@ -8,8 +8,17 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cabin-Bold.ttf">
+            <string>Cabin-Bold</string>
+        </array>
+        <array key="Cabin-Regular.ttf">
+            <string>Cabin-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--TriMeter-->
         <scene sceneID="uDK-vM-Dit">
@@ -19,12 +28,276 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hnp-1d-MsQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hnp-1d-MsQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="Bermuda"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="ozD-Wb-Sdw"/>
+                                </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UON-25-t8H" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="492" width="343" height="50"/>
+                                <color key="backgroundColor" name="Bermuda"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="966-k0-qlB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="All good? Let's go!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="vFt-mx-Lud" userLabel="Settings Stack View">
+                                <rect key="frame" x="16" y="286" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKz-YM-diG" userLabel="Live location">
+                                        <rect key="frame" x="0.0" y="0.0" width="36.5" height="30"/>
+                                        <state key="normal" image="Live-location-off"/>
+                                        <connections>
+                                            <action selector="liveLocationButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="tde-NK-Woj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJO-R7-W86" userLabel="Countdown">
+                                        <rect key="frame" x="76.5" y="0.0" width="36.5" height="30"/>
+                                        <state key="normal" image="countdown-off"/>
+                                        <connections>
+                                            <action selector="countdownButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="NDV-4R-DUF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-v0-BGB" userLabel="Auto pause">
+                                        <rect key="frame" x="153" y="0.0" width="37" height="30"/>
+                                        <state key="normal" image="autopause-off"/>
+                                        <connections>
+                                            <action selector="autoPauseButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="6gP-NS-ptR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-t1-DF7" userLabel="Audio">
+                                        <rect key="frame" x="230" y="0.0" width="36.5" height="30"/>
+                                        <state key="normal" image="audio-off"/>
+                                        <connections>
+                                            <action selector="audioButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="aEW-3U-pbK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-kP-ioa" userLabel="Haptic">
+                                        <rect key="frame" x="306.5" y="0.0" width="36.5" height="30"/>
+                                        <state key="normal" image="haptic-off"/>
+                                        <connections>
+                                            <action selector="hapticButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="cCB-9O-gsh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="78R-aV-mO5"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-n7-ovD">
+                                <rect key="frame" x="0.0" y="332" width="375" height="160"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLe-cf-nwK" userLabel="Activity + Goal view">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="160"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfi-3b-SJE" userLabel="Activity Label">
+                                                <rect key="frame" x="16" y="4" width="57" height="22"/>
+                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
+                                                <color key="textColor" name="Bermuda"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-1r-Sc6" userLabel="Activity Button">
+                                                <rect key="frame" x="16" y="26" width="166" height="44"/>
+                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="36"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Running" image="running">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="activityButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="MX4-NF-Qic"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-vH-za9" userLabel="Goal Label">
+                                                <rect key="frame" x="16" y="78" width="35" height="22"/>
+                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
+                                                <color key="textColor" name="Bermuda"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-Ab-AIS" userLabel="Goal Button">
+                                                <rect key="frame" x="16" y="100" width="166" height="44"/>
+                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="36"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="60 min" image="duration">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goalButtonClicked:" destination="ePT-xh-JOt" eventType="touchUpInside" id="Frg-2v-JpH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="0za-8z-ol8"/>
+                                            <constraint firstItem="cpF-vH-za9" firstAttribute="top" secondItem="o1w-1r-Sc6" secondAttribute="bottom" constant="8" id="9AB-pP-DYk"/>
+                                            <constraint firstAttribute="bottom" secondItem="ht1-Ab-AIS" secondAttribute="bottom" constant="16" id="9wA-Dp-Rda"/>
+                                            <constraint firstItem="sfi-3b-SJE" firstAttribute="leading" secondItem="o1w-1r-Sc6" secondAttribute="leading" id="AcV-3H-ULF"/>
+                                            <constraint firstAttribute="trailing" secondItem="o1w-1r-Sc6" secondAttribute="trailing" constant="8" id="GoN-qa-7rj"/>
+                                            <constraint firstItem="ht1-Ab-AIS" firstAttribute="top" secondItem="cpF-vH-za9" secondAttribute="bottom" id="POd-Wt-aSf"/>
+                                            <constraint firstItem="cpF-vH-za9" firstAttribute="leading" secondItem="ht1-Ab-AIS" secondAttribute="leading" id="Sqn-FD-c0l"/>
+                                            <constraint firstItem="o1w-1r-Sc6" firstAttribute="leading" secondItem="cpF-vH-za9" secondAttribute="leading" id="Xta-EK-QwC"/>
+                                            <constraint firstItem="o1w-1r-Sc6" firstAttribute="top" secondItem="sfi-3b-SJE" secondAttribute="bottom" id="lOp-FL-bwi"/>
+                                            <constraint firstItem="ht1-Ab-AIS" firstAttribute="leading" secondItem="BLe-cf-nwK" secondAttribute="leading" constant="16" id="qmG-5P-n2j"/>
+                                            <constraint firstAttribute="trailing" secondItem="ht1-Ab-AIS" secondAttribute="trailing" constant="8" id="tVj-M3-w8R"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlB-5N-yR0" userLabel="Data view">
+                                        <rect key="frame" x="206" y="0.0" width="169" height="160"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lp-hi-Jn1" userLabel="Data Label">
+                                                <rect key="frame" x="0.0" y="4" width="36.5" height="22"/>
+                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
+                                                <color key="textColor" name="Bermuda"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uw0-Yp-UhZ">
+                                                <rect key="frame" x="0.0" y="34" width="153" height="104"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M9J-jY-6zY" userLabel="Data 1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="20"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration" translatesAutoresizingMaskIntoConstraints="NO" id="7ox-4M-E4c">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="7Dd-3v-ie0"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="Lvg-BM-UNW"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJX-c2-QDT">
+                                                                <rect key="frame" x="28" y="0.0" width="110.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDT-JJ-yoA">
+                                                                <rect key="frame" x="138.5" y="0.0" width="0.0" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-1a-BTV" userLabel="Data 2">
+                                                        <rect key="frame" x="0.0" y="28" width="109.5" height="20"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-JR-5jl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="OI0-bj-pgJ"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="YDA-GX-kTM"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pQ-mg-1lQ">
+                                                                <rect key="frame" x="28" y="0.0" width="54.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQv-gm-nxA">
+                                                                <rect key="frame" x="90.5" y="0.0" width="19" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="npR-Wz-8D1" userLabel="Data 3">
+                                                        <rect key="frame" x="0.0" y="56" width="75.5" height="20"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calories" translatesAutoresizingMaskIntoConstraints="NO" id="G5n-BS-5n7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="sLB-LH-CF0"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="uH8-A3-5Ek"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF1-w8-STf">
+                                                                <rect key="frame" x="28" y="0.0" width="17" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kcal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ9-af-oVs">
+                                                                <rect key="frame" x="53" y="0.0" width="22.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FRp-XN-kZn" userLabel="Data 4">
+                                                        <rect key="frame" x="0.0" y="84" width="138" height="20"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pace" translatesAutoresizingMaskIntoConstraints="NO" id="K7Q-ca-sPj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="Gyg-AW-dUc"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="Hba-BZ-8co"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-7y-0G9">
+                                                                <rect key="frame" x="28" y="0.0" width="55.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min/km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhf-KY-Bhd">
+                                                                <rect key="frame" x="91.5" y="0.0" width="46.5" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Uw0-Yp-UhZ" secondAttribute="trailing" constant="16" id="6Ut-i8-KQj"/>
+                                            <constraint firstItem="3Lp-hi-Jn1" firstAttribute="leading" secondItem="mlB-5N-yR0" secondAttribute="leading" id="75Q-ze-Ii9"/>
+                                            <constraint firstItem="Uw0-Yp-UhZ" firstAttribute="top" secondItem="3Lp-hi-Jn1" secondAttribute="bottom" constant="8" id="Qtm-Wf-j3P"/>
+                                            <constraint firstItem="Uw0-Yp-UhZ" firstAttribute="leading" secondItem="mlB-5N-yR0" secondAttribute="leading" id="e7R-11-NZW"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="W9n-0Z-WNb" appends="YES" id="I9Q-ir-RUA"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3Lp-hi-Jn1" firstAttribute="top" secondItem="sfi-3b-SJE" secondAttribute="top" id="tAP-lF-Oeb"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="cOL-n7-ovD" firstAttribute="trailing" secondItem="kTc-Jw-pOu" secondAttribute="trailing" id="JOA-o7-dae"/>
+                            <constraint firstItem="Hnp-1d-MsQ" firstAttribute="top" secondItem="kTc-Jw-pOu" secondAttribute="top" id="U2F-A3-ve9"/>
+                            <constraint firstItem="vFt-mx-Lud" firstAttribute="leading" secondItem="kTc-Jw-pOu" secondAttribute="leading" constant="16" id="aTL-4r-yLl"/>
+                            <constraint firstItem="cOL-n7-ovD" firstAttribute="top" secondItem="vFt-mx-Lud" secondAttribute="bottom" constant="16" id="d34-fh-Vva"/>
+                            <constraint firstItem="UON-25-t8H" firstAttribute="top" secondItem="cOL-n7-ovD" secondAttribute="bottom" id="fu4-cH-RUs"/>
+                            <constraint firstItem="vFt-mx-Lud" firstAttribute="top" secondItem="Hnp-1d-MsQ" secondAttribute="bottom" constant="16" id="h37-kf-v9P"/>
+                            <constraint firstItem="UON-25-t8H" firstAttribute="leading" secondItem="kTc-Jw-pOu" secondAttribute="leading" constant="16" id="h58-bJ-q3m"/>
+                            <constraint firstItem="kTc-Jw-pOu" firstAttribute="bottom" secondItem="UON-25-t8H" secondAttribute="bottom" constant="12" id="jwG-26-vE4"/>
+                            <constraint firstItem="kTc-Jw-pOu" firstAttribute="trailing" secondItem="UON-25-t8H" secondAttribute="trailing" constant="16" id="kca-ks-EMx"/>
+                            <constraint firstItem="kTc-Jw-pOu" firstAttribute="trailing" secondItem="vFt-mx-Lud" secondAttribute="trailing" constant="16" id="kw0-67-vci"/>
+                            <constraint firstItem="cOL-n7-ovD" firstAttribute="leading" secondItem="kTc-Jw-pOu" secondAttribute="leading" id="miq-LT-ffv"/>
+                            <constraint firstItem="Hnp-1d-MsQ" firstAttribute="trailing" secondItem="kTc-Jw-pOu" secondAttribute="trailing" id="yTd-K8-lcu"/>
+                            <constraint firstItem="Hnp-1d-MsQ" firstAttribute="leading" secondItem="kTc-Jw-pOu" secondAttribute="leading" id="zY1-p2-eyv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kTc-Jw-pOu"/>
                     </view>
                     <navigationItem key="navigationItem" title="TriMeter" id="ROZ-b7-JFp">
@@ -42,21 +315,73 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <connections>
+                        <outlet property="activityButton" destination="o1w-1r-Sc6" id="SvP-mk-J4l"/>
+                        <outlet property="activityLabel" destination="sfi-3b-SJE" id="J2p-1D-JOt"/>
+                        <outlet property="audioButton" destination="0WS-t1-DF7" id="ihA-8A-aj2"/>
+                        <outlet property="autoPauseButton" destination="YKk-v0-BGB" id="syX-rG-Fct"/>
+                        <outlet property="countdownButton" destination="HJO-R7-W86" id="3Ri-b5-d1Q"/>
+                        <outlet property="data1DescriptionLabel" destination="HDT-JJ-yoA" id="KEX-6b-PhV"/>
+                        <outlet property="data1ImageView" destination="7ox-4M-E4c" id="a9J-na-yw4"/>
+                        <outlet property="data1Label" destination="RJX-c2-QDT" id="3eq-5N-rju"/>
+                        <outlet property="data2DescriptionLabel" destination="tQv-gm-nxA" id="8py-ZE-sa8"/>
+                        <outlet property="data2ImageView" destination="dFs-JR-5jl" id="H7C-dk-SfC"/>
+                        <outlet property="data2Label" destination="4pQ-mg-1lQ" id="9y7-Ed-QDP"/>
+                        <outlet property="data3DescriptionLabel" destination="sZ9-af-oVs" id="SgW-FK-kzu"/>
+                        <outlet property="data3ImageView" destination="G5n-BS-5n7" id="LZD-lO-we9"/>
+                        <outlet property="data3Label" destination="JF1-w8-STf" id="DVy-d8-lnp"/>
+                        <outlet property="data4DescriptionLabel" destination="Zhf-KY-Bhd" id="LZp-7i-kfo"/>
+                        <outlet property="data4ImageView" destination="K7Q-ca-sPj" id="zPb-wL-Q2c"/>
+                        <outlet property="data4Label" destination="pVH-7y-0G9" id="c4o-X8-EMr"/>
+                        <outlet property="dataLabel" destination="3Lp-hi-Jn1" id="Gpy-WH-ezA"/>
+                        <outlet property="goalButton" destination="ht1-Ab-AIS" id="Pup-sR-Qcr"/>
+                        <outlet property="goalLabel" destination="cpF-vH-za9" id="6kX-pO-Gbi"/>
+                        <outlet property="hapticButton" destination="1jR-kP-ioa" id="TEu-ik-ED0"/>
+                        <outlet property="liveLocationButton" destination="aKz-YM-diG" id="fhe-SE-e1U"/>
+                        <outlet property="mapView" destination="Hnp-1d-MsQ" id="1Ch-jt-ifk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9w8-4p-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W9n-0Z-WNb">
+                    <connections>
+                        <action selector="dataTapGestureTapped:" destination="ePT-xh-JOt" id="yuz-9D-jwO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="380" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="24" height="24"/>
+        <image name="Live-location-off" width="20" height="30"/>
+        <image name="audio-off" width="31" height="21"/>
+        <image name="autopause-off" width="24" height="24"/>
         <image name="calendar" width="22" height="24"/>
+        <image name="calories" width="17" height="23"/>
+        <image name="countdown-off" width="23" height="25"/>
+        <image name="distance" width="23" height="15"/>
+        <image name="duration" width="21" height="21"/>
+        <image name="haptic-off" width="24" height="24"/>
+        <image name="pace" width="22" height="25"/>
+        <image name="running" width="24" height="23"/>
         <image name="settings-1-gear" width="24" height="24"/>
         <namedColor name="Background">
             <color red="0.086000002920627594" green="0.13300000131130219" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Bermuda">
+            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bermuda">
             <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bermuda">
+            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bermuda">
+            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bermuda">
+            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

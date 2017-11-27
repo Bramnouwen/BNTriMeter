@@ -60,6 +60,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>If you want the app to be able to run in the background we will always need your location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>TriMeter needs access to your location to track and record your workouts.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cabin-Bold.ttf</string>

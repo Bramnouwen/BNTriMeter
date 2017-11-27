@@ -23,4 +23,5 @@ struct Segues {
     static let startToMainSegueKey = "startToMain"
     static let startToLoginSegueKey = "startToLogin"
     static let toRegisterTwo = "toRegisterTwo"
+    static let toWelcome = "toWelcome"
 }

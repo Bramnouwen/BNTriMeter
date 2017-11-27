@@ -28,6 +28,7 @@
 		F922A4431FCC3E7500C48C46 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922A4421FCC3E7500C48C46 /* RecordViewController.swift */; };
 		F922A4451FCC3E7F00C48C46 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922A4441FCC3E7F00C48C46 /* LeaderboardViewController.swift */; };
 		F922A4471FCC3E8900C48C46 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922A4461FCC3E8900C48C46 /* SettingsViewController.swift */; };
+		F922A4491FCC5F3D00C48C46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922A4481FCC5F3D00C48C46 /* LocationManager.swift */; };
 		F94E010F1F912CB60025648A /* TriMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E010E1F912CB60025648A /* TriMeterTests.swift */; };
 		F94E011A1F912CB60025648A /* TriMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E01191F912CB60025648A /* TriMeterUITests.swift */; };
 		F94E01381F912E990025648A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E012D1F912E990025648A /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		F9B8CB561FB634DB0068F6EC /* Cabin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B8CB4D1FB634DA0068F6EC /* Cabin-SemiBold.ttf */; };
 		F9B8CB571FB634DB0068F6EC /* Cabin-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9B8CB4E1FB634DA0068F6EC /* Cabin-SemiBoldItalic.ttf */; };
 		F9B8CB581FB634DB0068F6EC /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9B8CB4F1FB634DA0068F6EC /* OFL.txt */; };
+		F9C47E521FCC6AC300597B91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9C47E541FCC6AC300597B91 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,7 @@
 		F922A4421FCC3E7500C48C46 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		F922A4441FCC3E7F00C48C46 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		F922A4461FCC3E8900C48C46 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F922A4481FCC5F3D00C48C46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F94E00F61F912CB60025648A /* TriMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010A1F912CB60025648A /* TriMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010E1F912CB60025648A /* TriMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriMeterTests.swift; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 		F9B8CB4D1FB634DA0068F6EC /* Cabin-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBold.ttf"; sourceTree = "<group>"; };
 		F9B8CB4E1FB634DA0068F6EC /* Cabin-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		F9B8CB4F1FB634DA0068F6EC /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		F9C47E531FCC6AC300597B91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9C47E551FCC6AC500597B91 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +382,7 @@
 				F94E012D1F912E990025648A /* AppDelegate.swift */,
 				F955B67A1FB0A0AF00D723D7 /* Constants.swift */,
 				F955B67C1FB1AAB400D723D7 /* APIManager.swift */,
+				F922A4481FCC5F3D00C48C46 /* LocationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				F9B8CB461FB634DA0068F6EC /* Fonts */,
 				F94E01321F912E990025648A /* Assets.xcassets */,
 				F94E01331F912E990025648A /* Info.plist */,
+				F9C47E541FCC6AC300597B91 /* InfoPlist.strings */,
 				F955B6741FB0913500D723D7 /* Localizable.strings */,
 				F94E01341F912E990025648A /* Storyboards */,
 			);
@@ -577,6 +584,7 @@
 				F922A42D1FCC317900C48C46 /* Profile.storyboard in Resources */,
 				F90671521FC82F4400DB909C /* Start.storyboard in Resources */,
 				F9B8CB531FB634DA0068F6EC /* Cabin-Medium.ttf in Resources */,
+				F9C47E521FCC6AC300597B91 /* InfoPlist.strings in Resources */,
 				F922A4331FCC319C00C48C46 /* Leaderboard.storyboard in Resources */,
 				F9B8CB551FB634DB0068F6EC /* Cabin-Regular.ttf in Resources */,
 				F955B6721FB0913500D723D7 /* Localizable.strings in Resources */,
@@ -799,6 +807,7 @@
 				F922A4411FCC3E6D00C48C46 /* ProfileViewController.swift in Sources */,
 				F955B6781FB0937C00D723D7 /* Strings.swift in Sources */,
 				F95B55021FC84FB2001B0295 /* LoginViewController.swift in Sources */,
+				F922A4491FCC5F3D00C48C46 /* LocationManager.swift in Sources */,
 				F922A4471FCC3E8900C48C46 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,6 +851,15 @@
 				F955B6751FB0914C00D723D7 /* nl */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F9C47E541FCC6AC300597B91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C47E531FCC6AC300597B91 /* en */,
+				F9C47E551FCC6AC500597B91 /* nl */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

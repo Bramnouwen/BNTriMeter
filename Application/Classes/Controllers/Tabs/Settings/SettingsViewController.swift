@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKLoginKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +35,13 @@ class SettingsViewController: UIViewController {
     }
     */
 
+    @IBAction func logoutButtonClicked(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            FBSDKAccessToken.setCurrent(nil)
+            performSegue(withIdentifier: Segues.toWelcome, sender: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: \(signOutError.localizedDescription)")
+        }
+    }
 }

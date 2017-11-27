@@ -48,11 +48,11 @@ class ConnectViewController: UIViewController {
     }
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
-        //TODO: Facebook connect
+        // TODO: Facebook connect
     }
     
     @IBAction func stravaButtonClicked(_ sender: Any) {
-        //TODO: Strava connect
+        // TODO: Strava connect
         
     }
     
