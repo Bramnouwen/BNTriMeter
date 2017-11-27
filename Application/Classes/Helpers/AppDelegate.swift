@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        let defaultStore = Firestore.firestore()
+        _ = Firestore.firestore() //let defaultStore
         Fabric.with([Crashlytics.self])
         
         UIApplication.shared.statusBarStyle = .lightContent //Might be unnecessary
