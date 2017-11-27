@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-66" y="40"/>
         </scene>
-        <!--Main-->
+        <!--Tabs-->
         <scene sceneID="dt3-BT-zgO">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="TG3-El-Ngf" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Tabs" id="TG3-El-Ngf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWe-5l-tfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488" y="-63"/>

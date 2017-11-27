@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rqv-z4-76P">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eMR-OV-Rrx">
+            <objects>
+                <tabBarController id="Rqv-z4-76P" customClass="TabBarController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="utR-DH-vES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Bermuda"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eGi-PP-rUk" kind="relationship" relationship="viewControllers" id="b9V-Zz-fW7"/>
+                        <segue destination="9zA-Lq-NIf" kind="relationship" relationship="viewControllers" id="tOa-kp-KNH"/>
+                        <segue destination="BKu-xU-lzL" kind="relationship" relationship="viewControllers" id="C1D-6l-50a"/>
+                        <segue destination="Nyu-Bp-D7k" kind="relationship" relationship="viewControllers" id="hQ0-wU-Pi7"/>
+                        <segue destination="7DG-IA-8vL" kind="relationship" relationship="viewControllers" id="kyY-Q7-gCO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06M-kQ-jyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="-61"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="2Ef-RM-jbr">
+            <objects>
+                <navigationController id="eGi-PP-rUk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" selectedImage="feed - selected" id="tOP-Au-B7p"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="RSu-Tv-Twc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2t6-TL-s12" kind="relationship" relationship="rootViewController" id="EMb-ug-ewL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ock-Wq-z8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="-1902"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="8vf-DC-rmr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="2t6-TL-s12" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4v8-Xa-7rQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbK-Lw-SZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="-1903"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="415-dI-gN1">
+            <objects>
+                <navigationController id="9zA-Lq-NIf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile - selected" id="kyu-Uv-F83"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="81M-JY-jnQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LWc-cQ-1SV" kind="relationship" relationship="rootViewController" id="zDO-rf-lH7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qv7-cF-tI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="-1194"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="vyK-eh-iTw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="LWc-cQ-1SV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="r1x-Ev-yV7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6L-Mv-WXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="-1195"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="BPe-t2-PGp">
+            <objects>
+                <navigationController id="BKu-xU-lzL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Start" image="start" selectedImage="start - selected" id="5s5-79-0i5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YRv-y6-I8E">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Bpv-LM-TkR" kind="relationship" relationship="rootViewController" id="ees-Xg-vUy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mh6-Aq-xsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="-493"/>
+        </scene>
+        <!--Record-->
+        <scene sceneID="sAJ-yS-xUc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Record" id="Bpv-LM-TkR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iBP-LY-mdx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUg-EV-3rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="-493"/>
+        </scene>
+        <!--Leaderboard-->
+        <scene sceneID="usX-6e-Y2o">
+            <objects>
+                <navigationController id="Nyu-Bp-D7k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaderboard" selectedImage="leaderboard - selected" id="wam-2J-kXf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wbo-PX-Ih8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sGb-rL-EEv" kind="relationship" relationship="rootViewController" id="Fnn-G9-KUZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKy-rp-0uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="239"/>
+        </scene>
+        <!--Leaderboard-->
+        <scene sceneID="Afu-eI-Xdl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Leaderboard" id="sGb-rL-EEv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Gep-3t-aMx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgw-tA-cKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="238"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="isG-K1-2G7">
+            <objects>
+                <navigationController id="7DG-IA-8vL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings - selected" id="0Wp-Z2-HgO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JBr-bB-bYy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CS1-pJ-ae1" kind="relationship" relationship="rootViewController" id="weY-wG-5Tp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPe-sx-BsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="954"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="wtg-gj-lLf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="CS1-pJ-ae1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eiM-Ro-O3T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVe-aN-5Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="954"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="feed" width="25" height="25"/>
+        <image name="feed - selected" width="25" height="25"/>
+        <image name="leaderboard" width="25" height="25"/>
+        <image name="leaderboard - selected" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
+        <image name="profile - selected" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="settings - selected" width="25" height="25"/>
+        <image name="start" width="25" height="25"/>
+        <image name="start - selected" width="25" height="25"/>
+        <namedColor name="Bermuda">
+            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

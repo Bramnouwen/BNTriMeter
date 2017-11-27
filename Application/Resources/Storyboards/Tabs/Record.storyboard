@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePT-xh-JOt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TriMeter-->
+        <scene sceneID="uDK-vM-Dit">
+            <objects>
+                <viewController id="ePT-xh-JOt" customClass="RecordViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6iD-Bl-8rO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kTc-Jw-pOu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TriMeter" id="ROZ-b7-JFp">
+                        <barButtonItem key="leftBarButtonItem" image="settings 1 gear" id="fGa-Ow-GHk">
+                            <color key="tintColor" name="Bermuda"/>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="Add" id="qfH-n7-eZz">
+                                <color key="tintColor" name="Bermuda"/>
+                            </barButtonItem>
+                            <barButtonItem image="calendar" id="kFP-kJ-4SQ">
+                                <color key="tintColor" name="Bermuda"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9w8-4p-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add" width="24" height="24"/>
+        <image name="calendar" width="22" height="24"/>
+        <image name="settings 1 gear" width="24" height="24"/>
+        <namedColor name="Bermuda">
+            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
