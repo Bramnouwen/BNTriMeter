@@ -21,7 +21,11 @@ class ChooseDataViewController: GradientViewController {
     @IBOutlet weak var loadDefaultButton: UIButton!
     @IBOutlet weak var makeDefaultButton: UIButton!
     
-    var currentData: [DataField] = []
+    var currentData: [DataField] = [] {
+        didSet {
+            print("Current data changed")
+        }
+    }
     
     
     override func viewDidLoad() {
