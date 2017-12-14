@@ -23,7 +23,9 @@ class ChooseDataViewController: GradientViewController {
     
     var currentData: [DataField] = [] {
         didSet {
-            print("Current data changed")
+            for (index, data) in currentData.enumerated() {
+                data.spot = index
+            }
         }
     }
     
@@ -134,7 +136,7 @@ extension ChooseDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let i = indexPath.row
         if editingStyle == .delete {
-            if currentData.indices.contains(i) {
+            if currentData.indices.contains(i) && currentData.count != 1 {
                 currentData.remove(at: i) // Delete item from current displayed data
                 dataManager.currentActivity.dataLayout?.dataFields = currentData // Set displayed data equal to current activity data
                 //TODO: Fix this
