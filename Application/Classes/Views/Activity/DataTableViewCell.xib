@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cabin-Regular.ttf">
+            <string>Cabin-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="DataTableViewCell" customModule="TriMeter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8s-Jy-pkJ">
+                        <rect key="frame" x="24" y="12.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="GrM-PL-reY"/>
+                            <constraint firstAttribute="width" constant="25" id="bbs-OZ-DJq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwd-RQ-snZ">
+                        <rect key="frame" x="65" y="10.5" width="130.5" height="29.5"/>
+                        <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcN-wG-dqS">
+                        <rect key="frame" x="211.5" y="13" width="92.5" height="24.5"/>
+                        <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="20"/>
+                        <color key="textColor" name="Bermuda"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="kcN-wG-dqS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BAD-fA-fJ2"/>
+                    <constraint firstItem="fwd-RQ-snZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bgh-R5-viF"/>
+                    <constraint firstAttribute="trailing" secondItem="kcN-wG-dqS" secondAttribute="trailing" constant="16" id="JGG-GL-CqD"/>
+                    <constraint firstItem="W8s-Jy-pkJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="haf-Ab-0Kg"/>
+                    <constraint firstItem="W8s-Jy-pkJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j42-hu-DHg"/>
+                    <constraint firstItem="kcN-wG-dqS" firstAttribute="leading" secondItem="fwd-RQ-snZ" secondAttribute="trailing" constant="16" id="lVw-GE-GW2"/>
+                    <constraint firstItem="fwd-RQ-snZ" firstAttribute="leading" secondItem="W8s-Jy-pkJ" secondAttribute="trailing" constant="16" id="wqE-Dj-CyQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="dataDescription" destination="kcN-wG-dqS" id="Mz9-Mn-G8E"/>
+                <outlet property="dataIcon" destination="W8s-Jy-pkJ" id="kLE-jo-Bic"/>
+                <outlet property="dataTitle" destination="fwd-RQ-snZ" id="er7-s0-2m1"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Bermuda">
+            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

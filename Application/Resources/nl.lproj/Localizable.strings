@@ -41,3 +41,229 @@
 "Register.male" = "Man";
 "Register.female" = "Vrouw";
 "Register.register" = "Registreer";
+
+// Activity
+"Activity.cycling" = "Fietsen";
+"Activity.running" = "Hardlopen";
+"Activity.swimming" = "Zwemmen";
+"Activity.triathlon" = "Triatlon";
+"Activity.walking" = "Wandelen";
+"Activity.triathlon.olympic" = "Olympische triatlon";
+"Activity.triathlon.sprint" = "Sprint triatlon";
+"Activity.triathlon.superSprint" = "Super sprint triatlon";
+"Activity.triathlon.transition" = "Transitie";
+
+// Adjust
+"Adjust.calories" = "calorieën";
+"Adjust.distance" = "kilometers";
+"Adjust.duration" = "minuten";
+"Adjust.pace" = "min/km";
+
+"Adjust.goal.description" = "Druk op de knoppen om te wijzigen met %@";
+"Adjust.goal.title.one" = "Kies je ";
+"Adjust.goal.title.two" = " voor ";
+"Adjust.goal.title.three" = ".";
+
+// Choose
+"Choose.data.description.data" = "Druk om te veranderen, houd ingedrukt om de positie te wijzigen.";
+"Choose.data.description.one" = " voor ";
+"Choose.data.description.two" = ".\n";
+"Choose.data.description.three" = "Welke gegevens wil je zien?";
+
+"Choose.default.load" = "Laad standaard voor";
+"Choose.default.make" = "Maak standaard voor";
+
+"Choose.goal.description.one" = "Wat wil je bereiken met ";
+"Choose.goal.description.two" = "?";
+
+"Choose.settings.description.one" = " voor ";
+"Choose.settings.description.two" = ".\n";
+"Choose.settings.description.three" = "Kies je instellingen voor deze activiteit.";
+
+"Choose.sport.description.one" = "Wat wil je doen? Kies een\n";
+"Choose.sport.description.two" = "sport ";
+"Choose.sport.description.three" = "of kies een ";
+"Choose.sport.description.four" = "preset";
+"Choose.sport.description.five" = "!";
+
+// Common
+"Common.continueText" = "Volgende";
+"Common.done" = "Gereed";
+"Common.email" = "E-mail";
+"Common.load" = "Laad";
+"Common.login" = "Log in";
+"Common.password" = "Wachtwoord";
+"Common.toLogin" = "Heb je al een account? Log hier in!";
+"Common.toRegister" = "Nog geen account? Registreer hier!";
+"Common.createWorkout.button" = "Creëer activiteit ";
+"Common.createWorkout.description" = "Creëer een gestructureerde activiteit door sporten en doelen te combineren!";
+
+// Connect
+"Connect.description" = "Creëer een account of connecteer met Facebook of Strava, aan jou de keuze!";
+"Connect.or" = "of";
+
+// Data
+"Data.current" = "huidig";
+
+"Data.add" = "Voeg toe...";
+"Data.clock" = "Klok";
+"Data.calories.amount" = "%d kcal";
+"Data.calories.part" = "Huidige calorieën";
+"Data.calories.total" = "Calorieën";
+"Data.calories.part.description" = "Calorieën van het huidige deel";
+"Data.calories.remaining.part" = "Resterende huidige calorieën";
+"Data.calories.remaining.total" = "Resterende calorieën";
+"Data.calories.remaining.part.description" = "Resterende calorieën van het huidige deel";
+"Data.calories.remaining.total.description" = "Resterende calorieën van het de hele activiteit";
+"Data.calories.total.description" = "Calorieën van de hele activiteit";
+
+//Currently unused
+"Data.caloriesActive.part" = "Current active calories";
+"Data.caloriesActive.total" = "Active calories";
+"Data.caloriesActive.part.description" = "Active calories of the current part";
+"Data.caloriesActive.remaining.part" = "Remaining current active calories";
+"Data.caloriesActive.remaining.total" = "Remaining active calories";
+"Data.caloriesActive.remaining.part.description" = "Remaining active calories of the whole activity";
+"Data.caloriesActive.remaining.total.description" = "Remaining active calories of the whole activity";
+"Data.caloriesActive.total.description" = "Active calories of the whole activity";
+
+"Data.caloriesTotal.part" = "Current total calories";
+"Data.caloriesTotal.total" = "Total calories";
+"Data.caloriesTotal.part.description" = "Total calories of the current part";
+"Data.caloriesTotal.remaining.part" = "Remaining current total calories";
+"Data.caloriesTotal.remaining.total" = "Remaining total calories";
+"Data.caloriesTotal.remaining.part.description" = "Remaining total calories of the whole activity";
+"Data.caloriesTotal.remaining.total.description" = "Remaining total calories of the whole activity";
+"Data.caloriesTotal.total.description" = "Total calories of the whole activity";
+//Currently unused
+
+"Data.clock.description" = "De tijd";
+"Data.clock.amount" = "00:00:00";
+
+"Data.descent.amount" = "%d m";
+"Data.descent.part" = "Huidige afdaling";
+"Data.descent.total" = "Afdaling";
+"Data.descent.part.description" = "Afdaling van het huidige deel";
+"Data.descent.total.description" = "Afdaling van de hele activiteit";
+
+"Data.distance.amount" = "%.2f km";
+"Data.distance.part" = "Huidige afstand";
+"Data.distance.total" = "Afstand";
+"Data.distance.part.description" = "Total afstand van het huidige deel";
+"Data.distance.remaining.part" = "Huidige resterende afstand";
+"Data.distance.remaining.total" = "Resterende afstand";
+"Data.distance.remaining.part.description" = "Resterende afstand van het huidige deel";
+"Data.distance.remaining.total.description" = "Resterende afstand van de hele activiteit";
+"Data.distance.total.description" = "Totale afstand van de hele activiteit";
+
+"Data.duration.amount" = "%d min";
+"Data.duration.part" = "Huidige duur";
+"Data.duration.total" = "Duur";
+"Data.duration.part.description" = "Totale duur van het huidige deel";
+"Data.duration.remaining.part" = "Huidige resterende duur";
+"Data.duration.remaining.total" = "Resterende duur";
+"Data.duration.remaining.part.description" = "Resterende duur van het huidige deel";
+"Data.duration.remaining.total.description" = "Resterende duur van de hele activiteit";
+"Data.duration.total.description" = "Totale duur van de hele activiteit";
+
+"Data.elevation.amount" = "%d m";
+"Data.elevation.part" = "Huidige stijging";
+"Data.elevation.total" = "Stijging";
+"Data.elevation.part.description" = "Stijging van het huidige deel";
+"Data.elevation.total.description" = "Stijging van de hele activiteit";
+
+"Data.heartRate.amount" = "%d spm";
+"Data.heartRate.current" = "Hartritme";
+"Data.heartRate.average.part" = "Huidig gemiddeld hartritme";
+"Data.heartRate.average.total" = "Gemiddeld hartritme";
+"Data.heartRate.average.part.description" = "Gemiddeld hartritme van het huidige deel";
+"Data.heartRate.average.total.description" = "Gemiddeld hartritme van de hele activiteit";
+"Data.heartRate.current.description" = "Hartritme op dit moment";
+
+"Data.pace.amount" = "%d min/km";
+"Data.pace.current" = "Tempo";
+"Data.pace.average.part" = "Huidig gemiddeld tempo";
+"Data.pace.average.total" = "Gemiddeld tempo";
+"Data.pace.average.part.description" = "Gemiddeld tempo van het huidige deel";
+"Data.pace.average.total.description" = "Gemiddeld tempo van de hele activiteit";
+"Data.pace.current.description" = "Tempo op dit moment";
+
+"Data.speed.amount" = "%.2f km/u";
+"Data.speed.current" = "Snelheid";
+"Data.speed.average.part" = "Huidige gemiddelde snelheid";
+"Data.speed.average.total" = "Gemiddelde snelheid";
+"Data.speed.average.part.description" = "Gemiddelde snelheid van het huidige deel";
+"Data.speed.average.total.description" = "Gemiddelde snelheid van de hele activiteit";
+"Data.speed.current.description" = "Snelheid op dit moment";
+
+"Data.steps.amount" = "%d stappen";
+"Data.steps.part" = "Huidige stappen";
+"Data.steps.total" = "Stappen";
+"Data.steps.part.description" = "Stappen gedurende het huidige deel";
+"Data.steps.total.description" = "Stappen gedurende de hele activiteit";
+
+"Goal.multiple" = "Meerdere";
+"Goal.triathlon" = "Finish!";
+
+"Goal.calories.amount" = "%d kcal";
+"Goal.calories.title" = "Calorieën";
+
+"Goal.distance.amount" = "%d km";
+"Goal.distance.title" = "Afstand";
+
+"Goal.duration.amount" = "%d min";
+"Goal.duration.title" = "Duur";
+
+"Goal.nothing.amount" = "Geen doel";
+"Goal.nothing.title" = "Niets";
+
+"Goal.pace.amount" = "%d min/km";
+"Goal.pace.title" = "Tempo";
+
+// Login
+"Login.description" = "Log in met je TriMeter gegevens.";
+"Login.errorOne" = "Er ging iets verkeerd, probeer opnieuw.";
+"Login.errorThree" = "Nope, probeer op \"Vergeten?\" te klikken.";
+"Login.errorTwo" = "Weer fout, probeer een derde keer?";
+"Login.forgot" = "Vergeten?";
+"Login.forgotError" = "Probeer ten minste 1 keer in te loggen...";
+
+// Record
+"Record.activity" = "Activiteit";
+"Record.button" = "Alles in orde? Begin!";
+"Record.data" = "Gegevens";
+"Record.goal" = "Doel";
+
+// Register
+"Register.dateOfBirth" = "Geboortedatum";
+"Register.descriptionOne" = "We hebben wat gegevens van je nodig, te beginnen met een e-mail adres en wachtwoord.";
+"Register.descriptionTwo" = "Deze gegevens zijn optioneel maar wel noodzakelijk als je gebruik wilt maken van geavanceerd filteren bij de activiteitenfeed en het scorebord.";
+"Register.female" = "Vrouw";
+"Register.firstName" = "Voornaam";
+"Register.lastName" = "Achternaam";
+"Register.male" = "Man";
+"Register.password" = "Wachtwoord";
+"Register.register" = "Registreer";
+"Register.weight" = "Gewicht";
+
+// Settings
+"Settings.off" = "Uit";
+"Settings.on" = "Aan";
+
+"Settings.audio.description" = "Krijg samenvattingen en motivatie berichten";
+"Settings.audio.title" = "Audio feedback";
+
+"Settings.autopause.description" = "Pauzeer de activiteit als je stopt met bewegen";
+"Settings.autopause.title" = "Auto pauze";
+
+"Settings.countdown.description" = "Voeg een aftelling toe aan het begin van de activiteit";
+"Settings.countdown.title" = "Aftellen";
+
+"Settings.haptic.description" = "Krijg feedback in de vorm van trillingen";
+"Settings.haptic.title" = "Haptic feedback";
+
+"Settings.liveLocation.description" = "Deel je locatie met anderen";
+"Settings.liveLocation.title" = "Live locatie";
+
+"Welcome.description" = "De eerste app die het toelaat om activiteiten samen te stellen bestaande uit verschillende sporten en doelen, vooral handig voor triatleten maar gemaakt voor iedereen!";
+"Welcome.welcome" = "Welkom bij";

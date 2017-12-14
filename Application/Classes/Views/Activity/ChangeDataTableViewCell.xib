@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cabin-Regular.ttf">
+            <string>Cabin-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChangeDataTableViewCell" customModule="TriMeter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-tJ-wdF">
+                        <rect key="frame" x="32" y="6" width="256" height="42.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1h-hg-SoK">
+                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKn-ED-J9g">
+                                <rect key="frame" x="0.0" y="27.5" width="58.5" height="15"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX8-jt-CAF">
+                        <rect key="frame" x="22" y="6" width="3" height="42.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="3" id="K2D-A1-6kN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="MX8-jt-CAF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="1is-MP-Yoo"/>
+                    <constraint firstAttribute="trailing" secondItem="Giy-tJ-wdF" secondAttribute="trailing" constant="32" id="KhM-QK-naO"/>
+                    <constraint firstItem="MX8-jt-CAF" firstAttribute="bottom" secondItem="Giy-tJ-wdF" secondAttribute="bottom" id="TBM-GU-iYr"/>
+                    <constraint firstItem="MX8-jt-CAF" firstAttribute="top" secondItem="Giy-tJ-wdF" secondAttribute="top" id="W1A-5i-R4M"/>
+                    <constraint firstItem="Giy-tJ-wdF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="WIT-TD-sOM"/>
+                    <constraint firstItem="Giy-tJ-wdF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uoB-gZ-j5K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" name="Bermuda"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="colorIndicator" destination="MX8-jt-CAF" id="T6B-lC-Zxv"/>
+                <outlet property="explanation" destination="EKn-ED-J9g" id="jo7-Hw-ENh"/>
+                <outlet property="title" destination="u1h-hg-SoK" id="2cZ-nN-nVw"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="53.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Bermuda">
+            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

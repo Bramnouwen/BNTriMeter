@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TMActivity" representedClassName="TMActivity" syncable="YES" codeGenerationType="class">
+        <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPartOfWorkout" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="partId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tableViewId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dataLayout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMDataLayout" inverseName="activity" inverseEntity="TMDataLayout" syncable="YES"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMGoal" inverseName="activity" inverseEntity="TMGoal" syncable="YES"/>
+        <relationship name="parts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMActivity" inverseName="parts" inverseEntity="TMActivity" syncable="YES"/>
+        <relationship name="settingsLayout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMSettingsLayout" inverseName="activity" inverseEntity="TMSettingsLayout" syncable="YES"/>
+    </entity>
+    <entity name="TMData" representedClassName="TMData" syncable="YES" codeGenerationType="class">
+        <attribute name="amountString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="spot" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dataLayout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMDataLayout" inverseName="data" inverseEntity="TMDataLayout" syncable="YES"/>
+    </entity>
+    <entity name="TMDataLayout" representedClassName="TMDataLayout" syncable="YES" codeGenerationType="class">
+        <attribute name="defaultFor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMActivity" inverseName="dataLayout" inverseEntity="TMActivity" syncable="YES"/>
+        <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMData" inverseName="dataLayout" inverseEntity="TMData" syncable="YES"/>
+    </entity>
+    <entity name="TMGoal" representedClassName="TMGoal" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="descriptionString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMActivity" inverseName="goal" inverseEntity="TMActivity" syncable="YES"/>
+    </entity>
+    <entity name="TMSettingsLayout" representedClassName="TMSettingsLayout" syncable="YES" codeGenerationType="class">
+        <attribute name="audio" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="autopause" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="countdown" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="countdownAmount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="defaultFor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="haptic" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="liveLocation" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMActivity" inverseName="settingsLayout" inverseEntity="TMActivity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TMActivity" positionX="-243" positionY="-105" width="128" height="180"/>
+        <element name="TMData" positionX="-641" positionY="147" width="128" height="150"/>
+        <element name="TMDataLayout" positionX="-425" positionY="99" width="128" height="105"/>
+        <element name="TMGoal" positionX="-27" positionY="-147" width="128" height="150"/>
+        <element name="TMSettingsLayout" positionX="-9" positionY="252" width="128" height="180"/>
+    </elements>
+</model>

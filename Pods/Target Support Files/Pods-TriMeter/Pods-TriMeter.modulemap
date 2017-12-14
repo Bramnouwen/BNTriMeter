@@ -1,0 +1,6 @@
+framework module Pods_TriMeter {
+  umbrella header "Pods-TriMeter-umbrella.h"
+
+  export *
+  module * { export * }
+}

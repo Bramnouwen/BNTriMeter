@@ -41,3 +41,228 @@
 "Register.male" = "Male";
 "Register.female" = "Female";
 "Register.register" = "Register";
+
+// Activity
+"Activity.cycling" = "Cycling";
+"Activity.running" = "Running";
+"Activity.swimming" = "Swimming";
+"Activity.triathlon" = "Triathlon";
+"Activity.walking" = "Walking";
+"Activity.triathlon.olympic" = "Olympic triathlon";
+"Activity.triathlon.sprint" = "Sprint triathlon";
+"Activity.triathlon.superSprint" = "Super sprint triathlon";
+"Activity.triathlon.transition" = "Transition";
+
+// Adjust
+"Adjust.calories" = "calories";
+"Adjust.distance" = "kilometers";
+"Adjust.duration" = "minutes";
+"Adjust.pace" = "min/km";
+
+"Adjust.goal.description" = "Tap the buttons to add or subtract by %@";
+"Adjust.goal.title.one" = "Choose your ";
+"Adjust.goal.title.two" = " for ";
+"Adjust.goal.title.three" = ".";
+
+// Choose
+"Choose.data.description.data" = "Tap to change, hold to rearrange.";
+"Choose.data.description.one" = " for ";
+"Choose.data.description.two" = ".\n";
+"Choose.data.description.three" = "And what data would you like to see?";
+
+"Choose.default.load" = "Load default for";
+"Choose.default.make" = "Make default for";
+
+"Choose.goal.description.one" = "What do you want to achieve for \n";
+"Choose.goal.description.two" = "?";
+
+"Choose.settings.description.one" = " for ";
+"Choose.settings.description.two" = ".\n";
+"Choose.settings.description.three" = "Choose your settings for this activity.";
+
+"Choose.sport.description.one" = "What do you want to do? Choose a \n";
+"Choose.sport.description.two" = "sport ";
+"Choose.sport.description.three" = "or pick a ";
+"Choose.sport.description.four" = "preset";
+"Choose.sport.description.five" = "!";
+
+// Common
+"Common.continueText" = "Continue";
+"Common.done" = "Done";
+"Common.email" = "Email";
+"Common.load" = "Load";
+"Common.login" = "Log in";
+"Common.password" = "Password";
+"Common.toLogin" = "Already have an account? Log in here!";
+"Common.toRegister" = "No account yet? Register here!";
+"Common.createWorkout.button" = "Create workout";
+"Common.createWorkout.description" = "Create a structured workout by combining different sports and goals!";
+
+// Connect
+"Connect.description" = "Create an account or connect with Facebook or Strava, it's up to you!";
+"Connect.or" = "or";
+
+// Data
+"Data.current" = "current";
+
+"Data.add" = "Add...";
+"Data.clock" = "Clock";
+"Data.calories.amount" = "%d kcal";
+"Data.calories.part" = "Current calories";
+"Data.calories.total" = "Calories";
+"Data.calories.part.description" = "Calories of the current part";
+"Data.calories.remaining.part" = "Remaining current calories";
+"Data.calories.remaining.total" = "Remaining calories";
+"Data.calories.remaining.part.description" = "Remaining calories of the current part";
+"Data.calories.remaining.total.description" = "Remaining calories of the whole activity";
+"Data.calories.total.description" = "Calories of the whole activity";
+
+"Data.caloriesActive.part" = "Current active calories";
+"Data.caloriesActive.total" = "Active calories";
+"Data.caloriesActive.part.description" = "Active calories of the current part";
+"Data.caloriesActive.remaining.part" = "Remaining current active calories";
+"Data.caloriesActive.remaining.total" = "Remaining active calories";
+"Data.caloriesActive.remaining.part.description" = "Remaining active calories of the whole activity";
+"Data.caloriesActive.remaining.total.description" = "Remaining active calories of the whole activity";
+"Data.caloriesActive.total.description" = "Active calories of the whole activity";
+
+"Data.caloriesTotal.part" = "Current total calories";
+"Data.caloriesTotal.total" = "Total calories";
+"Data.caloriesTotal.part.description" = "Total calories of the current part";
+"Data.caloriesTotal.remaining.part" = "Remaining current total calories";
+"Data.caloriesTotal.remaining.total" = "Remaining total calories";
+"Data.caloriesTotal.remaining.part.description" = "Remaining total calories of the whole activity";
+"Data.caloriesTotal.remaining.total.description" = "Remaining total calories of the whole activity";
+"Data.caloriesTotal.total.description" = "Total calories of the whole activity";
+
+"Data.clock.description" = "The time";
+"Data.clock.amount" = "00:00:00";
+
+"Data.descent.amount" = "%d m";
+"Data.descent.part" = "Current descent";
+"Data.descent.total" = "Descent";
+"Data.descent.part.description" = "Descent during the current part";
+"Data.descent.total.description" = "Descent during the whole activity";
+
+"Data.distance.amount" = "%.2f km";
+"Data.distance.part" = "Current distance";
+"Data.distance.total" = "Distance";
+"Data.distance.part.description" = "Total distance of the current part";
+"Data.distance.remaining.part" = "Current remaining distance";
+"Data.distance.remaining.total" = "Remaining distance";
+"Data.distance.remaining.part.description" = "Remaining distance of the current part";
+"Data.distance.remaining.total.description" = "Remaining distance of the whole activity";
+"Data.distance.total.description" = "Total distance of the whole activity";
+
+"Data.duration.amount" = "%d min";
+"Data.duration.part" = "Current duration";
+"Data.duration.total" = "Duration";
+"Data.duration.part.description" = "Total duration of the current part";
+"Data.duration.remaining.part" = "Current remaining duration";
+"Data.duration.remaining.total" = "Remaining duration";
+"Data.duration.remaining.part.description" = "Remaining duration of the current part";
+"Data.duration.remaining.total.description" = "Remaining duration of the whole activity";
+"Data.duration.total.description" = "Total duration of the whole activity";
+
+"Data.elevation.amount" = "%d m";
+"Data.elevation.part" = "Current elevation";
+"Data.elevation.total" = "Elevation";
+"Data.elevation.part.description" = "Elevation during the current part";
+"Data.elevation.total.description" = "Elevation during the whole activity";
+
+"Data.heartRate.amount" = "%d bpm";
+"Data.heartRate.current" = "Heart rate";
+"Data.heartRate.average.part" = "Current average heart rate";
+"Data.heartRate.average.total" = "Average heart rate";
+"Data.heartRate.average.part.description" = "Average heart rate during the current part";
+"Data.heartRate.average.total.description" = "Average heart rate during the whole activity";
+"Data.heartRate.current.description" = "Heart rate at this moment";
+
+"Data.pace.amount" = "%d min/km";
+"Data.pace.current" = "Pace";
+"Data.pace.average.part" = "Current average pace";
+"Data.pace.average.total" = "Average pace";
+"Data.pace.average.part.description" = "Average pace of the current part";
+"Data.pace.average.total.description" = "Average pace of the whole activity";
+"Data.pace.current.description" = "Pace at this moment";
+
+"Data.speed.amount" = "%.2f km/h";
+"Data.speed.current" = "Speed";
+"Data.speed.average.part" = "Current average speed";
+"Data.speed.average.total" = "Average speed";
+"Data.speed.average.part.description" = "Average speed of the current part";
+"Data.speed.average.total.description" = "Average speed of the whole activity";
+"Data.speed.current.description" = "Speed at this moment";
+
+"Data.steps.amount" = "%d steps";
+"Data.steps.part" = "Current steps";
+"Data.steps.total" = "Steps";
+"Data.steps.part.description" = "Steps during the current part";
+"Data.steps.total.description" = "Steps during the whole activity";
+
+// Goal
+"Goal.multiple" = "Multiple";
+"Goal.triathlon" = "Finish!";
+
+"Goal.calories.amount" = "%d kcal";
+"Goal.calories.title" = "Calories";
+
+"Goal.distance.amount" = "%d km";
+"Goal.distance.title" = "Distance";
+
+"Goal.duration.amount" = "%d min";
+"Goal.duration.title" = "Duration";
+
+"Goal.nothing.amount" = "No goal";
+"Goal.nothing.title" = "Nothing";
+
+"Goal.pace.amount" = "%d min/km";
+"Goal.pace.title" = "Pace";
+
+// Login
+"Login.description" = "Log in with your TriMeter credentials.";
+"Login.errorOne" = "Something's wrong, try again.";
+"Login.errorThree" = "Nope, try clicking on \"Forgot?\".";
+"Login.errorTwo" = "Still wrong, try a third time?";
+"Login.forgot" = "Forgot?";
+"Login.forgotError" = "Atleast try to log in one time...";
+
+// Record
+"Record.activity" = "Activity";
+"Record.button" = "All good? Let's go!";
+"Record.data" = "Data";
+"Record.goal" = "Goal";
+
+// Register
+"Register.dateOfBirth" = "Date of birth";
+"Register.descriptionOne" = "We're going to need some information, let's start with an email address and password.";
+"Register.descriptionTwo" = "This is optional, however it is necessary for some features like advanced filtering and for the leaderboard and activity feed.";
+"Register.female" = "Female";
+"Register.firstName" = "First name";
+"Register.lastName" = "Last name";
+"Register.male" = "Male";
+"Register.password" = "Password";
+"Register.register" = "Register";
+"Register.weight" = "Weight";
+
+// Settings
+"Settings.off" = "Off";
+"Settings.on" = "On";
+
+"Settings.audio.description" = "Get motivational messages and summaries";
+"Settings.audio.title" = "Audio feedback";
+
+"Settings.autopause.description" = "Pause the workout when you stop moving";
+"Settings.autopause.title" = "Auto pause";
+
+"Settings.countdown.description" = "Add a countdown to the start of the activity";
+"Settings.countdown.title" = "Countdown";
+
+"Settings.haptic.description" = "Get feedback in the form of vibrations";
+"Settings.haptic.title" = "Haptic feedback";
+
+"Settings.liveLocation.description" = "Share your location with others";
+"Settings.liveLocation.title" = "Live location";
+
+"Welcome.description" = "The first app that lets you create workouts existing of multiple sports and goals, especially handy for triathletes but made for everyone!";
+"Welcome.welcome" = "Welcome to";

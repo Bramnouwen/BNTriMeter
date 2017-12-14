@@ -13,6 +13,9 @@ import UIKit
 import Firebase
 
 class StartViewController: UIViewController {
+    
+    let dataManager = DataManager.shared
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

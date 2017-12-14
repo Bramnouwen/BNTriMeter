@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iuq-bt-t9M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cabin-Bold.ttf">
+            <string>Cabin-Bold</string>
+        </array>
+        <array key="Cabin-Medium.ttf">
+            <string>Cabin-Medium</string>
+        </array>
+        <array key="Cabin-Regular.ttf">
+            <string>Cabin-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="9AQ-rS-rSq">
+            <objects>
+                <viewController id="sTY-2A-jlr" customClass="WelcomeViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rq8-bO-Ks0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qDO-fE-BvP">
+                                <rect key="frame" x="116" y="50" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="Awq-Z6-Z7F"/>
+                                    <constraint firstAttribute="height" constant="151" id="wBY-LL-Eay"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-XF-B7Y">
+                                <rect key="frame" x="124" y="246" width="127.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TriMeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7I-G8-J39">
+                                <rect key="frame" x="71.5" y="282" width="232.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1w-cj-4td">
+                                <rect key="frame" x="40" y="357.5" width="295" height="75"/>
+                                <string key="text">The first app that lets you create workouts existing of multiple sports and goals, especially handy for triathletes but made for everyone.</string>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoe-TW-ZwV" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="579" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EfE-MD-AIb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" name="Bermuda"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="Solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.45098039220000002" green="0.8980392157" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="XKc-Jf-tpx" kind="show" id="Gk5-YG-9Kc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="Zoe-TW-ZwV" firstAttribute="leading" secondItem="nAQ-1H-5Jt" secondAttribute="leading" constant="16" id="0mE-ep-QQE"/>
+                            <constraint firstItem="i1w-cj-4td" firstAttribute="leading" secondItem="nAQ-1H-5Jt" secondAttribute="leading" constant="40" id="9qX-tX-o9D"/>
+                            <constraint firstItem="JEb-XF-B7Y" firstAttribute="top" secondItem="qDO-fE-BvP" secondAttribute="bottom" constant="45" id="G9b-Tl-tAD"/>
+                            <constraint firstItem="nAQ-1H-5Jt" firstAttribute="bottom" secondItem="Zoe-TW-ZwV" secondAttribute="bottom" constant="38" id="IsA-El-Sbc"/>
+                            <constraint firstItem="JEb-XF-B7Y" firstAttribute="centerX" secondItem="rq8-bO-Ks0" secondAttribute="centerX" id="Ksd-Ab-xOF"/>
+                            <constraint firstItem="b7I-G8-J39" firstAttribute="top" secondItem="JEb-XF-B7Y" secondAttribute="bottom" constant="8" id="LgT-yf-LSG"/>
+                            <constraint firstItem="b7I-G8-J39" firstAttribute="centerX" secondItem="rq8-bO-Ks0" secondAttribute="centerX" id="Ym7-Wz-URf"/>
+                            <constraint firstItem="qDO-fE-BvP" firstAttribute="top" secondItem="nAQ-1H-5Jt" secondAttribute="top" constant="30" id="nmg-UD-BO6"/>
+                            <constraint firstItem="i1w-cj-4td" firstAttribute="top" secondItem="b7I-G8-J39" secondAttribute="bottom" id="oqc-PL-ryU"/>
+                            <constraint firstItem="nAQ-1H-5Jt" firstAttribute="trailing" secondItem="i1w-cj-4td" secondAttribute="trailing" constant="40" id="qfB-Bk-rWF"/>
+                            <constraint firstItem="nAQ-1H-5Jt" firstAttribute="trailing" secondItem="Zoe-TW-ZwV" secondAttribute="trailing" constant="16" id="rmG-zw-rOq"/>
+                            <constraint firstItem="qDO-fE-BvP" firstAttribute="centerX" secondItem="rq8-bO-Ks0" secondAttribute="centerX" id="za4-cg-wpV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nAQ-1H-5Jt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cwc-fx-OwR"/>
+                    <connections>
+                        <outlet property="continueButton" destination="Zoe-TW-ZwV" id="b0Q-dI-Kc4"/>
+                        <outlet property="descriptionLabel" destination="i1w-cj-4td" id="fMX-ek-sI1"/>
+                        <outlet property="welcomeLabel" destination="JEb-XF-B7Y" id="4sa-gd-6vv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTH-lY-i1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="805.54722638680664"/>
+        </scene>
+        <!--Connect View Controller-->
+        <scene sceneID="IcV-LE-OvL">
+            <objects>
+                <viewController id="XKc-Jf-tpx" customClass="ConnectViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GCW-aM-f04">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pHU-wY-Vmx">
+                                <rect key="frame" x="116" y="50" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="apM-GD-ioD"/>
+                                    <constraint firstAttribute="width" constant="143" id="wZ3-hi-X8g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TriMeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORT-vt-Lei">
+                                <rect key="frame" x="71.5" y="246" width="232.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account or connect with Facebook or Strava, it's up to you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siq-Ep-eok">
+                                <rect key="frame" x="40" y="321" width="295" height="37.5"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-vg-a61" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="513" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YuH-af-woy"/>
+                                </constraints>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebookButtonClicked:" destination="XKc-Jf-tpx" eventType="touchUpInside" id="SND-wt-zDX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-Hd-496" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="579" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IMO-w0-6zT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Strava">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.99886685609817505" green="0.29335421323776245" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stravaButtonClicked:" destination="XKc-Jf-tpx" eventType="touchUpInside" id="vCN-HM-irA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt1-eW-VsA">
+                                <rect key="frame" x="16" y="637" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Q7n-lg-0Iu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <state key="normal" title="Already have an account? Log in here!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TtD-Mb-FDG" kind="show" id="yQx-e5-x92"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-jV-Oy7" userLabel="Left separator">
+                                <rect key="frame" x="0.0" y="491.5" width="171.5" height="1"/>
+                                <color key="backgroundColor" red="0.396078431372549" green="0.88423770666122437" blue="0.76468288898468018" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="d9w-oF-0vp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrm-Bv-zVM" userLabel="Right separator">
+                                <rect key="frame" x="203.5" y="491.5" width="171.5" height="1"/>
+                                <color key="backgroundColor" red="0.39607843139999999" green="0.88423770670000001" blue="0.76468288900000003" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="kkK-TD-HLI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb2-Ig-quc">
+                                <rect key="frame" x="179.5" y="481" width="16" height="20"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEr-75-pZ4" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="419" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dgs-lq-NNr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" name="Bermuda"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="Solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.45098039220000002" green="0.8980392157" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonClicked:" destination="XKc-Jf-tpx" eventType="touchUpInside" id="LPf-uV-sYe"/>
+                                    <segue destination="CUZ-pX-fMZ" kind="show" id="D32-Iq-RSC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="ORT-vt-Lei" firstAttribute="centerX" secondItem="GCW-aM-f04" secondAttribute="centerX" id="0WH-la-b0J"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="trailing" secondItem="OEr-75-pZ4" secondAttribute="trailing" constant="16" id="0Yq-Q8-Kdi"/>
+                            <constraint firstItem="cb2-Ig-quc" firstAttribute="centerX" secondItem="GCW-aM-f04" secondAttribute="centerX" id="0tB-vv-ej4"/>
+                            <constraint firstItem="gt1-eW-VsA" firstAttribute="top" secondItem="DXW-Hd-496" secondAttribute="bottom" constant="8" id="7zS-4Y-1vH"/>
+                            <constraint firstItem="OEr-75-pZ4" firstAttribute="leading" secondItem="ra2-pC-tZP" secondAttribute="leading" constant="16" id="EUx-Tw-1Dx"/>
+                            <constraint firstItem="yb1-vg-a61" firstAttribute="leading" secondItem="ra2-pC-tZP" secondAttribute="leading" constant="16" id="G7L-Qv-DTL"/>
+                            <constraint firstItem="pHU-wY-Vmx" firstAttribute="centerX" secondItem="GCW-aM-f04" secondAttribute="centerX" id="Maj-aV-1fo"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="bottom" secondItem="gt1-eW-VsA" secondAttribute="bottom" constant="8" id="SKL-gd-KL4"/>
+                            <constraint firstItem="Nrm-Bv-zVM" firstAttribute="centerY" secondItem="cb2-Ig-quc" secondAttribute="centerY" constant="1" id="UIE-zv-JL0"/>
+                            <constraint firstItem="yb1-vg-a61" firstAttribute="top" secondItem="cb2-Ig-quc" secondAttribute="bottom" constant="12" id="Vik-Qi-KpN"/>
+                            <constraint firstItem="9Vp-jV-Oy7" firstAttribute="leading" secondItem="GCW-aM-f04" secondAttribute="leading" id="ZEe-W8-iXN"/>
+                            <constraint firstItem="DXW-Hd-496" firstAttribute="leading" secondItem="ra2-pC-tZP" secondAttribute="leading" constant="16" id="Zkz-MJ-SST"/>
+                            <constraint firstItem="Siq-Ep-eok" firstAttribute="top" secondItem="ORT-vt-Lei" secondAttribute="bottom" id="bTX-qG-MTx"/>
+                            <constraint firstItem="cb2-Ig-quc" firstAttribute="leading" secondItem="9Vp-jV-Oy7" secondAttribute="trailing" constant="8" id="e6V-hf-0J8"/>
+                            <constraint firstItem="pHU-wY-Vmx" firstAttribute="top" secondItem="ra2-pC-tZP" secondAttribute="top" constant="30" id="iDT-m4-U9n"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="trailing" secondItem="DXW-Hd-496" secondAttribute="trailing" constant="16" id="nbn-Ng-wY5"/>
+                            <constraint firstItem="Nrm-Bv-zVM" firstAttribute="leading" secondItem="cb2-Ig-quc" secondAttribute="trailing" constant="8" id="o6n-Du-9Us"/>
+                            <constraint firstItem="9Vp-jV-Oy7" firstAttribute="centerY" secondItem="cb2-Ig-quc" secondAttribute="centerY" constant="1" id="q3q-eI-jSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrm-Bv-zVM" secondAttribute="trailing" id="qvd-Ud-0dP"/>
+                            <constraint firstItem="Siq-Ep-eok" firstAttribute="leading" secondItem="ra2-pC-tZP" secondAttribute="leading" constant="40" id="rti-Zx-bB1"/>
+                            <constraint firstItem="cb2-Ig-quc" firstAttribute="top" secondItem="OEr-75-pZ4" secondAttribute="bottom" constant="12" id="sfj-ui-ioC"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="trailing" secondItem="gt1-eW-VsA" secondAttribute="trailing" constant="16" id="tT3-4O-aIN"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="trailing" secondItem="Siq-Ep-eok" secondAttribute="trailing" constant="40" id="tzh-3f-8da"/>
+                            <constraint firstItem="gt1-eW-VsA" firstAttribute="leading" secondItem="ra2-pC-tZP" secondAttribute="leading" constant="16" id="uhH-VB-o2k"/>
+                            <constraint firstItem="ra2-pC-tZP" firstAttribute="trailing" secondItem="yb1-vg-a61" secondAttribute="trailing" constant="16" id="vNk-Jn-VcZ"/>
+                            <constraint firstItem="ORT-vt-Lei" firstAttribute="top" secondItem="pHU-wY-Vmx" secondAttribute="bottom" constant="45" id="w8z-K4-xFI"/>
+                            <constraint firstItem="DXW-Hd-496" firstAttribute="top" secondItem="yb1-vg-a61" secondAttribute="bottom" constant="16" id="xxM-rB-V9Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ra2-pC-tZP"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Siq-Ep-eok" id="N9S-GZ-FRr"/>
+                        <outlet property="facebookButton" destination="yb1-vg-a61" id="QGt-JW-TCg"/>
+                        <outlet property="orLabel" destination="cb2-Ig-quc" id="UY4-Py-p3w"/>
+                        <outlet property="registerButton" destination="OEr-75-pZ4" id="LGd-fu-4K9"/>
+                        <outlet property="stravaButton" destination="DXW-Hd-496" id="uY0-Cv-Nyc"/>
+                        <outlet property="toLoginButton" destination="gt1-eW-VsA" id="OaZ-vJ-ic8"/>
+                        <segue destination="jbL-vS-2rt" kind="show" identifier="toRegisterTwo" id="XF9-VU-Pw1"/>
+                        <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="e01-nT-XOk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWZ-Fy-oaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="805.54722638680664"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="oDP-Tj-Ait">
+            <objects>
+                <viewController id="TtD-Mb-FDG" customClass="LoginViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5gH-DT-2Lt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rGZ-rf-B3K">
+                                <rect key="frame" x="116" y="50" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="9Fa-3T-BaO"/>
+                                    <constraint firstAttribute="width" constant="143" id="n7R-PA-2cd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TriMeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bm3-xX-lfI">
+                                <rect key="frame" x="71.5" y="246" width="232.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with your TriMeter credentials." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96f-Om-JEf">
+                                <rect key="frame" x="40" y="321" width="295" height="19"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1f-K8-xml">
+                                <rect key="frame" x="16" y="637" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="jIN-AQ-gPN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <state key="normal" title="No account yet? Register here!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CUZ-pX-fMZ" kind="show" id="vFK-gt-zcR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPq-35-TrD" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="32" y="411" width="311" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="emailEditingChanged:" destination="TtD-Mb-FDG" eventType="editingChanged" id="YIG-Mb-xdI"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-rO-NEw" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="32" y="453" width="311" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="passwordEditingChanged:" destination="TtD-Mb-FDG" eventType="editingChanged" id="1gS-hc-2FP"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-hh-nxW" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="579" width="343" height="50"/>
+                                <color key="backgroundColor" name="Bermuda"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="STu-6t-IIb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="TtD-Mb-FDG" eventType="touchUpInside" id="8cO-qA-xMo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x48-UH-Ls4">
+                                <rect key="frame" x="229" y="479" width="114" height="29"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <state key="normal" title="Forgot password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPasswordClicked:" destination="TtD-Mb-FDG" eventType="touchUpInside" id="an3-Um-gP0"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something's wrong, try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuB-wn-Z2S">
+                                <rect key="frame" x="81" y="372" width="214" height="19"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" name="Amaranth"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0v-ri-Tk0">
+                                <rect key="frame" x="321" y="454.5" width="22" height="22"/>
+                                <state key="normal" image="ShowPassword"/>
+                                <connections>
+                                    <action selector="showHidePasswordButtonClicked:" destination="TtD-Mb-FDG" eventType="touchUpInside" id="lsj-2f-PfW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="u0v-ri-Tk0" firstAttribute="centerY" secondItem="EQX-rO-NEw" secondAttribute="centerY" id="1lb-Ug-XeK"/>
+                            <constraint firstItem="x1f-K8-xml" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="16" id="461-pV-Kxq"/>
+                            <constraint firstItem="rGZ-rf-B3K" firstAttribute="centerX" secondItem="5gH-DT-2Lt" secondAttribute="centerX" id="Ahu-Wp-1dT"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="GPq-35-TrD" secondAttribute="trailing" constant="32" id="BMC-W7-zTX"/>
+                            <constraint firstItem="rGZ-rf-B3K" firstAttribute="top" secondItem="XLF-Wb-lCZ" secondAttribute="top" constant="30" id="Bsg-KR-bMT"/>
+                            <constraint firstItem="GPq-35-TrD" firstAttribute="top" secondItem="MuB-wn-Z2S" secondAttribute="bottom" constant="20" id="ELw-a8-zw5"/>
+                            <constraint firstItem="MuB-wn-Z2S" firstAttribute="centerX" secondItem="5gH-DT-2Lt" secondAttribute="centerX" id="HyM-c6-ivw"/>
+                            <constraint firstItem="96f-Om-JEf" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="40" id="J0C-Zo-L9v"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="EQX-rO-NEw" secondAttribute="trailing" constant="32" id="MHf-y3-mIJ"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="bottom" secondItem="x1f-K8-xml" secondAttribute="bottom" constant="8" id="N1h-2o-RmT"/>
+                            <constraint firstItem="x48-UH-Ls4" firstAttribute="trailing" secondItem="EQX-rO-NEw" secondAttribute="trailing" id="PxK-SI-2lV"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="u0v-ri-Tk0" secondAttribute="trailing" constant="32" id="Slf-Ez-b35"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="D7g-hh-nxW" secondAttribute="trailing" constant="16" id="UEa-92-h31"/>
+                            <constraint firstItem="D7g-hh-nxW" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="16" id="WRg-8p-tVR"/>
+                            <constraint firstItem="x1f-K8-xml" firstAttribute="top" secondItem="D7g-hh-nxW" secondAttribute="bottom" constant="8" id="YcA-uc-Kls"/>
+                            <constraint firstItem="Bm3-xX-lfI" firstAttribute="top" secondItem="rGZ-rf-B3K" secondAttribute="bottom" constant="45" id="Z10-eq-jdd"/>
+                            <constraint firstItem="EQX-rO-NEw" firstAttribute="top" secondItem="GPq-35-TrD" secondAttribute="bottom" constant="16" id="cG4-Tr-eHF"/>
+                            <constraint firstItem="x48-UH-Ls4" firstAttribute="top" secondItem="EQX-rO-NEw" secondAttribute="bottom" id="ii7-kH-Jxk"/>
+                            <constraint firstItem="D7g-hh-nxW" firstAttribute="top" secondItem="EQX-rO-NEw" secondAttribute="bottom" constant="100" id="jWq-HX-U52"/>
+                            <constraint firstItem="Bm3-xX-lfI" firstAttribute="centerX" secondItem="5gH-DT-2Lt" secondAttribute="centerX" id="nBv-5o-NmV"/>
+                            <constraint firstItem="96f-Om-JEf" firstAttribute="top" secondItem="Bm3-xX-lfI" secondAttribute="bottom" id="nfI-CS-5d9"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="x1f-K8-xml" secondAttribute="trailing" constant="16" id="qQP-bY-CJl"/>
+                            <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="96f-Om-JEf" secondAttribute="trailing" constant="40" id="vxF-lY-7E6"/>
+                            <constraint firstItem="EQX-rO-NEw" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="32" id="zGE-rf-yTs"/>
+                            <constraint firstItem="GPq-35-TrD" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="32" id="zh4-nP-uLz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XLF-Wb-lCZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="96f-Om-JEf" id="FXV-Ys-LO0"/>
+                        <outlet property="emailTextField" destination="GPq-35-TrD" id="fhe-IN-RTC"/>
+                        <outlet property="errorLabel" destination="MuB-wn-Z2S" id="kde-x2-oYK"/>
+                        <outlet property="forgotPasswordButton" destination="x48-UH-Ls4" id="2eB-tt-Kv8"/>
+                        <outlet property="loginButton" destination="D7g-hh-nxW" id="3wV-bX-KOH"/>
+                        <outlet property="passwordTextField" destination="EQX-rO-NEw" id="IIE-An-hCl"/>
+                        <outlet property="showHidePasswordButton" destination="u0v-ri-Tk0" id="qIa-nJ-9zW"/>
+                        <outlet property="toRegisterButton" destination="x1f-K8-xml" id="SkG-gt-0fe"/>
+                        <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="H06-W8-m5Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHj-dv-7WP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="806"/>
+        </scene>
+        <!--Tabs-->
+        <scene sceneID="Xxw-7q-ErP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabs" id="8lB-7W-ppd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zx8-2e-4Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="1206"/>
+        </scene>
+        <!--Register One View Controller-->
+        <scene sceneID="kFv-IX-b37">
+            <objects>
+                <viewController id="CUZ-pX-fMZ" customClass="RegisterOneViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="svr-0j-fsY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-4m-s4h">
+                                <rect key="frame" x="116" y="50" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="6hx-LJ-mMO"/>
+                                    <constraint firstAttribute="width" constant="143" id="uGP-f5-aXZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TriMeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRH-zq-NBy">
+                                <rect key="frame" x="71.5" y="246" width="232.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're going to need some information, let's start with an email address and password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INl-eX-ag7">
+                                <rect key="frame" x="40" y="321" width="295" height="56"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoT-wz-Je8">
+                                <rect key="frame" x="16" y="637" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="id3-R8-Erz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
+                                <state key="normal" title="Already have an account? Log in here!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TtD-Mb-FDG" kind="show" id="auZ-US-S9n"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83m-ql-Tfg" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="32" y="411" width="311" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="emailEditingChanged:" destination="CUZ-pX-fMZ" eventType="editingChanged" id="CDW-EO-Bet"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g05-wZ-jb2" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="32" y="453" width="311" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="passwordEditingChanged:" destination="CUZ-pX-fMZ" eventType="editingChanged" id="a0M-9B-8zO"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-0r-AKV" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="579" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="udH-A2-icq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueButtonClicked:" destination="CUZ-pX-fMZ" eventType="touchUpInside" id="UPh-wI-hI6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-RY-LRG">
+                                <rect key="frame" x="321" y="454.5" width="22" height="22"/>
+                                <state key="normal" image="ShowPassword"/>
+                                <connections>
+                                    <action selector="showHidePasswordButtonClicked:" destination="CUZ-pX-fMZ" eventType="touchUpInside" id="8Ec-fG-ypZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="CRH-zq-NBy" firstAttribute="top" secondItem="gBG-4m-s4h" secondAttribute="bottom" constant="45" id="9Sl-Kt-ZNN"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="uoT-wz-Je8" secondAttribute="trailing" constant="16" id="C1L-QF-Ekm"/>
+                            <constraint firstItem="uoT-wz-Je8" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="16" id="DCL-Ag-39z"/>
+                            <constraint firstItem="gBG-4m-s4h" firstAttribute="centerX" secondItem="svr-0j-fsY" secondAttribute="centerX" id="DY7-H7-THG"/>
+                            <constraint firstItem="INl-eX-ag7" firstAttribute="top" secondItem="CRH-zq-NBy" secondAttribute="bottom" id="Dbu-ZB-Sql"/>
+                            <constraint firstItem="g05-wZ-jb2" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="32" id="GGs-xB-jpP"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="83m-ql-Tfg" secondAttribute="trailing" constant="32" id="KUC-eB-94b"/>
+                            <constraint firstItem="INl-eX-ag7" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="40" id="LTr-1H-5Ol"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="g05-wZ-jb2" secondAttribute="trailing" constant="32" id="QtQ-AW-DBq"/>
+                            <constraint firstItem="E4y-0r-AKV" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="16" id="Wch-5F-wVy"/>
+                            <constraint firstItem="uoT-wz-Je8" firstAttribute="top" secondItem="E4y-0r-AKV" secondAttribute="bottom" constant="8" id="XJW-jI-OUc"/>
+                            <constraint firstItem="E4y-0r-AKV" firstAttribute="top" secondItem="g05-wZ-jb2" secondAttribute="bottom" constant="100" id="XKx-PB-qyQ"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="E4y-0r-AKV" secondAttribute="trailing" constant="16" id="a15-FA-fI2"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="CcQ-RY-LRG" secondAttribute="trailing" constant="32" id="gMF-ec-mjI"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="bottom" secondItem="uoT-wz-Je8" secondAttribute="bottom" constant="8" id="gbu-8u-Qkk"/>
+                            <constraint firstItem="g05-wZ-jb2" firstAttribute="top" secondItem="83m-ql-Tfg" secondAttribute="bottom" constant="16" id="jHk-1y-0Tm"/>
+                            <constraint firstItem="CRH-zq-NBy" firstAttribute="centerX" secondItem="svr-0j-fsY" secondAttribute="centerX" id="kAy-jf-QTX"/>
+                            <constraint firstItem="gBG-4m-s4h" firstAttribute="top" secondItem="4Ng-vc-L2n" secondAttribute="top" constant="30" id="onQ-vY-1Ze"/>
+                            <constraint firstItem="CcQ-RY-LRG" firstAttribute="centerY" secondItem="g05-wZ-jb2" secondAttribute="centerY" id="tix-40-9LO"/>
+                            <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="INl-eX-ag7" secondAttribute="trailing" constant="40" id="u1F-iF-pS1"/>
+                            <constraint firstItem="83m-ql-Tfg" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="32" id="wmP-UD-g8i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Ng-vc-L2n"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="E4y-0r-AKV" id="yWg-c5-Xc0"/>
+                        <outlet property="descriptionLabel" destination="INl-eX-ag7" id="3hK-DE-FJh"/>
+                        <outlet property="emailTextField" destination="83m-ql-Tfg" id="Ger-oA-Ref"/>
+                        <outlet property="passwordTextField" destination="g05-wZ-jb2" id="fl5-i4-Hcq"/>
+                        <outlet property="showHidePasswordButton" destination="CcQ-RY-LRG" id="Of1-Tb-jUg"/>
+                        <outlet property="toLoginButton" destination="uoT-wz-Je8" id="ut5-wX-KfU"/>
+                        <segue destination="jbL-vS-2rt" kind="show" identifier="toRegisterTwo" id="U6q-JG-mO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDi-mL-qq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="1612"/>
+        </scene>
+        <!--Register Two View Controller-->
+        <scene sceneID="3V1-YH-8ha">
+            <objects>
+                <viewController id="jbL-vS-2rt" customClass="RegisterTwoViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XnX-jx-ioQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-wc-9OR">
+                                <rect key="frame" x="116" y="50" width="143" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="6jy-Tl-V90"/>
+                                    <constraint firstAttribute="width" constant="143" id="e8A-qp-3nn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TriMeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAx-Nc-7Oq">
+                                <rect key="frame" x="71.5" y="246" width="232.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is optional, however it is necessary for some features like advanced filtering for the leaderboard and activity feed." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vde-qF-7Tz">
+                                <rect key="frame" x="40" y="321" width="295" height="56"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1M-sp-1pB" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="422" width="163.5" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="firstNameEditingChanged:" destination="jbL-vS-2rt" eventType="editingChanged" id="56h-MA-ACt"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-yB-zJp" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="195" y="422" width="163.5" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lastNameEditingChanged:" destination="jbL-vS-2rt" eventType="editingChanged" id="OhU-3d-Hug"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU7-qk-kVs" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="464" width="163.5" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dateOfBirthEditingChanged:" destination="jbL-vS-2rt" eventType="editingChanged" id="5Jf-6q-yJ8"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-69-PgI" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                <rect key="frame" x="195" y="464" width="163.5" height="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="weightEditingChanged:" destination="jbL-vS-2rt" eventType="editingChanged" id="8Lm-iI-pSc"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJ5-kI-tdd" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="579" width="343" height="50"/>
+                                <color key="backgroundColor" name="Bermuda"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gke-Mj-Gue"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonClicked:" destination="jbL-vS-2rt" eventType="touchUpInside" id="aFI-qU-ZSn"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="fih-Ax-wpG">
+                                <rect key="frame" x="32" y="506" width="311" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="N6n-pw-n8y"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <color key="tintColor" name="Bermuda"/>
+                                <connections>
+                                    <action selector="genderSegmentedControlValueChanged:" destination="jbL-vS-2rt" eventType="valueChanged" id="uns-w0-eDk"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-GZ-Fi6">
+                                <rect key="frame" x="329" y="461" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="17"/>
+                                <state key="normal" title="kg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="kilogramButtonClicked:" destination="jbL-vS-2rt" eventType="touchUpInside" id="dov-yD-AKa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="zbC-69-PgI" firstAttribute="leading" secondItem="PU7-qk-kVs" secondAttribute="trailing" constant="16" id="1N0-77-EQJ"/>
+                            <constraint firstItem="mAx-Nc-7Oq" firstAttribute="top" secondItem="Qmy-wc-9OR" secondAttribute="bottom" constant="45" id="5AX-iH-KmG"/>
+                            <constraint firstItem="Vde-qF-7Tz" firstAttribute="top" secondItem="mAx-Nc-7Oq" secondAttribute="bottom" id="7Hk-Ft-ajk"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="uJ5-kI-tdd" secondAttribute="trailing" constant="16" id="7nc-QY-Nc5"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="4ti-GZ-Fi6" secondAttribute="trailing" constant="16" id="9Cw-Dy-Dew"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="zbC-69-PgI" secondAttribute="trailing" constant="16" id="BPN-u9-Rme"/>
+                            <constraint firstItem="uJ5-kI-tdd" firstAttribute="top" secondItem="fih-Ax-wpG" secondAttribute="bottom" constant="45" id="BZd-9r-Ih5"/>
+                            <constraint firstItem="uJ5-kI-tdd" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="16" id="C2z-Zg-UTT"/>
+                            <constraint firstItem="fih-Ax-wpG" firstAttribute="top" secondItem="PU7-qk-kVs" secondAttribute="bottom" constant="16" id="FLD-h4-IDw"/>
+                            <constraint firstItem="PU7-qk-kVs" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="16" id="Q7R-Hh-sVa"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="bottom" secondItem="uJ5-kI-tdd" secondAttribute="bottom" constant="38" id="Y8h-do-Vwc"/>
+                            <constraint firstItem="mAx-Nc-7Oq" firstAttribute="centerX" secondItem="XnX-jx-ioQ" secondAttribute="centerX" id="Z5k-jA-hbd"/>
+                            <constraint firstItem="4ti-GZ-Fi6" firstAttribute="centerY" secondItem="zbC-69-PgI" secondAttribute="centerY" id="bD1-Kz-xmH"/>
+                            <constraint firstItem="Qmy-wc-9OR" firstAttribute="centerX" secondItem="XnX-jx-ioQ" secondAttribute="centerX" id="ccd-Qj-mZe"/>
+                            <constraint firstItem="PU7-qk-kVs" firstAttribute="top" secondItem="h1M-sp-1pB" secondAttribute="bottom" constant="16" id="frY-9m-sQA"/>
+                            <constraint firstItem="fih-Ax-wpG" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="32" id="hxq-9W-ycT"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="Idg-yB-zJp" secondAttribute="trailing" constant="16" id="jOd-TA-qM7"/>
+                            <constraint firstItem="Idg-yB-zJp" firstAttribute="leading" secondItem="h1M-sp-1pB" secondAttribute="trailing" constant="16" id="ngX-aL-68n"/>
+                            <constraint firstItem="Qmy-wc-9OR" firstAttribute="top" secondItem="o7D-GQ-YXw" secondAttribute="top" constant="30" id="nh8-Rf-Ea6"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="fih-Ax-wpG" secondAttribute="trailing" constant="32" id="p8d-yo-upY"/>
+                            <constraint firstItem="zbC-69-PgI" firstAttribute="top" secondItem="Idg-yB-zJp" secondAttribute="bottom" constant="16" id="qP0-TG-0pg"/>
+                            <constraint firstItem="Idg-yB-zJp" firstAttribute="width" secondItem="h1M-sp-1pB" secondAttribute="width" id="riA-jq-Cjb"/>
+                            <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="Vde-qF-7Tz" secondAttribute="trailing" constant="40" id="sdb-h9-zVr"/>
+                            <constraint firstItem="fih-Ax-wpG" firstAttribute="top" secondItem="zbC-69-PgI" secondAttribute="bottom" constant="16" id="ucC-4d-Pud"/>
+                            <constraint firstItem="zbC-69-PgI" firstAttribute="width" secondItem="PU7-qk-kVs" secondAttribute="width" id="vI0-dr-nh2"/>
+                            <constraint firstItem="h1M-sp-1pB" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="16" id="wL5-1r-9Tb"/>
+                            <constraint firstItem="Vde-qF-7Tz" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="40" id="yG9-r3-v2C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o7D-GQ-YXw"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateOfBirthTextField" destination="PU7-qk-kVs" id="QSF-9A-6w1"/>
+                        <outlet property="descriptionLabel" destination="Vde-qF-7Tz" id="CqH-dd-G1e"/>
+                        <outlet property="firstNameTextField" destination="h1M-sp-1pB" id="9tK-5B-4mK"/>
+                        <outlet property="genderSegmentedControl" destination="fih-Ax-wpG" id="Iu4-RM-Lck"/>
+                        <outlet property="kilogramButton" destination="4ti-GZ-Fi6" id="adc-ba-0QD"/>
+                        <outlet property="lastNameTextField" destination="Idg-yB-zJp" id="QGD-ds-uKE"/>
+                        <outlet property="registerButton" destination="uJ5-kI-tdd" id="90g-Y8-pVJ"/>
+                        <outlet property="weightTextField" destination="zbC-69-PgI" id="sq0-m2-Q4x"/>
+                        <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="4QP-f1-H7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCA-hh-OVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="1612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wBz-4c-hUj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iuq-bt-t9M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jS9-Eg-AVe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sTY-2A-jlr" kind="relationship" relationship="rootViewController" id="Ul9-gz-b5j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rg-2o-Nhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-681" y="806"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="141" height="150"/>
+        <image name="ShowPassword" width="22" height="14"/>
+        <namedColor name="Amaranth">
+            <color red="0.98799997568130493" green="0.2199999988079071" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background">
+            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bermuda">
+            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XF9-VU-Pw1"/>
+        <segue reference="D32-Iq-RSC"/>
+        <segue reference="e01-nT-XOk"/>
+        <segue reference="yQx-e5-x92"/>
+    </inferredMetricsTieBreakers>
+</document>
