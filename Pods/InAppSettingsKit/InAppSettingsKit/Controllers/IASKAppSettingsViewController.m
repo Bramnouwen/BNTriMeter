@@ -602,7 +602,10 @@ CGRect IASKCGRectSwap(CGRect rect);
 		
 		// TriMeter values
 		// Color for attributed string
-		UIColor *color = [UIColor whiteColor]; // select needed color
+		UIColor *color = [UIColor colorWithRed:1
+                                                     green:1
+                                                      blue:1
+                                                     alpha:0.5f]; // select needed color
 		NSString *string = specifier.placeholder; // the string to colorize
 		NSDictionary *attrs = @{ NSForegroundColorAttributeName : color };
 		NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:string attributes:attrs];

@@ -34,6 +34,7 @@ extension TMActivity {
                                          title: title!,
                                          iconName: iconName!,
                                          goal: newGoal,
+                                         goalSpeed: Int(goalSpeed),
                                          dataLayout: newData,
                                          settingsLayout: newSettings,
                                          isPartOfWorkout: isPartOfWorkout,

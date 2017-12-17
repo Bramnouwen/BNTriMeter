@@ -51,6 +51,9 @@ class DataManager: NSObject {
         }
     }
 
+    // Creating activity
+    var createdActivity: Activity = Activity()
+    var newPart: Activity = Activity(isPartOfWorkout: true)
     
     override init() {
         super.init()
@@ -115,6 +118,40 @@ class DataManager: NSObject {
             currentActivity.goal = goal.convert()
         }
     }
+    
+    func setGoalForNewPartWithId(_ id: Int, speed: Int) {
+        guard let db = db else { return }
+        if let goal = try! db.fetch(FetchRequest<TMGoal>().filtered(with: "id", equalTo: "\(id)")).first {
+            newPart.goal = goal.convert()
+            newPart.goalSpeed = speed
+        }
+    }
+    
+    // Save created activity
+    
+    func saveCreatedActivity(title: String) {
+        guard let db = db else { return }
+        
+        do {
+            try db.operation { (context, save) throws -> Void in
+                
+                let new: TMActivity = try! context.create()
+                new.tableViewId = Int32(self.TMActivities.count)
+                new.title = title
+                new.iconName = "saved"
+                new.isPartOfWorkout = false
+                
+                let newActivity = new.convert()
+                newActivity.parts = self.createdActivity.parts
+                let newData = NSKeyedArchiver.archivedData(withRootObject: newActivity)
+                self.defaults.set(newData, forKey: "\(new.tableViewId)")
+                
+                save()
+            }
+        } catch {
+            print("Something went wrong setting up core data (dataManager)")
+        }
+    }
 
     /*
      Duration: 0 1 2 3
@@ -168,7 +205,6 @@ class DataManager: NSObject {
         
         dataListSections["Clock"] = [convertedDataList[27]]
         
-//        print(dataListSections)
     }
     
     // MARK: - Saving

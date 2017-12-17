@@ -26,4 +26,7 @@ struct Segues {
     static let toWelcome = "toWelcome"
     static let adjustGoal = "adjustGoal"
     static let changeData = "changeData"
+    static let createWorkout = "createWorkout"
+    static let toOverview = "toOverview"
+    static let toCreate = "toCreate"
 }

@@ -13,6 +13,9 @@
 "Common.toRegister" = "No account yet? Register here!";
 "Common.email" = "Email";
 "Common.password" = "Password";
+"Common.activity.choose" = "Choose activity";
+"Common.activity.create" = "Create activity";
+"Common.add" = "Add";
 
 // Welcome
 "Welcome.welcome" = "Welcome to";
@@ -21,6 +24,15 @@
 // Connect
 "Connect.description" = "Create an account or connect with Facebook or Strava, it's up to you!";
 "Connect.or" = "or";
+
+// Create
+"Create.title" = "Workout title";
+"Create.title.title" = "Title";
+"Create.summary" = "Workout summary";
+"Create.add" = "Add part";
+"Create.select" = "Select";
+"Create.save" = "Save";
+"Create.edit" = "Edit";
 
 // Login
 "Login.description" = "Log in with your TriMeter credentials.";
@@ -63,6 +75,11 @@
 "Adjust.goal.title.one" = "Choose your ";
 "Adjust.goal.title.two" = " for ";
 "Adjust.goal.title.three" = ".";
+
+"Adjust.countdown.description" = "Tap the buttons to add or subtract by 1 second";
+"Adjust.countdown" = "seconds";
+"Adjust.countdown.title.one" = "Change your ";
+"Adjust.countdown.title.two" = "Countdown";
 
 // Choose
 "Choose.data.description.data" = "Tap to change, hold to rearrange.";
@@ -218,6 +235,10 @@
 
 "Goal.pace.amount" = "%d min/km";
 "Goal.pace.title" = "Pace";
+
+"Goal.segmented.slow" = "Slow";
+"Goal.segmented.steady" = "Normal";
+"Goal.segmented.fast" = "Fast";
 
 // Login
 "Login.description" = "Log in with your TriMeter credentials.";

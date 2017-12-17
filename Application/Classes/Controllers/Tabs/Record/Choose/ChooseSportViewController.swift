@@ -45,7 +45,6 @@ class ChooseSportViewController: GradientViewController {
         createWorkoutButton.setTitle(L10n.Common.Createworkout.button, for: .normal)
         createWorkoutDescriptionLabel.text = L10n.Common.Createworkout.description
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,12 +52,13 @@ class ChooseSportViewController: GradientViewController {
         if let activity = dataManager.currentActivity, let tableViewId = activity.tableViewId {
             let rowToSelect = IndexPath(row: tableViewId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
-            tableView(tableView, didSelectRowAt: rowToSelect)
+            let cell = tableView.cellForRow(at: rowToSelect) as? ActivityTableViewCell
+            cell?.accessoryType = .checkmark
         }
     }
     
     @IBAction func createWorkoutButtonClicked(_ sender: Any) {
-        print("Create workout button clicked")
+        performSegue(withIdentifier: Segues.createWorkout, sender: nil)
     }
     
     /*
@@ -86,11 +86,12 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
+        cell.TMActivity = dataManager.TMActivities[i]
+        
         if let title = dataManager.TMActivities[i].title, let iconName = dataManager.TMActivities[i].iconName {
             cell.activityTitle.text = title
             cell.activityIcon.image = UIImage(named: iconName)
         }
-        
         
         return cell
     }
@@ -103,22 +104,19 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ActivityTableViewCell else { return }
         cell.accessoryType = .checkmark
-        print("Selected row: \(indexPath.row), section: \(indexPath.section)")
         let i = indexPath.row
-        
         
         if selectedIsPreset(id: i) {
             print("Loading preset (TODO: go to overview)")
             self.dismiss(animated: true, completion: nil)
         } else {
-            if currentActivityIsPreset() {
+            if dataManager.currentActivity.isPreset() {
                 dataManager.getCurrentActivityBy(id: i)
             } else {
                 updateCurrentActivity(id: i)
             }
         }
         
-        print("New activity title: \(dataManager.currentActivity.title) & tableViewId: \(String(describing: dataManager.currentActivity.tableViewId))")
     }
     
     func updateCurrentActivity(id: Int) {
@@ -143,11 +141,4 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         return false // TODO: Should not be reachable
     }
     
-    func currentActivityIsPreset() -> Bool {
-        if dataManager.currentActivity.parts?.count != 0 {
-            return true
-        } else {
-            return false
-        }
-    }
 }

@@ -108,4 +108,25 @@ extension Goal {
             return L10n.Goal.Nothing.amount
         }
     }
+    
+    func returnOverviewAmountString() -> String {
+        switch id {
+        case 0: // duration
+            return "\(amount / 60) min"
+        case 1: // pace
+            let min = Int(floor(Double(amount / 60)))
+            let sec = amount % 60
+            return "\(min):\(sec) min/km"
+        case 2: // distance
+            if amount < 1000 {
+                return "\(amount) m"
+            } else {
+                return "\(Float(amount) / 1000) km"
+            }
+        case 3: // calories
+            return "\(amount) kcal"
+        default:
+            return L10n.Goal.Nothing.amount
+        }
+    }
 }

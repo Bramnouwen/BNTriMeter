@@ -2,6 +2,7 @@
 
 import Foundation
 
+// swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
 
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
@@ -34,12 +35,26 @@ enum L10n {
   enum Adjust {
     /// calories
     static let calories = L10n.tr("Localizable", "Adjust.calories")
+    /// seconds
+    static let countdown = L10n.tr("Localizable", "Adjust.countdown")
     /// kilometers
     static let distance = L10n.tr("Localizable", "Adjust.distance")
     /// minutes
     static let duration = L10n.tr("Localizable", "Adjust.duration")
     /// min/km
     static let pace = L10n.tr("Localizable", "Adjust.pace")
+
+    enum Countdown {
+      /// Tap the buttons to add or subtract by 1 second
+      static let description = L10n.tr("Localizable", "Adjust.countdown.description")
+
+      enum Title {
+        /// Change your 
+        static let one = L10n.tr("Localizable", "Adjust.countdown.title.one")
+        /// Countdown
+        static let two = L10n.tr("Localizable", "Adjust.countdown.title.two")
+      }
+    }
 
     enum Goal {
       /// Tap the buttons to add or subtract by %@
@@ -121,6 +136,8 @@ enum L10n {
   }
 
   enum Common {
+    /// Add
+    static let add = L10n.tr("Localizable", "Common.add")
     /// Continue
     static let continueText = L10n.tr("Localizable", "Common.continueText")
     /// Done
@@ -138,6 +155,13 @@ enum L10n {
     /// No account yet? Register here!
     static let toRegister = L10n.tr("Localizable", "Common.toRegister")
 
+    enum Activity {
+      /// Choose activity
+      static let choose = L10n.tr("Localizable", "Common.activity.choose")
+      /// Create activity
+      static let create = L10n.tr("Localizable", "Common.activity.create")
+    }
+
     enum Createworkout {
       /// Create workout
       static let button = L10n.tr("Localizable", "Common.createWorkout.button")
@@ -151,6 +175,26 @@ enum L10n {
     static let description = L10n.tr("Localizable", "Connect.description")
     /// or
     static let or = L10n.tr("Localizable", "Connect.or")
+  }
+
+  enum Create {
+    /// Add part
+    static let add = L10n.tr("Localizable", "Create.add")
+    /// Edit
+    static let edit = L10n.tr("Localizable", "Create.edit")
+    /// Save
+    static let save = L10n.tr("Localizable", "Create.save")
+    /// Select
+    static let select = L10n.tr("Localizable", "Create.select")
+    /// Workout summary
+    static let summary = L10n.tr("Localizable", "Create.summary")
+    /// Workout title
+    static let title = L10n.tr("Localizable", "Create.title")
+
+    enum Title {
+      /// Title
+      static let title = L10n.tr("Localizable", "Create.title.title")
+    }
   }
 
   enum Data {
@@ -554,6 +598,15 @@ enum L10n {
       }
       /// Pace
       static let title = L10n.tr("Localizable", "Goal.pace.title")
+    }
+
+    enum Segmented {
+      /// Fast
+      static let fast = L10n.tr("Localizable", "Goal.segmented.fast")
+      /// Slow
+      static let slow = L10n.tr("Localizable", "Goal.segmented.slow")
+      /// Normal
+      static let steady = L10n.tr("Localizable", "Goal.segmented.steady")
     }
   }
 

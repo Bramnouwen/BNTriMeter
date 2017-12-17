@@ -13,6 +13,9 @@
 "Common.toRegister" = "Nog geen account? Registreer hier!";
 "Common.email" = "E-mail";
 "Common.password" = "Wachtwoord";
+"Common.activity.choose" = "Kies activiteit";
+"Common.activity.create" = "Creëer activiteit";
+"Common.add" = "Voeg toe";
 
 // Welcome
 "Welcome.welcome" = "Welkom bij";
@@ -21,6 +24,15 @@
 // Connect
 "Connect.description" = "Maak een account aan of connecteer met Facebook of Strava, aan jou de keuze!";
 "Connect.or" = "of";
+
+// Create
+"Create.title" = "Activiteit titel";
+"Create.title.title" = "Titel";
+"Create.summary" = "Activiteit samenvatting";
+"Create.add" = "Voeg deel toe";
+"Create.select" = "Selecteer";
+"Create.save" = "Bewaar";
+"Create.edit" = "Wijzig";
 
 // Login
 "Login.description" = "Log in met je TriMeter inloggegevens.";
@@ -63,6 +75,11 @@
 "Adjust.goal.title.one" = "Kies je ";
 "Adjust.goal.title.two" = " voor ";
 "Adjust.goal.title.three" = ".";
+
+"Adjust.countdown.description" = "Druk op de knoppen om te wijzigen met 1 seconde";
+"Adjust.countdown" = "seconden";
+"Adjust.countdown.title.one" = "Kies je ";
+"Adjust.countdown.title.two" = "Aftelling";
 
 // Choose
 "Choose.data.description.data" = "Druk om te veranderen, houd ingedrukt om de positie te wijzigen.";
@@ -219,6 +236,10 @@
 
 "Goal.pace.amount" = "%d min/km";
 "Goal.pace.title" = "Tempo";
+
+"Goal.segmented.slow" = "Traag";
+"Goal.segmented.steady" = "Normaal";
+"Goal.segmented.fast" = "Snel";
 
 // Login
 "Login.description" = "Log in met je TriMeter gegevens.";

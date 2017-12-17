@@ -101,7 +101,7 @@ extension ChooseActivityPageViewController: UIPageViewControllerDataSource {
     }
     
     private func newChooseViewController(_ color: String) -> UIViewController {
-        return UIStoryboard(name: "Record", bundle: nil).instantiateViewController(withIdentifier: "\(color)ViewController")
+        return UIStoryboard(name: "Choose", bundle: nil).instantiateViewController(withIdentifier: "\(color)ViewController")
     }
     
 }

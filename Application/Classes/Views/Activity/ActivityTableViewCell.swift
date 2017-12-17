@@ -14,4 +14,5 @@ class ActivityTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var activityIcon: UIImageView!
     @IBOutlet weak var activityTitle: UILabel!
     
+    var TMActivity: TMActivity?
 }

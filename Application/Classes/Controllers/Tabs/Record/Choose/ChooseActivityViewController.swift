@@ -20,6 +20,8 @@ class ChooseActivityViewController: UIViewController {
     
     var controllerToLoad = 0
     
+    var newActivity: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,21 +31,22 @@ class ChooseActivityViewController: UIViewController {
         loadBarButtonItem.action = #selector(loadBarButtonItemClicked)
         loadBarButtonItem.title = L10n.Common.load
         
+        title = L10n.Common.Activity.choose
+        
+        newActivity = dataManager.currentActivity
     }
     
     @objc func doneBarButtonItemClicked() {
         self.dismiss(animated: true, completion: nil)
         print("Done choosing activity")
         
-        
     }
     
     @objc func loadBarButtonItemClicked() {
-        //self.dismiss(animated: true, completion: nil)
         print("Loading default data and settings for selected activity")
-        
+        // TODO: - Load defaults for selected sport
     }
-    
+        
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

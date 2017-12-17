@@ -57,7 +57,6 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         
         navigationController?.navigationBar.tintColor = UIColor(named: "Bermuda")
         
-        // TODO: change goal amounts to something else, like last goal, total average, ...
         switch goalId {
         case 0:
             goalString = L10n.Data.Duration.total
@@ -87,25 +86,42 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
             newAmount = defaults.integer(forKey: "previousCalories")
             goalDescriptionString = L10n.Adjust.calories
             setCaloriesPickerOptions()
-        default:
-            print("We shouldn't be here (adjusting goal)")
+        default: // Countdown
+            goalString = L10n.Adjust.Countdown.Title.two
+            buttonAmount = 1 //second
+            descriptionString = L10n.Adjust.Countdown.description
+            newAmount = defaults.integer(forKey: "previousCountdown")
+            goalDescriptionString = L10n.Adjust.countdown
+            setCountdownPickerOptions()
         }
 
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)
-        descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.two))
-        descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title.lowercased(), attributes: coloredAttributes))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
-
-        titleLabel.attributedText = descriptionText
-        descriptionLabel.text = descriptionString
-        
-        goalTitle.text = goalString
-        goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
-        goalDescription.text = goalDescriptionString
+        if goalId != 5 {
+            let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)
+            descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.two))
+            descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title!.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
+            
+            titleLabel.attributedText = descriptionText
+            descriptionLabel.text = descriptionString
+            
+            goalTitle.text = goalString
+            goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+            goalDescription.text = goalDescriptionString
+        } else {
+            let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Countdown.Title.one)
+            descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
+            titleLabel.attributedText = descriptionText
+            descriptionLabel.text = descriptionString
+            
+            goalTitle.text = goalString
+            goalAmount.text = "\(newAmount)"
+            goalDescription.text = goalDescriptionString
+        }
         
         doneButton.setTitle(L10n.Common.done, for: .normal)
         
@@ -127,20 +143,28 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         case 3:
             defaults.setValue(newAmount, forKey: "previousCalories")
         default:
-            return print("We shouldn't be here.")
+            defaults.setValue(newAmount, forKey: "previousCountdown")
         }
     }
     
     @IBAction func minusButtonClicked(_ sender: Any) {
         newAmount -= buttonAmount
-        dataManager.currentActivity.goal?.amount = newAmount
-        goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+        setGoalAmountText()
     }
     
     @IBAction func plusButtonClicked(_ sender: Any) {
         newAmount += buttonAmount
-        dataManager.currentActivity.goal?.amount = newAmount
-        goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+        setGoalAmountText()
+    }
+    
+    func setGoalAmountText() {
+        if goalId != 5 {
+            dataManager.currentActivity.goal?.amount = newAmount
+            goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+        } else {
+            dataManager.currentActivity.settingsLayout?.countdownAmount = newAmount
+            goalAmount.text = "\(newAmount)"
+        }
     }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
@@ -200,7 +224,9 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         case 3:
             newAmount = Int(amountString)!
         default:
-            return print("We shouldn't be here")
+            newAmount = Int(amountString)!
+            dataManager.currentActivity.settingsLayout?.countdownAmount = newAmount
+            return
         }
         dataManager.currentActivity.goal?.amount = newAmount
     }
@@ -238,6 +264,13 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         pickerComponents = 1
         for i in 1...100 {
             onePickerOption.append(i * 25)
+        }
+    }
+    
+    func setCountdownPickerOptions() {
+        pickerComponents = 1
+        for i in 1...12 {
+            onePickerOption.append(i * 5)
         }
     }
 

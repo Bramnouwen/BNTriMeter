@@ -84,7 +84,6 @@
 		F964EE7D1FDE9B6900675EA4 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE2C1FDE9B6900675EA4 /* Feed.storyboard */; };
 		F964EE7E1FDE9B6900675EA4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE2D1FDE9B6900675EA4 /* Leaderboard.storyboard */; };
 		F964EE7F1FDE9B6900675EA4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE2E1FDE9B6900675EA4 /* Profile.storyboard */; };
-		F964EE801FDE9B6900675EA4 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE2F1FDE9B6900675EA4 /* Record.storyboard */; };
 		F964EE811FDE9B6900675EA4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE301FDE9B6900675EA4 /* Settings.storyboard */; };
 		F964EE831FDE9B6900675EA4 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE321FDE9B6900675EA4 /* Tabs.storyboard */; };
 		F964EE841FDE9B6A00675EA4 /* TriMeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F964EE331FDE9B6900675EA4 /* TriMeter.xcdatamodeld */; };
@@ -93,6 +92,26 @@
 		F964EE8B1FDFD45F00675EA4 /* ChangeDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EE871FDFD45E00675EA4 /* ChangeDataTableViewCell.swift */; };
 		F964EE8C1FDFD45F00675EA4 /* ChangeDataSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F964EE881FDFD45F00675EA4 /* ChangeDataSectionHeader.xib */; };
 		F964EE8E1FE06BBC00675EA4 /* ChangeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EE8D1FE06BBC00675EA4 /* ChangeDataViewController.swift */; };
+		F9DAF0E81FE3EAB500A8F606 /* ActivityOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0E71FE3EAB500A8F606 /* ActivityOverviewViewController.swift */; };
+		F9DAF0EC1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0EA1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift */; };
+		F9DAF0ED1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */; };
+		F9DAF0F01FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */; };
+		F9DAF0F11FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */; };
+		F9DAF0F41FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */; };
+		F9DAF0F51FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */; };
+		F9DAF0F81FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */; };
+		F9DAF0F91FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */; };
+		F9F0DFD91FE2EEC8009570FA /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0DFD81FE2EEC8009570FA /* Record.storyboard */; };
+		F9F0DFDB1FE2EED7009570FA /* Choose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0DFDA1FE2EED7009570FA /* Choose.storyboard */; };
+		F9F0DFDD1FE2EEE0009570FA /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0DFDC1FE2EEE0009570FA /* Create.storyboard */; };
+		F9F0DFE61FE2F237009570FA /* CreateAdjustGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFDE1FE2F237009570FA /* CreateAdjustGoalViewController.swift */; };
+		F9F0DFE71FE2F237009570FA /* CreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFDF1FE2F237009570FA /* CreateActivityViewController.swift */; };
+		F9F0DFE81FE2F237009570FA /* CreateDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE01FE2F237009570FA /* CreateDataViewController.swift */; };
+		F9F0DFE91FE2F237009570FA /* CreateActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE11FE2F237009570FA /* CreateActivityPageViewController.swift */; };
+		F9F0DFEA1FE2F237009570FA /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE21FE2F237009570FA /* CreateGoalViewController.swift */; };
+		F9F0DFEB1FE2F237009570FA /* CreateChangeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE31FE2F237009570FA /* CreateChangeDataViewController.swift */; };
+		F9F0DFEC1FE2F237009570FA /* CreateSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE41FE2F237009570FA /* CreateSportViewController.swift */; };
+		F9F0DFED1FE2F237009570FA /* CreateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0DFE51FE2F237009570FA /* CreateSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,7 +222,6 @@
 		F964EE2C1FDE9B6900675EA4 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		F964EE2D1FDE9B6900675EA4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Leaderboard.storyboard; sourceTree = "<group>"; };
 		F964EE2E1FDE9B6900675EA4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		F964EE2F1FDE9B6900675EA4 /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		F964EE301FDE9B6900675EA4 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F964EE321FDE9B6900675EA4 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		F964EE341FDE9B6900675EA4 /* TriMeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TriMeter.xcdatamodel; sourceTree = "<group>"; };
@@ -212,6 +230,26 @@
 		F964EE871FDFD45E00675EA4 /* ChangeDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDataTableViewCell.swift; sourceTree = "<group>"; };
 		F964EE881FDFD45F00675EA4 /* ChangeDataSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeDataSectionHeader.xib; sourceTree = "<group>"; };
 		F964EE8D1FE06BBC00675EA4 /* ChangeDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataViewController.swift; sourceTree = "<group>"; };
+		F9DAF0E71FE3EAB500A8F606 /* ActivityOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverviewViewController.swift; sourceTree = "<group>"; };
+		F9DAF0EA1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSportNormalTableViewCell.swift; sourceTree = "<group>"; };
+		F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewSportNormalTableViewCell.xib; sourceTree = "<group>"; };
+		F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTransitionNormalTableViewCell.swift; sourceTree = "<group>"; };
+		F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTransitionNormalTableViewCell.xib; sourceTree = "<group>"; };
+		F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSportEditTableViewCell.swift; sourceTree = "<group>"; };
+		F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewSportEditTableViewCell.xib; sourceTree = "<group>"; };
+		F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTransitionEditTableViewCell.swift; sourceTree = "<group>"; };
+		F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTransitionEditTableViewCell.xib; sourceTree = "<group>"; };
+		F9F0DFD81FE2EEC8009570FA /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
+		F9F0DFDA1FE2EED7009570FA /* Choose.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choose.storyboard; sourceTree = "<group>"; };
+		F9F0DFDC1FE2EEE0009570FA /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		F9F0DFDE1FE2F237009570FA /* CreateAdjustGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAdjustGoalViewController.swift; sourceTree = "<group>"; };
+		F9F0DFDF1FE2F237009570FA /* CreateActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateActivityViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE01FE2F237009570FA /* CreateDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDataViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE11FE2F237009570FA /* CreateActivityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateActivityPageViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE21FE2F237009570FA /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE31FE2F237009570FA /* CreateChangeDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChangeDataViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE41FE2F237009570FA /* CreateSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSportViewController.swift; sourceTree = "<group>"; };
+		F9F0DFE51FE2F237009570FA /* CreateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +470,15 @@
 		F964EDE31FDE9B6800675EA4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				F9F0DFDF1FE2F237009570FA /* CreateActivityViewController.swift */,
+				F9F0DFE11FE2F237009570FA /* CreateActivityPageViewController.swift */,
+				F9F0DFE41FE2F237009570FA /* CreateSportViewController.swift */,
+				F9F0DFE21FE2F237009570FA /* CreateGoalViewController.swift */,
+				F9F0DFDE1FE2F237009570FA /* CreateAdjustGoalViewController.swift */,
+				F9F0DFE01FE2F237009570FA /* CreateDataViewController.swift */,
+				F9F0DFE31FE2F237009570FA /* CreateChangeDataViewController.swift */,
+				F9F0DFE51FE2F237009570FA /* CreateSettingsViewController.swift */,
+				F9DAF0E71FE3EAB500A8F606 /* ActivityOverviewViewController.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -495,6 +542,7 @@
 			children = (
 				F964EDFF1FDE9B6900675EA4 /* Activity */,
 				F964EE0A1FDE9B6900675EA4 /* Settings */,
+				F9DAF0E91FE40A6500A8F606 /* Overview */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -594,11 +642,36 @@
 				F964EE321FDE9B6900675EA4 /* Tabs.storyboard */,
 				F964EE2C1FDE9B6900675EA4 /* Feed.storyboard */,
 				F964EE2E1FDE9B6900675EA4 /* Profile.storyboard */,
-				F964EE2F1FDE9B6900675EA4 /* Record.storyboard */,
+				F9F0DFD71FE2EEC8009570FA /* Record */,
 				F964EE2D1FDE9B6900675EA4 /* Leaderboard.storyboard */,
 				F964EE301FDE9B6900675EA4 /* Settings.storyboard */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		F9DAF0E91FE40A6500A8F606 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				F9DAF0EA1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift */,
+				F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */,
+				F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */,
+				F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */,
+				F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */,
+				F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */,
+				F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */,
+				F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		F9F0DFD71FE2EEC8009570FA /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				F9F0DFD81FE2EEC8009570FA /* Record.storyboard */,
+				F9F0DFDA1FE2EED7009570FA /* Choose.storyboard */,
+				F9F0DFDC1FE2EEE0009570FA /* Create.storyboard */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -731,7 +804,7 @@
 				F964EE7B1FDE9B6900675EA4 /* LaunchScreen.storyboard in Resources */,
 				F964EE611FDE9B6900675EA4 /* DataTableViewCell.xib in Resources */,
 				F964EE651FDE9B6900675EA4 /* SettingsTableViewCell.xib in Resources */,
-				F964EE801FDE9B6900675EA4 /* Record.storyboard in Resources */,
+				F9DAF0F51FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib in Resources */,
 				F964EE7C1FDE9B6900675EA4 /* Start.storyboard in Resources */,
 				F964EE7F1FDE9B6900675EA4 /* Profile.storyboard in Resources */,
 				F964EE7E1FDE9B6900675EA4 /* Leaderboard.storyboard in Resources */,
@@ -739,10 +812,16 @@
 				F964EE8A1FDFD45F00675EA4 /* ChangeDataTableViewCell.xib in Resources */,
 				F964EE751FDE9B6900675EA4 /* Info.plist in Resources */,
 				F964EE6B1FDE9B6900675EA4 /* Localizable.strings in Resources */,
+				F9DAF0F11FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib in Resources */,
 				F964EE741FDE9B6900675EA4 /* OFL.txt in Resources */,
 				F964EE6C1FDE9B6900675EA4 /* Cabin-Bold.ttf in Resources */,
+				F9DAF0ED1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib in Resources */,
+				F9DAF0F91FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib in Resources */,
+				F9F0DFDD1FE2EEE0009570FA /* Create.storyboard in Resources */,
 				F964EE711FDE9B6900675EA4 /* Cabin-Regular.ttf in Resources */,
+				F9F0DFD91FE2EEC8009570FA /* Record.storyboard in Resources */,
 				F964EE761FDE9B6900675EA4 /* Settings.bundle in Resources */,
+				F9F0DFDB1FE2EED7009570FA /* Choose.storyboard in Resources */,
 				F964EE5F1FDE9B6900675EA4 /* DataListTableViewCell.xib in Resources */,
 				F964EE691FDE9B6900675EA4 /* Assets.xcassets in Resources */,
 				F964EE731FDE9B6900675EA4 /* Cabin-SemiBoldItalic.ttf in Resources */,
@@ -943,24 +1022,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DAF0F81FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift in Sources */,
 				F964EE621FDE9B6900675EA4 /* GoalTableViewCell.swift in Sources */,
 				F964EE381FDE9B6900675EA4 /* RegisterOneViewController.swift in Sources */,
 				F964EE551FDE9B6900675EA4 /* Strings.swift in Sources */,
+				F9F0DFE61FE2F237009570FA /* CreateAdjustGoalViewController.swift in Sources */,
 				F964EE3F1FDE9B6900675EA4 /* AdjustGoalViewController.swift in Sources */,
 				F964EE3B1FDE9B6900675EA4 /* DataListTableViewController.swift in Sources */,
 				F964EE451FDE9B6900675EA4 /* ChooseSettingsViewController.swift in Sources */,
 				F964EE641FDE9B6900675EA4 /* SettingsTableViewCell.swift in Sources */,
 				F964EE511FDE9B6900675EA4 /* AppDelegate.swift in Sources */,
 				F964EE521FDE9B6900675EA4 /* Constants.swift in Sources */,
+				F9F0DFEC1FE2F237009570FA /* CreateSportViewController.swift in Sources */,
 				F964EE891FDFD45F00675EA4 /* ChangeDataSectionHeader.swift in Sources */,
 				F964EE8E1FE06BBC00675EA4 /* ChangeDataViewController.swift in Sources */,
+				F9DAF0E81FE3EAB500A8F606 /* ActivityOverviewViewController.swift in Sources */,
 				F964EE411FDE9B6900675EA4 /* ChooseActivityPageViewController.swift in Sources */,
+				F9DAF0F41FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift in Sources */,
 				F964EE4B1FDE9B6900675EA4 /* TabBarController.swift in Sources */,
+				F9F0DFE81FE2F237009570FA /* CreateDataViewController.swift in Sources */,
 				F964EE431FDE9B6900675EA4 /* ChooseDataViewController.swift in Sources */,
 				F964EE471FDE9B6900675EA4 /* RecordViewController.swift in Sources */,
 				F964EE3E1FDE9B6900675EA4 /* ProfileViewController.swift in Sources */,
 				F964EE371FDE9B6900675EA4 /* LoginViewController.swift in Sources */,
 				F964EE591FDE9B6900675EA4 /* DataLayout.swift in Sources */,
+				F9F0DFED1FE2F237009570FA /* CreateSettingsViewController.swift in Sources */,
 				F964EE5A1FDE9B6900675EA4 /* Goal.swift in Sources */,
 				F964EE4C1FDE9B6900675EA4 /* TestViewController.swift in Sources */,
 				F964EE421FDE9B6900675EA4 /* ChooseActivityViewController.swift in Sources */,
@@ -971,21 +1057,27 @@
 				F964EE841FDE9B6A00675EA4 /* TriMeter.xcdatamodeld in Sources */,
 				F964EE671FDE9B6900675EA4 /* DataSettingsViewController.swift in Sources */,
 				F964EE561FDE9B6900675EA4 /* LocationManager.swift in Sources */,
+				F9F0DFE91FE2F237009570FA /* CreateActivityPageViewController.swift in Sources */,
+				F9F0DFE71FE2F237009570FA /* CreateActivityViewController.swift in Sources */,
 				F964EE8B1FDFD45F00675EA4 /* ChangeDataTableViewCell.swift in Sources */,
+				F9DAF0EC1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift in Sources */,
 				F964EE531FDE9B6900675EA4 /* DataManager.swift in Sources */,
 				F964EE5C1FDE9B6900675EA4 /* ActivityTableViewCell.swift in Sources */,
 				F964EE581FDE9B6900675EA4 /* DataField.swift in Sources */,
 				F964EE541FDE9B6900675EA4 /* Formatters.swift in Sources */,
 				F964EE3D1FDE9B6900675EA4 /* LeaderboardViewController.swift in Sources */,
 				F964EE4A1FDE9B6900675EA4 /* SettingsViewController.swift in Sources */,
+				F9DAF0F01FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift in Sources */,
 				F964EE3A1FDE9B6900675EA4 /* WelcomeViewController.swift in Sources */,
 				F964EE361FDE9B6900675EA4 /* ConnectViewController.swift in Sources */,
 				F964EE441FDE9B6900675EA4 /* ChooseGoalViewController.swift in Sources */,
 				F964EE501FDE9B6900675EA4 /* APIManager.swift in Sources */,
 				F964EE4D1FDE9B6900675EA4 /* CoreData+Extension.swift in Sources */,
 				F964EE3C1FDE9B6900675EA4 /* FeedViewController.swift in Sources */,
+				F9F0DFEA1FE2F237009570FA /* CreateGoalViewController.swift in Sources */,
 				F964EE571FDE9B6900675EA4 /* Activity.swift in Sources */,
 				F964EE4E1FDE9B6900675EA4 /* GradientViewController.swift in Sources */,
+				F9F0DFEB1FE2F237009570FA /* CreateChangeDataViewController.swift in Sources */,
 				F964EE481FDE9B6900675EA4 /* SettingsPerSportViewController.swift in Sources */,
 				F964EE391FDE9B6900675EA4 /* RegisterTwoViewController.swift in Sources */,
 				F964EE5B1FDE9B6900675EA4 /* SettingsLayout.swift in Sources */,

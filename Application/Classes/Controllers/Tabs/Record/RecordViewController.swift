@@ -89,14 +89,6 @@ class RecordViewController: UIViewController {
         dataLabel.text = L10n.Record.data
         startActivityButton.setTitle(L10n.Record.button, for: .normal)
         
-        
-        if let settings = dataManager.currentActivity.settingsLayout {
-            liveLocationOn = settings.liveLocation
-            countdownOn = settings.countdown
-            autoPauseOn = settings.autopause
-            audioOn = settings.audio
-            hapticOn = settings.haptic
-        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -212,6 +204,14 @@ class RecordViewController: UIViewController {
     }
     
     func turnAllSettingsOnOff() {
+        if let settings = dataManager.currentActivity.settingsLayout {
+            liveLocationOn = settings.liveLocation
+            countdownOn = settings.countdown
+            autoPauseOn = settings.autopause
+            audioOn = settings.audio
+            hapticOn = settings.haptic
+        }
+        
         turnSettingOnOff(bool: liveLocationOn, button: liveLocationButton, imageOn: #imageLiteral(resourceName: "Live-location-on"), imageOff: #imageLiteral(resourceName: "Live-location-off"))
         turnSettingOnOff(bool: countdownOn, button: countdownButton, imageOn: #imageLiteral(resourceName: "countdown-on"), imageOff: #imageLiteral(resourceName: "countdown-off"))
         turnSettingOnOff(bool: autoPauseOn, button: autoPauseButton, imageOn: #imageLiteral(resourceName: "autopause-on"), imageOff: #imageLiteral(resourceName: "autopause-off"))

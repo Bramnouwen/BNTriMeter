@@ -36,12 +36,6 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        guard let index = spotAndId?.id, index != 999 else { return }
-//        let i = defineRowByIndexId(index)
-//        let s = defineSectionByIndexId(index)
-//        rowToSelect = IndexPath(row: i, section: s)
-//        tableView.selectRow(at: rowToSelect!, animated: true, scrollPosition: .none)
-        //tableView(tableView, didSelectRowAt: rowToSelect!)
         
     }
     
@@ -75,8 +69,6 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
         let cell: ChangeDataTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         var item: DataField?
-        
-        
         
         switch indexPath.section {
         case 0: item = dataManager.dataListSections["Duration"]![i]

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TMActivity" representedClassName="TMActivity" syncable="YES" codeGenerationType="class">
+        <attribute name="goalSpeed" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isPartOfWorkout" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="partId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -47,7 +48,7 @@
         <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TMActivity" inverseName="settingsLayout" inverseEntity="TMActivity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TMActivity" positionX="-243" positionY="-105" width="128" height="180"/>
+        <element name="TMActivity" positionX="-243" positionY="-105" width="128" height="195"/>
         <element name="TMData" positionX="-641" positionY="147" width="128" height="150"/>
         <element name="TMDataLayout" positionX="-425" positionY="99" width="128" height="105"/>
         <element name="TMGoal" positionX="-27" positionY="-147" width="128" height="150"/>

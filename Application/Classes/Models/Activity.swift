@@ -9,12 +9,13 @@
 import UIKit
 
 class Activity: NSObject, NSCoding {
-    
+        
     //var id: Int?
     var tableViewId: Int?
-    var title: String
+    var title: String?
     var iconName: String?
     var goal: Goal?
+    var goalSpeed: Int?
     var dataLayout: DataLayout?
     var settingsLayout: SettingsLayout?
     
@@ -23,20 +24,22 @@ class Activity: NSObject, NSCoding {
     var parts: [Activity]?
     
     
-    init(tableViewId: Int?,
-         title: String,
-         iconName: String?,
-         goal: Goal?,
-         dataLayout: DataLayout?,
-         settingsLayout: SettingsLayout?,
-         isPartOfWorkout: Bool,
-         partId: Int?,
-         parts: [Activity]?) {
+    init(tableViewId: Int? = nil,
+         title: String? = nil,
+         iconName: String? = "saved",
+         goal: Goal? = nil,
+         goalSpeed: Int? = nil,
+         dataLayout: DataLayout? = nil,
+         settingsLayout: SettingsLayout? = nil,
+         isPartOfWorkout: Bool = false,
+         partId: Int? = nil,
+         parts: [Activity]? = []) {
         
         self.tableViewId = tableViewId
         self.title = title
         self.iconName = iconName
         self.goal = goal
+        self.goalSpeed = goalSpeed
         self.dataLayout = dataLayout
         self.settingsLayout = settingsLayout
         self.isPartOfWorkout = isPartOfWorkout
@@ -49,6 +52,7 @@ class Activity: NSObject, NSCoding {
         aCoder.encode(title, forKey: "title")
         aCoder.encode(iconName, forKey: "iconName")
         aCoder.encode(goal, forKey: "goal")
+        aCoder.encode(goalSpeed, forKey: "goalSpeed")
         aCoder.encode(dataLayout, forKey: "dataLayout")
         aCoder.encode(settingsLayout, forKey: "settingsLayout")
         aCoder.encode(isPartOfWorkout, forKey: "isPartOfWorkout")
@@ -58,16 +62,17 @@ class Activity: NSObject, NSCoding {
     
     required convenience init(coder aDecoder: NSCoder) {
         let tableViewId = aDecoder.decodeObject(forKey: "tableViewId") as? Int
-        let title = aDecoder.decodeObject(forKey: "title") as! String
+        let title = aDecoder.decodeObject(forKey: "title") as? String
         let iconName = aDecoder.decodeObject(forKey: "iconName") as? String
         let goal = aDecoder.decodeObject(forKey: "goal") as? Goal
+        let goalSpeed = aDecoder.decodeObject(forKey: "goalSpeed") as? Int
         let dataLayout = aDecoder.decodeObject(forKey: "dataLayout") as? DataLayout
         let settingsLayout = aDecoder.decodeObject(forKey: "settingsLayout") as? SettingsLayout
         let isPartOfWorkout = aDecoder.decodeBool(forKey: "isPartOfWorkout")
         let partId = aDecoder.decodeObject(forKey: "partId") as? Int
         let parts = aDecoder.decodeObject(forKey: "parts") as? [Activity]
         
-        self.init(tableViewId: tableViewId, title: title, iconName: iconName, goal: goal, dataLayout: dataLayout, settingsLayout: settingsLayout, isPartOfWorkout: isPartOfWorkout, partId: partId, parts: parts)
+        self.init(tableViewId: tableViewId, title: title, iconName: iconName, goal: goal, goalSpeed: goalSpeed, dataLayout: dataLayout, settingsLayout: settingsLayout, isPartOfWorkout: isPartOfWorkout, partId: partId, parts: parts)
     }
     
 }
@@ -76,7 +81,7 @@ extension Activity {
     func getGoalString() -> String {
         if let goal = goal {
             return goal.previousAmountAsString()
-        } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
+        } else if title?.contains(L10n.Activity.triathlon.lowercased()) == true {
             return L10n.Goal.triathlon
         } else if let parts = parts, parts.count != 0 {
             return L10n.Goal.multiple
@@ -88,7 +93,7 @@ extension Activity {
     func getGoalIconString() -> String {
         if let goal = goal {
             return goal.iconName
-        } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
+        } else if title?.contains(L10n.Activity.triathlon.lowercased()) == true {
             return "finishFlag"
         } else if let parts = parts, parts.count != 0 {
             return "multipleGoals"
@@ -105,6 +110,14 @@ extension Activity {
             let orderedParts = parts?.sorted(by: { $0.partId! < $1.partId! })
             let orderedData = orderedParts![0].dataLayout?.dataFields.sorted(by: { $0.spot < $1.spot })
             return orderedData!
+        }
+    }
+    
+    func isPreset() -> Bool {
+        if parts?.count != 0 {
+            return true
+        } else {
+            return false
         }
     }
     
