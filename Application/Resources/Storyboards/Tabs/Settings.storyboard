@@ -45,11 +45,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <segue destination="MUn-qz-lQQ" kind="show" identifier="toSettingsPerSport" id="rUD-Wh-POe"/>
+                        <segue destination="bD9-MK-HJg" kind="unwind" identifier="unwindToWelcomeSegue" unwindAction="unwindToWelcomeWithSegue:" id="4dL-W6-Xxp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znf-0g-7ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bD9-MK-HJg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="541" y="803"/>
+            <point key="canvasLocation" x="298" y="803"/>
         </scene>
         <!--Settings Per Sport View Controller-->
         <scene sceneID="nrN-dV-KDB">

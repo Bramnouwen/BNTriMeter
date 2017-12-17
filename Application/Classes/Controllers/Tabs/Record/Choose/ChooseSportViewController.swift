@@ -50,6 +50,7 @@ class ChooseSportViewController: GradientViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let activity = dataManager.currentActivity, let tableViewId = activity.tableViewId {
+            // TODO: Fix checkmark on load
             let rowToSelect = IndexPath(row: tableViewId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
             let cell = tableView.cellForRow(at: rowToSelect) as? ActivityTableViewCell
@@ -69,9 +70,10 @@ class ChooseSportViewController: GradientViewController {
         if segue.identifier == Segues.toOverview {
             guard let navVC = segue.destination as? UINavigationController else { return }
             guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
-            let values = sender as! (activity: Activity, editing: Bool)
+            let values = sender as! (activity: Activity, editing: Bool, isExistingWorkout: Bool)
             destVC.activity = values.activity
             destVC.setEditingMode = values.editing
+            destVC.isExistingWorkout = values.isExistingWorkout
         }
      }
     
@@ -108,19 +110,19 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ActivityTableViewCell else { return }
-        cell.accessoryType = .checkmark
         let i = indexPath.row
         
         if selectedIsPreset(id: i) {
             let activityData = defaults.object(forKey: "\(i)") as! Data
             let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false))
+            performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false, isExistingWorkout: true))
         } else {
             if dataManager.currentActivity.isPreset() {
                 dataManager.getCurrentActivityBy(id: i)
             } else {
                 updateCurrentActivity(id: i)
             }
+            cell.accessoryType = .checkmark
         }
         
     }

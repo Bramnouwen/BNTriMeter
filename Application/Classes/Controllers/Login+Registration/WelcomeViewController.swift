@@ -28,6 +28,8 @@ class WelcomeViewController: UIViewController {
         view.applyGradient()
     }
     
+    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) { }
+    
     /*
     // MARK: - Navigation
 

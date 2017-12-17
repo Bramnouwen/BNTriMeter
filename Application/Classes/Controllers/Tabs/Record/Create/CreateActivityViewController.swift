@@ -40,7 +40,7 @@ class CreateActivityViewController: UIViewController {
         // Reset newPart
         dataManager.newPart = Activity(isPartOfWorkout: true)
         // Go to overview
-        performSegue(withIdentifier: Segues.toOverview, sender: nil)
+        performSegue(withIdentifier: Segues.toOverview, sender: dataManager.createdActivity)
     }
     
     @objc func cancelBarButtonItemClicked() {
@@ -55,7 +55,7 @@ class CreateActivityViewController: UIViewController {
         if segue.identifier == Segues.toOverview {
             guard let navVC = segue.destination as? UINavigationController else { return }
             guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
-            destVC.activity = dataManager.createdActivity
+            destVC.activity = sender as? Activity
         } else {
             guard let destVC = segue.destination as? CreateActivityPageViewController else { return }
             destVC.createActivityDelegate = self

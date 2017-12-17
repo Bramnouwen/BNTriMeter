@@ -127,9 +127,15 @@ class DataManager: NSObject {
         }
     }
     
+    func setActivityInDefaults(_ activity: Activity) {
+        let activityData = NSKeyedArchiver.archivedData(withRootObject: activity)
+        guard let id = activity.tableViewId else { return }
+        defaults.set(activityData, forKey: "\(id)")
+    }
+    
     // Save created activity
     
-    func saveCreatedActivity(as title: String) {
+    func save(activity: Activity) {
         guard let db = db else { return }
         
         do {
@@ -137,14 +143,39 @@ class DataManager: NSObject {
                 
                 let new: TMActivity = try! context.create()
                 new.tableViewId = Int32(self.TMActivities.count)
-                new.title = title
+                new.title = activity.title
                 new.iconName = "saved"
                 new.isPartOfWorkout = false
                 
                 let newActivity = new.convert()
-                newActivity.parts = self.createdActivity.parts
-                let newData = NSKeyedArchiver.archivedData(withRootObject: newActivity)
-                self.defaults.set(newData, forKey: "\(new.tableViewId)")
+                newActivity.parts = activity.parts
+                self.setActivityInDefaults(newActivity)
+                
+                // Reset created activity
+                self.createdActivity = Activity()
+                
+                save()
+            }
+        } catch {
+            print("Something went wrong setting up core data (dataManager)")
+        }
+    }
+    
+    func update(activity: Activity) {
+        guard let db = db else { return }
+        
+        do {
+            try db.operation { (context, save) throws -> Void in
+                
+                guard let old = try! context.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(activity.tableViewId!)")).first else { return }
+                old.title = activity.title
+                
+                let oldActivity = old.convert()
+                oldActivity.parts = activity.parts
+                self.setActivityInDefaults(oldActivity)
+                
+                // Reset created activity
+                self.createdActivity = Activity()
                 
                 save()
             }

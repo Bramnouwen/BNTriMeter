@@ -108,6 +108,7 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
         if let title = dataManager.TMActivities[id].title, let iconName = dataManager.TMActivities[id].iconName {
             dataManager.newPart.title = title
             dataManager.newPart.iconName = iconName
+            dataManager.newPart.partId = dataManager.createdActivity.parts?.count
             if dataManager.newPart.dataLayout == nil {
                 dataManager.newPart.dataLayout = dataManager.TMDefaultData?.convert()
             }

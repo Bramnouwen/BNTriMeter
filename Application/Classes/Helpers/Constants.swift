@@ -24,6 +24,7 @@ struct Segues {
     static let startToLoginSegueKey = "startToLogin"
     static let toRegisterTwo = "toRegisterTwo"
     static let toWelcome = "toWelcome"
+    static let unwindToWelcome = "unwindToWelcomeSegue"
     static let adjustGoal = "adjustGoal"
     static let changeData = "changeData"
     static let createWorkout = "createWorkout"

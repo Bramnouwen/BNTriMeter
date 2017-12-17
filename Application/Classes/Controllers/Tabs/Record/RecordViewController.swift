@@ -106,9 +106,7 @@ class RecordViewController: UIViewController {
         setData()
     }
     
-    @IBAction func unwindToRecordVC(segue: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindToRecordVC(segue: UIStoryboardSegue) { }
     
     func setText() {
         guard let a = dataManager.currentActivity else { return }

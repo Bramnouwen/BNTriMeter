@@ -73,7 +73,7 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
                 do {
                     try Auth.auth().signOut()
                     FBSDKAccessToken.setCurrent(nil)
-                    self.performSegue(withIdentifier: Segues.toWelcome, sender: nil)
+                    self.performSegue(withIdentifier: Segues.unwindToWelcome, sender: nil)
                 } catch let signOutError as NSError {
                     print ("Error signing out: \(signOutError.localizedDescription)")
                 }

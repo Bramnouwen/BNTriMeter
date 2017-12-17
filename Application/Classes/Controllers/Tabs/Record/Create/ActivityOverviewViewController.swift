@@ -8,6 +8,7 @@
 
 import UIKit
 import IBAnimatable
+import SugarRecord
 
 class ActivityOverviewViewController: GradientViewController {
     
@@ -29,6 +30,7 @@ class ActivityOverviewViewController: GradientViewController {
     
     var activity: Activity!
     var parts: [Activity] = []
+    var isExistingWorkout = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +56,8 @@ class ActivityOverviewViewController: GradientViewController {
         
         parts = activity.parts!
         
-        if title != "" {
-            titleTextField.text = title
+        if activity.title != "" {
+            titleTextField.text = activity.title
         }
     }
 
@@ -67,16 +69,19 @@ class ActivityOverviewViewController: GradientViewController {
         } else {
             // If not editing -> back to main screen without selecting
             performSegue(withIdentifier: Segues.toMain, sender: nil)
+            // Or just go back to previous?
+//            dismiss(animated: true, completion: nil)
         }
     }
 
     @objc func saveEditBarButtonClicked() {
         if summaryTableView.isEditing {
-            // Stop editing
-            summaryTableView.setEditing(false, animated: true)
-            changePageLayout()
-            
-            saveWorkout()
+            // If saving completed
+            if saveWorkout() {
+                // Stop editing
+                summaryTableView.setEditing(false, animated: true)
+                changePageLayout()
+            }
         } else {
             // Start editing
             summaryTableView.setEditing(true, animated: true)
@@ -122,17 +127,24 @@ class ActivityOverviewViewController: GradientViewController {
         performSegue(withIdentifier: "unwindSegueToRecordVC", sender: nil)
     }
     
-    func saveWorkout() {
+    func saveWorkout() -> Bool {
         // If workout doesn't exist, save
-        guard let title = titleTextField.text else {
+        guard let title = titleTextField.text, title != "" else {
             // Show error message: title is necessary
-            return
+            print("We need a title for the workout")
+            return false
         }
-        print("Saving workout with title \(title)")
-//        dataManager.saveCreatedActivity(as: title)
-        // Else update
+        
+        if isExistingWorkout {
+            print("Updating workout")
+            dataManager.update(activity: activity)
+        } else {
+            print("Saving workout")
+            dataManager.save(activity: activity)
+        }
         
         dataManager.fetchCoreData()
+        return true
     }
     
     func cancelWorkout() {
@@ -140,7 +152,7 @@ class ActivityOverviewViewController: GradientViewController {
     }
     
     @IBAction func titleTextFieldEditingDidEnd(_ sender: Any) {
-        dataManager.createdActivity.title = titleTextField.text ?? ""
+        activity.title = titleTextField.text ?? ""
     }
     
     /*

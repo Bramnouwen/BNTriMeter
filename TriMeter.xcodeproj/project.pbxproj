@@ -387,11 +387,11 @@
 		F964EDCA1FDE9B6800675EA4 /* Login+Registration */ = {
 			isa = PBXGroup;
 			children = (
+				F964EDCF1FDE9B6800675EA4 /* WelcomeViewController.swift */,
 				F964EDCB1FDE9B6800675EA4 /* ConnectViewController.swift */,
 				F964EDCC1FDE9B6800675EA4 /* LoginViewController.swift */,
 				F964EDCD1FDE9B6800675EA4 /* RegisterOneViewController.swift */,
 				F964EDCE1FDE9B6800675EA4 /* RegisterTwoViewController.swift */,
-				F964EDCF1FDE9B6800675EA4 /* WelcomeViewController.swift */,
 			);
 			path = "Login+Registration";
 			sourceTree = "<group>";
