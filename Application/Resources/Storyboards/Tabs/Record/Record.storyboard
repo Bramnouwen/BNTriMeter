@@ -106,13 +106,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="160"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfi-3b-SJE" userLabel="Activity Label">
-                                                <rect key="frame" x="16" y="4" width="57" height="22"/>
+                                                <rect key="frame" x="16" y="10" width="59" height="21"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
                                                 <color key="textColor" name="Bermuda"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-1r-Sc6" userLabel="Activity Button">
-                                                <rect key="frame" x="16" y="26" width="166" height="44"/>
+                                                <rect key="frame" x="16" y="31" width="166" height="42"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="36"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -124,13 +124,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-vH-za9" userLabel="Goal Label">
-                                                <rect key="frame" x="16" y="78" width="35" height="22"/>
+                                                <rect key="frame" x="16" y="81" width="38" height="21"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
                                                 <color key="textColor" name="Bermuda"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-Ab-AIS" userLabel="Goal Button">
-                                                <rect key="frame" x="16" y="100" width="166" height="44"/>
+                                                <rect key="frame" x="16" y="102" width="166" height="42"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="36"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -160,16 +160,16 @@
                                         <rect key="frame" x="206" y="0.0" width="169" height="160"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lp-hi-Jn1" userLabel="Data Label">
-                                                <rect key="frame" x="0.0" y="4" width="36.5" height="22"/>
+                                                <rect key="frame" x="0.0" y="10" width="38" height="21"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
                                                 <color key="textColor" name="Bermuda"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Uw0-Yp-UhZ">
-                                                <rect key="frame" x="0.0" y="34" width="153" height="112"/>
+                                                <rect key="frame" x="0.0" y="39" width="153" height="112"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M9J-jY-6zY" userLabel="Data 1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="20"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duration" translatesAutoresizingMaskIntoConstraints="NO" id="7ox-4M-E4c">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -179,7 +179,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJX-c2-QDT">
-                                                                <rect key="frame" x="28" y="0.0" width="110.5" height="20"/>
+                                                                <rect key="frame" x="28" y="0.0" width="93.5" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -187,7 +187,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-1a-BTV" userLabel="Data 2">
-                                                        <rect key="frame" x="0.0" y="23" width="82.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="23" width="75" height="20"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance" translatesAutoresizingMaskIntoConstraints="NO" id="dFs-JR-5jl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -197,7 +197,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pQ-mg-1lQ">
-                                                                <rect key="frame" x="28" y="0.0" width="54.5" height="20"/>
+                                                                <rect key="frame" x="28" y="0.0" width="47" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -205,7 +205,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="npR-Wz-8D1" userLabel="Data 3">
-                                                        <rect key="frame" x="0.0" y="46" width="45" height="20"/>
+                                                        <rect key="frame" x="0.0" y="46" width="41.5" height="20"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calories" translatesAutoresizingMaskIntoConstraints="NO" id="G5n-BS-5n7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -215,7 +215,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF1-w8-STf">
-                                                                <rect key="frame" x="28" y="0.0" width="17" height="20"/>
+                                                                <rect key="frame" x="28" y="0.0" width="13.5" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FRp-XN-kZn" userLabel="Data 4">
-                                                        <rect key="frame" x="0.0" y="69" width="83.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="69" width="75" height="20"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pace" translatesAutoresizingMaskIntoConstraints="NO" id="K7Q-ca-sPj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -233,7 +233,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-7y-0G9">
-                                                                <rect key="frame" x="28" y="0.0" width="55.5" height="20"/>
+                                                                <rect key="frame" x="28" y="0.0" width="47" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -241,7 +241,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Th1-8u-4PU" userLabel="Data 5">
-                                                        <rect key="frame" x="0.0" y="92" width="83.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="92" width="75" height="20"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pace" translatesAutoresizingMaskIntoConstraints="NO" id="LS4-QD-Gdd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -251,7 +251,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAY-kT-BkD">
-                                                                <rect key="frame" x="28" y="0.0" width="55.5" height="20"/>
+                                                                <rect key="frame" x="28" y="0.0" width="47" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -341,7 +341,7 @@
                         <outlet property="mapView" destination="Hnp-1d-MsQ" id="1Ch-jt-ifk"/>
                         <outlet property="settingsBarButton" destination="fGa-Ow-GHk" id="1vf-9x-I93"/>
                         <outlet property="startActivityButton" destination="UON-25-t8H" id="X1l-kQ-F0M"/>
-                        <segue destination="UTG-Es-984" kind="modal" identifier="chooseActivity" id="wKJ-zo-wgv"/>
+                        <segue destination="UTG-Es-984" kind="presentation" identifier="chooseActivity" id="wKJ-zo-wgv"/>
                         <segue destination="NTh-Fl-K6W" kind="presentation" identifier="createWorkout" id="G9D-XK-z3W"/>
                     </connections>
                 </viewController>

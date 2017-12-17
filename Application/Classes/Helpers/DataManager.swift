@@ -129,7 +129,7 @@ class DataManager: NSObject {
     
     // Save created activity
     
-    func saveCreatedActivity(title: String) {
+    func saveCreatedActivity(as title: String) {
         guard let db = db else { return }
         
         do {
@@ -464,7 +464,7 @@ class DataManager: NSObject {
                 defaultSettings.id = 999
                 
                 defaultSettings.liveLocation = false
-                defaultSettings.countdown = true
+                defaultSettings.countdown = false
                 defaultSettings.countdownAmount = 3
                 defaultSettings.autopause = false
                 defaultSettings.audio = false

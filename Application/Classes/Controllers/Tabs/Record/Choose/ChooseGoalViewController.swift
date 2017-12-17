@@ -37,7 +37,7 @@ class ChooseGoalViewController: GradientViewController {
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title!.lowercased(), attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title.lowercased(), attributes: coloredAttributes))
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
         
         descriptionLabel.attributedText = descriptionText

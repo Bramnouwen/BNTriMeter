@@ -106,6 +106,10 @@ class RecordViewController: UIViewController {
         setData()
     }
     
+    @IBAction func unwindToRecordVC(segue: UIStoryboardSegue) {
+        
+    }
+    
     func setText() {
         guard let a = dataManager.currentActivity else { return }
         activityButton.setTitle(a.title, for: .normal)
@@ -297,7 +301,7 @@ extension RecordViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        let _: CLLocationCoordinate2D = manager.location!.coordinate
         //        print("Location = \(locValue.latitude) \(locValue.longitude)")
     }
 }

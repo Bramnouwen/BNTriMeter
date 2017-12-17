@@ -102,7 +102,7 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)
             descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.two))
-            descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title!.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
             
             titleLabel.attributedText = descriptionText

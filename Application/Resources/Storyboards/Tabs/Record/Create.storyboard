@@ -458,13 +458,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdy-WX-N9O">
-                                <rect key="frame" x="151" y="8" width="73" height="22"/>
+                                <rect key="frame" x="151" y="8" width="73" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-ga-Q1c" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="88" y="38" width="200" height="55"/>
+                                <rect key="frame" x="88" y="37" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GgA-fc-D8c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nVH-HV-XBI"/>
@@ -482,15 +482,18 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="titleTextFieldEditingDidEnd:" destination="q2L-BX-XoP" eventType="editingDidEnd" id="eS4-Vz-bva"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summaryLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-RK-7RT">
-                                <rect key="frame" x="130" y="125" width="116" height="22"/>
+                                <rect key="frame" x="129" y="124" width="118.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
-                                <rect key="frame" x="0.0" y="155" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="153" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="KYU-zf-ccv"/>
@@ -512,8 +515,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addPartButtonClicked:" destination="q2L-BX-XoP" eventType="touchUpInside" id="zjF-of-ngO"/>
-                                    <action selector="doneButtonClicked:" destination="M7J-ST-XvB" eventType="touchUpInside" id="ezG-l4-105"/>
+                                    <action selector="addPartButtonClicked:" destination="q2L-BX-XoP" eventType="touchUpInside" id="xgm-df-S9E"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dq2-0b-6Wo" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -532,9 +534,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addPartButtonClicked:" destination="q2L-BX-XoP" eventType="touchUpInside" id="tBB-cr-DUO"/>
-                                    <action selector="doneButtonClicked:" destination="M7J-ST-XvB" eventType="touchUpInside" id="uSS-uW-cIK"/>
-                                    <action selector="selectButtonClicked:" destination="q2L-BX-XoP" eventType="touchUpInside" id="xn7-0f-9jS"/>
+                                    <action selector="selectButtonClicked:" destination="q2L-BX-XoP" eventType="touchUpInside" id="2zQ-3T-TMV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -573,9 +573,11 @@
                         <outlet property="titleTextField" destination="kSo-ga-Q1c" id="t8h-eP-hhN"/>
                         <segue destination="Vf1-J6-yIK" kind="presentation" identifier="toMain" id="ywg-Yk-BLg"/>
                         <segue destination="tEA-ay-YBx" kind="show" identifier="toCreate" id="QSp-wh-a4u"/>
+                        <segue destination="0WR-gi-X4j" kind="unwind" identifier="unwindSegueToRecordVC" unwindAction="unwindToRecordVCWithSegue:" id="ckS-Pf-Xpl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTF-6M-uVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0WR-gi-X4j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6772" y="182.15892053973016"/>
         </scene>

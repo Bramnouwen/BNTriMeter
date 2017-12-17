@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2H-0c-ceS">
-                        <rect key="frame" x="49" y="11" width="74" height="22"/>
+                        <rect key="frame" x="65" y="11" width="74" height="22"/>
                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
                         <color key="textColor" name="Bermuda"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="j2H-0c-ceS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="49" id="E2c-PT-mMX"/>
+                    <constraint firstItem="j2H-0c-ceS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="65" id="E2c-PT-mMX"/>
                     <constraint firstItem="j2H-0c-ceS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S3C-uV-I8R"/>
                 </constraints>
             </tableViewCellContentView>

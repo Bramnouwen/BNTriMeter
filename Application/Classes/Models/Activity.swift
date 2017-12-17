@@ -12,7 +12,7 @@ class Activity: NSObject, NSCoding {
         
     //var id: Int?
     var tableViewId: Int?
-    var title: String?
+    var title: String
     var iconName: String?
     var goal: Goal?
     var goalSpeed: Int?
@@ -25,7 +25,7 @@ class Activity: NSObject, NSCoding {
     
     
     init(tableViewId: Int? = nil,
-         title: String? = nil,
+         title: String = "",
          iconName: String? = "saved",
          goal: Goal? = nil,
          goalSpeed: Int? = nil,
@@ -62,7 +62,7 @@ class Activity: NSObject, NSCoding {
     
     required convenience init(coder aDecoder: NSCoder) {
         let tableViewId = aDecoder.decodeObject(forKey: "tableViewId") as? Int
-        let title = aDecoder.decodeObject(forKey: "title") as? String
+        let title = aDecoder.decodeObject(forKey: "title") as! String
         let iconName = aDecoder.decodeObject(forKey: "iconName") as? String
         let goal = aDecoder.decodeObject(forKey: "goal") as? Goal
         let goalSpeed = aDecoder.decodeObject(forKey: "goalSpeed") as? Int
@@ -81,7 +81,7 @@ extension Activity {
     func getGoalString() -> String {
         if let goal = goal {
             return goal.previousAmountAsString()
-        } else if title?.contains(L10n.Activity.triathlon.lowercased()) == true {
+        } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
             return L10n.Goal.triathlon
         } else if let parts = parts, parts.count != 0 {
             return L10n.Goal.multiple
@@ -93,7 +93,7 @@ extension Activity {
     func getGoalIconString() -> String {
         if let goal = goal {
             return goal.iconName
-        } else if title?.contains(L10n.Activity.triathlon.lowercased()) == true {
+        } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
             return "finishFlag"
         } else if let parts = parts, parts.count != 0 {
             return "multipleGoals"

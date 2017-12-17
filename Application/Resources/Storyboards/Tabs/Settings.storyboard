@@ -18,43 +18,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="dhq-PT-etx">
-            <objects>
-                <viewController id="eTb-fE-1au" customClass="SettingsViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V01-JM-ZQq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8q-L8-RoI">
-                                <rect key="frame" x="161" y="492" width="52" height="30"/>
-                                <state key="normal" title="Log out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButtonClicked:" destination="eTb-fE-1au" eventType="touchUpInside" id="nNN-Gi-Qyr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="A8q-L8-RoI" firstAttribute="centerX" secondItem="V01-JM-ZQq" secondAttribute="centerX" id="2nR-X4-M8Q"/>
-                            <constraint firstItem="3ON-qM-n6q" firstAttribute="bottom" secondItem="A8q-L8-RoI" secondAttribute="bottom" constant="32" id="eyu-gb-hqd"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="3ON-qM-n6q"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="9kN-hH-hXZ"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
-                    <connections>
-                        <outlet property="logoutButton" destination="A8q-L8-RoI" id="aMU-VM-2yi"/>
-                        <segue destination="9mR-OU-TbX" kind="show" identifier="toWelcome" id="V1A-sL-E1I"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p6h-xB-M1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="327.19999999999999" y="100.29985007496252"/>
-        </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="j2B-0E-nll">
             <objects>
@@ -81,12 +44,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
-                        <segue destination="MUn-qz-lQQ" kind="show" id="rUD-Wh-POe"/>
+                        <segue destination="MUn-qz-lQQ" kind="show" identifier="toSettingsPerSport" id="rUD-Wh-POe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znf-0g-7ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="327" y="803"/>
+            <point key="canvasLocation" x="541" y="803"/>
         </scene>
         <!--Settings Per Sport View Controller-->
         <scene sceneID="nrN-dV-KDB">
@@ -194,14 +157,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTm-QA-cdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112.8" y="802.39880059970017"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="JTs-5L-zjU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="9mR-OU-TbX" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvp-SF-PFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="916" y="100"/>
         </scene>
     </scenes>
     <resources>

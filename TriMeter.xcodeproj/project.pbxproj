@@ -75,7 +75,6 @@
 		F964EE721FDE9B6900675EA4 /* Cabin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F964EE1B1FDE9B6900675EA4 /* Cabin-SemiBold.ttf */; };
 		F964EE731FDE9B6900675EA4 /* Cabin-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F964EE1C1FDE9B6900675EA4 /* Cabin-SemiBoldItalic.ttf */; };
 		F964EE741FDE9B6900675EA4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F964EE1D1FDE9B6900675EA4 /* OFL.txt */; };
-		F964EE751FDE9B6900675EA4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F964EE1E1FDE9B6900675EA4 /* Info.plist */; };
 		F964EE761FDE9B6900675EA4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F964EE211FDE9B6900675EA4 /* Settings.bundle */; };
 		F964EE781FDE9B6900675EA4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE251FDE9B6900675EA4 /* Login.storyboard */; };
 		F964EE7A1FDE9B6900675EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F964EE271FDE9B6900675EA4 /* Main.storyboard */; };
@@ -810,7 +809,6 @@
 				F964EE7E1FDE9B6900675EA4 /* Leaderboard.storyboard in Resources */,
 				F964EE831FDE9B6900675EA4 /* Tabs.storyboard in Resources */,
 				F964EE8A1FDFD45F00675EA4 /* ChangeDataTableViewCell.xib in Resources */,
-				F964EE751FDE9B6900675EA4 /* Info.plist in Resources */,
 				F964EE6B1FDE9B6900675EA4 /* Localizable.strings in Resources */,
 				F9DAF0F11FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib in Resources */,
 				F964EE741FDE9B6900675EA4 /* OFL.txt in Resources */,

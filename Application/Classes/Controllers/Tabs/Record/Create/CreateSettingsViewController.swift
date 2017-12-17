@@ -54,7 +54,7 @@ class CreateSettingsViewController: GradientViewController {
         
         let title = dataManager.newPart.title
         
-        let descriptionText = NSMutableAttributedString(string: title!, attributes: coloredAttributes)
+        let descriptionText = NSMutableAttributedString(string: title, attributes: coloredAttributes)
         if let goal = dataManager.newPart.goal {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
@@ -63,9 +63,9 @@ class CreateSettingsViewController: GradientViewController {
         }
         
         descriptionLabel.attributedText = descriptionText
-        loadDefaultButton.setTitle("\(L10n.Choose.Default.load)\n\(title!.lowercased())", for: .normal)
+        loadDefaultButton.setTitle("\(L10n.Choose.Default.load)\n\(title.lowercased())", for: .normal)
         loadDefaultButton.titleLabel?.textAlignment = .center
-        makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title!.lowercased())", for: .normal)
+        makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
         settings = dataManager.newPart.settingsLayout

@@ -61,15 +61,20 @@ class ChooseSportViewController: GradientViewController {
         performSegue(withIdentifier: Segues.createWorkout, sender: nil)
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == Segues.toOverview {
+            guard let navVC = segue.destination as? UINavigationController else { return }
+            guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
+            let values = sender as! (activity: Activity, editing: Bool)
+            destVC.activity = values.activity
+            destVC.setEditingMode = values.editing
+        }
      }
-     */
+    
     
 }
 
@@ -107,8 +112,9 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         let i = indexPath.row
         
         if selectedIsPreset(id: i) {
-            print("Loading preset (TODO: go to overview)")
-            self.dismiss(animated: true, completion: nil)
+            let activityData = defaults.object(forKey: "\(i)") as! Data
+            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
+            performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false))
         } else {
             if dataManager.currentActivity.isPreset() {
                 dataManager.getCurrentActivityBy(id: i)
@@ -128,11 +134,9 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func selectedIsPreset(id: Int) -> Bool {
-        if let selectedActivity = defaults.object(forKey: "\(id)") {
-            let activityData = selectedActivity as! Data
+        if let activityData = defaults.object(forKey: "\(id)") as? Data {
             let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
             if activity.parts?.count != 0 {
-                dataManager.currentActivity = activity
                 return true
             } else {
                 return false

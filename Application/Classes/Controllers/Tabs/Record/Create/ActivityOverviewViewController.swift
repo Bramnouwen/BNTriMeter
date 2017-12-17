@@ -22,6 +22,7 @@ class ActivityOverviewViewController: GradientViewController {
     
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryTableView: UITableView!
+    var setEditingMode = true
     
     @IBOutlet weak var addPartButton: AnimatableButton!
     @IBOutlet weak var selectButton: AnimatableButton!
@@ -46,16 +47,14 @@ class ActivityOverviewViewController: GradientViewController {
         summaryTableView.delegate = self
         summaryTableView.dataSource = self
         summaryTableView.tableFooterView = UIView()
-        summaryTableView.setEditing(true, animated: false)
+        summaryTableView.setEditing(setEditingMode, animated: false)
+        changePageLayout()
         summaryTableView.register(cellType: OverviewSportNormalTableViewCell.self)
         summaryTableView.register(cellType: OverviewTransitionNormalTableViewCell.self)
         
-        // Temporary
-//        let activityData = defaults.object(forKey: "6") as! Data
-//        activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
         parts = activity.parts!
         
-        if let title = activity.title {
+        if title != "" {
             titleTextField.text = title
         }
     }
@@ -64,7 +63,7 @@ class ActivityOverviewViewController: GradientViewController {
             // If editing -> stop editing and delete changes
         if summaryTableView.isEditing {
             summaryTableView.setEditing(false, animated: true)
-            changeSaveEditButton()
+            changePageLayout()
         } else {
             // If not editing -> back to main screen without selecting
             performSegue(withIdentifier: Segues.toMain, sender: nil)
@@ -75,48 +74,75 @@ class ActivityOverviewViewController: GradientViewController {
         if summaryTableView.isEditing {
             // Stop editing
             summaryTableView.setEditing(false, animated: true)
-            changeSaveEditButton()
-            addPartButton.isHidden = true
-            selectButton.isHidden = false
-            summaryTableView.separatorStyle = .none
+            changePageLayout()
             
             saveWorkout()
         } else {
             // Start editing
             summaryTableView.setEditing(true, animated: true)
-            changeSaveEditButton()
-            addPartButton.isHidden = false
-            selectButton.isHidden = true
-            summaryTableView.separatorStyle = .singleLine
+            changePageLayout()
             
             cancelWorkout() // ?
         }
     }
     
-    func changeSaveEditButton() {
+    
+    // Replace above functions by this one
+    func changePageLayout() {
         if summaryTableView.isEditing {
+            // Editing
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.Create.save, style: .plain, target: self, action: #selector(saveEditBarButtonClicked))
+            addPartButton.isHidden = false
+            addPartButton.isEnabled = true
+            selectButton.isHidden = true
+            selectButton.isEnabled = false
+            summaryTableView.separatorStyle = .singleLine
+            titleTextField.borderWidth = 1
+            titleTextField.isEnabled = true
         } else {
+            // Not
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.Create.edit, style: .plain, target: self, action: #selector(saveEditBarButtonClicked))
+            addPartButton.isHidden = true
+            addPartButton.isEnabled = false
+            selectButton.isHidden = false
+            selectButton.isEnabled = true
+            summaryTableView.separatorStyle = .none
+            titleTextField.borderWidth = 0
+            titleTextField.isEnabled = false
         }
     }
+    
     
     @IBAction func addPartButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: Segues.toCreate, sender: nil)
     }
     
     @IBAction func selectButtonClicked(_ sender: Any) {
-        
+        dataManager.currentActivity = activity
+        performSegue(withIdentifier: "unwindSegueToRecordVC", sender: nil)
     }
     
     func saveWorkout() {
-        dataManager.saveCreatedActivity(title: titleTextField.text!)
+        // If workout doesn't exist, save
+        guard let title = titleTextField.text else {
+            // Show error message: title is necessary
+            return
+        }
+        print("Saving workout with title \(title)")
+//        dataManager.saveCreatedActivity(as: title)
+        // Else update
+        
         dataManager.fetchCoreData()
     }
     
     func cancelWorkout() {
         
     }
+    
+    @IBAction func titleTextFieldEditingDidEnd(_ sender: Any) {
+        dataManager.createdActivity.title = titleTextField.text ?? ""
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -160,7 +186,7 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? OverviewSportNormalTableViewCell else { return }
-        print("Selected ")
+        print("Selected \(cell.title.text!)")
     }
     
     
