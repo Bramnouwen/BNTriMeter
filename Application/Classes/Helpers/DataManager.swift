@@ -51,14 +51,6 @@ class DataManager: NSObject {
     
     var TMDefaultData: TMDataLayout?
     var TMDefaultSettings: TMSettingsLayout?
-    
-    // Choosing activity
-//    var currentActivity: Activity! {
-//        didSet {
-//            setCurrentActivityInDefaults()
-//            print("Current activity set in defaults with didSet")
-//        }
-//    }
 
     // Creating activity
     var createdActivity: Activity = Activity()
@@ -88,12 +80,6 @@ class DataManager: NSObject {
         }
         setDataInSections()
         
-        // Get current activity from defaults
-//        if let currentActivity = defaults.object(forKey: "currentActivity") {
-//            let activityData = currentActivity as! Data
-//            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-//            self.currentActivity = activity
-//        }
     }
     
     // Initializing CoreDataDefaultStorage
@@ -107,35 +93,30 @@ class DataManager: NSObject {
     
     // Functions
     
-//    func getCurrentActivityBy(id: Int) {
-//        let activity = unarchive(key: "\(id)")
-//        currentActivity = activity
-//    }
-//
-//    func setCurrentActivityInDefaults() {
-//        archive(activity: currentActivity, key: "currentActivity")
-//    }
-    
     func getGoalById(_ id: Int) -> Goal {
         let goal = try! db?.fetch(FetchRequest<TMGoal>().filtered(with: "id", equalTo: "\(id)")).first
         return goal!.convert()
     }
     
-    func setGoalForNewPartWithId(_ id: Int, speed: Int) {
-        guard let db = db else { return }
-        if let goal = try! db.fetch(FetchRequest<TMGoal>().filtered(with: "id", equalTo: "\(id)")).first {
-            newPart.goal = goal.convert()
-            newPart.goalSpeed = speed
-        }
-    }
+    // MARK: - (Un)archiving defaults
     
-    func setActivityInDefaults(_ activity: Activity) {
+    func archive(activity: Activity, key: String) {
         let activityData = NSKeyedArchiver.archivedData(withRootObject: activity)
-        guard let id = activity.tableViewId else { return }
-        defaults.set(activityData, forKey: "\(id)")
+        defaults.set(activityData, forKey: key)
+        defaults.synchronize()
     }
     
-    // Create activity functions
+    func unarchive(key: String) -> Activity {
+        if let object = defaults.object(forKey: key) {
+            let data = object as! Data
+            let activity = NSKeyedUnarchiver.unarchiveObject(with: data) as! Activity
+            return activity
+        }
+        print("Activity for key doesn't exist")
+        return Activity()
+    }
+    
+    // Create/update/delete activity
     
     func save(_ activity: Activity) {
         guard let db = db else { return }
@@ -152,7 +133,7 @@ class DataManager: NSObject {
                 
                 let newActivity = new.convert()
                 newActivity.parts = activity.parts
-                self.setActivityInDefaults(newActivity)
+                self.archive(activity: newActivity, key: "\(newActivity.tableViewId!)")
                 
                 // Reset created activity
                 self.createdActivity = Activity()
@@ -175,7 +156,7 @@ class DataManager: NSObject {
                 
                 let oldActivity = old.convert()
                 oldActivity.parts = activity.parts
-                self.setActivityInDefaults(oldActivity)
+                self.archive(activity: oldActivity, key: "\(oldActivity.tableViewId!)")
                 
                 // Reset created activity
                 self.createdActivity = Activity()
@@ -260,26 +241,6 @@ class DataManager: NSObject {
         dataListSections["Clock"] = [convertedDataList[27]]
         
     }
-    
-    // MARK: - (Un)archiving defaults
-    
-    func archive(activity: Activity, key: String) {
-        let activityData = NSKeyedArchiver.archivedData(withRootObject: activity)
-        defaults.set(activityData, forKey: key)
-        defaults.synchronize()
-    }
-    
-    func unarchive(key: String) -> Activity {
-        if let object = defaults.object(forKey: key) {
-            let data = object as! Data
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: data) as! Activity
-            return activity
-        }
-        print("Activity for key doesn't exist")
-        return Activity()
-    }
-    
-    
     
     // MARK: - Core data setup + fetching
     

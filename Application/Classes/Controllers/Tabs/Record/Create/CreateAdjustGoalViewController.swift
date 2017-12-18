@@ -46,9 +46,10 @@ class CreateAdjustGoalViewController: GradientViewController, UIPickerViewDataSo
     
     @IBOutlet weak var IBPickerView: UIPickerView!
     
+    var newPart: Activity!
     var newAmount: Int = 0 {
         didSet {
-            dataManager.newPart.goal?.amount = newAmount
+            newPart.goal?.amount = newAmount
         }
     }
     
@@ -102,14 +103,14 @@ class CreateAdjustGoalViewController: GradientViewController, UIPickerViewDataSo
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)
             descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.two))
-            descriptionText.append(NSMutableAttributedString(string: dataManager.newPart.title.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: newPart.title.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
             
             titleLabel.attributedText = descriptionText
             descriptionLabel.text = descriptionString
             
             goalTitle.text = goalString
-            goalAmount.text = dataManager.newPart.goal?.amountNoString()
+            goalAmount.text = newPart.goal?.amountNoString()
             goalDescription.text = goalDescriptionString
         } else {
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Countdown.Title.one)
@@ -145,6 +146,7 @@ class CreateAdjustGoalViewController: GradientViewController, UIPickerViewDataSo
         default:
             defaults.setValue(newAmount, forKey: "previousCountdown")
         }
+        dataManager.newPart = newPart
     }
     
     @IBAction func minusButtonClicked(_ sender: Any) {
@@ -225,10 +227,10 @@ class CreateAdjustGoalViewController: GradientViewController, UIPickerViewDataSo
             newAmount = Int(amountString)!
         default:
             newAmount = Int(amountString)!
-            dataManager.newPart.settingsLayout?.countdownAmount = newAmount
+            newPart.settingsLayout?.countdownAmount = newAmount
             return
         }
-        dataManager.newPart.goal?.amount = newAmount
+        newPart.goal?.amount = newAmount
     }
     
     // Picker options

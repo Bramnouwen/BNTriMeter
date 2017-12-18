@@ -55,9 +55,9 @@ class ActivityOverviewViewController: GradientViewController {
             titleTextField.text = activity.title
         }
     }
-
+    
     @objc func cancelDeleteBarButtonClicked() {
-            // If editing -> delete workout
+        // If editing -> delete workout
         if summaryTableView.isEditing {
             if let db = dataManager.db,
                 let id = activity.tableViewId,
@@ -76,7 +76,7 @@ class ActivityOverviewViewController: GradientViewController {
             performSegue(withIdentifier: Segues.toMain, sender: nil)
         }
     }
-
+    
     @objc func saveEditBarButtonClicked() {
         if summaryTableView.isEditing {
             // If saving completed
@@ -155,16 +155,6 @@ class ActivityOverviewViewController: GradientViewController {
     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
         activity.title = titleTextField.text ?? ""
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSource {

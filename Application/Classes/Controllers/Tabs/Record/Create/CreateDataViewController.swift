@@ -29,6 +29,7 @@ class CreateDataViewController: GradientViewController {
         }
     }
     
+    var newPart: Activity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +43,15 @@ class CreateDataViewController: GradientViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        newPart = dataManager.newPart
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let title = dataManager.newPart.title
+        let title = newPart.title
         
         let descriptionText = NSMutableAttributedString(string: title, attributes: coloredAttributes)
-        if let goal = dataManager.newPart.goal {
+        if let goal = newPart.goal {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.two))
@@ -62,11 +65,11 @@ class CreateDataViewController: GradientViewController {
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
-        if dataManager.newPart.dataLayout == nil {
-            dataManager.newPart.dataLayout = dataManager.TMDefaultData?.convert()
+        if newPart.dataLayout == nil {
+            newPart.dataLayout = dataManager.TMDefaultData?.convert()
         }
         
-        currentData = dataManager.newPart.getOrderedData()
+        currentData = newPart.getOrderedData()
         tableView.reloadData()
     }
     
@@ -84,12 +87,11 @@ class CreateDataViewController: GradientViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.changeData {
-            guard let destVC = segue.destination as? ChangeDataViewController else { return }
+            guard let destVC = segue.destination as? CreateChangeDataViewController else { return }
             destVC.spotAndId = sender as? (Int, Int)
+            destVC.newPart = newPart
         }
     }
-    
-
 }
 
 extension CreateDataViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,7 +107,6 @@ extension CreateDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DataTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
-        
         
         if currentData.count != 0 {
             if currentData.indices.contains(i) {
@@ -141,9 +142,9 @@ extension CreateDataViewController: UITableViewDelegate, UITableViewDataSource {
         let i = indexPath.row
         if editingStyle == .delete {
             if currentData.indices.contains(i) && currentData.count != 1 {
-                currentData.remove(at: i) // Delete item from current displayed data
-                dataManager.newPart.dataLayout?.dataFields = currentData // Set displayed data equal to current activity data
-                //TODO: Fix this
+                currentData.remove(at: i)
+                newPart.dataLayout?.dataFields = currentData
+                // FIXME: Fix animation without async reload
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     tableView.reloadData()
                 }
@@ -153,6 +154,7 @@ extension CreateDataViewController: UITableViewDelegate, UITableViewDataSource {
             print("Add clicked at index \(i)")
             performSegue(withIdentifier: Segues.changeData, sender: (spot: i, id: 999))
         }
+        dataManager.newPart = newPart
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
@@ -163,7 +165,5 @@ extension CreateDataViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return .insert
         }
-        
     }
-    
 }

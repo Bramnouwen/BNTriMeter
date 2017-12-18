@@ -37,6 +37,8 @@ class CreateSettingsViewController: GradientViewController {
     var audioOn = false
     var hapticOn = false
     
+    var newPart: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,14 +53,15 @@ class CreateSettingsViewController: GradientViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        newPart = dataManager.newPart
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let title = dataManager.newPart.title
+        let title = newPart.title
         
         let descriptionText = NSMutableAttributedString(string: title, attributes: coloredAttributes)
-        if let goal = dataManager.newPart.goal {
+        if let goal = newPart.goal {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.two))
@@ -71,13 +74,13 @@ class CreateSettingsViewController: GradientViewController {
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
-        settings = dataManager.newPart.settingsLayout
+        settings = newPart.settingsLayout
         turnAllSettingsOnOff()
         tableView.reloadData()
     }
     
     func turnAllSettingsOnOff() {
-        if let settings = dataManager.newPart.settingsLayout {
+        if let settings = newPart.settingsLayout {
             liveLocationOn = settings.liveLocation
             countdownOn = settings.countdown
             autoPauseOn = settings.autopause
@@ -102,6 +105,7 @@ class CreateSettingsViewController: GradientViewController {
         if segue.identifier == Segues.adjustGoal {
             guard let destVC = segue.destination as? CreateAdjustGoalViewController else { return }
             destVC.goalId = sender as? Int
+            destVC.newPart = newPart
         }
     }
 
@@ -138,8 +142,6 @@ extension CreateSettingsViewController: UITableViewDelegate, UITableViewDataSour
             print("We shouldn't be here (cellForRowAt ChooseSettingsViewController")
         }
         
-        
-        
         return cell
     }
     
@@ -151,11 +153,11 @@ extension CreateSettingsViewController: UITableViewDelegate, UITableViewDataSour
         case 0:
             liveLocationOn = !liveLocationOn
             bool = liveLocationOn
-            dataManager.newPart.settingsLayout?.liveLocation = liveLocationOn
+            newPart.settingsLayout?.liveLocation = liveLocationOn
         case 1:
             countdownOn = !countdownOn
             bool = countdownOn
-            dataManager.newPart.settingsLayout?.countdown = countdownOn
+            newPart.settingsLayout?.countdown = countdownOn
             if countdownOn {
                 performSegue(withIdentifier: "adjustGoal", sender: 5)
             }
@@ -164,15 +166,15 @@ extension CreateSettingsViewController: UITableViewDelegate, UITableViewDataSour
         case 2:
             autoPauseOn = !autoPauseOn
             bool = autoPauseOn
-            dataManager.newPart.settingsLayout?.autopause = autoPauseOn
+            newPart.settingsLayout?.autopause = autoPauseOn
         case 3:
             audioOn = !audioOn
             bool = audioOn
-            dataManager.newPart.settingsLayout?.audio = audioOn
+            newPart.settingsLayout?.audio = audioOn
         case 4:
             hapticOn = !hapticOn
             bool = hapticOn
-            dataManager.newPart.settingsLayout?.haptic = hapticOn
+            newPart.settingsLayout?.haptic = hapticOn
         default:
             print("We shouldn't be here (didSelectRowAt ChooseSettingsViewController")
         }
@@ -194,6 +196,6 @@ extension CreateSettingsViewController: UITableViewDelegate, UITableViewDataSour
             cell.settingsOnOff.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
         }
         
-        
+        dataManager.newPart = newPart
     }
 }

@@ -19,6 +19,8 @@ class CreateGoalViewController: GradientViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var segmentedSelected = 1
     
+    var newPart: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,23 +35,25 @@ class CreateGoalViewController: GradientViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        newPart = dataManager.newPart
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: dataManager.newPart.title.lowercased(), attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: newPart.title.lowercased(), attributes: coloredAttributes))
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
         
         descriptionLabel.attributedText = descriptionText
         
-        if let goalId = dataManager.newPart.goal?.id {
+        if let goalId = newPart.goal?.id {
             let rowToSelect = IndexPath(row: goalId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
             if let cell = tableView.cellForRow(at: rowToSelect) as? GoalTableViewCell {
                 cell.accessoryType = .checkmark
                 cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
                 cell.goalDescription.textColor = UIColor(named: "Bermuda")
-                cell.goalDescription.text = dataManager.newPart.goal?.previousAmountAsString()
+                cell.goalDescription.text = newPart.goal?.previousAmountAsString()
             }
         }
     }
@@ -67,10 +71,9 @@ class CreateGoalViewController: GradientViewController {
         if segue.identifier == Segues.adjustGoal {
             guard let destVC = segue.destination as? CreateAdjustGoalViewController else { return }
             destVC.goalId = sender as? Int
+            destVC.newPart = newPart
         }
     }
-    
-
 }
 
 extension CreateGoalViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,7 +117,10 @@ extension CreateGoalViewController: UITableViewDelegate, UITableViewDataSource {
             cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
             cell.goalDescription.textColor = UIColor(named: "Bermuda")
             
-            dataManager.setGoalForNewPartWithId(i, speed: segmentedSelected)
+            newPart.goal = dataManager.getGoalById(i)
+            newPart.goalSpeed = segmentedSelected
+            
+            dataManager.newPart = newPart
         }
     }
 }

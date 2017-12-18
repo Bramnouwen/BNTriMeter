@@ -25,6 +25,8 @@ class CreateSportViewController: GradientViewController {
     
     var rowToSelect: IndexPath?
     
+    var newPart: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +48,14 @@ class CreateSportViewController: GradientViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        newPart = dataManager.newPart
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let tableViewId = dataManager.newPart.tableViewId {
+        if let tableViewId = newPart.tableViewId {
             rowToSelect = IndexPath(row: tableViewId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
             let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
@@ -87,11 +94,12 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        if let title = dataManager.TMCreateActivities[i].title, let iconName = dataManager.TMCreateActivities[i].iconName {
+        let tmActivity = dataManager.TMCreateActivities[i]
+        
+        if let title = tmActivity.title, let iconName = tmActivity.iconName {
             cell.activityTitle.text = title
             cell.activityIcon.image = UIImage(named: iconName)
         }
-        
         
         return cell
     }
@@ -111,32 +119,21 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func updateNewPart(id: Int) {
-        if let title = dataManager.TMCreateActivities[id].title, let iconName = dataManager.TMCreateActivities[id].iconName {
-            dataManager.newPart.title = title
-            dataManager.newPart.iconName = iconName
-            dataManager.newPart.tableViewId = id
-            dataManager.newPart.partId = dataManager.createdActivity.parts?.count
-            if dataManager.newPart.dataLayout == nil {
-                dataManager.newPart.dataLayout = dataManager.TMDefaultData?.convert()
+        let tmActivity = dataManager.TMCreateActivities[id]
+        
+        if let title = tmActivity.title, let iconName = tmActivity.iconName {
+            newPart.title = title
+            newPart.iconName = iconName
+            newPart.tableViewId = id
+            newPart.partId = dataManager.createdActivity.parts?.count
+            if newPart.dataLayout == nil {
+                newPart.dataLayout = dataManager.TMDefaultData?.convert()
             }
-            if dataManager.newPart.settingsLayout == nil {
-                dataManager.newPart.settingsLayout = dataManager.TMDefaultSettings?.convert()
-            }
-        }
-    }
-    
-    // Unused
-    func selectedIsPreset(id: Int) -> Bool {
-        if let selectedActivity = defaults.object(forKey: "\(id)") {
-            let activityData = selectedActivity as! Data
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            if activity.parts?.count != 0 {
-                return true
-            } else {
-                return false
+            if newPart.settingsLayout == nil {
+                newPart.settingsLayout = dataManager.TMDefaultSettings?.convert()
             }
         }
-        return false // TODO: Should not be reachable
+        
+        dataManager.newPart = newPart
     }
-    
 }
