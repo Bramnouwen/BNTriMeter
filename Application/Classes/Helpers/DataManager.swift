@@ -53,12 +53,12 @@ class DataManager: NSObject {
     var TMDefaultSettings: TMSettingsLayout?
     
     // Choosing activity
-    var currentActivity: Activity! {
-        didSet {
-            setCurrentActivityInDefaults()
-            print("Current activity set in defaults with didSet")
-        }
-    }
+//    var currentActivity: Activity! {
+//        didSet {
+//            setCurrentActivityInDefaults()
+//            print("Current activity set in defaults with didSet")
+//        }
+//    }
 
     // Creating activity
     var createdActivity: Activity = Activity()
@@ -89,11 +89,11 @@ class DataManager: NSObject {
         setDataInSections()
         
         // Get current activity from defaults
-        if let currentActivity = defaults.object(forKey: "currentActivity") {
-            let activityData = currentActivity as! Data
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            self.currentActivity = activity
-        }
+//        if let currentActivity = defaults.object(forKey: "currentActivity") {
+//            let activityData = currentActivity as! Data
+//            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
+//            self.currentActivity = activity
+//        }
     }
     
     // Initializing CoreDataDefaultStorage
@@ -107,25 +107,18 @@ class DataManager: NSObject {
     
     // Functions
     
-    func getCurrentActivityBy(id: Int) {
-        if let currentActivity = defaults.object(forKey: "\(id)") {
-            let activityData = currentActivity as! Data
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            self.currentActivity = activity
-        }
-    }
+//    func getCurrentActivityBy(id: Int) {
+//        let activity = unarchive(key: "\(id)")
+//        currentActivity = activity
+//    }
+//
+//    func setCurrentActivityInDefaults() {
+//        archive(activity: currentActivity, key: "currentActivity")
+//    }
     
-    func setCurrentActivityInDefaults() {
-        let activityData = NSKeyedArchiver.archivedData(withRootObject: currentActivity)
-        defaults.set(activityData, forKey: "currentActivity")
-        defaults.synchronize() // TODO: Not REALLY necessary
-    }
-    
-    func setGoalForCurrentActivityWithId(_ id: Int) {
-        guard let db = db else { return }
-        if let goal = try! db.fetch(FetchRequest<TMGoal>().filtered(with: "id", equalTo: "\(id)")).first {
-            currentActivity.goal = goal.convert()
-        }
+    func getGoalById(_ id: Int) -> Goal {
+        let goal = try! db?.fetch(FetchRequest<TMGoal>().filtered(with: "id", equalTo: "\(id)")).first
+        return goal!.convert()
     }
     
     func setGoalForNewPartWithId(_ id: Int, speed: Int) {
@@ -268,8 +261,23 @@ class DataManager: NSObject {
         
     }
     
-    // MARK: - Saving
+    // MARK: - (Un)archiving defaults
     
+    func archive(activity: Activity, key: String) {
+        let activityData = NSKeyedArchiver.archivedData(withRootObject: activity)
+        defaults.set(activityData, forKey: key)
+        defaults.synchronize()
+    }
+    
+    func unarchive(key: String) -> Activity {
+        if let object = defaults.object(forKey: key) {
+            let data = object as! Data
+            let activity = NSKeyedUnarchiver.unarchiveObject(with: data) as! Activity
+            return activity
+        }
+        print("Activity for key doesn't exist")
+        return Activity()
+    }
     
     
     

@@ -30,4 +30,5 @@ struct Segues {
     static let createWorkout = "createWorkout"
     static let toOverview = "toOverview"
     static let toCreate = "toCreate"
+    static let toChoose = "chooseActivity"
 }

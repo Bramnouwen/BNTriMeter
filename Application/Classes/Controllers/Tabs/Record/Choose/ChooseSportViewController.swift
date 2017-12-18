@@ -27,6 +27,8 @@ class ChooseSportViewController: GradientViewController {
     
     var rowToSelect: IndexPath?
     
+    var activity: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,9 +51,14 @@ class ChooseSportViewController: GradientViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        activity = dataManager.unarchive(key: "currentActivity")
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let activity = dataManager.currentActivity, let tableViewId = activity.tableViewId {
+        if let tableViewId = activity.tableViewId {
             rowToSelect = IndexPath(row: tableViewId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
             let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
@@ -94,9 +101,11 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        cell.TMActivity = dataManager.TMActivities[i]
+        let tmActivity = dataManager.TMActivities[i]
         
-        if let title = dataManager.TMActivities[i].title, let iconName = dataManager.TMActivities[i].iconName {
+        cell.TMActivity = tmActivity // FIXME: Necessary?
+        
+        if let title = tmActivity.title, let iconName = tmActivity.iconName {
             cell.activityTitle.text = title
             cell.activityIcon.image = UIImage(named: iconName)
         }
@@ -118,38 +127,37 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         let i = indexPath.row
         
         if selectedIsPreset(id: i) {
-            let activityData = defaults.object(forKey: "\(i)") as! Data
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
+            let activity = dataManager.unarchive(key: "\(i)")
             performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false, isExistingWorkout: true))
         } else {
-            if dataManager.currentActivity.isPreset {
-                dataManager.getCurrentActivityBy(id: i)
+            if activity.isPreset {
+//                dataManager.getCurrentActivityBy(id: i)
+                activity = dataManager.unarchive(key: "\(i)")
             } else {
-                updateCurrentActivity(id: i)
+                updateActivity(id: i)
             }
             cell.accessoryType = .checkmark
         }
         
     }
     
-    func updateCurrentActivity(id: Int) {
-        if let title = dataManager.TMActivities[id].title, let iconName = dataManager.TMActivities[id].iconName {
-            dataManager.currentActivity.title = title
-            dataManager.currentActivity.iconName = iconName
-            dataManager.currentActivity.tableViewId = id
+    func updateActivity(id: Int) {
+        let tmActivity = dataManager.TMActivities[id]
+        if let title = tmActivity.title, let iconName = tmActivity.iconName {
+            activity.title = title
+            activity.iconName = iconName
+            activity.tableViewId = id
         }
+        dataManager.archive(activity: activity, key: "currentActivity")
     }
     
     func selectedIsPreset(id: Int) -> Bool {
-        if let activityData = defaults.object(forKey: "\(id)") as? Data {
-            let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            if activity.isPreset {
-                return true
-            } else {
-                return false
-            }
+        let activity = dataManager.unarchive(key: "\(id)")
+        if activity.isPreset {
+            return true
+        } else {
+            return false
         }
-        return false // TODO: Should not be reachable
     }
     
 }

@@ -46,9 +46,10 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var IBPickerView: UIPickerView!
     
+    var activity: Activity!
     var newAmount: Int = 0 {
         didSet {
-            dataManager.currentActivity.goal?.amount = newAmount
+            activity.goal?.amount = newAmount
         }
     }
     
@@ -102,14 +103,14 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)
             descriptionText.append(NSMutableAttributedString(string: goalString.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.two))
-            descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title.lowercased(), attributes: coloredAttributes))
+            descriptionText.append(NSMutableAttributedString(string: activity.title.lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Adjust.Goal.Title.three))
             
             titleLabel.attributedText = descriptionText
             descriptionLabel.text = descriptionString
             
             goalTitle.text = goalString
-            goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+            goalAmount.text = activity.goal?.amountNoString()
             goalDescription.text = goalDescriptionString
         } else {
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Countdown.Title.one)
@@ -145,6 +146,7 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         default:
             defaults.setValue(newAmount, forKey: "previousCountdown")
         }
+        dataManager.archive(activity: activity, key: "currentActivity")
     }
     
     @IBAction func minusButtonClicked(_ sender: Any) {
@@ -159,10 +161,10 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
     
     func setGoalAmountText() {
         if goalId != 5 {
-            dataManager.currentActivity.goal?.amount = newAmount
-            goalAmount.text = dataManager.currentActivity.goal?.amountNoString()
+            activity.goal?.amount = newAmount
+            goalAmount.text = activity.goal?.amountNoString()
         } else {
-            dataManager.currentActivity.settingsLayout?.countdownAmount = newAmount
+            activity.settingsLayout?.countdownAmount = newAmount
             goalAmount.text = "\(newAmount)"
         }
     }
@@ -225,10 +227,10 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
             newAmount = Int(amountString)!
         default:
             newAmount = Int(amountString)!
-            dataManager.currentActivity.settingsLayout?.countdownAmount = newAmount
+            activity.settingsLayout?.countdownAmount = newAmount
             return
         }
-        dataManager.currentActivity.goal?.amount = newAmount
+        activity.goal?.amount = newAmount
     }
     
     // Picker options

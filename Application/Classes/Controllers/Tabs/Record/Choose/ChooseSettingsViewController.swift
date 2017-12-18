@@ -37,25 +37,27 @@ class ChooseSettingsViewController: GradientViewController {
     var audioOn = false
     var hapticOn = false
     
+    var activity: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: SettingsTableViewCell.self)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activity = dataManager.unarchive(key: "currentActivity")
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let title = dataManager.currentActivity.title
+        let title = activity.title
         
         let descriptionText = NSMutableAttributedString(string: title, attributes: coloredAttributes)
-        if let goal = dataManager.currentActivity.goal {
+        if let goal = activity.goal {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.two))
@@ -68,13 +70,13 @@ class ChooseSettingsViewController: GradientViewController {
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
-        settings = dataManager.currentActivity.settingsLayout
+        settings = activity.settingsLayout
         turnAllSettingsOnOff()
         tableView.reloadData()
     }
     
     func turnAllSettingsOnOff() {
-        if let settings = dataManager.currentActivity.settingsLayout {
+        if let settings = activity.settingsLayout {
             liveLocationOn = settings.liveLocation
             countdownOn = settings.countdown
             autoPauseOn = settings.autopause
@@ -84,11 +86,11 @@ class ChooseSettingsViewController: GradientViewController {
     }
 
     @IBAction func loadDefaultButtonClicked(_ sender: Any) {
-        
+        print("Loading defaults for \(activity.title)")
     }
     
     @IBAction func makeDefaultButtonclicked(_ sender: Any) {
-        
+        print("Loading defaults for \(activity.title)")
     }
     
     
@@ -99,9 +101,9 @@ class ChooseSettingsViewController: GradientViewController {
         if segue.identifier == Segues.adjustGoal {
             guard let destVC = segue.destination as? AdjustGoalViewController else { return }
             destVC.goalId = sender as? Int
+            destVC.activity = activity
         }
     }
-
 }
 
 extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -135,8 +137,6 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
             print("We shouldn't be here (cellForRowAt ChooseSettingsViewController")
         }
         
-        
-        
         return cell
     }
     
@@ -144,15 +144,16 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.cellForRow(at: indexPath) as? SettingsTableViewCell else { return }
         let i = indexPath.row
         var bool: Bool?
+        
         switch i {
         case 0:
             liveLocationOn = !liveLocationOn
             bool = liveLocationOn
-            dataManager.currentActivity.settingsLayout?.liveLocation = liveLocationOn
+            activity.settingsLayout?.liveLocation = liveLocationOn
         case 1:
             countdownOn = !countdownOn
             bool = countdownOn
-            dataManager.currentActivity.settingsLayout?.countdown = countdownOn
+            activity.settingsLayout?.countdown = countdownOn
             if countdownOn {
                 performSegue(withIdentifier: "adjustGoal", sender: 5)
             }
@@ -161,15 +162,15 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
         case 2:
             autoPauseOn = !autoPauseOn
             bool = autoPauseOn
-            dataManager.currentActivity.settingsLayout?.autopause = autoPauseOn
+            activity.settingsLayout?.autopause = autoPauseOn
         case 3:
             audioOn = !audioOn
             bool = audioOn
-            dataManager.currentActivity.settingsLayout?.audio = audioOn
+            activity.settingsLayout?.audio = audioOn
         case 4:
             hapticOn = !hapticOn
             bool = hapticOn
-            dataManager.currentActivity.settingsLayout?.haptic = hapticOn
+            activity.settingsLayout?.haptic = hapticOn
         default:
             print("We shouldn't be here (didSelectRowAt ChooseSettingsViewController")
         }
@@ -191,6 +192,6 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
             cell.settingsOnOff.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
         }
         
-        
+        dataManager.archive(activity: activity, key: "currentActivity")
     }
 }

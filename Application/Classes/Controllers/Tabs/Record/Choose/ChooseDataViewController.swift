@@ -29,6 +29,7 @@ class ChooseDataViewController: GradientViewController {
         }
     }
     
+    var activity: Activity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +43,15 @@ class ChooseDataViewController: GradientViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activity = dataManager.unarchive(key: "currentActivity")
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let title = dataManager.currentActivity.title
+        let title = activity.title
         
         let descriptionText = NSMutableAttributedString(string: title, attributes: coloredAttributes)
-        if let goal = dataManager.currentActivity.goal {
+        if let goal = activity.goal {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.two))
@@ -62,16 +65,16 @@ class ChooseDataViewController: GradientViewController {
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
-        currentData = dataManager.currentActivity.getOrderedData()
+        currentData = activity.getOrderedData()
         tableView.reloadData()
     }
     
     @IBAction func loadDefaultButtonClicked(_ sender: Any) {
-        
+        print("Loading default for \(activity.title)")
     }
     
     @IBAction func makeDefaultButtonClicked(_ sender: Any) {
-        
+        print("Setting default for \(activity.title)")
     }
     
     
@@ -81,11 +84,10 @@ class ChooseDataViewController: GradientViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.changeData {
             guard let destVC = segue.destination as? ChangeDataViewController else { return }
-            destVC.spotAndId = sender as? (Int, Int)
+            destVC.spotAndId = sender as? (spot: Int, id: Int)
+            destVC.activity = activity
         }
     }
-    
-
 }
 
 extension ChooseDataViewController: UITableViewDelegate, UITableViewDataSource {
@@ -95,13 +97,11 @@ extension ChooseDataViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DataTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
-        
         
         if currentData.count != 0 {
             if currentData.indices.contains(i) {
@@ -137,18 +137,18 @@ extension ChooseDataViewController: UITableViewDelegate, UITableViewDataSource {
         let i = indexPath.row
         if editingStyle == .delete {
             if currentData.indices.contains(i) && currentData.count != 1 {
-                currentData.remove(at: i) // Delete item from current displayed data
-                dataManager.currentActivity.dataLayout?.dataFields = currentData // Set displayed data equal to current activity data
-                //TODO: Fix this
+                currentData.remove(at: i)
+                activity.dataLayout?.dataFields = currentData
+                // FIXME: Fix animation without async reload
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                     tableView.reloadData()
                 }
             }
-            
         } else if editingStyle == .insert {
             print("Add clicked at index \(i)")
             performSegue(withIdentifier: Segues.changeData, sender: (spot: i, id: 999))
         }
+        dataManager.archive(activity: activity, key: "currentActivity")
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
@@ -159,7 +159,5 @@ extension ChooseDataViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return .insert
         }
-        
     }
-    
 }

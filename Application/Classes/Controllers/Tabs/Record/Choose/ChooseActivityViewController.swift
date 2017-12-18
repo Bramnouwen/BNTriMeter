@@ -20,8 +20,6 @@ class ChooseActivityViewController: UIViewController {
     
     var controllerToLoad = 0
     
-    var newActivity: Activity!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,8 +30,6 @@ class ChooseActivityViewController: UIViewController {
         loadBarButtonItem.title = L10n.Common.load
         
         title = L10n.Common.Activity.choose
-        
-        newActivity = dataManager.currentActivity
     }
     
     @objc func doneBarButtonItemClicked() {
@@ -44,7 +40,7 @@ class ChooseActivityViewController: UIViewController {
     
     @objc func loadBarButtonItemClicked() {
         print("Loading default data and settings for selected activity")
-        // TODO: - Load defaults for selected sport
+        // TODO: - Load all defaults for selected sport
     }
         
     // MARK: - Navigation

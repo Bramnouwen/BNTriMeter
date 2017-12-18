@@ -18,6 +18,8 @@ class ChooseGoalViewController: GradientViewController {
     @IBOutlet weak var createWorkoutButton: AnimatableButton!
     @IBOutlet weak var createWorkoutDescriptionLabel: UILabel!
     
+    var activity: Activity!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,31 +27,31 @@ class ChooseGoalViewController: GradientViewController {
         tableView.dataSource = self
         tableView.register(cellType: GoalTableViewCell.self)
         
-        
         createWorkoutButton.setTitle(L10n.Common.Createworkout.button, for: .normal)
         createWorkoutDescriptionLabel.text = L10n.Common.Createworkout.description
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activity = dataManager.unarchive(key: "currentActivity")
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: dataManager.currentActivity.title.lowercased(), attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: activity.title.lowercased(), attributes: coloredAttributes))
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
         
         descriptionLabel.attributedText = descriptionText
         
-        if let activity = dataManager.currentActivity, let goalId = activity.goal?.id {
+        if let goalId = activity.goal?.id {
             let rowToSelect = IndexPath(row: goalId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
             if let cell = tableView.cellForRow(at: rowToSelect) as? GoalTableViewCell {
                 cell.accessoryType = .checkmark
                 cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
                 cell.goalDescription.textColor = UIColor(named: "Bermuda")
-                cell.goalDescription.text = dataManager.currentActivity.goal?.previousAmountAsString()
+                cell.goalDescription.text = activity.goal?.previousAmountAsString()
             }
         }
     }
@@ -66,10 +68,9 @@ class ChooseGoalViewController: GradientViewController {
         if segue.identifier == Segues.adjustGoal {
             guard let destVC = segue.destination as? AdjustGoalViewController else { return }
             destVC.goalId = sender as? Int
+            destVC.activity = activity
         }
     }
-    
-
 }
 
 extension ChooseGoalViewController: UITableViewDelegate, UITableViewDataSource {
@@ -101,6 +102,7 @@ extension ChooseGoalViewController: UITableViewDelegate, UITableViewDataSource {
             cell.goalDescription.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? GoalTableViewCell {
             let i = indexPath.row
@@ -112,8 +114,8 @@ extension ChooseGoalViewController: UITableViewDelegate, UITableViewDataSource {
             cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
             cell.goalDescription.textColor = UIColor(named: "Bermuda")
             
-            dataManager.setGoalForCurrentActivityWithId(i)
-            
+            activity.goal = dataManager.getGoalById(i)
+            dataManager.archive(activity: activity, key: "currentActivity")
         }
     }
 }

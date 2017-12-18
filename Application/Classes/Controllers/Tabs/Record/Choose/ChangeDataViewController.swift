@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeDataViewController: GradientViewController, UITableViewDelegate, UITableViewDataSource {
+class ChangeDataViewController: GradientViewController {
 
     let dataManager = DataManager.shared
     
@@ -16,6 +16,8 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
     
     var spotAndId: (spot: Int, id: Int)?
     var rowToSelect: IndexPath?
+    
+    var activity: Activity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +32,52 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
         
         let nibChangeData = UINib(nibName: "ChangeDataSectionHeader", bundle: nil)
         tableView.register(nibChangeData, forHeaderFooterViewReuseIdentifier: "ChangeDataSectionHeader")
-        
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    /*
+     Duration: 0 1 2 3
+     Pace: 4 5 6
+     Distance: 7 8 9 10
+     Speed: 11 12 13
+     Calories: 14 15 16 17
+     Heart rate: 18 19 20
+     Steps: 21 22
+     Elevation: 23 24
+     Descent: 25 26
+     Clock: 27
+     */
+    func defineSectionByIndexId(_ i: Int) -> Int {
+        switch i {
+        case 0, 1, 2, 3: return 0
+        case 4, 5, 6: return 1
+        case 7, 8, 9, 10: return 2
+        case 11, 12, 13: return 3
+        case 14, 15, 16, 17: return 4
+        case 18, 19, 20: return 5
+        case 21, 22: return 6
+        case 23, 24: return 7
+        case 25, 26: return 8
+        case 27: return 9
+        default:
+            print("Something went wrong defining section")
+            return 0
+        }
     }
     
-    
+    func defineRowByIndexId(_ i: Int) -> Int {
+        switch i {
+        case 0, 4, 7, 11, 14, 18, 21, 23, 25, 27: return 0
+        case 1, 5, 8, 12, 15, 19, 22, 24, 26: return 1
+        case 2, 6, 9, 13, 16, 20: return 2
+        case 3, 10, 17: return 3
+        default:
+            print("Something went wrong defining row")
+            return 0
+        }
+    }
+}
+
+extension ChangeDataViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,7 +101,6 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
             return 0
         }
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChangeDataTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -103,7 +140,6 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ChangeDataSectionHeader") as! ChangeDataSectionHeader
         
@@ -139,7 +175,7 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
             icon = #imageLiteral(resourceName: "descent")
         case 9:
             title = L10n.Data.clock
-            icon = #imageLiteral(resourceName: "duration") 
+            icon = #imageLiteral(resourceName: "duration")
             
         default: print("We shouldn't be here (viewForHeaderInSection for ChangeDataTableViewController")
         }
@@ -155,79 +191,27 @@ class ChangeDataViewController: GradientViewController, UITableViewDelegate, UIT
         return 53
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? ChangeDataTableViewCell else { return }
-        cell.accessoryType = .none
-        
-    }
+    // TODO: Delete
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.cellForRow(at: indexPath) as? ChangeDataTableViewCell else { return }
+//        cell.accessoryType = .none
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ChangeDataTableViewCell else { return }
         cell.accessoryType = .checkmark
         if let cellItem = cell.item, let spot = spotAndId?.spot {
             spotAndId?.id = cellItem.id
             
-            if (dataManager.currentActivity.dataLayout?.dataFields.indices.contains(spot))! {
+            if (activity.dataLayout?.dataFields.indices.contains(spot))! {
                 cellItem.spot = spot
-                dataManager.currentActivity.dataLayout?.dataFields[spot] = cellItem
+                activity.dataLayout?.dataFields[spot] = cellItem
             } else {
-                cellItem.spot = (dataManager.currentActivity.dataLayout?.dataFields.count)!
-                dataManager.currentActivity.dataLayout?.dataFields.append(cellItem)
+                cellItem.spot = (activity.dataLayout?.dataFields.count)!
+                activity.dataLayout?.dataFields.append(cellItem)
             }
         }
-        
-       navigationController?.popViewController(animated: true)
+        dataManager.archive(activity: activity, key: "currentActivity")
+        navigationController?.popViewController(animated: true)
     }
-    
-    func defineSectionByIndexId(_ i: Int) -> Int {
-        switch i {
-        case 0, 1, 2, 3: return 0
-        case 4, 5, 6: return 1
-        case 7, 8, 9, 10: return 2
-        case 11, 12, 13: return 3
-        case 14, 15, 16, 17: return 4
-        case 18, 19, 20: return 5
-        case 21, 22: return 6
-        case 23, 24: return 7
-        case 25, 26: return 8
-        case 27: return 9
-        default:
-            print("Something went wrong defining section")
-            return 0
-        }
-    }
-    
-    func defineRowByIndexId(_ i: Int) -> Int {
-        switch i {
-        case 0, 4, 7, 11, 14, 18, 21, 23, 25, 27: return 0
-        case 1, 5, 8, 12, 15, 19, 22, 24, 26: return 1
-        case 2, 6, 9, 13, 16, 20: return 2
-        case 3, 10, 17: return 3
-        default:
-            print("Something went wrong defining row")
-            return 0
-        }
-    }
-    /*
-     Duration: 0 1 2 3
-     Pace: 4 5 6
-     Distance: 7 8 9 10
-     Speed: 11 12 13
-     Calories: 14 15 16 17
-     Heart rate: 18 19 20
-     Steps: 21 22
-     Elevation: 23 24
-     Descent: 25 26
-     Clock: 27
-     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

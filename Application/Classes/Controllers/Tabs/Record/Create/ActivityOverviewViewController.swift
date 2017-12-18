@@ -67,7 +67,7 @@ class ActivityOverviewViewController: GradientViewController {
                 // Set current activity to running after deleting = default determined by myself
                 let runningData = defaults.object(forKey: "1") as! Data
                 let running = NSKeyedUnarchiver.unarchiveObject(with: runningData) as! Activity
-                dataManager.currentActivity = running
+                dataManager.archive(activity: running, key: "currentActivity")
             }
             dataManager.createdActivity = Activity()
             performSegue(withIdentifier: Segues.toMain, sender: nil)
@@ -127,7 +127,7 @@ class ActivityOverviewViewController: GradientViewController {
     }
     
     @IBAction func selectButtonClicked(_ sender: Any) {
-        dataManager.currentActivity = activity
+        dataManager.archive(activity: activity, key: "currentActivity")
         performSegue(withIdentifier: "unwindSegueToRecordVC", sender: nil)
     }
     
