@@ -13,6 +13,8 @@ class OverviewTransitionNormalTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet weak var title: UILabel!
     
+    var part: Activity?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

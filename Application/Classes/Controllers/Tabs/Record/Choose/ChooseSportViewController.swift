@@ -78,10 +78,9 @@ class ChooseSportViewController: GradientViewController {
         if segue.identifier == Segues.toOverview {
             guard let navVC = segue.destination as? UINavigationController else { return }
             guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
-            let values = sender as! (activity: Activity, editing: Bool, isExistingWorkout: Bool)
+            let values = sender as! (activity: Activity, editing: Bool)
             destVC.activity = values.activity
             destVC.setEditingMode = values.editing
-            destVC.isExistingWorkout = values.isExistingWorkout
         }
      }
     
@@ -128,7 +127,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
         
         if selectedIsPreset(id: i) {
             let activity = dataManager.unarchive(key: "\(i)")
-            performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false, isExistingWorkout: true))
+            performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false))
         } else {
             if activity.isPreset {
 //                dataManager.getCurrentActivityBy(id: i)

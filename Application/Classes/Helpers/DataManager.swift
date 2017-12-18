@@ -55,6 +55,7 @@ class DataManager: NSObject {
     // Creating activity
     var createdActivity: Activity = Activity()
     var newPart: Activity = Activity(isPartOfWorkout: true)
+    var existingPart = false
     
     override init() {
         super.init()

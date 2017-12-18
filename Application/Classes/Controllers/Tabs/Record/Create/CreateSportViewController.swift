@@ -63,22 +63,6 @@ class CreateSportViewController: GradientViewController {
         }
     }
     
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.toOverview {
-            guard let navVC = segue.destination as? UINavigationController else { return }
-            guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
-            let values = sender as! (activity: Activity, editing: Bool, isExistingWorkout: Bool)
-            destVC.activity = values.activity
-            destVC.setEditingMode = values.editing
-            destVC.isExistingWorkout = values.isExistingWorkout
-        }
-    }
-    
-    
 }
 
 extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource {
@@ -125,7 +109,10 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
             newPart.title = title
             newPart.iconName = iconName
             newPart.tableViewId = id
-            newPart.partId = dataManager.createdActivity.parts?.count
+            if dataManager.existingPart == false {
+                // If we have a new part we have to set the partId, if not we have to keep the old one
+                newPart.partId = dataManager.createdActivity.parts?.count
+            }
             if newPart.dataLayout == nil {
                 newPart.dataLayout = dataManager.TMDefaultData?.convert()
             }

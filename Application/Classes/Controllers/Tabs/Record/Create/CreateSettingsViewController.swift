@@ -46,9 +46,7 @@ class CreateSettingsViewController: GradientViewController {
         tableView.dataSource = self
         tableView.register(cellType: SettingsTableViewCell.self)
         
-        if dataManager.newPart.settingsLayout == nil {
-            dataManager.newPart.settingsLayout = dataManager.TMDefaultSettings?.convert()
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +71,10 @@ class CreateSettingsViewController: GradientViewController {
         loadDefaultButton.titleLabel?.textAlignment = .center
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
+        
+        if newPart.settingsLayout == nil {
+            newPart.settingsLayout = dataManager.TMDefaultSettings?.convert()
+        }
         
         settings = newPart.settingsLayout
         turnAllSettingsOnOff()

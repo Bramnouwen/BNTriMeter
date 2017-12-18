@@ -162,6 +162,17 @@ class ActivityOverviewViewController: GradientViewController {
     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
         activity.title = titleTextField.text ?? ""
     }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.toCreate {
+            guard let navVC = segue.destination as? UINavigationController else { return }
+            guard let destVC = navVC.childViewControllers.first as? CreateActivityViewController else { return }
+            destVC.indexOfPartToUpdate = sender as? Int
+        }
+    }
 }
 
 extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSource {
@@ -182,6 +193,7 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
             let cell: OverviewTransitionNormalTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
             cell.title.text = part.title
+            cell.part = part
             
             return cell
         } else {
@@ -190,6 +202,7 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
             cell.icon.image = UIImage(named: part.iconName!)
             cell.title.text = part.title
             cell.amount.text = part.goal?.returnOverviewAmountString()
+            cell.part = part
             
             return cell
         }
@@ -197,8 +210,14 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? OverviewSportNormalTableViewCell else { return }
-        print("Selected \(cell.title.text!)")
+        dataManager.existingPart = true
+        if let cell = tableView.cellForRow(at: indexPath) as? OverviewSportNormalTableViewCell {
+            dataManager.newPart = cell.part!
+            performSegue(withIdentifier: Segues.toCreate, sender: ((cell.part?.partId)!)) // FIXME: Update partId's to start from 0?
+        } else if let cell = tableView.cellForRow(at: indexPath) as? OverviewTransitionNormalTableViewCell {
+            dataManager.newPart = cell.part!
+            performSegue(withIdentifier: Segues.toCreate, sender: ((cell.part?.partId)!))
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

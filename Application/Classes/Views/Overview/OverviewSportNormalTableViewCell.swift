@@ -16,6 +16,8 @@ class OverviewSportNormalTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var amount: UILabel!
     
+    var part: Activity?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

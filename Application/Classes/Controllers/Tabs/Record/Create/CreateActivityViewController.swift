@@ -20,6 +20,8 @@ class CreateActivityViewController: UIViewController {
     
     var controllerToLoad = 0
     
+    var indexOfPartToUpdate: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,10 +37,17 @@ class CreateActivityViewController: UIViewController {
     @objc func addBarButtonItemClicked() {
         // TODO: Check if part is complete, if not show error message
         print("Adding/updating part")
-        // If newPart doesn't exist, add
-        dataManager.createdActivity.parts?.append(dataManager.newPart)
-        // Reset newPart
+        if dataManager.existingPart == false {
+            // If newPart doesn't exist, add
+            dataManager.createdActivity.parts?.append(dataManager.newPart)
+        } else {
+            // Part already exists, update accordingly
+            guard let i = indexOfPartToUpdate else { return }
+            dataManager.createdActivity.parts?[i] = dataManager.newPart
+        }
+        // Reset newPart and set existing back to false
         dataManager.newPart = Activity(isPartOfWorkout: true)
+        dataManager.existingPart = false
         // Go to overview
         performSegue(withIdentifier: Segues.toOverview, sender: dataManager.createdActivity)
     }
