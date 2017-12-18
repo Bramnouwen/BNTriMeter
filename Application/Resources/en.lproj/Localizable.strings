@@ -30,9 +30,12 @@
 "Create.title.title" = "Title";
 "Create.summary" = "Workout summary";
 "Create.add" = "Add part";
+"Create.add.transition" = "Add transition...";
 "Create.select" = "Select";
 "Create.save" = "Save";
 "Create.edit" = "Edit";
+"Create.cancel" = "Cancel";
+"Create.delete" = "Delete";
 
 // Login
 "Login.description" = "Log in with your TriMeter credentials.";

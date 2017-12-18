@@ -20,6 +20,7 @@ class Activity: NSObject, NSCoding {
     var settingsLayout: SettingsLayout?
     
     var isPartOfWorkout: Bool
+    var isPreset: Bool
     var partId: Int?
     var parts: [Activity]?
     
@@ -32,6 +33,7 @@ class Activity: NSObject, NSCoding {
          dataLayout: DataLayout? = nil,
          settingsLayout: SettingsLayout? = nil,
          isPartOfWorkout: Bool = false,
+         isPreset: Bool = false,
          partId: Int? = nil,
          parts: [Activity]? = []) {
         
@@ -43,6 +45,7 @@ class Activity: NSObject, NSCoding {
         self.dataLayout = dataLayout
         self.settingsLayout = settingsLayout
         self.isPartOfWorkout = isPartOfWorkout
+        self.isPreset = isPreset
         self.partId = partId
         self.parts = parts
     }
@@ -56,6 +59,7 @@ class Activity: NSObject, NSCoding {
         aCoder.encode(dataLayout, forKey: "dataLayout")
         aCoder.encode(settingsLayout, forKey: "settingsLayout")
         aCoder.encode(isPartOfWorkout, forKey: "isPartOfWorkout")
+        aCoder.encode(isPreset, forKey: "isPreset")
         aCoder.encode(partId, forKey: "partId")
         aCoder.encode(parts, forKey: "parts")
     }
@@ -69,10 +73,11 @@ class Activity: NSObject, NSCoding {
         let dataLayout = aDecoder.decodeObject(forKey: "dataLayout") as? DataLayout
         let settingsLayout = aDecoder.decodeObject(forKey: "settingsLayout") as? SettingsLayout
         let isPartOfWorkout = aDecoder.decodeBool(forKey: "isPartOfWorkout")
+        let isPreset = aDecoder.decodeBool(forKey: "isPreset")
         let partId = aDecoder.decodeObject(forKey: "partId") as? Int
         let parts = aDecoder.decodeObject(forKey: "parts") as? [Activity]
         
-        self.init(tableViewId: tableViewId, title: title, iconName: iconName, goal: goal, goalSpeed: goalSpeed, dataLayout: dataLayout, settingsLayout: settingsLayout, isPartOfWorkout: isPartOfWorkout, partId: partId, parts: parts)
+        self.init(tableViewId: tableViewId, title: title, iconName: iconName, goal: goal, goalSpeed: goalSpeed, dataLayout: dataLayout, settingsLayout: settingsLayout, isPartOfWorkout: isPartOfWorkout, isPreset: isPreset, partId: partId, parts: parts)
     }
     
 }
@@ -110,14 +115,6 @@ extension Activity {
             let orderedParts = parts?.sorted(by: { $0.partId! < $1.partId! })
             let orderedData = orderedParts![0].dataLayout?.dataFields.sorted(by: { $0.spot < $1.spot })
             return orderedData!
-        }
-    }
-    
-    func isPreset() -> Bool {
-        if parts?.count != 0 {
-            return true
-        } else {
-            return false
         }
     }
     

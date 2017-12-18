@@ -96,8 +96,6 @@
 		F9DAF0ED1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */; };
 		F9DAF0F01FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */; };
 		F9DAF0F11FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */; };
-		F9DAF0F41FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */; };
-		F9DAF0F51FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */; };
 		F9DAF0F81FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */; };
 		F9DAF0F91FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */; };
 		F9F0DFD91FE2EEC8009570FA /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0DFD81FE2EEC8009570FA /* Record.storyboard */; };
@@ -234,8 +232,6 @@
 		F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewSportNormalTableViewCell.xib; sourceTree = "<group>"; };
 		F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTransitionNormalTableViewCell.swift; sourceTree = "<group>"; };
 		F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTransitionNormalTableViewCell.xib; sourceTree = "<group>"; };
-		F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSportEditTableViewCell.swift; sourceTree = "<group>"; };
-		F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewSportEditTableViewCell.xib; sourceTree = "<group>"; };
 		F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTransitionEditTableViewCell.swift; sourceTree = "<group>"; };
 		F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTransitionEditTableViewCell.xib; sourceTree = "<group>"; };
 		F9F0DFD81FE2EEC8009570FA /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
@@ -655,8 +651,6 @@
 				F9DAF0EB1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.xib */,
 				F9DAF0EE1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift */,
 				F9DAF0EF1FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.xib */,
-				F9DAF0F21FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift */,
-				F9DAF0F31FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib */,
 				F9DAF0F61FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.swift */,
 				F9DAF0F71FE431FA00A8F606 /* OverviewTransitionEditTableViewCell.xib */,
 			);
@@ -803,7 +797,6 @@
 				F964EE7B1FDE9B6900675EA4 /* LaunchScreen.storyboard in Resources */,
 				F964EE611FDE9B6900675EA4 /* DataTableViewCell.xib in Resources */,
 				F964EE651FDE9B6900675EA4 /* SettingsTableViewCell.xib in Resources */,
-				F9DAF0F51FE431ED00A8F606 /* OverviewSportEditTableViewCell.xib in Resources */,
 				F964EE7C1FDE9B6900675EA4 /* Start.storyboard in Resources */,
 				F964EE7F1FDE9B6900675EA4 /* Profile.storyboard in Resources */,
 				F964EE7E1FDE9B6900675EA4 /* Leaderboard.storyboard in Resources */,
@@ -1036,7 +1029,6 @@
 				F964EE8E1FE06BBC00675EA4 /* ChangeDataViewController.swift in Sources */,
 				F9DAF0E81FE3EAB500A8F606 /* ActivityOverviewViewController.swift in Sources */,
 				F964EE411FDE9B6900675EA4 /* ChooseActivityPageViewController.swift in Sources */,
-				F9DAF0F41FE431ED00A8F606 /* OverviewSportEditTableViewCell.swift in Sources */,
 				F964EE4B1FDE9B6900675EA4 /* TabBarController.swift in Sources */,
 				F9F0DFE81FE2F237009570FA /* CreateDataViewController.swift in Sources */,
 				F964EE431FDE9B6900675EA4 /* ChooseDataViewController.swift in Sources */,

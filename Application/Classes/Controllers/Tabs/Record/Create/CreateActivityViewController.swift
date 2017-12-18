@@ -34,8 +34,8 @@ class CreateActivityViewController: UIViewController {
     
     @objc func addBarButtonItemClicked() {
         // TODO: Check if part is complete, if not show error message
-        print("Adding part")
-        // Add newPart
+        print("Adding/updating part")
+        // If newPart doesn't exist, add
         dataManager.createdActivity.parts?.append(dataManager.newPart)
         // Reset newPart
         dataManager.newPart = Activity(isPartOfWorkout: true)
@@ -45,6 +45,8 @@ class CreateActivityViewController: UIViewController {
     
     @objc func cancelBarButtonItemClicked() {
         print("Cancelling adding part")
+        // Reset newPart
+        dataManager.newPart = Activity(isPartOfWorkout: true)
         dismiss(animated: true, completion: nil)
     }
     

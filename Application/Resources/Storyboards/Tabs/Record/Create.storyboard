@@ -128,6 +128,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="xrZ-z7-hFU" id="MFY-AF-4DC"/>
                         <outlet property="tableView" destination="nXR-7Z-gyk" id="lSo-2B-PQ1"/>
+                        <segue destination="MtM-nO-p8a" kind="show" identifier="toOverview" id="eG6-dU-lae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blk-5c-IhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,13 +459,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdy-WX-N9O">
-                                <rect key="frame" x="151" y="8" width="73" height="21"/>
+                                <rect key="frame" x="151" y="8" width="73" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-ga-Q1c" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="88" y="37" width="200" height="55"/>
+                                <rect key="frame" x="88" y="38" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GgA-fc-D8c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nVH-HV-XBI"/>
@@ -483,17 +484,17 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="titleTextFieldEditingDidEnd:" destination="q2L-BX-XoP" eventType="editingDidEnd" id="eS4-Vz-bva"/>
+                                    <action selector="titleTextFieldEditingChanged:" destination="q2L-BX-XoP" eventType="editingChanged" id="gly-A2-pvB"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summaryLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-RK-7RT">
-                                <rect key="frame" x="129" y="124" width="118.5" height="21"/>
+                                <rect key="frame" x="130.5" y="125" width="115.5" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
-                                <rect key="frame" x="0.0" y="153" width="375" height="270"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
+                                <rect key="frame" x="0.0" y="155" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="KYU-zf-ccv"/>
@@ -558,14 +559,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zQp-bs-3qh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Overzicht" id="nmi-UK-6Vc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Snp-Yh-BTF"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Overzicht" id="nmi-UK-6Vc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="addPartButton" destination="iHU-e3-wah" id="SVC-IZ-lhZ"/>
-                        <outlet property="cancelBarButton" destination="Snp-Yh-BTF" id="vXY-Od-UQg"/>
                         <outlet property="selectButton" destination="dq2-0b-6Wo" id="iiS-Vc-y5n"/>
                         <outlet property="summaryLabel" destination="i5Z-RK-7RT" id="3WX-P1-lmq"/>
                         <outlet property="summaryTableView" destination="hiX-dt-SVy" id="juO-Tm-HQ0"/>
@@ -587,7 +585,7 @@
                 <viewControllerPlaceholder storyboardName="Tabs" id="Vf1-J6-yIK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5y-Pz-fvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7310" y="133"/>
+            <point key="canvasLocation" x="7300" y="133"/>
         </scene>
         <!--Create-->
         <scene sceneID="IFh-NP-8vv">
@@ -595,7 +593,7 @@
                 <viewControllerPlaceholder storyboardName="Create" id="tEA-ay-YBx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcY-2t-7Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7310" y="227"/>
+            <point key="canvasLocation" x="7310" y="237"/>
         </scene>
         <!--Create Settings View Controller-->
         <scene sceneID="8Re-6G-wi3">
@@ -722,6 +720,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rq7-V7-f9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6058" y="182"/>
+        </scene>
+        <!--ActivityOverview-->
+        <scene sceneID="2DG-4m-GM3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Create" referencedIdentifier="ActivityOverview" id="MtM-nO-p8a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEZ-NR-TSH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3153" y="-69"/>
         </scene>
     </scenes>
     <resources>

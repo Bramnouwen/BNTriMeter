@@ -24,8 +24,17 @@ class DataManager: NSObject {
     var TMActivities: [TMActivity] = [] {
         didSet {
             TMActivities = TMActivities.sorted(by: { $0.tableViewId < $1.tableViewId })
+            TMCreateActivities = TMActivities.filter { $0.isPreset == false }
         }
     }
+    var TMCreateActivities: [TMActivity] = [] {
+        didSet {
+            TMCreateActivities = TMCreateActivities.sorted(by: { $0.tableViewId < $1.tableViewId })
+            guard let transition = try! db?.fetch(FetchRequest<TMActivity>().filtered(with: "title", equalTo: L10n.Activity.Triathlon.transition)).first else { return }
+            TMCreateActivities.append(transition)
+        }
+    }
+    
     var TMGoals: [TMGoal] = [] {
         didSet {
             TMGoals = TMGoals.sorted(by: { $0.id < $1.id })
@@ -133,19 +142,20 @@ class DataManager: NSObject {
         defaults.set(activityData, forKey: "\(id)")
     }
     
-    // Save created activity
+    // Create activity functions
     
-    func save(activity: Activity) {
+    func save(_ activity: Activity) {
         guard let db = db else { return }
         
         do {
             try db.operation { (context, save) throws -> Void in
                 
                 let new: TMActivity = try! context.create()
-                new.tableViewId = Int32(self.TMActivities.count)
+                new.tableViewId = Int32(activity.tableViewId!)
                 new.title = activity.title
                 new.iconName = "saved"
                 new.isPartOfWorkout = false
+                new.isPreset = true
                 
                 let newActivity = new.convert()
                 newActivity.parts = activity.parts
@@ -161,7 +171,7 @@ class DataManager: NSObject {
         }
     }
     
-    func update(activity: Activity) {
+    func update(_ activity: Activity) {
         guard let db = db else { return }
         
         do {
@@ -177,6 +187,26 @@ class DataManager: NSObject {
                 // Reset created activity
                 self.createdActivity = Activity()
                 
+                save()
+            }
+        } catch {
+            print("Something went wrong setting up core data (dataManager)")
+        }
+    }
+    
+    func delete(_ activity: Activity) {
+        guard let db = db else { return }
+        
+        do {
+            try db.operation { (context, save) throws -> Void in
+                
+                guard let old = try! context.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(activity.tableViewId!)")).first else { return }
+                
+                self.defaults.removeObject(forKey: "\(old.tableViewId)")
+                
+                // Reset created activity
+                self.createdActivity = Activity()
+                try context.remove(old)
                 save()
             }
         } catch {
@@ -318,6 +348,7 @@ class DataManager: NSObject {
                 walking.dataLayout = defaultDataLayout
                 walking.settingsLayout = defaultSettings
                 walking.isPartOfWorkout = false
+                walking.isPreset = false
                 
                 let walkingActivity = walking.convert()
                 walkingActivity.goal = noGoal?.convert()
@@ -331,6 +362,7 @@ class DataManager: NSObject {
                 running.dataLayout = defaultDataLayout
                 running.settingsLayout = defaultSettings
                 running.isPartOfWorkout = false
+                running.isPreset = false
                 
                 let runningActivity = running.convert()
                 runningActivity.goal = noGoal?.convert()
@@ -345,6 +377,7 @@ class DataManager: NSObject {
                 cycling.dataLayout = defaultDataLayout
                 cycling.settingsLayout = defaultSettings
                 cycling.isPartOfWorkout = false
+                cycling.isPreset = false
                 
                 let cyclingActivity = cycling.convert()
                 cyclingActivity.goal = noGoal?.convert()
@@ -358,6 +391,7 @@ class DataManager: NSObject {
                 swimming.dataLayout = defaultDataLayout
                 swimming.settingsLayout = defaultSettings
                 swimming.isPartOfWorkout = false
+                swimming.isPreset = false
                 
                 let swimmingActivity = swimming.convert()
                 swimmingActivity.goal = noGoal?.convert()
@@ -369,6 +403,7 @@ class DataManager: NSObject {
                 superSprint.title = L10n.Activity.Triathlon.superSprint
                 superSprint.iconName = "saved"
                 superSprint.isPartOfWorkout = false
+                superSprint.isPreset = true
                 
                 let superSprintActivity = superSprint.convert()
                 self.setTriValues(for: superSprintActivity, in: context, swim: 400, cycle: 10000, run: 2500)
@@ -380,6 +415,7 @@ class DataManager: NSObject {
                 sprint.title = L10n.Activity.Triathlon.sprint
                 sprint.iconName = "saved"
                 sprint.isPartOfWorkout = false
+                sprint.isPreset = true
                 
                 let sprintActivity = sprint.convert()
                 self.setTriValues(for: sprintActivity, in: context, swim: 750, cycle: 20000, run: 5000)
@@ -391,11 +427,20 @@ class DataManager: NSObject {
                 olympic.title = L10n.Activity.Triathlon.olympic
                 olympic.iconName = "saved"
                 olympic.isPartOfWorkout = false
+                olympic.isPreset = true
                 
                 let olympicActivity = olympic.convert()
                 self.setTriValues(for: olympicActivity, in: context, swim: 1500, cycle: 40000, run: 10000)
                 let olympicData = NSKeyedArchiver.archivedData(withRootObject: olympicActivity)
                 self.defaults.set(olympicData, forKey: "6")
+                
+                let transition: TMActivity = try! context.create()
+                transition.title = L10n.Activity.Triathlon.transition
+                transition.iconName = "transition"
+                transition.isPartOfWorkout = true
+                transition.isPreset = false
+                transition.dataLayout = defaultDataLayout
+                transition.settingsLayout = defaultSettings
                 
                 save()
             }

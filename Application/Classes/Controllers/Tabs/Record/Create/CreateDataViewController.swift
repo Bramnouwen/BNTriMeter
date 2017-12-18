@@ -62,6 +62,10 @@ class CreateDataViewController: GradientViewController {
         makeDefaultButton.setTitle("\(L10n.Choose.Default.make)\n\(title.lowercased())", for: .normal)
         makeDefaultButton.titleLabel?.textAlignment = .center
         
+        if dataManager.newPart.dataLayout == nil {
+            dataManager.newPart.dataLayout = dataManager.TMDefaultData?.convert()
+        }
+        
         currentData = dataManager.newPart.getOrderedData()
         tableView.reloadData()
     }

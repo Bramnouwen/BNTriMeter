@@ -23,6 +23,8 @@ class CreateSportViewController: GradientViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var rowToSelect: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,18 +48,29 @@ class CreateSportViewController: GradientViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        if let tableViewId = dataManager.newPart.tableViewId {
+            rowToSelect = IndexPath(row: tableViewId, section: 0)
+            tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
+            let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
+            cell?.accessoryType = .checkmark
+        }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.toOverview {
+            guard let navVC = segue.destination as? UINavigationController else { return }
+            guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
+            let values = sender as! (activity: Activity, editing: Bool, isExistingWorkout: Bool)
+            destVC.activity = values.activity
+            destVC.setEditingMode = values.editing
+            destVC.isExistingWorkout = values.isExistingWorkout
+        }
+    }
+    
     
 }
 
@@ -67,14 +80,14 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.TMActivities.count
+        return dataManager.TMCreateActivities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        if let title = dataManager.TMActivities[i].title, let iconName = dataManager.TMActivities[i].iconName {
+        if let title = dataManager.TMCreateActivities[i].title, let iconName = dataManager.TMCreateActivities[i].iconName {
             cell.activityTitle.text = title
             cell.activityIcon.image = UIImage(named: iconName)
         }
@@ -90,24 +103,18 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ActivityTableViewCell else { return }
-        cell.accessoryType = .checkmark
         print("Selected row: \(indexPath.row), section: \(indexPath.section)")
         let i = indexPath.row
         
-        
-        if selectedIsPreset(id: i) {
-            print("Loading preset (TODO: go to overview)")
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            updateNewPart(id: i)
-        }
-        
+        updateNewPart(id: i)
+        cell.accessoryType = .checkmark
     }
     
     func updateNewPart(id: Int) {
-        if let title = dataManager.TMActivities[id].title, let iconName = dataManager.TMActivities[id].iconName {
+        if let title = dataManager.TMCreateActivities[id].title, let iconName = dataManager.TMCreateActivities[id].iconName {
             dataManager.newPart.title = title
             dataManager.newPart.iconName = iconName
+            dataManager.newPart.tableViewId = id
             dataManager.newPart.partId = dataManager.createdActivity.parts?.count
             if dataManager.newPart.dataLayout == nil {
                 dataManager.newPart.dataLayout = dataManager.TMDefaultData?.convert()
@@ -118,12 +125,12 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
+    // Unused
     func selectedIsPreset(id: Int) -> Bool {
         if let selectedActivity = defaults.object(forKey: "\(id)") {
             let activityData = selectedActivity as! Data
             let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
             if activity.parts?.count != 0 {
-                dataManager.currentActivity = activity
                 return true
             } else {
                 return false

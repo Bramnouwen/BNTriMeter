@@ -38,6 +38,7 @@ extension TMActivity {
                                          dataLayout: newData,
                                          settingsLayout: newSettings,
                                          isPartOfWorkout: isPartOfWorkout,
+                                         isPreset: isPreset,
                                          partId: Int(partId),
                                          parts: newParts)
         
@@ -55,6 +56,7 @@ extension TMActivity {
                                        dataLayout: activity.dataLayout?.convert(),
                                        settingsLayout: activity.settingsLayout?.convert(),
                                        isPartOfWorkout: activity.isPartOfWorkout,
+                                       isPreset: activity.isPreset,
                                        partId: Int(activity.partId),
                                        parts: convertTMParts(activity.parts!)))
         }

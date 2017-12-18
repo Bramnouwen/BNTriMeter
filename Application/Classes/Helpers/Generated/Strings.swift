@@ -180,6 +180,10 @@ enum L10n {
   enum Create {
     /// Add part
     static let add = L10n.tr("Localizable", "Create.add")
+    /// Cancel
+    static let cancel = L10n.tr("Localizable", "Create.cancel")
+    /// Delete
+    static let delete = L10n.tr("Localizable", "Create.delete")
     /// Edit
     static let edit = L10n.tr("Localizable", "Create.edit")
     /// Save
@@ -190,6 +194,11 @@ enum L10n {
     static let summary = L10n.tr("Localizable", "Create.summary")
     /// Workout title
     static let title = L10n.tr("Localizable", "Create.title")
+
+    enum Add {
+      /// Add transition...
+      static let transition = L10n.tr("Localizable", "Create.add.transition")
+    }
 
     enum Title {
       /// Title

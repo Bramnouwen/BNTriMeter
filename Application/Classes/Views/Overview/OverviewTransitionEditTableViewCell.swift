@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Reusable
 
-class OverviewTransitionEditTableViewCell: UITableViewCell {
+class OverviewTransitionEditTableViewCell: UITableViewCell, NibReusable {
 
+    @IBOutlet weak var title: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

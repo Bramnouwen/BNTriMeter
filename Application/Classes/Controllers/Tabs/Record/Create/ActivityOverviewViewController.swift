@@ -16,8 +16,6 @@ class ActivityOverviewViewController: GradientViewController {
     let defaults = UserDefaults.standard
     let formatters = Formatters.shared
     
-    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleTextField: AnimatableTextField!
     
@@ -34,10 +32,6 @@ class ActivityOverviewViewController: GradientViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        cancelBarButton.target = self
-        cancelBarButton.action = #selector(cancelBarButtonClicked)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.Create.save, style: .plain, target: self, action: #selector(saveEditBarButtonClicked))
         
         titleLabel.text = L10n.Create.title
         titleTextField.placeholder = L10n.Create.Title.title
@@ -53,6 +47,7 @@ class ActivityOverviewViewController: GradientViewController {
         changePageLayout()
         summaryTableView.register(cellType: OverviewSportNormalTableViewCell.self)
         summaryTableView.register(cellType: OverviewTransitionNormalTableViewCell.self)
+        summaryTableView.register(cellType: OverviewTransitionEditTableViewCell.self)
         
         parts = activity.parts!
         
@@ -61,16 +56,24 @@ class ActivityOverviewViewController: GradientViewController {
         }
     }
 
-    @objc func cancelBarButtonClicked() {
-            // If editing -> stop editing and delete changes
+    @objc func cancelDeleteBarButtonClicked() {
+            // If editing -> delete workout
         if summaryTableView.isEditing {
-            summaryTableView.setEditing(false, animated: true)
-            changePageLayout()
+            if let db = dataManager.db,
+                let id = activity.tableViewId,
+                (try! db.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(id)")).first) != nil {
+                dataManager.delete(activity)
+                dataManager.fetchCoreData()
+                // Set current activity to running after deleting = default determined by myself
+                let runningData = defaults.object(forKey: "1") as! Data
+                let running = NSKeyedUnarchiver.unarchiveObject(with: runningData) as! Activity
+                dataManager.currentActivity = running
+            }
+            dataManager.createdActivity = Activity()
+            performSegue(withIdentifier: Segues.toMain, sender: nil)
         } else {
             // If not editing -> back to main screen without selecting
             performSegue(withIdentifier: Segues.toMain, sender: nil)
-            // Or just go back to previous?
-//            dismiss(animated: true, completion: nil)
         }
     }
 
@@ -79,6 +82,7 @@ class ActivityOverviewViewController: GradientViewController {
             // If saving completed
             if saveWorkout() {
                 // Stop editing
+                isExistingWorkout = true
                 summaryTableView.setEditing(false, animated: true)
                 changePageLayout()
             }
@@ -86,8 +90,6 @@ class ActivityOverviewViewController: GradientViewController {
             // Start editing
             summaryTableView.setEditing(true, animated: true)
             changePageLayout()
-            
-            cancelWorkout() // ?
         }
     }
     
@@ -96,6 +98,7 @@ class ActivityOverviewViewController: GradientViewController {
     func changePageLayout() {
         if summaryTableView.isEditing {
             // Editing
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: L10n.Create.delete, style: .plain, target: self, action: #selector(cancelDeleteBarButtonClicked))
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.Create.save, style: .plain, target: self, action: #selector(saveEditBarButtonClicked))
             addPartButton.isHidden = false
             addPartButton.isEnabled = true
@@ -106,6 +109,7 @@ class ActivityOverviewViewController: GradientViewController {
             titleTextField.isEnabled = true
         } else {
             // Not
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: L10n.Create.cancel, style: .plain, target: self, action: #selector(cancelDeleteBarButtonClicked))
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: L10n.Create.edit, style: .plain, target: self, action: #selector(saveEditBarButtonClicked))
             addPartButton.isHidden = true
             addPartButton.isEnabled = false
@@ -127,31 +131,28 @@ class ActivityOverviewViewController: GradientViewController {
         performSegue(withIdentifier: "unwindSegueToRecordVC", sender: nil)
     }
     
+    
     func saveWorkout() -> Bool {
         // If workout doesn't exist, save
         guard let title = titleTextField.text, title != "" else {
-            // Show error message: title is necessary
             print("We need a title for the workout")
             return false
         }
         
         if isExistingWorkout {
             print("Updating workout")
-            dataManager.update(activity: activity)
+            dataManager.update(activity)
         } else {
             print("Saving workout")
-            dataManager.save(activity: activity)
+            activity.tableViewId = dataManager.TMActivities.count
+            dataManager.save(activity)
         }
         
         dataManager.fetchCoreData()
         return true
     }
     
-    func cancelWorkout() {
-        
-    }
-    
-    @IBAction func titleTextFieldEditingDidEnd(_ sender: Any) {
+    @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
         activity.title = titleTextField.text ?? ""
     }
     
@@ -164,7 +165,6 @@ class ActivityOverviewViewController: GradientViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSource {
@@ -178,9 +178,13 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let i = indexPath.row
+        
+        // part exists
         let part = parts[i]
         if part.title == L10n.Activity.Triathlon.transition {
             let cell: OverviewTransitionNormalTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            
+            cell.title.text = part.title
             
             return cell
         } else {
@@ -188,7 +192,6 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
             
             cell.icon.image = UIImage(named: part.iconName!)
             cell.title.text = part.title
-//            let amountText = Formatters.min0max2Formatter.string(from: part.goal?.amount as! NSNumber)
             cell.amount.text = part.goal?.returnOverviewAmountString()
             
             return cell
@@ -201,5 +204,29 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
         print("Selected \(cell.title.text!)")
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let i = indexPath.row
+        if editingStyle == .delete {
+            if let parts = activity.parts, parts.indices.contains(i) {
+                activity.parts?.remove(at: i) // Delete part
+                recalculatePartIds()
+                //TODO: Fix this
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    self.summaryTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func recalculatePartIds() {
+        guard let parts = activity.parts else { return }
+        var newParts: [Activity] = []
+        for (index, part) in parts.enumerated() {
+            part.partId = index
+            newParts.append(part)
+        }
+        activity.parts = newParts
+        self.parts = newParts
+    }
     
 }

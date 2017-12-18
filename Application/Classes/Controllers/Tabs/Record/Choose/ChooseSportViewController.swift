@@ -25,6 +25,8 @@ class ChooseSportViewController: GradientViewController {
     @IBOutlet weak var createWorkoutButton: AnimatableButton!
     @IBOutlet weak var createWorkoutDescriptionLabel: UILabel!
     
+    var rowToSelect: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +52,9 @@ class ChooseSportViewController: GradientViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let activity = dataManager.currentActivity, let tableViewId = activity.tableViewId {
-            // TODO: Fix checkmark on load
-            let rowToSelect = IndexPath(row: tableViewId, section: 0)
+            rowToSelect = IndexPath(row: tableViewId, section: 0)
             tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
-            let cell = tableView.cellForRow(at: rowToSelect) as? ActivityTableViewCell
+            let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
             cell?.accessoryType = .checkmark
         }
     }
@@ -100,6 +101,10 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
             cell.activityIcon.image = UIImage(named: iconName)
         }
         
+        if indexPath == rowToSelect {
+            cell.accessoryType = .checkmark
+        }
+        
         return cell
     }
     
@@ -117,7 +122,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
             let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
             performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false, isExistingWorkout: true))
         } else {
-            if dataManager.currentActivity.isPreset() {
+            if dataManager.currentActivity.isPreset {
                 dataManager.getCurrentActivityBy(id: i)
             } else {
                 updateCurrentActivity(id: i)
@@ -138,7 +143,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     func selectedIsPreset(id: Int) -> Bool {
         if let activityData = defaults.object(forKey: "\(id)") as? Data {
             let activity = NSKeyedUnarchiver.unarchiveObject(with: activityData) as! Activity
-            if activity.parts?.count != 0 {
+            if activity.isPreset {
                 return true
             } else {
                 return false

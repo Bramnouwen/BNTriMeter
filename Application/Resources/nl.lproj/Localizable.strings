@@ -30,9 +30,12 @@
 "Create.title.title" = "Titel";
 "Create.summary" = "Activiteit samenvatting";
 "Create.add" = "Voeg deel toe";
+"Create.add.transition" = "Voeg transitie toe...";
 "Create.select" = "Selecteer";
 "Create.save" = "Bewaar";
 "Create.edit" = "Wijzig";
+"Create.cancel" = "Annuleer";
+"Create.delete" = "Verwijder";
 
 // Login
 "Login.description" = "Log in met je TriMeter inloggegevens.";
