@@ -118,6 +118,16 @@ class DataManager: NSObject {
     
     // Create/update/delete activity
     
+    func activityExists(_ activity: Activity) -> Bool {
+        guard let id = activity.tableViewId else {
+            return false
+        }
+        guard (try! db?.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(id)")).first) != nil else {
+            return false
+        }
+        return true
+    }
+    
     func save(_ activity: Activity) {
         guard let db = db else { return }
         

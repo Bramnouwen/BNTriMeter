@@ -56,6 +56,13 @@ class ActivityOverviewViewController: GradientViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataManager.createdActivity = activity
+        isExistingWorkout = dataManager.activityExists(activity)
+        print("Workout exists: \(isExistingWorkout)")
+    }
+    
     @objc func cancelDeleteBarButtonClicked() {
         // If editing -> delete workout
         if summaryTableView.isEditing {
