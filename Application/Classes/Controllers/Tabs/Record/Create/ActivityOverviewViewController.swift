@@ -76,6 +76,7 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
             if dataManager.unarchive(key: "currentActivity").tableViewId == activity.tableViewId {
                 dataManager.archive(activity: activity, key: "currentActivity")
             }
+            dataManager.createdActivity = Activity() // Leaving overview, reset createdActivity
             performSegue(withIdentifier: Segues.toMain, sender: nil)
         }
     }
@@ -143,12 +144,27 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
             return false
         }
         
+        if isExistingWorkout == false && dataManager.titleExists(activity) {
+            print("Title already exists, choose another")
+            showTitleExistsAlert()
+            return false
+        }
+        
+        guard activity.parts?.count != 0 else {
+            print("You need atleast 1 part")
+            showMissingPartAlert()
+            return false
+        }
+        
         if isExistingWorkout {
             print("Updating workout")
             dataManager.update(activity)
         } else {
             print("Saving workout")
-            activity.tableViewId = dataManager.TMActivities.count
+            // FIXME: Don't do it like this...
+            let tableViewId = defaults.integer(forKey: "nextTableViewId")
+            activity.tableViewId = tableViewId
+            defaults.set(tableViewId+1, forKey: "nextTableViewId")
             dataManager.save(activity)
         }
         
@@ -198,13 +214,13 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
     }
     
     func showTitleMissingAlert() {
-        let incompleteAppearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
+        let appearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
                                                               kTextFont: UIFont(name: "Cabin-Regular", size: 16)!,
                                                               kButtonFont: UIFont(name: "Cabin-Bold", size: 16)!,
                                                               showCloseButton: false)
-        let incomplete = SCLAlertView(appearance: incompleteAppearance)
-        let titleTextField = incomplete.addTextField(L10n.Alert.Title.Incomplete.title)
-        incomplete.addButton(L10n.Alert.Title.Incomplete.done, action: {
+        let alert = SCLAlertView(appearance: appearance)
+        let titleTextField = alert.addTextField(L10n.Alert.Title.Incomplete.title)
+        alert.addButton(L10n.Alert.Title.Incomplete.done, action: {
             self.activity.title = (titleTextField.text?.trimmingCharacters(in: .whitespaces))!
             self.titleTextField.text = self.activity.title
             if self.saveWorkout() {
@@ -214,11 +230,40 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
                 self.changePageLayout()
             }
         })
-        incomplete.showError(L10n.Alert.Title.Incomplete.title, subTitle: L10n.Alert.Title.Incomplete.description)
+        alert.showError(L10n.Alert.Title.Incomplete.title, subTitle: L10n.Alert.Title.Incomplete.description)
     }
     
     func showTitleExistsAlert() {
-        
+        let appearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
+                                                    kTextFont: UIFont(name: "Cabin-Regular", size: 16)!,
+                                                    kButtonFont: UIFont(name: "Cabin-Bold", size: 16)!,
+                                                    showCloseButton: false)
+        let alert = SCLAlertView(appearance: appearance)
+        let titleTextField = alert.addTextField(L10n.Alert.Title.Incomplete.title)
+        alert.addButton(L10n.Alert.Title.Incomplete.done, action: {
+            self.activity.title = (titleTextField.text?.trimmingCharacters(in: .whitespaces))!
+            self.titleTextField.text = self.activity.title
+            if self.saveWorkout() {
+                // Stop editing
+                self.isExistingWorkout = true
+                self.summaryTableView.setEditing(false, animated: true)
+                self.changePageLayout()
+            }
+        })
+        alert.showError("Bestaat al", subTitle: "Er bestaat al een activiteit met deze titel, kies een andere")
+    }
+    
+    func showMissingPartAlert() {
+        // TODO: Give option to delete in alert or go back and add a part
+        let appearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
+                                                              kTextFont: UIFont(name: "Cabin-Regular", size: 16)!,
+                                                              kButtonFont: UIFont(name: "Cabin-Bold", size: 16)!,
+                                                              showCloseButton: false)
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("Oké", action: {
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.showError("Leeg", subTitle: "Voeg minstens 1 deel toe aan de activiteit")
     }
 }
 

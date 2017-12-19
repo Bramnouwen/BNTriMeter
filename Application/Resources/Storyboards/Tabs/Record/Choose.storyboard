@@ -26,17 +26,17 @@
             <objects>
                 <viewController id="Rq2-8R-t1v" customClass="ChooseActivityViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJU-FM-dSc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGL-wO-OKh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <connections>
                                     <segue destination="jcn-xp-ZJC" kind="embed" id="hRx-IV-jJB"/>
                                 </connections>
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xAl-Xj-Er8">
-                                <rect key="frame" x="168" y="517" width="39" height="37"/>
+                                <rect key="frame" x="168" y="566" width="39" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
@@ -60,7 +60,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="containerView" destination="FGL-wO-OKh" id="c2L-Eu-iF9"/>
                         <outlet property="doneBarButtonItem" destination="gsh-Se-uxs" id="8vX-SL-UkZ"/>
@@ -85,23 +84,23 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseActivityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eBy-7y-yp6" customClass="ChooseSportViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rDC-Wc-mKC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-VB-Xsc">
-                                <rect key="frame" x="32" y="16" width="311" height="21"/>
+                                <rect key="frame" x="32" y="16" width="311" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZw-8G-SLe">
-                                <rect key="frame" x="0.0" y="77" width="375" height="345"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="392"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Bermuda"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwy-yJ-btL" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="454" width="343" height="50"/>
+                                <rect key="frame" x="16" y="502" width="343" height="50"/>
                                 <color key="backgroundColor" name="Amaranth"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9OI-pz-Bh4"/>
@@ -120,7 +119,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWj-YK-jvm">
-                                <rect key="frame" x="32" y="508" width="311" height="14"/>
+                                <rect key="frame" x="32" y="556" width="311" height="15"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -146,7 +145,6 @@
                         <viewLayoutGuide key="safeArea" id="dxJ-Ag-Abc"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="createWorkoutButton" destination="uwy-yJ-btL" id="k0d-Jk-ZcE"/>
                         <outlet property="createWorkoutDescriptionLabel" destination="TWj-YK-jvm" id="GAB-pE-JZv"/>
@@ -181,17 +179,17 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseGoalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XeS-L5-27x" customClass="ChooseGoalViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g2m-zK-Bph">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW5-kx-b66">
-                                <rect key="frame" x="31" y="16" width="313" height="21"/>
+                                <rect key="frame" x="31" y="16" width="313" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiB-zR-Usy">
-                                <rect key="frame" x="0.0" y="122" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="146.5" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Bermuda"/>
                                 <constraints>
@@ -200,7 +198,7 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="423-V6-pEL" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="454" width="343" height="50"/>
+                                <rect key="frame" x="16" y="502" width="343" height="50"/>
                                 <color key="backgroundColor" name="Amaranth"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7VL-3Y-IQH"/>
@@ -219,22 +217,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpj-Ed-gyB">
-                                <rect key="frame" x="32" y="508" width="311" height="14"/>
+                                <rect key="frame" x="32" y="556" width="311" height="15"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1a-hM-JCT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EA-C0-fzb">
-                                        <rect key="frame" x="32" y="247.5" width="311" height="59.5"/>
+                                        <rect key="frame" x="32" y="281" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQc-qj-R0M">
-                                        <rect key="frame" x="139" y="322.5" width="97" height="30"/>
+                                        <rect key="frame" x="142" y="338" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -277,7 +275,6 @@
                         <viewLayoutGuide key="safeArea" id="d0h-7R-o5i"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="createWorkoutButton" destination="423-V6-pEL" id="Fne-Lf-Kab"/>
                         <outlet property="createWorkoutDescriptionLabel" destination="qpj-Ed-gyB" id="Q2u-T0-mx7"/>
@@ -302,41 +299,41 @@
             <objects>
                 <viewController id="7MR-TU-wIW" customClass="AdjustGoalViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4E-lB-YRF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-gi-PHZ">
-                                <rect key="frame" x="32" y="16" width="311" height="21"/>
+                                <rect key="frame" x="32" y="16" width="311" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-DO-byh">
-                                <rect key="frame" x="48" y="41" width="279" height="16.5"/>
+                                <rect key="frame" x="48" y="42" width="279" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-eU-aK0">
-                                <rect key="frame" x="170.5" y="114" width="34.5" height="21"/>
+                                <rect key="frame" x="171.5" y="135" width="33" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifv-hn-5dJ">
-                                <rect key="frame" x="172" y="259.5" width="32.5" height="43"/>
+                                <rect key="frame" x="172" y="286.5" width="31" height="65"/>
                                 <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUh-hV-p1J">
-                                <rect key="frame" x="132.5" y="139" width="111.5" height="116.5"/>
+                                <rect key="frame" x="124" y="161" width="127" height="121.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="100"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQz-R3-1lJ">
-                                <rect key="frame" x="32.5" y="175" width="44" height="44"/>
+                                <rect key="frame" x="32.5" y="199.5" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="dlU-oK-Yzi"/>
                                     <constraint firstAttribute="height" constant="44" id="wzI-mB-gc6"/>
@@ -347,7 +344,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lO-ta-n5y">
-                                <rect key="frame" x="299.5" y="175" width="44" height="44"/>
+                                <rect key="frame" x="299.5" y="199.5" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="b3D-Xz-h3f"/>
                                     <constraint firstAttribute="width" constant="44" id="wsi-cG-dEv"/>
@@ -358,13 +355,13 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sj-w2-5ui">
-                                <rect key="frame" x="0.0" y="310" width="375" height="170"/>
+                                <rect key="frame" x="0.0" y="359" width="375" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="rsR-52-BBJ"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7M-DX-T5Z" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="488" width="343" height="50"/>
+                                <rect key="frame" x="16" y="537" width="343" height="50"/>
                                 <color key="backgroundColor" name="Bermuda"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="K6a-qK-hCR"/>
@@ -432,7 +429,7 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n5M-SG-DlL" customClass="ChooseDataViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cl6-qL-fLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMD-gE-T47">
@@ -448,7 +445,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="anO-Tp-Dki">
-                                <rect key="frame" x="0.0" y="122" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="146.5" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Bermuda"/>
                                 <constraints>
@@ -457,7 +454,7 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-oi-vfw">
-                                <rect key="frame" x="32" y="442" width="311" height="60"/>
+                                <rect key="frame" x="32" y="466.5" width="311" height="60"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SQW-MS-gsk">
                                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="60"/>
@@ -482,10 +479,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9l-Ar-0GS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMx-wn-NkZ">
-                                        <rect key="frame" x="142" y="314.5" width="91" height="31"/>
+                                        <rect key="frame" x="142" y="339" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -495,7 +492,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-lF-jgR">
-                                        <rect key="frame" x="32" y="257" width="311" height="41.5"/>
+                                        <rect key="frame" x="32" y="281.5" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -535,7 +532,6 @@
                         <viewLayoutGuide key="safeArea" id="hhE-lC-7X0"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="dataDescriptionLabel" destination="WsT-5a-LSS" id="AQb-uM-Vfc"/>
                         <outlet property="descriptionLabel" destination="NMD-gE-T47" id="BR3-eD-5za"/>
@@ -560,11 +556,11 @@
             <objects>
                 <viewController id="nIM-ww-AWU" customClass="ChangeDataViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8e-gX-qwy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-Oa-WtR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -590,7 +586,7 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qgy-4K-mLm" customClass="ChooseSettingsViewController" customModule="TriMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lak-9J-Pfu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNg-U7-CJZ">
@@ -600,7 +596,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-BN-g1T">
-                                <rect key="frame" x="0.0" y="122" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="146.5" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Bermuda"/>
                                 <constraints>
@@ -609,7 +605,7 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="DQ0-H8-tdg">
-                                <rect key="frame" x="32" y="442" width="311" height="60"/>
+                                <rect key="frame" x="32" y="466.5" width="311" height="60"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="h8D-WV-S4q">
                                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="60"/>
@@ -634,16 +630,16 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-eI-lFd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP5-af-N6P">
-                                        <rect key="frame" x="32" y="256.5" width="311" height="41.5"/>
+                                        <rect key="frame" x="32" y="281" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9M-ld-rWO">
-                                        <rect key="frame" x="141.5" y="314" width="91" height="31"/>
+                                        <rect key="frame" x="141.5" y="338.5" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -683,7 +679,6 @@
                         <viewLayoutGuide key="safeArea" id="m3S-6r-vS8"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="yNg-U7-CJZ" id="g0H-qf-mhl"/>
                         <outlet property="loadDefaultButton" destination="h8D-WV-S4q" id="n5T-wL-DKF"/>

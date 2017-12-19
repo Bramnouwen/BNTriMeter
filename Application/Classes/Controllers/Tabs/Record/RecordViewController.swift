@@ -190,7 +190,7 @@ class RecordViewController: GradientViewController {
         if let activitySettings = activity.settingsLayout {
             emptySettings = activitySettings
         } else if let parts = activity.parts {
-            emptySettings = parts[0].settingsLayout
+            emptySettings = parts.first?.settingsLayout
         }
         guard let settings = emptySettings else { return }
         

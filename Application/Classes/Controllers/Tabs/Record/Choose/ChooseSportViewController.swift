@@ -58,12 +58,18 @@ class ChooseSportViewController: GradientViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let tableViewId = activity.tableViewId {
-            rowToSelect = IndexPath(row: tableViewId, section: 0)
-            tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
-            let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
-            cell?.accessoryType = .checkmark
+        // Can't work anymore due to rowId not being equal to an activity's tableViewId
+        var tableViewId = 0
+        for (index, tmActivity) in dataManager.TMActivities.enumerated() {
+            if tmActivity.title == activity.title {
+                tableViewId = index
+            }
+            
         }
+        rowToSelect = IndexPath(row: tableViewId, section: 0)
+        tableView.selectRow(at: rowToSelect, animated: true, scrollPosition: .none)
+        let cell = tableView.cellForRow(at: rowToSelect!) as? ActivityTableViewCell
+        cell?.accessoryType = .checkmark
     }
     
     @IBAction func createWorkoutButtonClicked(_ sender: Any) {
@@ -123,7 +129,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ActivityTableViewCell else { return }
-        let i = indexPath.row
+        let i = Int(cell.TMActivity.tableViewId)
         
         if selectedIsPreset(id: i) {
             let activity = dataManager.unarchive(key: "\(i)")

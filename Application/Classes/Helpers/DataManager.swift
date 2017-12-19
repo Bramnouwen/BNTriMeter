@@ -81,6 +81,8 @@ class DataManager: NSObject {
         }
         setDataInSections()
         
+        // FIXME: Don't do it like this...
+        defaults.register(defaults: ["nextTableViewId": TMActivities.count])
     }
     
     // Initializing CoreDataDefaultStorage
@@ -129,6 +131,17 @@ class DataManager: NSObject {
         return true
     }
     
+    func titleExists(_ activity: Activity) -> Bool {
+        guard (try! db?.fetch(FetchRequest<TMActivity>().filtered(with: "title", equalTo: activity.title)).first) != nil else {
+            return false
+        }
+        return true
+    }
+    
+    func resetCreatedActivity() {
+        createdActivity = Activity()
+    }
+    
     func save(_ activity: Activity) {
         guard let db = db else { return }
         
@@ -146,8 +159,7 @@ class DataManager: NSObject {
                 newActivity.parts = activity.parts
                 self.archive(activity: newActivity, key: "\(newActivity.tableViewId!)")
                 
-                // Reset created activity
-                self.createdActivity = Activity()
+                self.resetCreatedActivity()
                 
                 save()
             }
@@ -169,8 +181,7 @@ class DataManager: NSObject {
                 oldActivity.parts = activity.parts
                 self.archive(activity: oldActivity, key: "\(oldActivity.tableViewId!)")
                 
-                // Reset created activity
-                self.createdActivity = Activity()
+                self.resetCreatedActivity()
                 
                 save()
             }
@@ -189,8 +200,7 @@ class DataManager: NSObject {
                 
                 self.defaults.removeObject(forKey: "\(old.tableViewId)")
                 
-                // Reset created activity
-                self.createdActivity = Activity()
+                self.resetCreatedActivity()
                 try context.remove(old)
                 save()
             }
