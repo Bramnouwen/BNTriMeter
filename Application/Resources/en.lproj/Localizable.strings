@@ -5,6 +5,14 @@
   Created by Bram Nouwen on 6/11/17.
   Copyright © 2017 Bram Nouwen. All rights reserved.
 */
+// Alerts
+"Alert.part.incomplete.title" = "Incomplete";
+"Alert.part.incomplete.description" = "Make sure you chose a sport and a goal for this part.";
+"Alert.part.incomplete.done" = "Will do";
+
+"Alert.title.incomplete.title" = "Title";
+"Alert.title.incomplete.done" = "Done";
+"Alert.title.incomplete.description" = "Give the activity a title";
 
 // Common
 "Common.continueText" = "Continue";

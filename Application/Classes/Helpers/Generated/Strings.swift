@@ -73,6 +73,33 @@ enum L10n {
     }
   }
 
+  enum Alert {
+
+    enum Part {
+
+      enum Incomplete {
+        /// Make sure you chose a sport and a goal for this part.
+        static let description = L10n.tr("Localizable", "Alert.part.incomplete.description")
+        /// Will do
+        static let done = L10n.tr("Localizable", "Alert.part.incomplete.done")
+        /// Incomplete
+        static let title = L10n.tr("Localizable", "Alert.part.incomplete.title")
+      }
+    }
+
+    enum Title {
+
+      enum Incomplete {
+        /// Give the activity a title
+        static let description = L10n.tr("Localizable", "Alert.title.incomplete.description")
+        /// Done
+        static let done = L10n.tr("Localizable", "Alert.title.incomplete.done")
+        /// Title
+        static let title = L10n.tr("Localizable", "Alert.title.incomplete.title")
+      }
+    }
+  }
+
   enum Choose {
     /// First change to a sport or go to the overview of the selected preset!
     static let obstruction = L10n.tr("Localizable", "Choose.obstruction")

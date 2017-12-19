@@ -12,6 +12,7 @@
 import UIKit
 import IBAnimatable
 import SugarRecord
+import SCLAlertView
 
 class ActivityOverviewViewController: GradientViewController, UIActionSheetDelegate {
     
@@ -136,8 +137,9 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
     
     func saveWorkout() -> Bool {
         // If workout doesn't exist, save
-        guard let title = titleTextField.text, title != "" else {
+        guard activity.title != "" else {
             print("We need a title for the workout")
+            showTitleMissingAlert()
             return false
         }
         
@@ -169,7 +171,7 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
         }
     }
     
-    // MARK: - Action sheets
+    // MARK: - Alerts
     
     func showDeleteActionSheet() {
         let alert = UIAlertController(title: nil, message: L10n.Create.Delete.confirmation, preferredStyle: UIAlertControllerStyle.actionSheet)
@@ -193,6 +195,30 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
         alert.addAction(delete)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func showTitleMissingAlert() {
+        let incompleteAppearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
+                                                              kTextFont: UIFont(name: "Cabin-Regular", size: 16)!,
+                                                              kButtonFont: UIFont(name: "Cabin-Bold", size: 16)!,
+                                                              showCloseButton: false)
+        let incomplete = SCLAlertView(appearance: incompleteAppearance)
+        let titleTextField = incomplete.addTextField(L10n.Alert.Title.Incomplete.title)
+        incomplete.addButton(L10n.Alert.Title.Incomplete.done, action: {
+            self.activity.title = (titleTextField.text?.trimmingCharacters(in: .whitespaces))!
+            self.titleTextField.text = self.activity.title
+            if self.saveWorkout() {
+                // Stop editing
+                self.isExistingWorkout = true
+                self.summaryTableView.setEditing(false, animated: true)
+                self.changePageLayout()
+            }
+        })
+        incomplete.showError(L10n.Alert.Title.Incomplete.title, subTitle: L10n.Alert.Title.Incomplete.description)
+    }
+    
+    func showTitleExistsAlert() {
+        
     }
 }
 

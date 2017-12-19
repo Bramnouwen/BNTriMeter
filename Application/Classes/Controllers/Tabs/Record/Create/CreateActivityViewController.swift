@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class CreateActivityViewController: UIViewController {
 
@@ -35,15 +36,19 @@ class CreateActivityViewController: UIViewController {
     }
     
     @objc func addBarButtonItemClicked() {
-        // TODO: Check if part is complete, if not show error message
-        print("Adding/updating part")
+        let newPart = dataManager.newPart
+        if newPart.title == "" || newPart.goal == nil && newPart.title != L10n.Activity.Triathlon.transition {
+            showIncompleteAlert()
+            return
+        }
+        
         if dataManager.existingPart == false {
             // If newPart doesn't exist, add
-            dataManager.createdActivity.parts?.append(dataManager.newPart)
+            dataManager.createdActivity.parts?.append(newPart)
         } else {
             // Part already exists, update accordingly
             guard let i = indexOfPartToUpdate else { return }
-            dataManager.createdActivity.parts?[i] = dataManager.newPart
+            dataManager.createdActivity.parts?[i] = newPart
         }
         resetNewPart()
         // Go to overview
@@ -59,6 +64,18 @@ class CreateActivityViewController: UIViewController {
     func resetNewPart() {
         dataManager.existingPart = false
         dataManager.newPart = Activity(isPartOfWorkout: true)
+    }
+    
+    func showIncompleteAlert() {
+        let incompleteAppearance = SCLAlertView.SCLAppearance(kTitleFont: UIFont(name: "Cabin-Bold", size: 20)!,
+                                                              kTextFont: UIFont(name: "Cabin-Regular", size: 16)!,
+                                                              kButtonFont: UIFont(name: "Cabin-Bold", size: 16)!,
+                                                              showCloseButton: false)
+        let incomplete = SCLAlertView(appearance: incompleteAppearance)
+        incomplete.addButton(L10n.Alert.Part.Incomplete.done, action: {
+            incomplete.dismiss(animated: true, completion: nil)
+        })
+        incomplete.showError(L10n.Alert.Part.Incomplete.title, subTitle: L10n.Alert.Part.Incomplete.description)
     }
     
     // MARK: - Navigation
