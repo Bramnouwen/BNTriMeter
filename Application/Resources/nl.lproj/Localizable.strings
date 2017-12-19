@@ -26,9 +26,9 @@
 "Connect.or" = "of";
 
 // Create
-"Create.title" = "Activiteit titel";
+"Create.title" = "Titel";
 "Create.title.title" = "Titel";
-"Create.summary" = "Activiteit samenvatting";
+"Create.summary" = "Samenvatting";
 "Create.add" = "Voeg deel toe";
 "Create.add.transition" = "Voeg transitie toe...";
 "Create.select" = "Selecteer";
@@ -36,6 +36,15 @@
 "Create.edit" = "Wijzig";
 "Create.cancel" = "Annuleer";
 "Create.delete" = "Verwijder";
+"Create.delete.confirmation" = "Ben je zeker dat je deze activiteit wilt verwijderen?";
+
+"Create.sport.description.one" = "Kies een ";
+"Create.sport.description.two" = "sport ";
+"Create.sport.description.three" = "of ";
+"Create.sport.description.four" = "transitie ";
+"Create.sport.description.five" = "voor dit deel.";
+
+"Create.obstruction.transition" = "Een transitie heeft geen doel nodig, blader verder voor de gegevens en instellingen!";
 
 // Login
 "Login.description" = "Log in met je TriMeter inloggegevens.";
@@ -44,6 +53,11 @@
 "Login.errorTwo" = "Nog steeds mis, probeer een derde keer?";
 "Login.errorThree" = "Nope, klik maar op \"Vergeten?\".";
 "Login.forgotError" = "Probeer op zijn minst 1 keer in te loggen...";
+
+// Logout
+"Logout.logout" = "Uitloggen";
+"Logout.cancel" = "Annuleer";
+"Logout.confirmation" = "Ben je zeker dat je wilt uitloggen?";
 
 // Register
 "Register.descriptionOne" = "Om te registreren hebben we wat informatie nodig, te beginnen met een\ne-mailadres en wachtwoord.";
@@ -93,8 +107,9 @@
 "Choose.default.load" = "Laad standaard voor";
 "Choose.default.make" = "Maak standaard voor";
 
-"Choose.goal.description.one" = "Wat wil je bereiken met ";
-"Choose.goal.description.two" = "?";
+"Choose.goal.description.one" = "Wat wil je bereiken";
+"Choose.goal.description.two" = " met \n";
+"Choose.goal.description.three" = "?";
 
 "Choose.settings.description.one" = " voor ";
 "Choose.settings.description.two" = ".\n";
@@ -105,6 +120,9 @@
 "Choose.sport.description.three" = "of kies een ";
 "Choose.sport.description.four" = "preset";
 "Choose.sport.description.five" = "!";
+
+"Choose.obstruction" = "Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!";
+"Choose.obstruction.toOverview" = "Naar overzicht";
 
 // Common
 "Common.continueText" = "Volgende";
@@ -254,7 +272,8 @@
 
 // Record
 "Record.activity" = "Activiteit";
-"Record.button" = "Alles in orde? Begin!";
+//"Record.button" = "Alles in orde? Begin!"; // TODO: change back
+"Record.button" = "Start op Apple Watch"; // TODO: delete
 "Record.data" = "Gegevens";
 "Record.goal" = "Doel";
 

@@ -55,8 +55,10 @@ class CreateDataViewController: GradientViewController {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.two))
-            descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.three))
+        } else if newPart.title != "" {
+            descriptionText.append(NSMutableAttributedString(string: ".\n"))
         }
+        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Data.Description.three))
         
         descriptionLabel.attributedText = descriptionText
         dataDescriptionLabel.text = L10n.Choose.Data.Description.data

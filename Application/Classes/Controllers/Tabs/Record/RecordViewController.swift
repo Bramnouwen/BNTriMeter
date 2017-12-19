@@ -207,6 +207,21 @@ class RecordViewController: GradientViewController {
         turnSettingOnOff(bool: autoPauseOn, button: autoPauseButton, imageOn: #imageLiteral(resourceName: "autopause-on"), imageOff: #imageLiteral(resourceName: "autopause-off"))
         turnSettingOnOff(bool: audioOn, button: audioButton, imageOn: #imageLiteral(resourceName: "audio-on"), imageOff: #imageLiteral(resourceName: "audio-off"))
         turnSettingOnOff(bool: hapticOn, button: hapticButton, imageOn: #imageLiteral(resourceName: "haptic-on"), imageOff: #imageLiteral(resourceName: "haptic-off"))
+        
+        // Disable if preset
+        if activity.isPreset {
+            setSettingsEnabled(to: false)
+        } else {
+            setSettingsEnabled(to: true)
+        }
+    }
+    
+    func setSettingsEnabled(to bool: Bool) {
+        liveLocationButton.isEnabled = bool
+        countdownButton.isEnabled = bool
+        autoPauseButton.isEnabled = bool
+        audioButton.isEnabled = bool
+        hapticButton.isEnabled = bool
     }
     
     func setText() {

@@ -88,8 +88,12 @@ extension Activity {
             return goal.previousAmountAsString()
         } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
             return L10n.Goal.triathlon
-        } else if let parts = parts, parts.count != 0 {
-            return L10n.Goal.multiple
+        } else if let parts = parts {
+            if parts.count == 1 {
+                return parts[0].getGoalString()
+            } else {
+                return L10n.Goal.multiple
+            }
         } else {
             return L10n.Goal.Nothing.title
         }
@@ -100,8 +104,12 @@ extension Activity {
             return goal.iconName
         } else if title.contains(L10n.Activity.triathlon.lowercased()) == true {
             return "finishFlag"
-        } else if let parts = parts, parts.count != 0 {
-            return "multipleGoals"
+        } else if let parts = parts {
+            if parts.count == 1 {
+                return parts[0].getGoalIconString()
+            } else {
+                return "multipleGoals"
+            }
         } else {
             return "nothing"
         }

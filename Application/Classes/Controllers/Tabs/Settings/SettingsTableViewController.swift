@@ -64,12 +64,12 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
     
     func settingsViewController(_ sender: IASKAppSettingsViewController!, buttonTappedFor specifier: IASKSpecifier!){
         if specifier.key() == "LogoutButtonAction" {
-            let alert = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.actionSheet)
+            let alert = UIAlertController(title: nil, message: L10n.Logout.confirmation, preferredStyle: UIAlertControllerStyle.actionSheet)
             
-            let cancel: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancel: UIAlertAction = UIAlertAction(title: L10n.Logout.cancel, style: .cancel, handler: nil)
             alert.addAction(cancel)
             
-            let logout: UIAlertAction = UIAlertAction(title: "Logout", style: .destructive, handler: { (action) -> Void in
+            let logout: UIAlertAction = UIAlertAction(title: L10n.Logout.logout, style: .destructive, handler: { (action) -> Void in
                 do {
                     try Auth.auth().signOut()
                     FBSDKAccessToken.setCurrent(nil)

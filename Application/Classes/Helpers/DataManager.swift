@@ -432,7 +432,7 @@ class DataManager: NSObject {
     func setTriValues(for triathlon: Activity, in context: Context, swim: Int, cycle: Int, run: Int) {
         let distanceGoal = try! context.fetch(FetchRequest<TMGoal>().filtered(with: "title", equalTo: L10n.Goal.Distance.title)).first
         
-        let triSwim = Activity(tableViewId: nil,
+        let triSwim = Activity(tableViewId: 3,
                                title: L10n.Activity.swimming,
                                iconName: "swimming",
                                goal: distanceGoal?.convert(),
@@ -443,7 +443,7 @@ class DataManager: NSObject {
                                parts: nil)
         triSwim.goal?.amount = swim
         
-        let T1 = Activity(tableViewId: nil,
+        let T1 = Activity(tableViewId: 4,
                           title: L10n.Activity.Triathlon.transition,
                           iconName: nil,
                           goal: nil,
@@ -453,7 +453,7 @@ class DataManager: NSObject {
                           partId: 2,
                           parts: nil)
         
-        let triCycle = Activity(tableViewId: nil,
+        let triCycle = Activity(tableViewId: 2,
                                title: L10n.Activity.cycling,
                                iconName: "cycling",
                                goal: distanceGoal?.convert(),
@@ -464,7 +464,7 @@ class DataManager: NSObject {
                                parts: nil)
         triCycle.goal?.amount = cycle
 
-        let T2 = Activity(tableViewId: nil,
+        let T2 = Activity(tableViewId: 4,
                           title: L10n.Activity.Triathlon.transition,
                           iconName: nil,
                           goal: nil,
@@ -474,7 +474,7 @@ class DataManager: NSObject {
                           partId: 4,
                           parts: nil)
         
-        let triRun = Activity(tableViewId: nil,
+        let triRun = Activity(tableViewId: 1,
                               title: L10n.Activity.running,
                               iconName: "running",
                               goal: distanceGoal?.convert(),

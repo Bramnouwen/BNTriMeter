@@ -74,6 +74,8 @@ enum L10n {
   }
 
   enum Choose {
+    /// First change to a sport or go to the overview of the selected preset!
+    static let obstruction = L10n.tr("Localizable", "Choose.obstruction")
 
     enum Data {
 
@@ -99,11 +101,18 @@ enum L10n {
     enum Goal {
 
       enum Description {
-        /// What do you want to achieve for \n
+        /// What do you want to achieve
         static let one = L10n.tr("Localizable", "Choose.goal.description.one")
         /// ?
+        static let three = L10n.tr("Localizable", "Choose.goal.description.three")
+        ///  for \n
         static let two = L10n.tr("Localizable", "Choose.goal.description.two")
       }
+    }
+
+    enum Obstruction {
+      /// To overview
+      static let toOverview = L10n.tr("Localizable", "Choose.obstruction.toOverview")
     }
 
     enum Settings {
@@ -190,14 +199,40 @@ enum L10n {
     static let save = L10n.tr("Localizable", "Create.save")
     /// Select
     static let select = L10n.tr("Localizable", "Create.select")
-    /// Workout summary
+    /// Summary
     static let summary = L10n.tr("Localizable", "Create.summary")
-    /// Workout title
+    /// Title
     static let title = L10n.tr("Localizable", "Create.title")
 
     enum Add {
       /// Add transition...
       static let transition = L10n.tr("Localizable", "Create.add.transition")
+    }
+
+    enum Delete {
+      /// Are you sure you want to delete this workout?
+      static let confirmation = L10n.tr("Localizable", "Create.delete.confirmation")
+    }
+
+    enum Obstruction {
+      /// A transition doesn't need a goal, scroll further for the data and settings!
+      static let transition = L10n.tr("Localizable", "Create.obstruction.transition")
+    }
+
+    enum Sport {
+
+      enum Description {
+        /// for this part.
+        static let five = L10n.tr("Localizable", "Create.sport.description.five")
+        /// transition 
+        static let four = L10n.tr("Localizable", "Create.sport.description.four")
+        /// Choose a 
+        static let one = L10n.tr("Localizable", "Create.sport.description.one")
+        /// or 
+        static let three = L10n.tr("Localizable", "Create.sport.description.three")
+        /// sport 
+        static let two = L10n.tr("Localizable", "Create.sport.description.two")
+      }
     }
 
     enum Title {
@@ -634,10 +669,19 @@ enum L10n {
     static let forgotError = L10n.tr("Localizable", "Login.forgotError")
   }
 
+  enum Logout {
+    /// Cancel
+    static let cancel = L10n.tr("Localizable", "Logout.cancel")
+    /// Are you sure you want to logout?
+    static let confirmation = L10n.tr("Localizable", "Logout.confirmation")
+    /// Logout
+    static let logout = L10n.tr("Localizable", "Logout.logout")
+  }
+
   enum Record {
     /// Activity
     static let activity = L10n.tr("Localizable", "Record.activity")
-    /// All good? Let's go!
+    /// Start on Apple Watch
     static let button = L10n.tr("Localizable", "Record.button")
     /// Data
     static let data = L10n.tr("Localizable", "Record.data")

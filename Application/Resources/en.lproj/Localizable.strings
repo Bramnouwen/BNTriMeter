@@ -26,9 +26,9 @@
 "Connect.or" = "or";
 
 // Create
-"Create.title" = "Workout title";
+"Create.title" = "Title";
 "Create.title.title" = "Title";
-"Create.summary" = "Workout summary";
+"Create.summary" = "Summary";
 "Create.add" = "Add part";
 "Create.add.transition" = "Add transition...";
 "Create.select" = "Select";
@@ -36,6 +36,15 @@
 "Create.edit" = "Edit";
 "Create.cancel" = "Cancel";
 "Create.delete" = "Delete";
+"Create.delete.confirmation" = "Are you sure you want to delete this workout?";
+
+"Create.sport.description.one" = "Choose a ";
+"Create.sport.description.two" = "sport ";
+"Create.sport.description.three" = "or ";
+"Create.sport.description.four" = "transition ";
+"Create.sport.description.five" = "for this part.";
+
+"Create.obstruction.transition" = "A transition doesn't need a goal, scroll further for the data and settings!";
 
 // Login
 "Login.description" = "Log in with your TriMeter credentials.";
@@ -44,6 +53,11 @@
 "Login.errorTwo" = "Still wrong, try a third time?";
 "Login.errorThree" = "Nope, try clicking on \"Forgot?\".";
 "Login.forgotError" = "Atleast try to log in one time...";
+
+// Logout
+"Logout.logout" = "Logout";
+"Logout.cancel" = "Cancel";
+"Logout.confirmation" = "Are you sure you want to logout?";
 
 // Register
 "Register.descriptionOne" = "We're going to need some information, let's start with an email address and password.";
@@ -93,8 +107,9 @@
 "Choose.default.load" = "Load default for";
 "Choose.default.make" = "Make default for";
 
-"Choose.goal.description.one" = "What do you want to achieve for \n";
-"Choose.goal.description.two" = "?";
+"Choose.goal.description.one" = "What do you want to achieve";
+"Choose.goal.description.two" = " for \n";
+"Choose.goal.description.three" = "?";
 
 "Choose.settings.description.one" = " for ";
 "Choose.settings.description.two" = ".\n";
@@ -105,6 +120,9 @@
 "Choose.sport.description.three" = "or pick a ";
 "Choose.sport.description.four" = "preset";
 "Choose.sport.description.five" = "!";
+
+"Choose.obstruction" = "First change to a sport or go to the overview of the selected preset!";
+"Choose.obstruction.toOverview" = "To overview";
 
 // Common
 "Common.continueText" = "Continue";
@@ -253,7 +271,8 @@
 
 // Record
 "Record.activity" = "Activity";
-"Record.button" = "All good? Let's go!";
+//"Record.button" = "All good? Let's go!"; // TODO: change back
+"Record.button" = "Start on Apple Watch"; // TODO: delete
 "Record.data" = "Data";
 "Record.goal" = "Goal";
 

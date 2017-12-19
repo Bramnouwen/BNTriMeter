@@ -63,8 +63,10 @@ class CreateSettingsViewController: GradientViewController {
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.one))
             descriptionText.append(NSMutableAttributedString(string: goal.previousAmountAsString().lowercased(), attributes: coloredAttributes))
             descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.two))
-            descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.three))
+        } else if newPart.title != "" {
+            descriptionText.append(NSMutableAttributedString(string: ".\n"))
         }
+        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Settings.Description.three))
         
         descriptionLabel.attributedText = descriptionText
         loadDefaultButton.setTitle("\(L10n.Choose.Default.load)\n\(title.lowercased())", for: .normal)

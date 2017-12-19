@@ -24,6 +24,8 @@ target 'TriMeter' do
   pod 'Device'
   pod 'InAppSettingsKit', :git => 'https://github.com/Bramnouwen/InAppSettingsKit.git'
   pod 'SugarRecord'
+  pod 'SCLAlertView',:git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
+  pod 'Whisper'
 
   pod 'PromiseKit'
   pod 'PromiseKit/MapKit'

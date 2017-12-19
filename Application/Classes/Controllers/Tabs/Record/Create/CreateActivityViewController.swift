@@ -45,18 +45,20 @@ class CreateActivityViewController: UIViewController {
             guard let i = indexOfPartToUpdate else { return }
             dataManager.createdActivity.parts?[i] = dataManager.newPart
         }
-        // Reset newPart and set existing back to false
-        dataManager.newPart = Activity(isPartOfWorkout: true)
-        dataManager.existingPart = false
+        resetNewPart()
         // Go to overview
         performSegue(withIdentifier: Segues.toOverview, sender: dataManager.createdActivity)
     }
     
     @objc func cancelBarButtonItemClicked() {
         print("Cancelling adding part")
-        // Reset newPart
-        dataManager.newPart = Activity(isPartOfWorkout: true)
+        resetNewPart()
         dismiss(animated: true, completion: nil)
+    }
+    
+    func resetNewPart() {
+        dataManager.existingPart = false
+        dataManager.newPart = Activity(isPartOfWorkout: true)
     }
     
     // MARK: - Navigation

@@ -155,6 +155,7 @@ PODS:
     - Reusable/View (= 4.0.0)
   - Reusable/Storyboard (4.0.0)
   - Reusable/View (4.0.0)
+  - SCLAlertView (0.7.0)
   - SugarRecord (3.1.2):
     - SugarRecord/CoreData (= 3.1.2)
     - SugarRecord/CoreData+iCloud (= 3.1.2)
@@ -164,6 +165,7 @@ PODS:
     - Result (~> 3.0)
   - SwiftGen (5.2.1)
   - SwiftyJSON (4.0.0)
+  - Whisper (6.0.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -189,18 +191,25 @@ DEPENDENCIES:
   - PromiseKit/MapKit
   - PromiseKit/WatchConnectivity
   - Reusable
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
   - SugarRecord
   - SwiftGen
   - SwiftyJSON
+  - Whisper
 
 EXTERNAL SOURCES:
   InAppSettingsKit:
     :git: https://github.com/Bramnouwen/InAppSettingsKit.git
+  SCLAlertView:
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
 
 CHECKOUT OPTIONS:
   InAppSettingsKit:
     :commit: 7a114a81624c8ae775f73254624b5d46bb5a6446
     :git: https://github.com/Bramnouwen/InAppSettingsKit.git
+  SCLAlertView:
+    :commit: 85329ce66c297bea79ddef92908ff2040174ccf9
+    :git: https://github.com/vikmeup/SCLAlertView-Swift.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -240,10 +249,12 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SugarRecord: be6aa5c18b4a4dec0de4c1f49fc61c85eabb5328
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
 
-PODFILE CHECKSUM: a0939ce650815b4c15139ff34a5db70d508803f1
+PODFILE CHECKSUM: 49bafae1523fb821df09b01a758f18b22815b273
 
 COCOAPODS: 1.2.1

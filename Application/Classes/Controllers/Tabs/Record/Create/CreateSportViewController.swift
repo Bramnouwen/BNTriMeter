@@ -38,11 +38,11 @@ class CreateSportViewController: GradientViewController {
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
-        let descriptionText = NSMutableAttributedString(string: L10n.Choose.Sport.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Sport.Description.two, attributes: coloredAttributes))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Sport.Description.three))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Sport.Description.four, attributes: coloredAttributes))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Sport.Description.five))
+        let descriptionText = NSMutableAttributedString(string: L10n.Create.Sport.Description.one)
+        descriptionText.append(NSMutableAttributedString(string: L10n.Create.Sport.Description.two, attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: L10n.Create.Sport.Description.three))
+        descriptionText.append(NSMutableAttributedString(string: L10n.Create.Sport.Description.four, attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: L10n.Create.Sport.Description.five))
         
         descriptionLabel.attributedText = descriptionText
         

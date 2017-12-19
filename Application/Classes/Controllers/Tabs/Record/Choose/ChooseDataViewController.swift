@@ -31,6 +31,10 @@ class ChooseDataViewController: GradientViewController {
     
     var activity: Activity!
     
+    @IBOutlet weak var obstructionView: UIView!
+    @IBOutlet weak var obstructionLabel: UILabel!
+    @IBOutlet weak var obstructionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +43,20 @@ class ChooseDataViewController: GradientViewController {
         tableView.register(cellType: DataTableViewCell.self)
         tableView.isEditing = true
         
+        obstructionView.applyGradient()
+        obstructionLabel.text = L10n.Choose.obstruction
+        obstructionButton.setTitle(L10n.Choose.Obstruction.toOverview, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         activity = dataManager.unarchive(key: "currentActivity")
+        
+        if activity.isPreset {
+            obstructionView.isHidden = false
+        } else {
+            obstructionView.isHidden = true
+        }
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
@@ -77,6 +90,9 @@ class ChooseDataViewController: GradientViewController {
         print("Setting default for \(activity.title)")
     }
     
+    @IBAction func obstructionButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false))
+    }
     
     // MARK: - Navigation
 
@@ -86,6 +102,12 @@ class ChooseDataViewController: GradientViewController {
             guard let destVC = segue.destination as? ChangeDataViewController else { return }
             destVC.spotAndId = sender as? (spot: Int, id: Int)
             destVC.activity = activity
+        } else if segue.identifier == Segues.toOverview {
+            guard let navVC = segue.destination as? UINavigationController else { return }
+            guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
+            let values = sender as! (activity: Activity, editing: Bool)
+            destVC.activity = values.activity
+            destVC.setEditingMode = values.editing
         }
     }
 }

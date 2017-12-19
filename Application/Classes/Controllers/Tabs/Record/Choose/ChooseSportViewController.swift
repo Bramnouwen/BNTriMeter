@@ -136,6 +136,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
                 updateActivity(id: i)
             }
             cell.accessoryType = .checkmark
+            dataManager.archive(activity: activity, key: "currentActivity")
         }
         
     }
@@ -147,7 +148,6 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
             activity.iconName = iconName
             activity.tableViewId = id
         }
-        dataManager.archive(activity: activity, key: "currentActivity")
     }
     
     func selectedIsPreset(id: Int) -> Bool {

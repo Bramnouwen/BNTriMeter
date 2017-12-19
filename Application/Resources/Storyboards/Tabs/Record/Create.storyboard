@@ -98,13 +98,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-z7-hFU">
-                                <rect key="frame" x="32" y="16" width="311" height="22"/>
+                                <rect key="frame" x="32" y="16" width="311" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nXR-7Z-gyk">
-                                <rect key="frame" x="0.0" y="78" width="375" height="431"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="432"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Bermuda"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1G-WB-18X">
-                                <rect key="frame" x="31" y="16" width="313" height="22"/>
+                                <rect key="frame" x="31" y="16" width="313" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -171,10 +171,31 @@
                                     <action selector="segmentedValueChanged:" destination="ESV-nD-hqp" eventType="valueChanged" id="Dnd-tD-jeA"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AX-K8-Iv7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transitie heeft geen doel nodig" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzK-hJ-bVZ">
+                                        <rect key="frame" x="32" y="267.5" width="311" height="20"/>
+                                        <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SzK-hJ-bVZ" secondAttribute="trailing" constant="32" id="Rf9-lF-dpW"/>
+                                    <constraint firstItem="SzK-hJ-bVZ" firstAttribute="leading" secondItem="6AX-K8-Iv7" secondAttribute="leading" constant="32" id="TCW-7P-yq1"/>
+                                    <constraint firstItem="SzK-hJ-bVZ" firstAttribute="centerY" secondItem="6AX-K8-Iv7" secondAttribute="centerY" id="yC4-9P-uCT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="6AX-K8-Iv7" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" id="01a-R8-KkO"/>
                             <constraint firstItem="L1G-WB-18X" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" constant="31" id="1Fg-eB-qQO"/>
+                            <constraint firstItem="6AX-K8-Iv7" firstAttribute="trailing" secondItem="ylJ-0H-HFm" secondAttribute="trailing" id="8lJ-Sc-HVW"/>
+                            <constraint firstItem="6AX-K8-Iv7" firstAttribute="bottom" secondItem="ylJ-0H-HFm" secondAttribute="bottom" id="H0z-kZ-FZL"/>
+                            <constraint firstItem="6AX-K8-Iv7" firstAttribute="top" secondItem="ylJ-0H-HFm" secondAttribute="top" id="Rkg-Y8-V1C"/>
                             <constraint firstItem="FzI-h0-EfU" firstAttribute="trailing" secondItem="ylJ-0H-HFm" secondAttribute="trailing" id="T7f-0A-5Tp"/>
                             <constraint firstItem="ylJ-0H-HFm" firstAttribute="trailing" secondItem="L1G-WB-18X" secondAttribute="trailing" constant="31" id="UWU-lZ-HHY"/>
                             <constraint firstItem="FzI-h0-EfU" firstAttribute="centerY" secondItem="qhh-Yl-EDW" secondAttribute="centerY" constant="-20" id="cAL-fX-Y1B"/>
@@ -188,6 +209,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="L1G-WB-18X" id="UIZ-oR-5Du"/>
+                        <outlet property="obstructionLabel" destination="SzK-hJ-bVZ" id="rKi-OS-UP7"/>
+                        <outlet property="obstructionView" destination="6AX-K8-Iv7" id="GHx-1C-qCf"/>
                         <outlet property="segmentedControl" destination="6Od-uy-pha" id="QKO-n2-hmb"/>
                         <outlet property="tableView" destination="FzI-h0-EfU" id="r99-ol-I2f"/>
                         <segue destination="M7J-ST-XvB" kind="show" identifier="adjustGoal" id="YJF-9J-pVX">
@@ -338,7 +361,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6T4-l3-EmI">
-                                <rect key="frame" x="32" y="16" width="311" height="22"/>
+                                <rect key="frame" x="32" y="16" width="311" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -378,7 +401,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umu-hm-8cx">
-                                <rect key="frame" x="16" y="40" width="343" height="15"/>
+                                <rect key="frame" x="16" y="39" width="343" height="14"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -459,13 +482,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdy-WX-N9O">
-                                <rect key="frame" x="151" y="8" width="73" height="22"/>
+                                <rect key="frame" x="151" y="8" width="73" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-ga-Q1c" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="88" y="38" width="200" height="55"/>
+                                <rect key="frame" x="88" y="37" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GgA-fc-D8c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nVH-HV-XBI"/>
@@ -488,13 +511,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summaryLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-RK-7RT">
-                                <rect key="frame" x="130.5" y="125" width="115.5" height="22"/>
+                                <rect key="frame" x="129" y="124" width="118.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
-                                <rect key="frame" x="0.0" y="155" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="153" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="KYU-zf-ccv"/>
@@ -604,7 +627,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-qO-zOB">
-                                <rect key="frame" x="32" y="16" width="311" height="22"/>
+                                <rect key="frame" x="32" y="16" width="311" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -735,6 +758,9 @@
         <image name="button-plus" width="34" height="34"/>
         <namedColor name="Amaranth">
             <color red="0.98799997568130493" green="0.2199999988079071" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background">
+            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Background">
             <color red="0.086000002920627594" green="0.13300000131130219" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

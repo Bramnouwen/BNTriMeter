@@ -5,12 +5,15 @@
 //  Created by Bram Nouwen on 15/12/17.
 //  Copyright © 2017 Bram Nouwen. All rights reserved.
 //
+/* Referenced
+ - https://stackoverflow.com/questions/969313/uitableview-disable-swipe-to-delete-but-still-have-delete-in-edit-mode
+ */
 
 import UIKit
 import IBAnimatable
 import SugarRecord
 
-class ActivityOverviewViewController: GradientViewController {
+class ActivityOverviewViewController: GradientViewController, UIActionSheetDelegate {
     
     let dataManager = DataManager.shared
     let defaults = UserDefaults.standard
@@ -66,20 +69,12 @@ class ActivityOverviewViewController: GradientViewController {
     @objc func cancelDeleteBarButtonClicked() {
         // If editing -> delete workout
         if summaryTableView.isEditing {
-            if let db = dataManager.db,
-                let id = activity.tableViewId,
-                (try! db.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(id)")).first) != nil {
-                dataManager.delete(activity)
-                dataManager.fetchCoreData()
-                // Set current activity to running after deleting = default determined by myself
-                let runningData = defaults.object(forKey: "1") as! Data
-                let running = NSKeyedUnarchiver.unarchiveObject(with: runningData) as! Activity
-                dataManager.archive(activity: running, key: "currentActivity")
-            }
-            dataManager.createdActivity = Activity()
-            performSegue(withIdentifier: Segues.toMain, sender: nil)
+            showDeleteActionSheet()
         } else {
             // If not editing -> back to main screen without selecting
+            if dataManager.unarchive(key: "currentActivity").tableViewId == activity.tableViewId {
+                dataManager.archive(activity: activity, key: "currentActivity")
+            }
             performSegue(withIdentifier: Segues.toMain, sender: nil)
         }
     }
@@ -160,7 +155,7 @@ class ActivityOverviewViewController: GradientViewController {
     }
     
     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
-        activity.title = titleTextField.text ?? ""
+        activity.title = titleTextField.text?.trimmingCharacters(in: .whitespaces) ?? ""
     }
     
     // MARK: - Navigation
@@ -172,6 +167,32 @@ class ActivityOverviewViewController: GradientViewController {
             guard let destVC = navVC.childViewControllers.first as? CreateActivityViewController else { return }
             destVC.indexOfPartToUpdate = sender as? Int
         }
+    }
+    
+    // MARK: - Action sheets
+    
+    func showDeleteActionSheet() {
+        let alert = UIAlertController(title: nil, message: L10n.Create.Delete.confirmation, preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let cancel: UIAlertAction = UIAlertAction(title: L10n.Create.cancel, style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        
+        let delete: UIAlertAction = UIAlertAction(title: L10n.Create.delete, style: .destructive, handler: { (action) -> Void in
+            if let db = self.dataManager.db,
+                let id = self.activity.tableViewId,
+                (try! db.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(id)")).first) != nil {
+                self.dataManager.delete(self.activity)
+                self.dataManager.fetchCoreData()
+                // Set current activity to running after deleting = default determined by myself
+                let running = self.dataManager.unarchive(key: "1")
+                self.dataManager.archive(activity: running, key: "currentActivity")
+            }
+            self.dataManager.createdActivity = Activity()
+            self.performSegue(withIdentifier: Segues.toMain, sender: nil)
+        })
+        alert.addAction(delete)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -195,6 +216,8 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
             cell.title.text = part.title
             cell.part = part
             
+            cell.selectionStyle = .none
+            
             return cell
         } else {
             let cell: OverviewSportNormalTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -204,9 +227,10 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
             cell.amount.text = part.goal?.returnOverviewAmountString()
             cell.part = part
             
+            cell.selectionStyle = .none
+            
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -232,6 +256,13 @@ extension ActivityOverviewViewController: UITableViewDelegate, UITableViewDataSo
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if tableView.isEditing {
+            return .delete
+        }
+        return .none
     }
     
     func recalculatePartIds() {

@@ -20,6 +20,10 @@ class ChooseGoalViewController: GradientViewController {
     
     var activity: Activity!
     
+    @IBOutlet weak var obstructionView: UIView!
+    @IBOutlet weak var obstructionLabel: UILabel!
+    @IBOutlet weak var obstructionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,18 +33,29 @@ class ChooseGoalViewController: GradientViewController {
         
         createWorkoutButton.setTitle(L10n.Common.Createworkout.button, for: .normal)
         createWorkoutDescriptionLabel.text = L10n.Common.Createworkout.description
+        
+        obstructionView.applyGradient()
+        obstructionLabel.text = L10n.Choose.obstruction
+        obstructionButton.setTitle(L10n.Choose.Obstruction.toOverview, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         activity = dataManager.unarchive(key: "currentActivity")
         
+        if activity.isPreset {
+            obstructionView.isHidden = false
+        } else {
+            obstructionView.isHidden = true
+        }
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: activity.title.lowercased(), attributes: coloredAttributes))
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
+        descriptionText.append(NSMutableAttributedString(string: activity.title.lowercased(), attributes: coloredAttributes))
+        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.three))
         
         descriptionLabel.attributedText = descriptionText
         
@@ -60,6 +75,10 @@ class ChooseGoalViewController: GradientViewController {
         performSegue(withIdentifier: Segues.createWorkout, sender: nil)
     }
     
+    @IBAction func obstructionButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: Segues.toOverview, sender: (activity: activity, editing: false))
+    }
+    
     
     // MARK: - Navigation
 
@@ -69,6 +88,12 @@ class ChooseGoalViewController: GradientViewController {
             guard let destVC = segue.destination as? AdjustGoalViewController else { return }
             destVC.goalId = sender as? Int
             destVC.activity = activity
+        } else if segue.identifier == Segues.toOverview {
+            guard let navVC = segue.destination as? UINavigationController else { return }
+            guard let destVC = navVC.childViewControllers.first as? ActivityOverviewViewController else { return }
+            let values = sender as! (activity: Activity, editing: Bool)
+            destVC.activity = values.activity
+            destVC.setEditingMode = values.editing
         }
     }
 }

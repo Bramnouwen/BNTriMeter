@@ -21,6 +21,9 @@ class CreateGoalViewController: GradientViewController {
     
     var newPart: Activity!
     
+    @IBOutlet weak var obstructionView: UIView!
+    @IBOutlet weak var obstructionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,19 +34,30 @@ class CreateGoalViewController: GradientViewController {
         segmentedControl.setTitle(L10n.Goal.Segmented.slow, forSegmentAt: 0)
         segmentedControl.setTitle(L10n.Goal.Segmented.steady, forSegmentAt: 1)
         segmentedControl.setTitle(L10n.Goal.Segmented.fast, forSegmentAt: 2)
+        
+        obstructionView.applyGradient()
+        obstructionLabel.text = L10n.Create.Obstruction.transition
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         newPart = dataManager.newPart
         
+        if newPart.title == L10n.Activity.Triathlon.transition {
+            obstructionView.isHidden = false
+        } else {
+            obstructionView.isHidden = true
+        }
+        
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
                                  NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
-        descriptionText.append(NSMutableAttributedString(string: newPart.title.lowercased(), attributes: coloredAttributes))
-        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
-        
+        if newPart.title != "" {
+            descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
+            descriptionText.append(NSMutableAttributedString(string: newPart.title.lowercased(), attributes: coloredAttributes))
+        }
+        descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.three))
         descriptionLabel.attributedText = descriptionText
         
         if let goalId = newPart.goal?.id {
