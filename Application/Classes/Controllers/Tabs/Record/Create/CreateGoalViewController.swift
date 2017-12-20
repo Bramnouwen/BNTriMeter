@@ -134,6 +134,7 @@ extension CreateGoalViewController: UITableViewDelegate, UITableViewDataSource {
             newPart.goal = dataManager.getGoalById(i)
             newPart.goalSpeed = segmentedSelected
             
+            
             dataManager.newPart = newPart
         }
     }

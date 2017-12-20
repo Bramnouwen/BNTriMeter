@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: GradientViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -21,11 +21,6 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = L10n.Welcome.welcome
         descriptionLabel.text = L10n.Welcome.description
         continueButton.setTitle(L10n.Common.continueText, for: .normal)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.applyGradient()
     }
     
     @IBAction func unwindToWelcome(segue: UIStoryboardSegue) { }

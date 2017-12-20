@@ -10,6 +10,7 @@
 		161FD00B650116217090DAE6 /* Pods_TriMeterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B35A8B6F86580177F87892E /* Pods_TriMeterUITests.framework */; };
 		55F7B1352FE283AB07812AD4 /* Pods_TriMeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B70A3B5910A45EEC40EBD /* Pods_TriMeterTests.framework */; };
 		93BA5BA9FCEF5B47D6C19AAF /* Pods_TriMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C6E93CF3880A01CBB8477E /* Pods_TriMeter.framework */; };
+		F92D94E81FEA767600BBDA05 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D94E71FEA767600BBDA05 /* Haptic.swift */; };
 		F94E010F1F912CB60025648A /* TriMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E010E1F912CB60025648A /* TriMeterTests.swift */; };
 		F94E011A1F912CB60025648A /* TriMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E01191F912CB60025648A /* TriMeterUITests.swift */; };
 		F964EE351FDE9B6900675EA4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDC91FDE9B6800675EA4 /* StartViewController.swift */; };
@@ -18,7 +19,6 @@
 		F964EE381FDE9B6900675EA4 /* RegisterOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDCD1FDE9B6800675EA4 /* RegisterOneViewController.swift */; };
 		F964EE391FDE9B6900675EA4 /* RegisterTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDCE1FDE9B6800675EA4 /* RegisterTwoViewController.swift */; };
 		F964EE3A1FDE9B6900675EA4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDCF1FDE9B6800675EA4 /* WelcomeViewController.swift */; };
-		F964EE3B1FDE9B6900675EA4 /* DataListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDD11FDE9B6800675EA4 /* DataListTableViewController.swift */; };
 		F964EE3C1FDE9B6900675EA4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDD41FDE9B6800675EA4 /* FeedViewController.swift */; };
 		F964EE3D1FDE9B6900675EA4 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDD61FDE9B6800675EA4 /* LeaderboardViewController.swift */; };
 		F964EE3E1FDE9B6900675EA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDD81FDE9B6800675EA4 /* ProfileViewController.swift */; };
@@ -138,6 +138,7 @@
 		C3FE1E816F5E3E1E9629AB1D /* Pods-TriMeterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeterUITests/Pods-TriMeterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F5BCBC25A20AAB8F42ECBB37 /* Pods-TriMeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeter/Pods-TriMeter.release.xcconfig"; sourceTree = "<group>"; };
 		F7DE000C5F969FF7824E8711 /* Pods-TriMeterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeterUITests/Pods-TriMeterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F92D94E71FEA767600BBDA05 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		F94E00F61F912CB60025648A /* TriMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010A1F912CB60025648A /* TriMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010E1F912CB60025648A /* TriMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriMeterTests.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		F964EDCD1FDE9B6800675EA4 /* RegisterOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterOneViewController.swift; sourceTree = "<group>"; };
 		F964EDCE1FDE9B6800675EA4 /* RegisterTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTwoViewController.swift; sourceTree = "<group>"; };
 		F964EDCF1FDE9B6800675EA4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		F964EDD11FDE9B6800675EA4 /* DataListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListTableViewController.swift; sourceTree = "<group>"; };
 		F964EDD41FDE9B6800675EA4 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F964EDD61FDE9B6800675EA4 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		F964EDD81FDE9B6800675EA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -365,7 +365,6 @@
 			children = (
 				F964EDC81FDE9B6800675EA4 /* Launch */,
 				F964EDCA1FDE9B6800675EA4 /* Login+Registration */,
-				F964EDD01FDE9B6800675EA4 /* Reused */,
 				F964EDD21FDE9B6800675EA4 /* Tabs */,
 				F964EDEA1FDE9B6800675EA4 /* TestViewController.swift */,
 			);
@@ -390,14 +389,6 @@
 				F964EDCE1FDE9B6800675EA4 /* RegisterTwoViewController.swift */,
 			);
 			path = "Login+Registration";
-			sourceTree = "<group>";
-		};
-		F964EDD01FDE9B6800675EA4 /* Reused */ = {
-			isa = PBXGroup;
-			children = (
-				F964EDD11FDE9B6800675EA4 /* DataListTableViewController.swift */,
-			);
-			path = Reused;
 			sourceTree = "<group>";
 		};
 		F964EDD21FDE9B6800675EA4 /* Tabs */ = {
@@ -508,6 +499,7 @@
 				F964EDF21FDE9B6900675EA4 /* Constants.swift */,
 				F964EDF31FDE9B6900675EA4 /* DataManager.swift */,
 				F964EDF41FDE9B6900675EA4 /* Formatters.swift */,
+				F92D94E71FEA767600BBDA05 /* Haptic.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1019,7 +1011,6 @@
 				F964EE551FDE9B6900675EA4 /* Strings.swift in Sources */,
 				F9F0DFE61FE2F237009570FA /* CreateAdjustGoalViewController.swift in Sources */,
 				F964EE3F1FDE9B6900675EA4 /* AdjustGoalViewController.swift in Sources */,
-				F964EE3B1FDE9B6900675EA4 /* DataListTableViewController.swift in Sources */,
 				F964EE451FDE9B6900675EA4 /* ChooseSettingsViewController.swift in Sources */,
 				F964EE641FDE9B6900675EA4 /* SettingsTableViewCell.swift in Sources */,
 				F964EE511FDE9B6900675EA4 /* AppDelegate.swift in Sources */,
@@ -1050,6 +1041,7 @@
 				F9F0DFE91FE2F237009570FA /* CreateActivityPageViewController.swift in Sources */,
 				F9F0DFE71FE2F237009570FA /* CreateActivityViewController.swift in Sources */,
 				F964EE8B1FDFD45F00675EA4 /* ChangeDataTableViewCell.swift in Sources */,
+				F92D94E81FEA767600BBDA05 /* Haptic.swift in Sources */,
 				F9DAF0EC1FE431CB00A8F606 /* OverviewSportNormalTableViewCell.swift in Sources */,
 				F964EE531FDE9B6900675EA4 /* DataManager.swift in Sources */,
 				F964EE5C1FDE9B6900675EA4 /* ActivityTableViewCell.swift in Sources */,

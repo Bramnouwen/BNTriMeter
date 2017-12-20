@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import PromiseKit
 import Firebase
 
-class ConnectViewController: UIViewController {
+class ConnectViewController: GradientViewController {
     
     let API = APIManager.shared
     let db = Firestore.firestore()
@@ -35,11 +35,6 @@ class ConnectViewController: UIViewController {
         orLabel.text = L10n.Connect.or
         
         configureFacebookLogin()
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.applyGradient()
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
@@ -152,6 +147,30 @@ extension ConnectViewController: FBSDKLoginButtonDelegate {
                 self.createUserDocument(user: user)
                 self.performSegue(withIdentifier: Segues.toRegisterTwo, sender: nil)
             }
+        }
+    }
+}
+
+// Screen support
+
+import Device
+extension ConnectViewController {
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //iphone 7+ (5.5) = 330, iphone 7 (4.7) = 300, iphone 5 (4) = 240,
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+        case .screen5_8Inch: //iPhone x
+            print("X")
+        default:
+            print("Size not supported")
         }
     }
 }

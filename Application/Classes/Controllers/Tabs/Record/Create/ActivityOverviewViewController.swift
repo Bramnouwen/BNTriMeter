@@ -13,12 +13,13 @@ import UIKit
 import IBAnimatable
 import SugarRecord
 import SCLAlertView
+import MBProgressHUD
 
 class ActivityOverviewViewController: GradientViewController, UIActionSheetDelegate {
     
     let dataManager = DataManager.shared
     let defaults = UserDefaults.standard
-    let formatters = Formatters.shared
+    let haptic = Haptic.shared
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleTextField: AnimatableTextField!
@@ -85,6 +86,7 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
         if summaryTableView.isEditing {
             // If saving completed
             if saveWorkout() {
+                showSuccessMessage()
                 // Stop editing
                 isExistingWorkout = true
                 summaryTableView.setEditing(false, animated: true)
@@ -97,8 +99,18 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
         }
     }
     
+    func showSuccessMessage() {
+        if let topView = UIApplication.topViewController()?.view {
+            self.haptic.success()
+            let loadingNotification = MBProgressHUD.showAdded(to: topView, animated: true)
+            loadingNotification.customView = UIImageView(image: #imageLiteral(resourceName: "completion-check"))
+            loadingNotification.mode = MBProgressHUDMode.customView
+            loadingNotification.isUserInteractionEnabled = true
+            loadingNotification.show(animated: true)
+            loadingNotification.hide(animated: true, afterDelay: TimeInterval(1))
+        }
+    }
     
-    // Replace above functions by this one
     func changePageLayout() {
         if summaryTableView.isEditing {
             // Editing
@@ -201,6 +213,7 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
                 (try! db.fetch(FetchRequest<TMActivity>().filtered(with: "tableViewId", equalTo: "\(id)")).first) != nil {
                 self.dataManager.delete(self.activity)
                 self.dataManager.fetchCoreData()
+                Haptic.shared.success() // Just give haptic feedback, no success HUD
                 // Set current activity to running after deleting = default determined by myself
                 let running = self.dataManager.unarchive(key: "1")
                 self.dataManager.archive(activity: running, key: "currentActivity")
@@ -224,6 +237,7 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
             self.activity.title = (titleTextField.text?.trimmingCharacters(in: .whitespaces))!
             self.titleTextField.text = self.activity.title
             if self.saveWorkout() {
+                self.showSuccessMessage()
                 // Stop editing
                 self.isExistingWorkout = true
                 self.summaryTableView.setEditing(false, animated: true)
