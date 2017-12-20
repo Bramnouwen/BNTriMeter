@@ -50,7 +50,7 @@ class ChooseGoalViewController: GradientViewController {
         }
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Goal.Description.two))
@@ -65,7 +65,7 @@ class ChooseGoalViewController: GradientViewController {
             if let cell = tableView.cellForRow(at: rowToSelect) as? GoalTableViewCell {
                 cell.accessoryType = .checkmark
                 cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
-                cell.goalDescription.textColor = UIColor(named: "Bermuda")
+                cell.goalDescription.textColor = Colors.bermuda
                 cell.goalDescription.text = activity.goal?.previousAmountAsString()
             }
         }
@@ -137,7 +137,7 @@ extension ChooseGoalViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.accessoryType = .checkmark
             cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
-            cell.goalDescription.textColor = UIColor(named: "Bermuda")
+            cell.goalDescription.textColor = Colors.bermuda
             
             activity.goal = dataManager.getGoalById(i)
             dataManager.archive(activity: activity, key: "currentActivity")

@@ -37,9 +37,9 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
             setHiddenKeys(keys, animated: false)
         }
         
-        navigationController?.navigationBar.tintColor = UIColor(named: "Bermuda")
-//        UISwitch.appearance().tintColor = UIColor(named: "Bermuda")
-        UISwitch.appearance().onTintColor = UIColor(named: "Bermuda")
+        navigationController?.navigationBar.tintColor = Colors.bermuda
+//        UISwitch.appearance().tintColor = Colors.bermuda
+        UISwitch.appearance().onTintColor = Colors.bermuda
     }
     
     override func viewWillLayoutSubviews() {

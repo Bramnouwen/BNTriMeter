@@ -1235,7 +1235,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1252,7 +1252,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";

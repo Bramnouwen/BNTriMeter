@@ -60,7 +60,7 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.tintColor = UIColor(named: "Bermuda")
+        navigationController?.navigationBar.tintColor = Colors.bermuda
         
         switch goalId {
         case 0:
@@ -101,7 +101,7 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         }
 
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         if goalId != 5 {
             let descriptionText = NSMutableAttributedString(string: L10n.Adjust.Goal.Title.one)

@@ -69,7 +69,7 @@ class ChooseSettingsViewController: GradientViewController {
         }
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         let title = activity.title
         
@@ -212,7 +212,7 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
             } else {
                 cell.settingsOnOff.text = L10n.Settings.on
             }
-            cell.settingsOnOff.textColor = UIColor(named: "Bermuda")
+            cell.settingsOnOff.textColor = Colors.bermuda
         case false:
             cell.settingsOnOff.text = L10n.Settings.off
             cell.settingsOnOff.textColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)

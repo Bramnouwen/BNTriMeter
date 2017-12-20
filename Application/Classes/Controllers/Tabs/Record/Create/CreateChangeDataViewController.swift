@@ -22,7 +22,7 @@ class CreateChangeDataViewController: GradientViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.tintColor = UIColor(named: "Bermuda")
+        navigationController?.navigationBar.tintColor = Colors.bermuda
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -124,9 +124,9 @@ extension CreateChangeDataViewController: UITableViewDelegate, UITableViewDataSo
         cell.title.text = item!.title
         cell.explanation.text = item!.descriptionString
         if item!.title.lowercased().contains(L10n.Data.current) {
-            cell.colorIndicator.backgroundColor = UIColor(named: "Amaranth")
+            cell.colorIndicator.backgroundColor = Colors.amaranth
         } else {
-            cell.colorIndicator.backgroundColor = UIColor(named: "Bermuda")
+            cell.colorIndicator.backgroundColor = Colors.bermuda
         }
         
         cell.item = item!

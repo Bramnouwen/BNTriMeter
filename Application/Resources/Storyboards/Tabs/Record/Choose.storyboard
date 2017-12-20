@@ -303,31 +303,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your duration for running." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-gi-PHZ">
-                                <rect key="frame" x="16" y="16" width="343" height="21"/>
+                                <rect key="frame" x="16" y="16" width="343" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the buttons add or subtract by 1." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-DO-byh">
-                                <rect key="frame" x="16" y="41" width="343" height="16.5"/>
+                                <rect key="frame" x="16" y="42" width="343" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-eU-aK0">
-                                <rect key="frame" x="170.5" y="138.5" width="34.5" height="21"/>
+                                <rect key="frame" x="171.5" y="135" width="33" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifv-hn-5dJ">
-                                <rect key="frame" x="171.5" y="284" width="32.5" height="67.5"/>
+                                <rect key="frame" x="172.5" y="286.5" width="31" height="65"/>
                                 <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUh-hV-p1J">
-                                <rect key="frame" x="132" y="163.5" width="111.5" height="116.5"/>
+                                <rect key="frame" x="124.5" y="161" width="127" height="121.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="100"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

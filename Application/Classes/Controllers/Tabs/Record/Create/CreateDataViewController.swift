@@ -50,7 +50,7 @@ class CreateDataViewController: GradientViewController {
         newPart = dataManager.newPart
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         let title = newPart.title
         

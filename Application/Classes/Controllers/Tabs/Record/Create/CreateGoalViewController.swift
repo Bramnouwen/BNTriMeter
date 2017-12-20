@@ -50,7 +50,7 @@ class CreateGoalViewController: GradientViewController {
         }
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Goal.Description.one)
         if newPart.title != "" {
@@ -66,7 +66,7 @@ class CreateGoalViewController: GradientViewController {
             if let cell = tableView.cellForRow(at: rowToSelect) as? GoalTableViewCell {
                 cell.accessoryType = .checkmark
                 cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
-                cell.goalDescription.textColor = UIColor(named: "Bermuda")
+                cell.goalDescription.textColor = Colors.bermuda
                 cell.goalDescription.text = newPart.goal?.previousAmountAsString()
             }
         }
@@ -129,7 +129,7 @@ extension CreateGoalViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.accessoryType = .checkmark
             cell.goalDescription.font = UIFont(name: "Cabin-Bold", size: cell.goalDescription.font.pointSize)
-            cell.goalDescription.textColor = UIColor(named: "Bermuda")
+            cell.goalDescription.textColor = Colors.bermuda
             
             newPart.goal = dataManager.getGoalById(i)
             newPart.goalSpeed = segmentedSelected

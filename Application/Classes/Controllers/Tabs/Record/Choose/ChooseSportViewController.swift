@@ -37,7 +37,7 @@ class ChooseSportViewController: GradientViewController {
         tableView.register(cellType: ActivityTableViewCell.self)
         
         let coloredAttributes = [NSAttributedStringKey.font: UIFont(name: "Cabin-Bold", size: 18)!,
-                                 NSAttributedStringKey.foregroundColor: UIColor(named: "Bermuda")!]
+                                 NSAttributedStringKey.foregroundColor: Colors.bermuda]
         
         let descriptionText = NSMutableAttributedString(string: L10n.Choose.Sport.Description.one)
         descriptionText.append(NSMutableAttributedString(string: L10n.Choose.Sport.Description.two, attributes: coloredAttributes))
