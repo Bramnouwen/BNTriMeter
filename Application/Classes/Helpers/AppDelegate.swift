@@ -11,6 +11,7 @@ import Firebase
 import FBSDKCoreKit
 import Fabric
 import Crashlytics
+import OneSignal
 
 // fb login redirect: https://trimeter-b40c9.firebaseapp.com/__/auth/handler
 @UIApplicationMain
@@ -28,6 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         UIApplication.shared.statusBarStyle = .lightContent //Might be unnecessary
+        
+        // OneSignal setup
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "85025ae0-81a5-42b5-a382-3b4109a6859e",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+        // Sync hashed email if you have a login system or collect it.
+        //   Will be used to reach the user at the most optimal time of day.
+        // OneSignal.syncHashedEmail(userEmail)
         
         return true
     }

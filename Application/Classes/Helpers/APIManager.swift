@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import PromiseKit
+import OneSignal
 
 class APIManager: NSObject {
     
@@ -26,6 +27,8 @@ class APIManager: NSObject {
                     reject(error)
                 } else if let user = user {
                     print("User signed in! \(user)")
+                    OneSignal.syncHashedEmail(user.email)
+                    OneSignal.sendTag("user_id", value: "\(user.uid)")
                     fulfill(user)
                 }
             }
@@ -40,6 +43,8 @@ class APIManager: NSObject {
                     reject(error)
                 } else if let user = user {
                     print("User registered! \(user)")
+                    OneSignal.syncHashedEmail(user.email)
+                    OneSignal.sendTag("user_id", value: "\(user.uid)")
                     fulfill(user)
                 }
             }
@@ -54,6 +59,8 @@ class APIManager: NSObject {
                     reject(error)
                 } else if let user = user {
                     print("User signed in! \(user)")
+                    OneSignal.syncHashedEmail(user.email)
+                    OneSignal.sendTag("user_id", value: "\(user.uid)")
                     fulfill(user)
                 }
             }

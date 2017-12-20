@@ -259,47 +259,6 @@ class RecordViewController: GradientViewController {
                 stackViewArray[i]?.isHidden = true
             }
         }
-        
-        // TODO: Delete ?
-//        if indices.contains(0) {
-//            data1StackView.isHidden = false
-//            data1Label.text = orderedData[0].amountString
-//            data1ImageView.image = UIImage(named: orderedData[0].iconString)
-//        } else {
-//            data1StackView.isHidden = true
-//        }
-//
-//        if indices.contains(1) {
-//            data2StackView.isHidden = false
-//            data2Label.text = orderedData[1].amountString
-//            data2ImageView.image = UIImage(named: orderedData[1].iconString)
-//        } else {
-//            data2StackView.isHidden = true
-//        }
-//
-//        if indices.contains(2) {
-//            data3StackView.isHidden = false
-//            data3Label.text = orderedData[2].amountString
-//            data3ImageView.image = UIImage(named: orderedData[2].iconString)
-//        } else {
-//            data3StackView.isHidden = true
-//        }
-//
-//        if indices.contains(3) {
-//            data4StackView.isHidden = false
-//            data4Label.text = orderedData[3].amountString
-//            data4ImageView.image = UIImage(named: orderedData[3].iconString)
-//        } else {
-//            data4StackView.isHidden = true
-//        }
-//
-//        if indices.contains(4) {
-//            data5StackView.isHidden = false
-//            data5Label.text = orderedData[4].amountString
-//            data5ImageView.image = UIImage(named: orderedData[4].iconString)
-//        } else {
-//            data5StackView.isHidden = true
-//        }
     }
     
     
@@ -351,20 +310,12 @@ extension RecordViewController {
         super.viewWillLayoutSubviews()
         switch Device.size() {
         case .screen4Inch: //iPhone 5
-            print("5")
             mapHeight.constant = 180
             activityGoalStackViewWidth.constant = 150
-        case .screen4_7Inch: //iPhone 8
-            print("8")
-            
-        case .screen5_5Inch: //iPhone 8+
-            print("8+")
-            
         case .screen5_8Inch: //iPhone x
-            print("X")
             mapHeight.constant = 365
         default:
-            print("Size not supported")
+            _ = "Silence default warning"
         }
     }
 }

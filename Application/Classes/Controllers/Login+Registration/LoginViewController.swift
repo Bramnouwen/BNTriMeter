@@ -135,17 +135,10 @@ extension LoginViewController {
         //iphone 7+ (5.5) = 330, iphone 7 (4.7) = 300, iphone 5 (4) = 240,
         switch Device.size() {
         case .screen4Inch: //iPhone 5
-            print("5")
             triMeterToLogoDistance.constant = 0
             emailToDescriptionDistance.constant = 40
-        case .screen4_7Inch: //iPhone 8
-            print("8")
-        case .screen5_5Inch: //iPhone 8+
-            print("8+")
-        case .screen5_8Inch: //iPhone x
-            print("X")
         default:
-            print("Size not supported")
+            _ = "Silence default warning"
         }
     }
 }

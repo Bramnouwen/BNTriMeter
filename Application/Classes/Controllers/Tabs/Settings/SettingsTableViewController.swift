@@ -10,12 +10,15 @@ import UIKit
 import InAppSettingsKit
 import FBSDKLoginKit
 import Firebase
+import OneSignal
 
 class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDelegate, UIActionSheetDelegate {
+    
+    let locationManager = LocationManager.shared
+    
     func settingsViewControllerDidEnd(_ sender: IASKAppSettingsViewController!) {
         
     }
-    
     
     override func awakeFromNib() {
         NotificationCenter.default.addObserver(self, selector: #selector(settingDidChange(_:)), name: NSNotification.Name(rawValue: kIASKAppSettingChanged), object: nil)
@@ -72,7 +75,9 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
             let logout: UIAlertAction = UIAlertAction(title: L10n.Logout.logout, style: .destructive, handler: { (action) -> Void in
                 do {
                     try Auth.auth().signOut()
+                    self.locationManager.stopUpdatingLocation()
                     FBSDKAccessToken.setCurrent(nil)
+                    OneSignal.deleteTag("user_id")
                     self.performSegue(withIdentifier: Segues.unwindToWelcome, sender: nil)
                 } catch let signOutError as NSError {
                     print ("Error signing out: \(signOutError.localizedDescription)")
@@ -103,16 +108,4 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
         header?.textLabel?.textColor = .white
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destVC = segue.destination as? SettingsPerSportViewController {
-//            if segue.identifier == "walkingSettingsSegue" {
-//                destVC.settingsForSport = "Walking"
-//            } else if segue.identifier == "runningSettingsSegue" {
-//                destVC.settingsForSport = "Running"
-//            }
-//        }
-//    }
-    
-   
 }
-

@@ -197,19 +197,9 @@ extension ChooseDataViewController {
         super.viewWillLayoutSubviews()
         switch Device.size() {
         case .screen4Inch: //iPhone 5
-            print("5")
             distanceToDefaultButtons.constant = 25
-        case .screen4_7Inch: //iPhone 8
-            print("8")
-            
-        case .screen5_5Inch: //iPhone 8+
-            print("8+")
-            
-        case .screen5_8Inch: //iPhone x
-            print("X")
-            
         default:
-            print("Size not supported")
+            _ = "Silence default warning"
         }
     }
 }

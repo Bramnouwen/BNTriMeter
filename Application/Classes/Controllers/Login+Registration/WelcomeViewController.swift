@@ -23,7 +23,9 @@ class WelcomeViewController: GradientViewController {
         continueButton.setTitle(L10n.Common.continueText, for: .normal)
     }
     
-    @IBAction func unwindToWelcome(segue: UIStoryboardSegue) { }
+    @IBAction func unwindToWelcome(_ segue: UIStoryboardSegue) {
+        print("Unwind to welcome")
+    }
     
     /*
     // MARK: - Navigation

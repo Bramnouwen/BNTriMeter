@@ -9,8 +9,19 @@
 /* Begin PBXBuildFile section */
 		161FD00B650116217090DAE6 /* Pods_TriMeterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B35A8B6F86580177F87892E /* Pods_TriMeterUITests.framework */; };
 		55F7B1352FE283AB07812AD4 /* Pods_TriMeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B70A3B5910A45EEC40EBD /* Pods_TriMeterTests.framework */; };
+		8BC9CF1E8E047B0DCCBDD02F /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2427B98E8A903FBF95BBE788 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		93BA5BA9FCEF5B47D6C19AAF /* Pods_TriMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C6E93CF3880A01CBB8477E /* Pods_TriMeter.framework */; };
 		F92D94E81FEA767600BBDA05 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D94E71FEA767600BBDA05 /* Haptic.swift */; };
+		F92D94F11FEAA7F400BBDA05 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D94F01FEAA7F400BBDA05 /* NotificationService.swift */; };
+		F92D94F51FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F92D94EE1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F92D95001FEAC35B00BBDA05 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92D94FE1FEAC35B00BBDA05 /* Interface.storyboard */; };
+		F92D95021FEAC35B00BBDA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92D95011FEAC35B00BBDA05 /* Assets.xcassets */; };
+		F92D95091FEAC35C00BBDA05 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F92D95081FEAC35C00BBDA05 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F92D950E1FEAC35C00BBDA05 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D950D1FEAC35C00BBDA05 /* InterfaceController.swift */; };
+		F92D95101FEAC35C00BBDA05 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D950F1FEAC35C00BBDA05 /* ExtensionDelegate.swift */; };
+		F92D95121FEAC35C00BBDA05 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D95111FEAC35C00BBDA05 /* NotificationController.swift */; };
+		F92D95141FEAC35C00BBDA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92D95131FEAC35C00BBDA05 /* Assets.xcassets */; };
+		F92D95191FEAC35C00BBDA05 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F92D94FC1FEAC35B00BBDA05 /* Watch.app */; };
 		F94E010F1F912CB60025648A /* TriMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E010E1F912CB60025648A /* TriMeterTests.swift */; };
 		F94E011A1F912CB60025648A /* TriMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E01191F912CB60025648A /* TriMeterUITests.swift */; };
 		F964EE351FDE9B6900675EA4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDC91FDE9B6800675EA4 /* StartViewController.swift */; };
@@ -111,6 +122,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F92D94F31FEAA7F400BBDA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F92D94ED1FEAA7F400BBDA05;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+		F92D950A1FEAC35C00BBDA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F92D95071FEAC35C00BBDA05;
+			remoteInfo = "Watch Extension";
+		};
+		F92D95171FEAC35C00BBDA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F92D94FB1FEAC35B00BBDA05;
+			remoteInfo = Watch;
+		};
 		F94E010B1F912CB60025648A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F94E00EE1F912CB60025648A /* Project object */;
@@ -127,8 +159,47 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F92D94F91FEAA7F400BBDA05 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F92D94F51FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D951D1FEAC35C00BBDA05 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F92D95091FEAC35C00BBDA05 /* Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D95211FEAC35C00BBDA05 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F92D95191FEAC35C00BBDA05 /* Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1B6286F95ADA849A26F0C88E /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		2427B98E8A903FBF95BBE788 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		273B70A3B5910A45EEC40EBD /* Pods_TriMeterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriMeterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E9C4848EF9D6F32FFCC858D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		56D51EFA61FEE144B42C5D31 /* Pods-TriMeterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeterTests/Pods-TriMeterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61C6E93CF3880A01CBB8477E /* Pods_TriMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F253A48E8AD97AD2BAE9AD /* Pods-TriMeterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeterTests/Pods-TriMeterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +209,21 @@
 		F5BCBC25A20AAB8F42ECBB37 /* Pods-TriMeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeter/Pods-TriMeter.release.xcconfig"; sourceTree = "<group>"; };
 		F7DE000C5F969FF7824E8711 /* Pods-TriMeterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriMeterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriMeterUITests/Pods-TriMeterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F92D94E71FEA767600BBDA05 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		F92D94E91FEAA5E100BBDA05 /* TriMeter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TriMeter.entitlements; path = TriMeter/TriMeter.entitlements; sourceTree = "<group>"; };
+		F92D94EE1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92D94F01FEAA7F400BBDA05 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F92D94F21FEAA7F400BBDA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92D94FC1FEAC35B00BBDA05 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92D94FF1FEAC35B00BBDA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F92D95011FEAC35B00BBDA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F92D95031FEAC35B00BBDA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92D95081FEAC35C00BBDA05 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F92D950D1FEAC35C00BBDA05 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F92D950F1FEAC35C00BBDA05 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F92D95111FEAC35C00BBDA05 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F92D95131FEAC35C00BBDA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F92D95151FEAC35C00BBDA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F92D95161FEAC35C00BBDA05 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		F94E00F61F912CB60025648A /* TriMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010A1F912CB60025648A /* TriMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94E010E1F912CB60025648A /* TriMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriMeterTests.swift; sourceTree = "<group>"; };
@@ -246,6 +332,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F92D94EB1FEAA7F400BBDA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC9CF1E8E047B0DCCBDD02F /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D95051FEAC35C00BBDA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F94E00F31F912CB60025648A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +380,7 @@
 				61C6E93CF3880A01CBB8477E /* Pods_TriMeter.framework */,
 				273B70A3B5910A45EEC40EBD /* Pods_TriMeterTests.framework */,
 				7B35A8B6F86580177F87892E /* Pods_TriMeterUITests.framework */,
+				2427B98E8A903FBF95BBE788 /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,16 +394,54 @@
 				79F253A48E8AD97AD2BAE9AD /* Pods-TriMeterTests.release.xcconfig */,
 				F7DE000C5F969FF7824E8711 /* Pods-TriMeterUITests.debug.xcconfig */,
 				C3FE1E816F5E3E1E9629AB1D /* Pods-TriMeterUITests.release.xcconfig */,
+				4E9C4848EF9D6F32FFCC858D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				1B6286F95ADA849A26F0C88E /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F92D94EF1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F92D94F01FEAA7F400BBDA05 /* NotificationService.swift */,
+				F92D94F21FEAA7F400BBDA05 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		F92D94FD1FEAC35B00BBDA05 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				F92D94FE1FEAC35B00BBDA05 /* Interface.storyboard */,
+				F92D95011FEAC35B00BBDA05 /* Assets.xcassets */,
+				F92D95031FEAC35B00BBDA05 /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		F92D950C1FEAC35C00BBDA05 /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F92D950D1FEAC35C00BBDA05 /* InterfaceController.swift */,
+				F92D950F1FEAC35C00BBDA05 /* ExtensionDelegate.swift */,
+				F92D95111FEAC35C00BBDA05 /* NotificationController.swift */,
+				F92D95131FEAC35C00BBDA05 /* Assets.xcassets */,
+				F92D95151FEAC35C00BBDA05 /* Info.plist */,
+				F92D95161FEAC35C00BBDA05 /* PushNotificationPayload.apns */,
+			);
+			path = "Watch Extension";
 			sourceTree = "<group>";
 		};
 		F94E00ED1F912CB60025648A = {
 			isa = PBXGroup;
 			children = (
+				F92D94E91FEAA5E100BBDA05 /* TriMeter.entitlements */,
 				F964EDC51FDE9B6800675EA4 /* Application */,
 				F94E010D1F912CB60025648A /* TriMeterTests */,
 				F94E01181F912CB60025648A /* TriMeterUITests */,
+				F92D94EF1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension */,
+				F92D94FD1FEAC35B00BBDA05 /* Watch */,
+				F92D950C1FEAC35C00BBDA05 /* Watch Extension */,
 				F94E00F71F912CB60025648A /* Products */,
 				AECD4D10BEF0A5663DD2516F /* Pods */,
 				40AB74483E6476FC8E1F4FF2 /* Frameworks */,
@@ -314,6 +454,9 @@
 				F94E00F61F912CB60025648A /* TriMeter.app */,
 				F94E010A1F912CB60025648A /* TriMeterTests.xctest */,
 				F94E01151F912CB60025648A /* TriMeterUITests.xctest */,
+				F92D94EE1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex */,
+				F92D94FC1FEAC35B00BBDA05 /* Watch.app */,
+				F92D95081FEAC35C00BBDA05 /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -659,6 +802,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F92D94ED1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F92D94F61FEAA7F400BBDA05 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				BC598F47BFED7C58827A9F6D /* [CP] Check Pods Manifest.lock */,
+				F92D94EA1FEAA7F400BBDA05 /* Sources */,
+				F92D94EB1FEAA7F400BBDA05 /* Frameworks */,
+				F92D94EC1FEAA7F400BBDA05 /* Resources */,
+				AA8D7321F715C88E324C2A06 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = F92D94EE1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F92D94FB1FEAC35B00BBDA05 /* Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F92D951E1FEAC35C00BBDA05 /* Build configuration list for PBXNativeTarget "Watch" */;
+			buildPhases = (
+				F92D94FA1FEAC35B00BBDA05 /* Resources */,
+				F92D951D1FEAC35C00BBDA05 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F92D950B1FEAC35C00BBDA05 /* PBXTargetDependency */,
+			);
+			name = Watch;
+			productName = Watch;
+			productReference = F92D94FC1FEAC35B00BBDA05 /* Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F92D95071FEAC35C00BBDA05 /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F92D951A1FEAC35C00BBDA05 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				F92D95041FEAC35C00BBDA05 /* Sources */,
+				F92D95051FEAC35C00BBDA05 /* Frameworks */,
+				F92D95061FEAC35C00BBDA05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			productName = "Watch Extension";
+			productReference = F92D95081FEAC35C00BBDA05 /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		F94E00F51F912CB60025648A /* TriMeter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F94E011E1F912CB60025648A /* Build configuration list for PBXNativeTarget "TriMeter" */;
@@ -671,10 +867,14 @@
 				D367D2EA104EF67FC61F9562 /* [CP] Embed Pods Frameworks */,
 				2684083B64486EEA4C1C9DF6 /* [CP] Copy Pods Resources */,
 				F955B6791FB0955200D723D7 /* Fabric */,
+				F92D94F91FEAA7F400BBDA05 /* Embed App Extensions */,
+				F92D95211FEAC35C00BBDA05 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F92D94F41FEAA7F400BBDA05 /* PBXTargetDependency */,
+				F92D95181FEAC35C00BBDA05 /* PBXTargetDependency */,
 			);
 			name = TriMeter;
 			productName = TriMeter;
@@ -729,13 +929,33 @@
 		F94E00EE1F912CB60025648A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Bram Nouwen";
 				TargetAttributes = {
+					F92D94ED1FEAA7F400BBDA05 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F92D94FB1FEAC35B00BBDA05 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					F92D95071FEAC35C00BBDA05 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					F94E00F51F912CB60025648A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F94E01091F912CB60025648A = {
 						CreatedOnToolsVersion = 9.0;
@@ -766,11 +986,38 @@
 				F94E00F51F912CB60025648A /* TriMeter */,
 				F94E01091F912CB60025648A /* TriMeterTests */,
 				F94E01141F912CB60025648A /* TriMeterUITests */,
+				F92D94ED1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension */,
+				F92D94FB1FEAC35B00BBDA05 /* Watch */,
+				F92D95071FEAC35C00BBDA05 /* Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F92D94EC1FEAA7F400BBDA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D94FA1FEAC35B00BBDA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92D95021FEAC35B00BBDA05 /* Assets.xcassets in Resources */,
+				F92D95001FEAC35B00BBDA05 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D95061FEAC35C00BBDA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92D95141FEAC35C00BBDA05 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F94E00F41F912CB60025648A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -892,6 +1139,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		AA8D7321F715C88E324C2A06 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ACEB290171C70B33463DF546 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -908,6 +1170,21 @@
 			showEnvVarsInLog = 0;
 		};
 		B4CC39BAC5E1480548E4907C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC598F47BFED7C58827A9F6D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -998,6 +1275,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F92D94EA1FEAA7F400BBDA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92D94F11FEAA7F400BBDA05 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F92D95041FEAC35C00BBDA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92D95121FEAC35C00BBDA05 /* NotificationController.swift in Sources */,
+				F92D95101FEAC35C00BBDA05 /* ExtensionDelegate.swift in Sources */,
+				F92D950E1FEAC35C00BBDA05 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F94E00F21F912CB60025648A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1083,6 +1378,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F92D94F41FEAA7F400BBDA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F92D94ED1FEAA7F400BBDA05 /* OneSignalNotificationServiceExtension */;
+			targetProxy = F92D94F31FEAA7F400BBDA05 /* PBXContainerItemProxy */;
+		};
+		F92D950B1FEAC35C00BBDA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F92D95071FEAC35C00BBDA05 /* Watch Extension */;
+			targetProxy = F92D950A1FEAC35C00BBDA05 /* PBXContainerItemProxy */;
+		};
+		F92D95181FEAC35C00BBDA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F92D94FB1FEAC35B00BBDA05 /* Watch */;
+			targetProxy = F92D95171FEAC35C00BBDA05 /* PBXContainerItemProxy */;
+		};
 		F94E010C1F912CB60025648A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F94E00F51F912CB60025648A /* TriMeter */;
@@ -1096,6 +1406,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F92D94FE1FEAC35B00BBDA05 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F92D94FF1FEAC35B00BBDA05 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		F964EE101FDE9B6900675EA4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1117,6 +1435,114 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F92D94F71FEAA7F400BBDA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E9C4848EF9D6F32FFCC858D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F92D94F81FEAA7F400BBDA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B6286F95ADA849A26F0C88E /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F92D951B1FEAC35C00BBDA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F92D951C1FEAC35C00BBDA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		F92D951F1FEAC35C00BBDA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F92D95201FEAC35C00BBDA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
 		F94E011C1F912CB60025648A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1230,14 +1656,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3D6ADBFD40E189CC966F018 /* Pods-TriMeter.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TriMeter/TriMeter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1248,13 +1676,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5BCBC25A20AAB8F42ECBB37 /* Pods-TriMeter.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TriMeter/TriMeter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeter;
+				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1334,6 +1764,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F92D94F61FEAA7F400BBDA05 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F92D94F71FEAA7F400BBDA05 /* Debug */,
+				F92D94F81FEAA7F400BBDA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F92D951A1FEAC35C00BBDA05 /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F92D951B1FEAC35C00BBDA05 /* Debug */,
+				F92D951C1FEAC35C00BBDA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F92D951E1FEAC35C00BBDA05 /* Build configuration list for PBXNativeTarget "Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F92D951F1FEAC35C00BBDA05 /* Debug */,
+				F92D95201FEAC35C00BBDA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F94E00F11F912CB60025648A /* Build configuration list for PBXProject "TriMeter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

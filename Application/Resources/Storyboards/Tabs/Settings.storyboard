@@ -46,7 +46,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <segue destination="MUn-qz-lQQ" kind="show" identifier="toSettingsPerSport" id="rUD-Wh-POe"/>
-                        <segue destination="bD9-MK-HJg" kind="unwind" identifier="unwindToWelcomeSegue" unwindAction="unwindToWelcomeWithSegue:" id="4dL-W6-Xxp"/>
+                        <segue destination="bD9-MK-HJg" kind="unwind" identifier="unwindToWelcomeSegue" unwindAction="unwindToWelcome:" id="UkK-c9-ExK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znf-0g-7ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="765"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="defaultsLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krZ-Sx-UX6">
-                                        <rect key="frame" x="135" y="16" width="105" height="22"/>
+                                        <rect key="frame" x="135.5" y="16" width="105" height="22"/>
                                         <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dataLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82M-Rt-Hy1">
-                                        <rect key="frame" x="149" y="133" width="77" height="22"/>
+                                        <rect key="frame" x="149.5" y="133" width="76.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                         </constraints>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="settingsLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-Gc-Cbb">
-                                        <rect key="frame" x="136" y="449" width="103" height="22"/>
+                                        <rect key="frame" x="136.5" y="449" width="102.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>

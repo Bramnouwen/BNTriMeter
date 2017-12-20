@@ -44,6 +44,8 @@ target 'TriMeter' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
 
+  pod 'OneSignal', '>= 2.5.2', '< 3.0'
+
   target 'TriMeterTests' do
     inherit! :search_paths
     # Pods for testing
@@ -54,4 +56,9 @@ target 'TriMeter' do
     # Pods for testing
   end
 
+end
+
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  pod 'OneSignal', '>= 2.5.2', '< 3.0'
 end
