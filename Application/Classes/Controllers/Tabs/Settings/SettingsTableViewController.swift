@@ -24,7 +24,7 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("settingsTableViewController didLoad")
+        title = L10n.Tabs.settings
         
         delegate = self
         

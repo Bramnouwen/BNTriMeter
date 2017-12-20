@@ -222,17 +222,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1a-hM-JCT">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1a-hM-JCT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EA-C0-fzb">
-                                        <rect key="frame" x="32" y="281" width="311" height="41.5"/>
+                                        <rect key="frame" x="32" y="281.5" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQc-qj-R0M">
-                                        <rect key="frame" x="142" y="338" width="91" height="31"/>
+                                        <rect key="frame" x="142" y="338.5" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -302,20 +302,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-gi-PHZ">
-                                <rect key="frame" x="32" y="16" width="311" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your duration for running." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXN-gi-PHZ">
+                                <rect key="frame" x="16" y="16" width="343" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-DO-byh">
-                                <rect key="frame" x="48" y="41" width="279" height="16.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the buttons add or subtract by 1." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-DO-byh">
+                                <rect key="frame" x="16" y="41" width="343" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-eU-aK0">
-                                <rect key="frame" x="171" y="138.5" width="34.5" height="21"/>
+                                <rect key="frame" x="170.5" y="138.5" width="34.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -344,7 +344,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lO-ta-n5y">
-                                <rect key="frame" x="299.5" y="199.5" width="44" height="44"/>
+                                <rect key="frame" x="299" y="199.5" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="b3D-Xz-h3f"/>
                                     <constraint firstAttribute="width" constant="44" id="wsi-cG-dEv"/>
@@ -383,13 +383,13 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="aQz-R3-1lJ" firstAttribute="centerY" secondItem="yUh-hV-p1J" secondAttribute="centerY" id="0NM-yv-g9q"/>
-                            <constraint firstItem="0qA-GR-e7S" firstAttribute="trailing" secondItem="NXN-gi-PHZ" secondAttribute="trailing" constant="32" id="0ff-bQ-xGd"/>
+                            <constraint firstItem="0qA-GR-e7S" firstAttribute="trailing" secondItem="NXN-gi-PHZ" secondAttribute="trailing" constant="16" id="0ff-bQ-xGd"/>
                             <constraint firstItem="yUh-hV-p1J" firstAttribute="top" secondItem="vDA-eU-aK0" secondAttribute="bottom" constant="4" id="4qK-KF-uWf"/>
-                            <constraint firstItem="NXN-gi-PHZ" firstAttribute="leading" secondItem="0qA-GR-e7S" secondAttribute="leading" constant="32" id="5Dv-M7-XAb"/>
+                            <constraint firstItem="NXN-gi-PHZ" firstAttribute="leading" secondItem="0qA-GR-e7S" secondAttribute="leading" constant="16" id="5Dv-M7-XAb"/>
                             <constraint firstItem="a7M-DX-T5Z" firstAttribute="leading" secondItem="0qA-GR-e7S" secondAttribute="leading" constant="16" id="5UC-Ik-CTT"/>
                             <constraint firstItem="Ifv-hn-5dJ" firstAttribute="centerX" secondItem="N4E-lB-YRF" secondAttribute="centerX" id="9rI-ke-2JJ"/>
-                            <constraint firstItem="sjC-DO-byh" firstAttribute="leading" secondItem="0qA-GR-e7S" secondAttribute="leading" constant="48" id="FpA-6M-asi"/>
-                            <constraint firstItem="0qA-GR-e7S" firstAttribute="trailing" secondItem="sjC-DO-byh" secondAttribute="trailing" constant="48" id="GWF-rd-avr"/>
+                            <constraint firstItem="sjC-DO-byh" firstAttribute="leading" secondItem="0qA-GR-e7S" secondAttribute="leading" constant="16" id="FpA-6M-asi"/>
+                            <constraint firstItem="0qA-GR-e7S" firstAttribute="trailing" secondItem="sjC-DO-byh" secondAttribute="trailing" constant="16" id="GWF-rd-avr"/>
                             <constraint firstItem="0qA-GR-e7S" firstAttribute="bottom" secondItem="a7M-DX-T5Z" secondAttribute="bottom" constant="16" id="Ght-zP-K8A"/>
                             <constraint firstItem="sjC-DO-byh" firstAttribute="top" secondItem="NXN-gi-PHZ" secondAttribute="bottom" constant="4" id="HO2-Mx-TMk"/>
                             <constraint firstItem="8Sj-w2-5ui" firstAttribute="top" secondItem="Ifv-hn-5dJ" secondAttribute="bottom" constant="8" id="OcJ-5r-LKl"/>
@@ -416,6 +416,7 @@
                         <outlet property="goalDescription" destination="Ifv-hn-5dJ" id="IcF-C4-fPV"/>
                         <outlet property="goalTitle" destination="vDA-eU-aK0" id="FNG-Fj-FzD"/>
                         <outlet property="minusButton" destination="aQz-R3-1lJ" id="0jJ-IC-u3t"/>
+                        <outlet property="pickerHeight" destination="rsR-52-BBJ" id="X8O-nR-A9J"/>
                         <outlet property="plusButton" destination="7lO-ta-n5y" id="7bm-hY-ONc"/>
                         <outlet property="titleLabel" destination="NXN-gi-PHZ" id="LYf-Mh-zHa"/>
                     </connections>
@@ -478,11 +479,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9l-Ar-0GS">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9l-Ar-0GS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMx-wn-NkZ">
-                                        <rect key="frame" x="142" y="339" width="91" height="31"/>
+                                        <rect key="frame" x="142" y="338.5" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -492,7 +493,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-lF-jgR">
-                                        <rect key="frame" x="32" y="281.5" width="311" height="41.5"/>
+                                        <rect key="frame" x="32" y="281" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -535,6 +536,7 @@
                     <connections>
                         <outlet property="dataDescriptionLabel" destination="WsT-5a-LSS" id="AQb-uM-Vfc"/>
                         <outlet property="descriptionLabel" destination="NMD-gE-T47" id="BR3-eD-5za"/>
+                        <outlet property="distanceToDefaultButtons" destination="2ag-5D-vxV" id="Rzc-CC-KWC"/>
                         <outlet property="loadDefaultButton" destination="SQW-MS-gsk" id="C27-d8-G8U"/>
                         <outlet property="makeDefaultButton" destination="rai-g9-ho7" id="O0Q-ow-JyE"/>
                         <outlet property="obstructionButton" destination="qMx-wn-NkZ" id="Nvf-Bf-pjC"/>
@@ -579,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Os-yg-UOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4649" y="525"/>
+            <point key="canvasLocation" x="4701" y="525"/>
         </scene>
         <!--Choose Settings View Controller-->
         <scene sceneID="n1d-ki-cKs">
@@ -629,17 +631,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-eI-lFd">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-eI-lFd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verander eerst naar een sport of ga naar het overzicht van de geselecteerde preset!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP5-af-N6P">
-                                        <rect key="frame" x="32" y="281" width="311" height="41.5"/>
+                                        <rect key="frame" x="32" y="281.5" width="311" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9M-ld-rWO">
-                                        <rect key="frame" x="141.5" y="338.5" width="91" height="31"/>
+                                        <rect key="frame" x="141.5" y="339" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
                                             <color key="titleColor" name="Bermuda"/>
@@ -681,6 +683,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="yNg-U7-CJZ" id="g0H-qf-mhl"/>
+                        <outlet property="distanceToDefaultButtons" destination="jqc-Yt-RoO" id="MUC-X1-ltc"/>
                         <outlet property="loadDefaultButton" destination="h8D-WV-S4q" id="n5T-wL-DKF"/>
                         <outlet property="makeDefaultButton" destination="R3b-Yp-HP4" id="hxr-WA-qxb"/>
                         <outlet property="obstructionButton" destination="B9M-ld-rWO" id="R64-LT-SXs"/>
@@ -725,24 +728,6 @@
         </namedColor>
         <namedColor name="Background">
             <color red="0.086000002920627594" green="0.13300000131130219" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Background">
-            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Background">
-            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Background">
-            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Bermuda">
-            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Bermuda">
-            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Bermuda">
-            <color red="0.45100000500679016" green="0.89800000190734863" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Bermuda">
             <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

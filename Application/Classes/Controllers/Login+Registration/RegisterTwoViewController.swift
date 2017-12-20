@@ -16,7 +16,7 @@ import IBAnimatable
 import PromiseKit
 import Firebase
 
-class RegisterTwoViewController: UIViewController, UITextFieldDelegate {
+class RegisterTwoViewController: GradientViewController, UITextFieldDelegate {
     
     let API = APIManager.shared
     let db = Firestore.firestore()
@@ -34,6 +34,10 @@ class RegisterTwoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var kilogramButton: UIButton!
     
     var male: Bool?
+    
+    // Constraints
+    @IBOutlet weak var triMeterToLogoDistance: NSLayoutConstraint!
+    @IBOutlet weak var firstNameToDescriptionDistance: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +63,6 @@ class RegisterTwoViewController: UIViewController, UITextFieldDelegate {
         dateOfBirthTextField.inputView = datePicker
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.applyGradient()
-    }
-    
     @IBAction func genderSegmentedControlValueChanged(_ sender: Any) {
         if genderSegmentedControl.selectedSegmentIndex == 0 {
             male = true
@@ -172,4 +171,29 @@ class RegisterTwoViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+// Screen support
+
+import Device
+extension RegisterTwoViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //iphone 7+ (5.5) = 330, iphone 7 (4.7) = 300, iphone 5 (4) = 240,
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            triMeterToLogoDistance.constant = 0
+            firstNameToDescriptionDistance.constant = 0
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+        case .screen5_8Inch: //iPhone x
+            print("X")
+        default:
+            print("Size not supported")
+        }
+    }
 }

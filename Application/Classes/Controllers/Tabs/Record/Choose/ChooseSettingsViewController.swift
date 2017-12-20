@@ -43,6 +43,9 @@ class ChooseSettingsViewController: GradientViewController {
     @IBOutlet weak var obstructionLabel: UILabel!
     @IBOutlet weak var obstructionButton: UIButton!
     
+    // Constraints
+    @IBOutlet weak var distanceToDefaultButtons: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -216,5 +219,31 @@ extension ChooseSettingsViewController: UITableViewDelegate, UITableViewDataSour
         }
         
         dataManager.archive(activity: activity, key: "currentActivity")
+    }
+}
+
+// Screen support
+
+import Device
+extension ChooseSettingsViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            distanceToDefaultButtons.constant = 25
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+            
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+            
+        case .screen5_8Inch: //iPhone x
+            print("X")
+            
+        default:
+            print("Size not supported")
+        }
     }
 }

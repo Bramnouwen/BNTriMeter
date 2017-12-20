@@ -74,6 +74,11 @@ class RecordViewController: GradientViewController {
     
     var activity: Activity!
     
+    // Constraints
+    @IBOutlet weak var mapHeight: NSLayoutConstraint!
+    @IBOutlet weak var activityGoalStackViewWidth: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,11 +96,7 @@ class RecordViewController: GradientViewController {
         dataLabel.text = L10n.Record.data
         startActivityButton.setTitle(L10n.Record.button, for: .normal)
         
-        
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        // Previously in willLayoutSubview
         activityButton.titleLabel?.adjustsFontSizeToFitWidth = true
         goalButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
@@ -337,6 +338,33 @@ extension RecordViewController: CLLocationManagerDelegate {
         } else {
             locationManager.requestWhenInUseAuthorization()
             //          locationManager.requestAlwaysAuthorization() //TODO: To run in background?
+        }
+    }
+}
+
+// Screen support
+
+import Device
+extension RecordViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            mapHeight.constant = 180
+            activityGoalStackViewWidth.constant = 150
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+            
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+            
+        case .screen5_8Inch: //iPhone x
+            print("X")
+            mapHeight.constant = 365
+        default:
+            print("Size not supported")
         }
     }
 }

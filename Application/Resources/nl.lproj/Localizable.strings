@@ -5,6 +5,13 @@
   Created by Bram Nouwen on 6/11/17.
   Copyright © 2017 Bram Nouwen. All rights reserved.
 */
+// Tabs
+"Tabs.feed" = "Overzicht";
+"Tabs.profile" = "Profiel";
+"Tabs.start" = "Begin!";
+"Tabs.leaderboard" = "Scorebord";
+"Tabs.settings" = "Instellingen";
+
 // Alerts
 "Alert.part.incomplete.title" = "Onvolledig";
 "Alert.part.incomplete.description" = "Zorg dat je een sport en doel voor dit deel hebt gekozen";
@@ -34,6 +41,7 @@
 "Connect.or" = "of";
 
 // Create
+"Create.overview" = "Overzicht";
 "Create.title" = "Titel";
 "Create.title.title" = "Titel";
 "Create.summary" = "Samenvatting";

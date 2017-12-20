@@ -15,6 +15,12 @@ class TabBarController: UITabBarController {
         
         self.selectedIndex = 2
         
+        tabBar.items![0].title = L10n.Tabs.feed
+        tabBar.items![1].title = L10n.Tabs.profile
+        tabBar.items![2].title = L10n.Tabs.start
+        tabBar.items![3].title = L10n.Tabs.leaderboard
+        tabBar.items![4].title = L10n.Tabs.settings
+        
     }
 
 }

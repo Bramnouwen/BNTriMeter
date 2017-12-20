@@ -222,6 +222,8 @@ enum L10n {
     static let delete = L10n.tr("Localizable", "Create.delete")
     /// Edit
     static let edit = L10n.tr("Localizable", "Create.edit")
+    /// Overview
+    static let overview = L10n.tr("Localizable", "Create.overview")
     /// Save
     static let save = L10n.tr("Localizable", "Create.save")
     /// Select
@@ -779,6 +781,19 @@ enum L10n {
       /// Live location
       static let title = L10n.tr("Localizable", "Settings.liveLocation.title")
     }
+  }
+
+  enum Tabs {
+    /// Feed
+    static let feed = L10n.tr("Localizable", "Tabs.feed")
+    /// Leaderboard
+    static let leaderboard = L10n.tr("Localizable", "Tabs.leaderboard")
+    /// Profile
+    static let profile = L10n.tr("Localizable", "Tabs.profile")
+    /// Settings
+    static let settings = L10n.tr("Localizable", "Tabs.settings")
+    /// Let's go!
+    static let start = L10n.tr("Localizable", "Tabs.start")
   }
 
   enum Welcome {

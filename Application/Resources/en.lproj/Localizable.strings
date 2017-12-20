@@ -5,6 +5,13 @@
   Created by Bram Nouwen on 6/11/17.
   Copyright © 2017 Bram Nouwen. All rights reserved.
 */
+// Tabs
+"Tabs.feed" = "Feed";
+"Tabs.profile" = "Profile";
+"Tabs.start" = "Let's go!";
+"Tabs.leaderboard" = "Leaderboard";
+"Tabs.settings" = "Settings";
+
 // Alerts
 "Alert.part.incomplete.title" = "Incomplete";
 "Alert.part.incomplete.description" = "Make sure you chose a sport and a goal for this part.";
@@ -34,6 +41,7 @@
 "Connect.or" = "or";
 
 // Create
+"Create.overview" = "Overview";
 "Create.title" = "Title";
 "Create.title.title" = "Title";
 "Create.summary" = "Summary";

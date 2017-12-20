@@ -282,6 +282,7 @@
                         <outlet property="registerButton" destination="OEr-75-pZ4" id="LGd-fu-4K9"/>
                         <outlet property="stravaButton" destination="DXW-Hd-496" id="uY0-Cv-Nyc"/>
                         <outlet property="toLoginButton" destination="gt1-eW-VsA" id="OaZ-vJ-ic8"/>
+                        <outlet property="triMeterToLogoDistanceConstraint" destination="w8z-K4-xFI" id="Ktd-Wk-UPa"/>
                         <segue destination="jbL-vS-2rt" kind="show" identifier="toRegisterTwo" id="XF9-VU-Pw1"/>
                         <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="e01-nT-XOk"/>
                     </connections>
@@ -404,7 +405,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something's wrong, try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuB-wn-Z2S">
-                                <rect key="frame" x="89" y="370" width="198" height="19"/>
+                                <rect key="frame" x="88.5" y="370" width="198" height="19"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="16"/>
                                 <color key="textColor" name="Amaranth"/>
                                 <nil key="highlightedColor"/>
@@ -435,9 +436,9 @@
                             <constraint firstItem="D7g-hh-nxW" firstAttribute="leading" secondItem="XLF-Wb-lCZ" secondAttribute="leading" constant="16" id="WRg-8p-tVR"/>
                             <constraint firstItem="x1f-K8-xml" firstAttribute="top" secondItem="D7g-hh-nxW" secondAttribute="bottom" constant="8" id="YcA-uc-Kls"/>
                             <constraint firstItem="Bm3-xX-lfI" firstAttribute="top" secondItem="rGZ-rf-B3K" secondAttribute="bottom" constant="45" id="Z10-eq-jdd"/>
+                            <constraint firstItem="GPq-35-TrD" firstAttribute="top" secondItem="96f-Om-JEf" secondAttribute="bottom" constant="66" id="Z2V-gs-R5N"/>
                             <constraint firstItem="EQX-rO-NEw" firstAttribute="top" secondItem="GPq-35-TrD" secondAttribute="bottom" constant="16" id="cG4-Tr-eHF"/>
                             <constraint firstItem="x48-UH-Ls4" firstAttribute="top" secondItem="EQX-rO-NEw" secondAttribute="bottom" id="ii7-kH-Jxk"/>
-                            <constraint firstItem="D7g-hh-nxW" firstAttribute="top" secondItem="EQX-rO-NEw" secondAttribute="bottom" constant="100" id="jWq-HX-U52"/>
                             <constraint firstItem="Bm3-xX-lfI" firstAttribute="centerX" secondItem="5gH-DT-2Lt" secondAttribute="centerX" id="nBv-5o-NmV"/>
                             <constraint firstItem="96f-Om-JEf" firstAttribute="top" secondItem="Bm3-xX-lfI" secondAttribute="bottom" id="nfI-CS-5d9"/>
                             <constraint firstItem="XLF-Wb-lCZ" firstAttribute="trailing" secondItem="x1f-K8-xml" secondAttribute="trailing" constant="16" id="qQP-bY-CJl"/>
@@ -450,12 +451,14 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="96f-Om-JEf" id="FXV-Ys-LO0"/>
                         <outlet property="emailTextField" destination="GPq-35-TrD" id="fhe-IN-RTC"/>
+                        <outlet property="emailToDescriptionDistance" destination="Z2V-gs-R5N" id="n3I-9q-tmc"/>
                         <outlet property="errorLabel" destination="MuB-wn-Z2S" id="kde-x2-oYK"/>
                         <outlet property="forgotPasswordButton" destination="x48-UH-Ls4" id="2eB-tt-Kv8"/>
                         <outlet property="loginButton" destination="D7g-hh-nxW" id="3wV-bX-KOH"/>
                         <outlet property="passwordTextField" destination="EQX-rO-NEw" id="IIE-An-hCl"/>
                         <outlet property="showHidePasswordButton" destination="u0v-ri-Tk0" id="qIa-nJ-9zW"/>
                         <outlet property="toRegisterButton" destination="x1f-K8-xml" id="SkG-gt-0fe"/>
+                        <outlet property="triMeterToLogoDistance" destination="Z10-eq-jdd" id="iPB-lr-mQz"/>
                         <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="H06-W8-m5Z"/>
                     </connections>
                 </viewController>
@@ -601,8 +604,8 @@
                             <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="g05-wZ-jb2" secondAttribute="trailing" constant="32" id="QtQ-AW-DBq"/>
                             <constraint firstItem="E4y-0r-AKV" firstAttribute="leading" secondItem="4Ng-vc-L2n" secondAttribute="leading" constant="16" id="Wch-5F-wVy"/>
                             <constraint firstItem="uoT-wz-Je8" firstAttribute="top" secondItem="E4y-0r-AKV" secondAttribute="bottom" constant="8" id="XJW-jI-OUc"/>
-                            <constraint firstItem="E4y-0r-AKV" firstAttribute="top" secondItem="g05-wZ-jb2" secondAttribute="bottom" constant="100" id="XKx-PB-qyQ"/>
                             <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="E4y-0r-AKV" secondAttribute="trailing" constant="16" id="a15-FA-fI2"/>
+                            <constraint firstItem="83m-ql-Tfg" firstAttribute="top" secondItem="INl-eX-ag7" secondAttribute="bottom" constant="46" id="eBT-d3-C4O"/>
                             <constraint firstItem="4Ng-vc-L2n" firstAttribute="trailing" secondItem="CcQ-RY-LRG" secondAttribute="trailing" constant="32" id="gMF-ec-mjI"/>
                             <constraint firstItem="4Ng-vc-L2n" firstAttribute="bottom" secondItem="uoT-wz-Je8" secondAttribute="bottom" constant="8" id="gbu-8u-Qkk"/>
                             <constraint firstItem="g05-wZ-jb2" firstAttribute="top" secondItem="83m-ql-Tfg" secondAttribute="bottom" constant="16" id="jHk-1y-0Tm"/>
@@ -618,9 +621,11 @@
                         <outlet property="continueButton" destination="E4y-0r-AKV" id="yWg-c5-Xc0"/>
                         <outlet property="descriptionLabel" destination="INl-eX-ag7" id="3hK-DE-FJh"/>
                         <outlet property="emailTextField" destination="83m-ql-Tfg" id="Ger-oA-Ref"/>
+                        <outlet property="emailToDescriptionDistance" destination="eBT-d3-C4O" id="0Yv-Nc-AUf"/>
                         <outlet property="passwordTextField" destination="g05-wZ-jb2" id="fl5-i4-Hcq"/>
                         <outlet property="showHidePasswordButton" destination="CcQ-RY-LRG" id="Of1-Tb-jUg"/>
                         <outlet property="toLoginButton" destination="uoT-wz-Je8" id="ut5-wX-KfU"/>
+                        <outlet property="triMeterToLogoDistance" destination="9Sl-Kt-ZNN" id="yKq-nf-HbY"/>
                         <segue destination="jbL-vS-2rt" kind="show" identifier="toRegisterTwo" id="U6q-JG-mO6"/>
                     </connections>
                 </viewController>
@@ -656,7 +661,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1M-sp-1pB" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="420" width="163.5" height="27"/>
+                                <rect key="frame" x="16" y="420" width="164" height="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -678,7 +683,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-yB-zJp" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="195" y="420" width="163.5" height="27"/>
+                                <rect key="frame" x="195.5" y="420" width="163.5" height="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -700,7 +705,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU7-qk-kVs" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="463" width="163.5" height="27"/>
+                                <rect key="frame" x="16" y="463" width="164" height="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -722,7 +727,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-69-PgI" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="195" y="463" width="163.5" height="27"/>
+                                <rect key="frame" x="195.5" y="463" width="163.5" height="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -798,9 +803,9 @@
                             <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="uJ5-kI-tdd" secondAttribute="trailing" constant="16" id="7nc-QY-Nc5"/>
                             <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="4ti-GZ-Fi6" secondAttribute="trailing" constant="16" id="9Cw-Dy-Dew"/>
                             <constraint firstItem="o7D-GQ-YXw" firstAttribute="trailing" secondItem="zbC-69-PgI" secondAttribute="trailing" constant="16" id="BPN-u9-Rme"/>
-                            <constraint firstItem="uJ5-kI-tdd" firstAttribute="top" secondItem="fih-Ax-wpG" secondAttribute="bottom" constant="45" id="BZd-9r-Ih5"/>
                             <constraint firstItem="uJ5-kI-tdd" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="16" id="C2z-Zg-UTT"/>
                             <constraint firstItem="fih-Ax-wpG" firstAttribute="top" secondItem="PU7-qk-kVs" secondAttribute="bottom" constant="16" id="FLD-h4-IDw"/>
+                            <constraint firstItem="h1M-sp-1pB" firstAttribute="top" secondItem="Vde-qF-7Tz" secondAttribute="bottom" constant="37.5" id="PkG-kg-SFS"/>
                             <constraint firstItem="PU7-qk-kVs" firstAttribute="leading" secondItem="o7D-GQ-YXw" secondAttribute="leading" constant="16" id="Q7R-Hh-sVa"/>
                             <constraint firstItem="o7D-GQ-YXw" firstAttribute="bottom" secondItem="uJ5-kI-tdd" secondAttribute="bottom" constant="38" id="Y8h-do-Vwc"/>
                             <constraint firstItem="mAx-Nc-7Oq" firstAttribute="centerX" secondItem="XnX-jx-ioQ" secondAttribute="centerX" id="Z5k-jA-hbd"/>
@@ -826,10 +831,12 @@
                         <outlet property="dateOfBirthTextField" destination="PU7-qk-kVs" id="QSF-9A-6w1"/>
                         <outlet property="descriptionLabel" destination="Vde-qF-7Tz" id="CqH-dd-G1e"/>
                         <outlet property="firstNameTextField" destination="h1M-sp-1pB" id="9tK-5B-4mK"/>
+                        <outlet property="firstNameToDescriptionDistance" destination="PkG-kg-SFS" id="Z09-Zw-3t3"/>
                         <outlet property="genderSegmentedControl" destination="fih-Ax-wpG" id="Iu4-RM-Lck"/>
                         <outlet property="kilogramButton" destination="4ti-GZ-Fi6" id="adc-ba-0QD"/>
                         <outlet property="lastNameTextField" destination="Idg-yB-zJp" id="QGD-ds-uKE"/>
                         <outlet property="registerButton" destination="uJ5-kI-tdd" id="90g-Y8-pVJ"/>
+                        <outlet property="triMeterToLogoDistance" destination="5AX-iH-KmG" id="I2y-M2-9Lt"/>
                         <outlet property="weightTextField" destination="zbC-69-PgI" id="sq0-m2-Q4x"/>
                         <segue destination="8lB-7W-ppd" kind="show" identifier="toMain" id="4QP-f1-H7a"/>
                     </connections>
@@ -871,9 +878,9 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XF9-VU-Pw1"/>
-        <segue reference="D32-Iq-RSC"/>
-        <segue reference="e01-nT-XOk"/>
-        <segue reference="yQx-e5-x92"/>
+        <segue reference="U6q-JG-mO6"/>
+        <segue reference="vFK-gt-zcR"/>
+        <segue reference="H06-W8-m5Z"/>
+        <segue reference="auZ-US-S9n"/>
     </inferredMetricsTieBreakers>
 </document>

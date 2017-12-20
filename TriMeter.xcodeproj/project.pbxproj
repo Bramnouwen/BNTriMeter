@@ -32,7 +32,6 @@
 		F964EE471FDE9B6900675EA4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDE41FDE9B6800675EA4 /* RecordViewController.swift */; };
 		F964EE481FDE9B6900675EA4 /* SettingsPerSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDE61FDE9B6800675EA4 /* SettingsPerSportViewController.swift */; };
 		F964EE491FDE9B6900675EA4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDE71FDE9B6800675EA4 /* SettingsTableViewController.swift */; };
-		F964EE4A1FDE9B6900675EA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDE81FDE9B6800675EA4 /* SettingsViewController.swift */; };
 		F964EE4B1FDE9B6900675EA4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDE91FDE9B6800675EA4 /* TabBarController.swift */; };
 		F964EE4C1FDE9B6900675EA4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDEA1FDE9B6800675EA4 /* TestViewController.swift */; };
 		F964EE4D1FDE9B6900675EA4 /* CoreData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDEC1FDE9B6800675EA4 /* CoreData+Extension.swift */; };
@@ -165,7 +164,6 @@
 		F964EDE41FDE9B6800675EA4 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		F964EDE61FDE9B6800675EA4 /* SettingsPerSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPerSportViewController.swift; sourceTree = "<group>"; };
 		F964EDE71FDE9B6800675EA4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		F964EDE81FDE9B6800675EA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F964EDE91FDE9B6800675EA4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F964EDEA1FDE9B6800675EA4 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F964EDEC1FDE9B6800675EA4 /* CoreData+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreData+Extension.swift"; sourceTree = "<group>"; };
@@ -474,7 +472,6 @@
 			children = (
 				F964EDE71FDE9B6800675EA4 /* SettingsTableViewController.swift */,
 				F964EDE61FDE9B6800675EA4 /* SettingsPerSportViewController.swift */,
-				F964EDE81FDE9B6800675EA4 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1048,7 +1045,6 @@
 				F964EE581FDE9B6900675EA4 /* DataField.swift in Sources */,
 				F964EE541FDE9B6900675EA4 /* Formatters.swift in Sources */,
 				F964EE3D1FDE9B6900675EA4 /* LeaderboardViewController.swift in Sources */,
-				F964EE4A1FDE9B6900675EA4 /* SettingsViewController.swift in Sources */,
 				F9DAF0F01FE431DE00A8F606 /* OverviewTransitionNormalTableViewCell.swift in Sources */,
 				F964EE3A1FDE9B6900675EA4 /* WelcomeViewController.swift in Sources */,
 				F964EE361FDE9B6900675EA4 /* ConnectViewController.swift in Sources */,

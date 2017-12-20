@@ -39,6 +39,10 @@ class CreateSettingsViewController: GradientViewController {
     
     var newPart: Activity!
     
+    // Constraints
+    @IBOutlet weak var distanceToDefaultButtons: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -201,5 +205,31 @@ extension CreateSettingsViewController: UITableViewDelegate, UITableViewDataSour
         }
         
         dataManager.newPart = newPart
+    }
+}
+
+// Screen support
+
+import Device
+extension CreateSettingsViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            distanceToDefaultButtons.constant = 25
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+            
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+            
+        case .screen5_8Inch: //iPhone x
+            print("X")
+            
+        default:
+            print("Size not supported")
+        }
     }
 }

@@ -158,9 +158,8 @@
                                 </constraints>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Od-uy-pha">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Od-uy-pha">
                                 <rect key="frame" x="16" y="417" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Slow"/>
                                     <segment title="Normal"/>
@@ -194,11 +193,14 @@
                             <constraint firstItem="6AX-K8-Iv7" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" id="01a-R8-KkO"/>
                             <constraint firstItem="L1G-WB-18X" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" constant="31" id="1Fg-eB-qQO"/>
                             <constraint firstItem="6AX-K8-Iv7" firstAttribute="trailing" secondItem="ylJ-0H-HFm" secondAttribute="trailing" id="8lJ-Sc-HVW"/>
+                            <constraint firstItem="ylJ-0H-HFm" firstAttribute="trailing" secondItem="6Od-uy-pha" secondAttribute="trailing" constant="16" id="Euk-s2-JrG"/>
                             <constraint firstItem="6AX-K8-Iv7" firstAttribute="bottom" secondItem="ylJ-0H-HFm" secondAttribute="bottom" id="H0z-kZ-FZL"/>
                             <constraint firstItem="6AX-K8-Iv7" firstAttribute="top" secondItem="ylJ-0H-HFm" secondAttribute="top" id="Rkg-Y8-V1C"/>
                             <constraint firstItem="FzI-h0-EfU" firstAttribute="trailing" secondItem="ylJ-0H-HFm" secondAttribute="trailing" id="T7f-0A-5Tp"/>
                             <constraint firstItem="ylJ-0H-HFm" firstAttribute="trailing" secondItem="L1G-WB-18X" secondAttribute="trailing" constant="31" id="UWU-lZ-HHY"/>
                             <constraint firstItem="FzI-h0-EfU" firstAttribute="centerY" secondItem="qhh-Yl-EDW" secondAttribute="centerY" constant="-20" id="cAL-fX-Y1B"/>
+                            <constraint firstItem="6Od-uy-pha" firstAttribute="top" secondItem="FzI-h0-EfU" secondAttribute="bottom" constant="25" id="gK7-a6-Tut"/>
+                            <constraint firstItem="6Od-uy-pha" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" constant="16" id="ozd-uS-zHg"/>
                             <constraint firstItem="FzI-h0-EfU" firstAttribute="leading" secondItem="ylJ-0H-HFm" secondAttribute="leading" id="pjo-pn-FAE"/>
                             <constraint firstItem="L1G-WB-18X" firstAttribute="top" secondItem="ylJ-0H-HFm" secondAttribute="top" constant="16" id="qSl-yg-VT0"/>
                             <constraint firstItem="L1G-WB-18X" firstAttribute="centerX" secondItem="qhh-Yl-EDW" secondAttribute="centerX" id="sKa-OW-S2b"/>
@@ -431,6 +433,7 @@
                     <connections>
                         <outlet property="dataDescriptionLabel" destination="umu-hm-8cx" id="2XZ-St-nlF"/>
                         <outlet property="descriptionLabel" destination="6T4-l3-EmI" id="a9M-1E-UD9"/>
+                        <outlet property="distanceToDefaultButtons" destination="tKI-oM-3MQ" id="Vud-oF-9fs"/>
                         <outlet property="loadDefaultButton" destination="cYQ-Yq-j6X" id="4cB-wf-ntN"/>
                         <outlet property="makeDefaultButton" destination="SfI-pI-sXd" id="fIZ-d2-Bfj"/>
                         <outlet property="tableView" destination="RTL-Ro-OIR" id="I6j-uz-vpj"/>
@@ -482,13 +485,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdy-WX-N9O">
-                                <rect key="frame" x="151" y="8" width="73" height="21"/>
+                                <rect key="frame" x="151" y="8" width="73" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-ga-Q1c" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="88" y="37" width="200" height="55"/>
+                                <rect key="frame" x="88" y="38" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GgA-fc-D8c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nVH-HV-XBI"/>
@@ -511,13 +514,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summaryLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-RK-7RT">
-                                <rect key="frame" x="129" y="124" width="118.5" height="21"/>
+                                <rect key="frame" x="130.5" y="125" width="115.5" height="22"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
-                                <rect key="frame" x="0.0" y="153" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="KYU-zf-ccv"/>
@@ -686,6 +689,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="BWF-qO-zOB" id="EwN-hS-APK"/>
+                        <outlet property="distanceToDefaultButtons" destination="N39-Eg-HNY" id="7Ln-rt-Ryv"/>
                         <outlet property="loadDefaultButton" destination="Dg7-8n-zzp" id="0nJ-KK-btq"/>
                         <outlet property="makeDefaultButton" destination="Whq-mY-EFH" id="egg-2L-u1K"/>
                         <outlet property="tableView" destination="S9I-jp-RkA" id="Pll-Rj-m9w"/>
@@ -767,6 +771,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YJF-9J-pVX"/>
+        <segue reference="D38-xc-mB0"/>
     </inferredMetricsTieBreakers>
 </document>

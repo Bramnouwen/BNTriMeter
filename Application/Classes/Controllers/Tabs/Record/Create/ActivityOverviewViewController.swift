@@ -38,6 +38,8 @@ class ActivityOverviewViewController: GradientViewController, UIActionSheetDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = L10n.Create.overview
+        
         titleLabel.text = L10n.Create.title
         titleTextField.placeholder = L10n.Create.Title.title
         titleTextField.placeholderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)

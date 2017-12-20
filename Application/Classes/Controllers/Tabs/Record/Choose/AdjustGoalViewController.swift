@@ -53,6 +53,10 @@ class AdjustGoalViewController: GradientViewController, UIPickerViewDataSource, 
         }
     }
     
+    // Constraints
+    @IBOutlet weak var pickerHeight: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -11,7 +11,7 @@ import IBAnimatable
 import PromiseKit
 import Firebase
 
-class RegisterOneViewController: UIViewController {
+class RegisterOneViewController: GradientViewController {
     
     let API = APIManager.shared
     let db = Firestore.firestore()
@@ -24,6 +24,10 @@ class RegisterOneViewController: UIViewController {
     @IBOutlet weak var continueButton: AnimatableButton!
     @IBOutlet weak var toLoginButton: UIButton!
     @IBOutlet weak var showHidePasswordButton: UIButton!
+    
+    // Constraints
+    @IBOutlet weak var emailToDescriptionDistance: NSLayoutConstraint!
+    @IBOutlet weak var triMeterToLogoDistance: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +43,6 @@ class RegisterOneViewController: UIViewController {
         
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.applyGradient()
-    }
-    
     @IBAction func continueButtonClicked(_ sender: Any) {
         guard let email = emailTextField.text?.trimmingCharacters(in: .whitespaces),
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
@@ -119,4 +118,29 @@ class RegisterOneViewController: UIViewController {
         }
     }
     
+}
+
+// Screen support
+
+import Device
+extension RegisterOneViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //iphone 7+ (5.5) = 330, iphone 7 (4.7) = 300, iphone 5 (4) = 240,
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            emailToDescriptionDistance.constant = 12
+            triMeterToLogoDistance.constant = 0
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+        case .screen5_8Inch: //iPhone x
+            print("X")
+        default:
+            print("Size not supported")
+        }
+    }
 }

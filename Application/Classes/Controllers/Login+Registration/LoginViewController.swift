@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import PromiseKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: GradientViewController {
     
     let API = APIManager.shared
     
@@ -28,6 +28,11 @@ class LoginViewController: UIViewController {
     
     var errorCounter = 1
     
+    // Constraints
+    @IBOutlet weak var triMeterToLogoDistance: NSLayoutConstraint!
+    @IBOutlet weak var emailToDescriptionDistance: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,11 +46,6 @@ class LoginViewController: UIViewController {
         errorLabel.text = L10n.Login.errorOne
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.applyGradient()
-    }
-    
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         //TODO: Send password reset email
         errorLabel.text = L10n.Login.forgotError
@@ -123,4 +123,29 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+// Screen support
+
+import Device
+extension LoginViewController {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //iphone 7+ (5.5) = 330, iphone 7 (4.7) = 300, iphone 5 (4) = 240,
+        switch Device.size() {
+        case .screen4Inch: //iPhone 5
+            print("5")
+            triMeterToLogoDistance.constant = 0
+            emailToDescriptionDistance.constant = 40
+        case .screen4_7Inch: //iPhone 8
+            print("8")
+        case .screen5_5Inch: //iPhone 8+
+            print("8+")
+        case .screen5_8Inch: //iPhone x
+            print("X")
+        default:
+            print("Size not supported")
+        }
+    }
 }

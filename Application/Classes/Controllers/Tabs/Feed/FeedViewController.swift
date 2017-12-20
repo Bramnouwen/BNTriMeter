@@ -13,7 +13,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = L10n.Tabs.feed
     }
 
     override func viewWillLayoutSubviews() {
