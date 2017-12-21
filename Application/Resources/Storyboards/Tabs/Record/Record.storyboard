@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePT-xh-JOt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePT-xh-JOt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,14 +29,14 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hnp-1d-MsQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
-                                <color key="tintColor" name="Bermuda"/>
+                                <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="ozD-Wb-Sdw"/>
                                 </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UON-25-t8H" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="492" width="343" height="50"/>
-                                <color key="backgroundColor" name="Bermuda"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="966-k0-qlB"/>
                                 </constraints>
@@ -108,7 +108,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfi-3b-SJE" userLabel="Activity Label">
                                                 <rect key="frame" x="16" y="4" width="57" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
-                                                <color key="textColor" name="Bermuda"/>
+                                                <color key="textColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-1r-Sc6" userLabel="Activity Button">
@@ -126,7 +126,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-vH-za9" userLabel="Goal Label">
                                                 <rect key="frame" x="16" y="78" width="35" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
-                                                <color key="textColor" name="Bermuda"/>
+                                                <color key="textColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-Ab-AIS" userLabel="Goal Button">
@@ -162,7 +162,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lp-hi-Jn1" userLabel="Data Label">
                                                 <rect key="frame" x="0.0" y="4" width="36.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="18"/>
-                                                <color key="textColor" name="Bermuda"/>
+                                                <color key="textColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Uw0-Yp-UhZ">
@@ -278,7 +278,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cOL-n7-ovD" firstAttribute="trailing" secondItem="kTc-Jw-pOu" secondAttribute="trailing" id="JOA-o7-dae"/>
                             <constraint firstItem="Hnp-1d-MsQ" firstAttribute="top" secondItem="kTc-Jw-pOu" secondAttribute="top" id="U2F-A3-ve9"/>
@@ -298,14 +298,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="TriMeter" id="ROZ-b7-JFp">
                         <barButtonItem key="leftBarButtonItem" image="settings-1-gear" id="fGa-Ow-GHk">
-                            <color key="tintColor" name="Bermuda"/>
+                            <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="Add" id="qfH-n7-eZz">
-                                <color key="tintColor" name="Bermuda"/>
+                                <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                             </barButtonItem>
                             <barButtonItem image="calendar" id="kFP-kJ-4SQ">
-                                <color key="tintColor" name="Bermuda"/>
+                                <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -387,11 +387,5 @@
         <image name="pace" width="22" height="25"/>
         <image name="running" width="24" height="23"/>
         <image name="settings-1-gear" width="24" height="24"/>
-        <namedColor name="Background">
-            <color red="0.086000002919999999" green="0.1330000013" blue="0.1650000066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Bermuda">
-            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

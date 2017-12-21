@@ -698,8 +698,8 @@
 		F964EE0A1FDE9B6900675EA4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F964EE0B1FDE9B6900675EA4 /* DataSettingsSubViewController.xib */,
 				F964EE0C1FDE9B6900675EA4 /* DataSettingsViewController.swift */,
+				F964EE0B1FDE9B6900675EA4 /* DataSettingsSubViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1483,7 +1483,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -1501,7 +1501,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -1520,7 +1520,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -1539,7 +1539,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -1663,7 +1663,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1682,7 +1682,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2GXZ6WYJR;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.bramnouwen.TriMeterFW;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4N-hK-yKe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4N-hK-yKe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +40,7 @@
                                 <rect key="frame" x="168" y="566" width="39" height="37"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xAl-Xj-Er8" firstAttribute="centerX" secondItem="hJU-FM-dSc" secondAttribute="centerX" id="50V-f5-XQi"/>
                             <constraint firstItem="FGL-wO-OKh" firstAttribute="leading" secondItem="lz0-Ue-iUf" secondAttribute="leading" id="ods-bF-uOb"/>
@@ -53,10 +54,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Pma-ep-SCI">
                         <barButtonItem key="leftBarButtonItem" title="Load" id="VpU-KS-Agk">
-                            <color key="tintColor" name="Bermuda"/>
+                            <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="gsh-Se-uxs">
-                            <color key="tintColor" name="Bermuda"/>
+                            <color key="tintColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
@@ -101,7 +102,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwy-yJ-btL" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="502" width="343" height="50"/>
-                                <color key="backgroundColor" name="Amaranth"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.11764705882352941" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9OI-pz-Bh4"/>
                                 </constraints>
@@ -125,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jZw-8G-SLe" firstAttribute="leading" secondItem="dxJ-Ag-Abc" secondAttribute="leading" id="1aG-fS-jBh"/>
                             <constraint firstItem="5O6-VB-Xsc" firstAttribute="centerX" secondItem="rDC-Wc-mKC" secondAttribute="centerX" id="3aa-F2-PP3"/>
@@ -199,7 +200,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="423-V6-pEL" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="502" width="343" height="50"/>
-                                <color key="backgroundColor" name="Amaranth"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.11764705882352941" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7VL-3Y-IQH"/>
                                 </constraints>
@@ -235,7 +236,7 @@
                                         <rect key="frame" x="142" y="338.5" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
-                                            <color key="titleColor" name="Bermuda"/>
+                                            <color key="titleColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="obstructionButtonClicked:" destination="XeS-L5-27x" eventType="touchUpInside" id="YpX-gh-p4Y"/>
@@ -252,7 +253,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Z1a-hM-JCT" firstAttribute="leading" secondItem="d0h-7R-o5i" secondAttribute="leading" id="1p6-Kl-mKO"/>
                             <constraint firstItem="423-V6-pEL" firstAttribute="leading" secondItem="d0h-7R-o5i" secondAttribute="leading" constant="16" id="7Cl-45-HiQ"/>
@@ -362,7 +363,7 @@
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7M-DX-T5Z" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="537" width="343" height="50"/>
-                                <color key="backgroundColor" name="Bermuda"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="K6a-qK-hCR"/>
                                 </constraints>
@@ -380,7 +381,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aQz-R3-1lJ" firstAttribute="centerY" secondItem="yUh-hV-p1J" secondAttribute="centerY" id="0NM-yv-g9q"/>
                             <constraint firstItem="0qA-GR-e7S" firstAttribute="trailing" secondItem="NXN-gi-PHZ" secondAttribute="trailing" constant="16" id="0ff-bQ-xGd"/>
@@ -486,7 +487,7 @@
                                         <rect key="frame" x="142" y="338.5" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
-                                            <color key="titleColor" name="Bermuda"/>
+                                            <color key="titleColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="obstructionButtonClicked:" destination="n5M-SG-DlL" eventType="touchUpInside" id="Qai-Au-EH9"/>
@@ -509,7 +510,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WsT-5a-LSS" firstAttribute="leading" secondItem="hhE-lC-7X0" secondAttribute="leading" constant="16" id="03G-1b-Sbo"/>
                             <constraint firstItem="gFc-oi-vfw" firstAttribute="leading" secondItem="hhE-lC-7X0" secondAttribute="leading" constant="32" id="065-tE-1M4"/>
@@ -644,7 +645,7 @@
                                         <rect key="frame" x="141.5" y="339" width="91" height="31"/>
                                         <fontDescription key="fontDescription" name="Cabin-Regular" family="Cabin" pointSize="15"/>
                                         <state key="normal" title="Naar overzicht">
-                                            <color key="titleColor" name="Bermuda"/>
+                                            <color key="titleColor" red="0.26666666666666666" green="0.8784313725490196" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="obstructionButtonClicked:" destination="Qgy-4K-mLm" eventType="touchUpInside" id="01o-lR-BxV"/>
@@ -661,7 +662,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hfO-BN-g1T" firstAttribute="leading" secondItem="m3S-6r-vS8" secondAttribute="leading" id="2Wq-Qm-jjX"/>
                             <constraint firstItem="T2p-eI-lFd" firstAttribute="bottom" secondItem="m3S-6r-vS8" secondAttribute="bottom" id="8JD-5c-WRa"/>
@@ -723,14 +724,11 @@
     <resources>
         <image name="button-minus" width="34" height="34"/>
         <image name="button-plus" width="34" height="34"/>
-        <namedColor name="Amaranth">
-            <color red="0.98799997569999998" green="0.21999999880000001" blue="0.32199999689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Background">
-            <color red="0.086000002920627594" green="0.13300000131130219" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.078000001609325409" green="0.13300000131130219" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Bermuda">
-            <color red="0.45100000499999998" green="0.89800000189999996" blue="0.80800002810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.30199998617172241" green="0.89399999380111694" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
