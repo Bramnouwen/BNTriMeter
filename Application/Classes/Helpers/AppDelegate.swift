@@ -12,6 +12,7 @@ import FBSDKCoreKit
 import Fabric
 import Crashlytics
 import OneSignal
+import HealthKit
 
 // fb login redirect: https://trimeter-b40c9.firebaseapp.com/__/auth/handler
 @UIApplicationMain
@@ -80,11 +81,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
+    
+    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+        let healthStore = HKHealthStore()
+        healthStore.handleAuthorizationForExtension { (success, error) in
+            
+        }
+    }
 
 }
 
 // David Jennes @ AppWise
-// Got this during internship
+// Acquired during internship // TODO: Spelling?
 extension UIApplication {
     class func topViewController(base: UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {

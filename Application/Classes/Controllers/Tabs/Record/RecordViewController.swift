@@ -78,6 +78,8 @@ class RecordViewController: GradientViewController {
     @IBOutlet weak var mapHeight: NSLayoutConstraint!
     @IBOutlet weak var activityGoalStackViewWidth: NSLayoutConstraint!
     
+    // Watch
+    fileprivate var session: WCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +101,17 @@ class RecordViewController: GradientViewController {
         // Previously in willLayoutSubview
         activityButton.titleLabel?.adjustsFontSizeToFitWidth = true
         goalButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        // Watch
+        if WCSession.isSupported() {
+            session = WCSession.default
+            session.delegate = self
+            session.activate()
+            sendActivitiesFileIfNotExisting()
+        }
+        
+        // Notification listener
+        NotificationCenter.default.addObserver(self, selector: #selector(RecordViewController.sendActivitiesFile), name: NSNotification.Name(rawValue: "sendActivitiesFile"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,6 +151,7 @@ class RecordViewController: GradientViewController {
     
     @IBAction func startActivityButtonClicked(_ sender: Any) {
         print("Starting activity")
+        sendActivitiesFile()
     }
     
     
@@ -301,8 +315,7 @@ extension RecordViewController: CLLocationManagerDelegate {
     }
 }
 
-// Screen support
-
+// MARK: - Screen support
 import Device
 extension RecordViewController {
     
@@ -318,4 +331,78 @@ extension RecordViewController {
             _ = "Silence default warning"
         }
     }
+}
+
+// MARK: - AWatch
+import WatchConnectivity
+extension RecordViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Activation did complete")
+        
+        DispatchQueue.main.async {
+            if activationState == .activated {
+                if session.isWatchAppInstalled {
+                    print("Watch app is installed")
+                }
+            }
+        }
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("Session did become inactive")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("Session did deactivate")
+        WCSession.default.activate() // For multiple watches
+    }
+    
+//    @objc
+//    func sendActivities() {
+//        NSKeyedArchiver.setClassName("Activity", for: Activity.self)
+//        NSKeyedArchiver.setClassName("DataField", for: DataField.self)
+//        NSKeyedArchiver.setClassName("DataLayout", for: DataLayout.self)
+//        NSKeyedArchiver.setClassName("Goal", for: Goal.self)
+//        NSKeyedArchiver.setClassName("SettingsLayout", for: SettingsLayout.self)
+//
+//        let data = NSKeyedArchiver.archivedData(withRootObject: dataManager.activities)
+//
+//        session.sendMessageData(data, replyHandler: { (replyMessage) in
+//            // Do something with the (optional) reply
+//        }) { (error) in
+//            // Catch any error Handler
+//            print("error: \(error.localizedDescription)")
+//        }
+//    }
+    
+    @objc
+    func sendActivitiesFile() {
+        if session.activationState == .activated {
+            //create a URL from where the file is/will be saved
+            let sourceURL = getDocumentsDirectory().appendingPathComponent("activities_file")
+            
+            NSKeyedArchiver.archiveRootObject(dataManager.activities, toFile: sourceURL.path)
+            
+            session.transferFile(sourceURL, metadata: nil)
+        }
+    }
+    
+    @objc
+    func sendActivitiesFileIfNotExisting() {
+        if session.activationState == .activated {
+            //create a URL from where the file is/will be saved
+            let fm = FileManager.default
+            let sourceURL = getDocumentsDirectory().appendingPathComponent("activities_file")
+            
+            if !fm.fileExists(atPath: sourceURL.path) {
+                //the file doesn't exist - create it now
+                NSKeyedArchiver.archiveRootObject(dataManager.activities, toFile: sourceURL.path)
+                session.transferFile(sourceURL, metadata: nil)
+            }
+            
+            //the file exists now; send it across the session
+            
+        }
+    }
+    
 }

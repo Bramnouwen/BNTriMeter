@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +44,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <segue destination="MUn-qz-lQQ" kind="show" identifier="toSettingsPerSport" id="rUD-Wh-POe"/>
-                        <segue destination="bD9-MK-HJg" kind="unwind" identifier="unwindToWelcomeSegue" unwindAction="unwindToWelcome:" id="UkK-c9-ExK"/>
+                        <segue destination="bD9-MK-HJg" kind="unwind" identifier="unwindToStartSegue" unwindAction="unwindToStart:" id="chj-z2-KN1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znf-0g-7ji" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class Goal: NSObject, NSCoding {
     
     let defaults = UserDefaults.standard
@@ -15,14 +14,14 @@ class Goal: NSObject, NSCoding {
     var id: Int
     var title: String
     var iconName: String
-    var descriptionString: String
-    var amount: Int
+    var descriptionString: String?
+    var amount: Int?
     
     init(id: Int,
          title: String,
          iconName: String,
-         descriptionString: String,
-         amount: Int) {
+         descriptionString: String? = "",
+         amount: Int? = 0) {
         
         self.id = id
         self.title = title
@@ -43,8 +42,8 @@ class Goal: NSObject, NSCoding {
         let id = aDecoder.decodeInteger(forKey: "id")
         let title = aDecoder.decodeObject(forKey: "title") as! String
         let iconName = aDecoder.decodeObject(forKey: "iconName") as! String
-        let descriptionString = aDecoder.decodeObject(forKey: "descriptionString") as! String
-        let amount = aDecoder.decodeInteger(forKey: "amount")
+        let descriptionString = aDecoder.decodeObject(forKey: "descriptionString") as? String
+        let amount = aDecoder.decodeObject(forKey: "amount") as? Int
         
         self.init(id: id, title: title, iconName: iconName, descriptionString: descriptionString, amount: amount)
     }
@@ -93,6 +92,7 @@ extension Goal {
     }
     
     func amountNoString() -> String {
+        guard let amount = amount else { return "" }
         switch id {
         case 0:
             return "\(amount / 60)"
@@ -110,6 +110,7 @@ extension Goal {
     }
     
     func returnOverviewAmountString() -> String {
+        guard let amount = amount else { return "" }
         switch id {
         case 0: // duration
             return "\(amount / 60) min"

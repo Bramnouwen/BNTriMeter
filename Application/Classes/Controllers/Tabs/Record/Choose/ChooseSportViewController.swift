@@ -60,8 +60,8 @@ class ChooseSportViewController: GradientViewController {
         super.viewDidAppear(animated)
         // Can't work anymore due to rowId not being equal to an activity's tableViewId
         var tableViewId = 0
-        for (index, tmActivity) in dataManager.TMActivities.enumerated() {
-            if tmActivity.title == activity.title {
+        for (index, item) in dataManager.activities.enumerated() {
+            if item.title == activity.title {
                 tableViewId = index
             }
             
@@ -89,8 +89,6 @@ class ChooseSportViewController: GradientViewController {
             destVC.setEditingMode = values.editing
         }
      }
-    
-    
 }
 
 extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource {
@@ -99,19 +97,19 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.TMActivities.count
+        return dataManager.activities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        let tmActivity = dataManager.TMActivities[i]
+        let item = dataManager.activities[i]
         
-        cell.TMActivity = tmActivity // FIXME: Necessary?
+        cell.activity = item
         
-        if let title = tmActivity.title, let iconName = tmActivity.iconName {
-            cell.activityTitle.text = title
+        if let iconName = item.iconName {
+            cell.activityTitle.text = item.title
             cell.activityIcon.image = UIImage(named: iconName)
         }
         
@@ -129,7 +127,7 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ActivityTableViewCell else { return }
-        let i = Int(cell.TMActivity.tableViewId)
+        let i = cell.activity.tableViewId!
         
         if selectedIsPreset(id: i) {
             let activity = dataManager.unarchive(key: "\(i)")
@@ -148,9 +146,9 @@ extension ChooseSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func updateActivity(id: Int) {
-        let tmActivity = dataManager.TMActivities[id]
-        if let title = tmActivity.title, let iconName = tmActivity.iconName {
-            activity.title = title
+        let item = dataManager.activities[id]
+        if let iconName = item.iconName {
+            activity.title = item.title
             activity.iconName = iconName
             activity.tableViewId = id
         }

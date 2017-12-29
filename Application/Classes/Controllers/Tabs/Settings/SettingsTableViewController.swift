@@ -78,7 +78,7 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
                     self.locationManager.stopUpdatingLocation()
                     FBSDKAccessToken.setCurrent(nil)
                     OneSignal.deleteTag("user_id")
-                    self.performSegue(withIdentifier: Segues.unwindToWelcome, sender: nil)
+                    self.performSegue(withIdentifier: Segues.unwindToStart, sender: nil)
                 } catch let signOutError as NSError {
                     print ("Error signing out: \(signOutError.localizedDescription)")
                 }

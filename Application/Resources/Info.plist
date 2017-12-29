@@ -83,6 +83,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We read your health data during workouts.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need to save your completed workouts.</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>

@@ -34,5 +34,7 @@ class StartViewController: UIViewController {
             performSegue(withIdentifier: Segues.startToLoginSegueKey, sender: nil)
         }
     }
+    
+    @IBAction func unwindToStart(_ segue: UIStoryboardSegue) { }
 
 }

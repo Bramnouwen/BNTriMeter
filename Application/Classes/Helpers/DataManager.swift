@@ -25,28 +25,60 @@ class DataManager: NSObject {
         didSet {
             TMActivities = TMActivities.sorted(by: { $0.tableViewId < $1.tableViewId })
             TMCreateActivities = TMActivities.filter { $0.isPreset == false }
+            
+            var tmpArray: [Activity] = []
+            for tmActivity in TMActivities {
+                let tmp = unarchive(key: "\(tmActivity.tableViewId)")
+                tmpArray.append(tmp)
+            }
+            activities = tmpArray
         }
     }
+    var activities: [Activity] = [] {
+        didSet {
+            print("Set convertedActivities: \(activities.count)")
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "sendActivitiesFile"), object: self) // AWatch
+        }
+    }
+    
     var TMCreateActivities: [TMActivity] = [] {
         didSet {
             TMCreateActivities = TMCreateActivities.sorted(by: { $0.tableViewId < $1.tableViewId })
             guard let transition = try! db?.fetch(FetchRequest<TMActivity>().filtered(with: "title", equalTo: L10n.Activity.Triathlon.transition)).first else { return }
             TMCreateActivities.append(transition)
+            
+            var tmpArray: [Activity] = []
+            for tmCreateActivity in TMCreateActivities {
+                tmpArray.append(tmCreateActivity.convert())
+            }
+            createActivities = tmpArray
+        }
+    }
+    var createActivities: [Activity] = [] {
+        didSet {
+            print("Set convertedCreateActivities: \(createActivities.count)")
         }
     }
     
     var TMGoals: [TMGoal] = [] {
         didSet {
             TMGoals = TMGoals.sorted(by: { $0.id < $1.id })
+            
+            var tmpArray: [Goal] = []
+            for goal in TMGoals {
+                tmpArray.append(goal.convert())
+            }
+            goals = tmpArray
         }
     }
+    var goals: [Goal] = []
+    
     var TMDataList: [TMData] = [] {
         didSet {
             TMDataList = TMDataList.sorted(by: { $0.id < $1.id })
         }
     }
-    
-    var convertedDataList: [DataField] = []
+    var dataList: [DataField] = []
     var dataListSections: [String: [DataField]] = [:]
     
     var TMDefaultData: TMDataLayout?
@@ -77,10 +109,10 @@ class DataManager: NSObject {
         
         // Convert data list
         for TMData in TMDataList {
-            convertedDataList.append(TMData.convert())
+            dataList.append(TMData.convert())
         }
         setDataInSections()
-        
+                
         // FIXME: Don't do it like this...
         defaults.register(defaults: ["nextTableViewId": TMActivities.count])
     }
@@ -104,12 +136,26 @@ class DataManager: NSObject {
     // MARK: - (Un)archiving defaults
     
     func archive(activity: Activity, key: String) {
+        // Necessary for AWatch
+        NSKeyedArchiver.setClassName("Activity", for: Activity.self)
+        NSKeyedArchiver.setClassName("DataField", for: DataField.self)
+        NSKeyedArchiver.setClassName("DataLayout", for: DataLayout.self)
+        NSKeyedArchiver.setClassName("Goal", for: Goal.self)
+        NSKeyedArchiver.setClassName("SettingsLayout", for: SettingsLayout.self)
+        
         let activityData = NSKeyedArchiver.archivedData(withRootObject: activity)
         defaults.set(activityData, forKey: key)
         defaults.synchronize()
     }
     
     func unarchive(key: String) -> Activity {
+        // Necessary for AWatch
+        NSKeyedUnarchiver.setClass(Activity.self, forClassName: "Activity")
+        NSKeyedUnarchiver.setClass(DataField.self, forClassName: "DataField")
+        NSKeyedUnarchiver.setClass(DataLayout.self, forClassName: "DataLayout")
+        NSKeyedUnarchiver.setClass(Goal.self, forClassName: "Goal")
+        NSKeyedUnarchiver.setClass(SettingsLayout.self, forClassName: "SettingsLayout")
+        
         if let object = defaults.object(forKey: key) {
             let data = object as! Data
             let activity = NSKeyedUnarchiver.unarchiveObject(with: data) as! Activity
@@ -223,43 +269,43 @@ class DataManager: NSObject {
      */
     func setDataInSections() {
         
-        dataListSections["Duration"] = [convertedDataList[0],
-                                        convertedDataList[1],
-                                        convertedDataList[2],
-                                        convertedDataList[3]]
+        dataListSections["Duration"] = [dataList[0],
+                                        dataList[1],
+                                        dataList[2],
+                                        dataList[3]]
         
-        dataListSections["Pace"] = [convertedDataList[4],
-                                        convertedDataList[5],
-                                        convertedDataList[6]]
+        dataListSections["Pace"] = [dataList[4],
+                                        dataList[5],
+                                        dataList[6]]
         
-        dataListSections["Distance"] = [convertedDataList[7],
-                                        convertedDataList[8],
-                                        convertedDataList[9],
-                                        convertedDataList[10]]
+        dataListSections["Distance"] = [dataList[7],
+                                        dataList[8],
+                                        dataList[9],
+                                        dataList[10]]
         
-        dataListSections["Speed"] = [convertedDataList[11],
-                                        convertedDataList[12],
-                                        convertedDataList[13]]
+        dataListSections["Speed"] = [dataList[11],
+                                        dataList[12],
+                                        dataList[13]]
         
-        dataListSections["Calories"] = [convertedDataList[14],
-                                        convertedDataList[15],
-                                        convertedDataList[16],
-                                        convertedDataList[17]]
+        dataListSections["Calories"] = [dataList[14],
+                                        dataList[15],
+                                        dataList[16],
+                                        dataList[17]]
         
-        dataListSections["Heart rate"] = [convertedDataList[18],
-                                        convertedDataList[19],
-                                        convertedDataList[20]]
+        dataListSections["Heart rate"] = [dataList[18],
+                                        dataList[19],
+                                        dataList[20]]
         
-        dataListSections["Steps"] = [convertedDataList[21],
-                                        convertedDataList[22]]
+        dataListSections["Steps"] = [dataList[21],
+                                        dataList[22]]
         
-        dataListSections["Elevation"] = [convertedDataList[23],
-                                        convertedDataList[24]]
+        dataListSections["Elevation"] = [dataList[23],
+                                        dataList[24]]
         
-        dataListSections["Descent"] = [convertedDataList[25],
-                                         convertedDataList[26]]
+        dataListSections["Descent"] = [dataList[25],
+                                         dataList[26]]
         
-        dataListSections["Clock"] = [convertedDataList[27]]
+        dataListSections["Clock"] = [dataList[27]]
         
     }
     

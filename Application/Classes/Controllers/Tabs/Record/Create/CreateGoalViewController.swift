@@ -96,14 +96,14 @@ extension CreateGoalViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.TMGoals.count
+        return dataManager.goals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: GoalTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        let goal = dataManager.TMGoals[i].convert()
+        let goal = dataManager.goals[i]
         
         cell.goalIcon.image = UIImage(named: goal.iconName)
         cell.goalTitle.text = goal.title

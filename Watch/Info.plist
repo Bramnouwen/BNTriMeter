@@ -29,5 +29,12 @@
 	<string>be.bramnouwen.TriMeterFW</string>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cabin-Regular.ttf</string>
+		<string>Cabin-Bold.ttf</string>
+		<string>Cabin-Medium.ttf</string>
+		<string>Cabin-SemiBold.ttf</string>
+	</array>
 </dict>
 </plist>

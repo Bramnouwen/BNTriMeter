@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class Activity: NSObject, NSCoding {
         
@@ -126,4 +127,22 @@ extension Activity {
         }
     }
     
+    func healthKitWorkoutActivityType() -> HKWorkoutActivityType {
+        switch title {
+        case L10n.Activity.walking: return .walking
+        case L10n.Activity.running: return .running
+        case L10n.Activity.cycling: return .cycling
+        case L10n.Activity.swimming: return .swimming
+        case L10n.Activity.triathlon: return .running
+        default: return .running
+        }
+    }
+}
+
+extension HKWorkoutActivityType {
+    enum HKWorkoutActivityType {
+        case superSprintTriathlon
+        case sprintTriathlon
+        case olympicTriathlon
+    }
 }

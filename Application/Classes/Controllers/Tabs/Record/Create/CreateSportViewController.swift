@@ -71,17 +71,17 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.TMCreateActivities.count
+        return dataManager.createActivities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ActivityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let i = indexPath.row
         
-        let tmActivity = dataManager.TMCreateActivities[i]
+        let item = dataManager.createActivities[i]
         
-        if let title = tmActivity.title, let iconName = tmActivity.iconName {
-            cell.activityTitle.text = title
+        if let iconName = item.iconName {
+            cell.activityTitle.text = item.title
             cell.activityIcon.image = UIImage(named: iconName)
         }
         
@@ -103,10 +103,10 @@ extension CreateSportViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func updateNewPart(id: Int) {
-        let tmActivity = dataManager.TMCreateActivities[id]
+        let item = dataManager.createActivities[id]
         
-        if let title = tmActivity.title, let iconName = tmActivity.iconName {
-            newPart.title = title
+        if let iconName = item.iconName {
+            newPart.title = item.title
             newPart.iconName = iconName
             newPart.tableViewId = id
             if dataManager.existingPart == false {

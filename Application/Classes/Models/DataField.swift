@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class DataField: NSObject, NSCoding {
     
     var id: Int

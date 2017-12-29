@@ -796,6 +796,21 @@ enum L10n {
     static let start = L10n.tr("Localizable", "Tabs.start")
   }
 
+  enum Watch {
+
+    enum Goal {
+      /// Buttons: %@ | Scrolling: %@
+      static func description(_ p1: String, _ p2: String) -> String {
+        return L10n.tr("Localizable", "Watch.goal.description", p1, p2)
+      }
+    }
+
+    enum Nogoal {
+      /// No goal? Tap here!
+      static let description = L10n.tr("Localizable", "Watch.noGoal.description")
+    }
+  }
+
   enum Welcome {
     /// The first app that lets you create workouts existing of multiple sports and goals, especially handy for triathletes but made for everyone!
     static let description = L10n.tr("Localizable", "Welcome.description")
