@@ -133,16 +133,7 @@ extension Activity {
         case L10n.Activity.running: return .running
         case L10n.Activity.cycling: return .cycling
         case L10n.Activity.swimming: return .swimming
-        case L10n.Activity.triathlon: return .running
         default: return .running
         }
-    }
-}
-
-extension HKWorkoutActivityType {
-    enum HKWorkoutActivityType {
-        case superSprintTriathlon
-        case sprintTriathlon
-        case olympicTriathlon
     }
 }

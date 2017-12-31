@@ -72,7 +72,7 @@ class OverviewInterfaceController: WKInterfaceController {
     @IBAction func startButtonClicked() {
         guard HKHealthStore.isHealthDataAvailable() else { return }
         
-        wm.startWorkout()
+        wm.startWorkout(nil)
         
 //        WKInterfaceController.reloadRootPageControllers(withNames: ["MenuController", "DuringSingleController", "PartsController"], contexts: nil, orientation: .horizontal, pageIndex: 1)
     }

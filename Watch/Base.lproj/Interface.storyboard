@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Activities-->
+        <!--ActivityController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="ActivityController" title="Activities" id="AgC-eL-Hgc" customClass="ChooseActivityInterfaceController" customModule="Watch_Extension">
+                <controller identifier="ActivityController" id="AgC-eL-Hgc" customClass="ChooseActivityInterfaceController" customModule="Watch_Extension">
                     <items>
                         <table alignment="left" id="5te-Km-w9v">
                             <items>
@@ -796,33 +796,36 @@
             </objects>
             <point key="canvasLocation" x="912" y="416"/>
         </scene>
-        <!-- -->
+        <!--AfterController-->
         <scene sceneID="7VT-Il-4e0">
             <objects>
-                <controller identifier="AfterController" title=" " id="3OZ-qD-eZj" customClass="AfterInterfaceController" customModule="Watch_Extension">
+                <controller identifier="AfterController" id="3OZ-qD-eZj" customClass="AfterInterfaceController" customModule="Watch_Extension">
                     <items>
                         <group width="1" alignment="left" layout="vertical" spacing="12" id="gcz-Wb-OFU">
                             <items>
-                                <group width="75" alignment="center" layout="vertical" spacing="0.0" id="xlo-Ba-8KK" userLabel="Progress">
+                                <group width="1" alignment="center" layout="vertical" spacing="0.0" id="xlo-Ba-8KK" userLabel="Progress">
                                     <items>
                                         <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="QBU-cx-nl3"/>
-                                        <label alignment="center" text="10" textAlignment="center" id="HUc-ES-uSZ">
+                                        <label width="1" alignment="center" text="10" textAlignment="center" id="HUc-ES-uSZ">
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="50"/>
                                         </label>
-                                        <label alignment="center" text="km" textAlignment="center" id="2R3-1N-t1A">
+                                        <label width="1" alignment="center" text="km" textAlignment="center" minimumScaleFactor="0.5" id="2R3-1N-t1A">
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
+                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="15"/>
                                         </label>
                                     </items>
                                 </group>
-                                <map height="100" alignment="left" id="zPL-rj-sYo"/>
+                                <separator alignment="left" id="01I-0U-YpB">
+                                    <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                </separator>
+                                <map height="100" alignment="center" hidden="YES" id="zPL-rj-sYo"/>
                                 <group width="1" alignment="left" layout="vertical" id="u2M-gw-uHB">
                                     <items>
                                         <group width="1" alignment="left" spacing="5" id="scU-fC-zgE">
                                             <items>
-                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="running" contentMode="scaleAspectFit" id="1TN-mt-dP5"/>
-                                                <label alignment="left" verticalAlignment="center" text="km" id="PAv-KN-nnx">
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="duration" contentMode="scaleAspectFit" id="1TN-mt-dP5"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="PAv-KN-nnx">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
                                                 </label>
@@ -831,8 +834,8 @@
                                         </group>
                                         <group width="1" alignment="left" spacing="5" id="uTJ-gb-lu3">
                                             <items>
-                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="running" contentMode="scaleAspectFit" id="u5H-Fm-Lsg"/>
-                                                <label alignment="left" verticalAlignment="center" text="km" id="FFN-c7-803">
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="distance" contentMode="scaleAspectFit" id="u5H-Fm-Lsg"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="FFN-c7-803">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
                                                 </label>
@@ -841,8 +844,8 @@
                                         </group>
                                         <group width="1" alignment="left" spacing="5" id="8sa-Oh-1ky">
                                             <items>
-                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="running" contentMode="scaleAspectFit" id="xWl-73-JQr"/>
-                                                <label alignment="left" verticalAlignment="center" text="km" id="0xD-2p-l0V">
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="calories" contentMode="scaleAspectFit" id="xWl-73-JQr"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="0xD-2p-l0V">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
                                                 </label>
@@ -851,8 +854,8 @@
                                         </group>
                                         <group width="1" alignment="left" spacing="5" id="fth-6q-NPq">
                                             <items>
-                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="running" contentMode="scaleAspectFit" id="Et7-WC-vXO"/>
-                                                <label alignment="left" verticalAlignment="center" text="km" id="aVu-9i-4Tj">
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="heart" contentMode="scaleAspectFit" id="Et7-WC-vXO"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="aVu-9i-4Tj">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
                                                 </label>
@@ -861,8 +864,8 @@
                                         </group>
                                         <group width="1" alignment="left" spacing="5" id="fSb-65-vfa">
                                             <items>
-                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="running" contentMode="scaleAspectFit" id="1I8-K5-PXG"/>
-                                                <label alignment="left" verticalAlignment="center" text="km" id="TZi-IG-XPX">
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="steps" contentMode="scaleAspectFit" id="1I8-K5-PXG"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="TZi-IG-XPX">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
                                                 </label>
@@ -924,7 +927,7 @@
                         <outlet property="goalAmountDescriptionLabel" destination="2R3-1N-t1A" id="zKu-bt-xfp"/>
                         <outlet property="goalAmountLabel" destination="HUc-ES-uSZ" id="Za5-NY-QvT"/>
                         <outlet property="goalIcon" destination="QBU-cx-nl3" id="Gog-9v-GYK"/>
-                        <outlet property="map" destination="zPL-rj-sYo" id="RhB-1v-qVm"/>
+                        <outlet property="map" destination="zPL-rj-sYo" id="BE2-S5-EF3"/>
                         <outlet property="saveButton" destination="lq9-Cq-I0S" id="Gj5-G9-E2g"/>
                     </connections>
                 </controller>

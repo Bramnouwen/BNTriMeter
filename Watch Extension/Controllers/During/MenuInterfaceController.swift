@@ -27,6 +27,7 @@ class MenuInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         print("Awake")
         
+        setTitle(wm.activity?.title)
     }
     
     override func willActivate() {
@@ -52,31 +53,31 @@ class MenuInterfaceController: WKInterfaceController {
     
     @IBAction func stopButtonClicked() {
         guard wm.workoutSession != nil else { return }
-        
-        wm.workoutEndDate = Date()
-        wm.healthStore?.end(wm.workoutSession!)
-        
+        print("Stop button clicked")
+        wm.timer?.invalidate()
+        wm.healthStore.end(wm.workoutSession!)
     }
     
     @IBAction func playPauseButtonClicked() {
         guard wm.workoutSession != nil else { return }
-        
-        if wm.workoutPaused {
-            wm.healthStore?.resumeWorkoutSession(wm.workoutSession!)
-            wm.workoutPaused = false
+        print("PlayPause button clicked")
+        if !wm.workoutIsActive {
+            // Resume workout
+            wm.cumulativePauseTime += Date().timeIntervalSince(wm.pauseDate)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "startTimer"), object: self)
+            wm.healthStore.resumeWorkoutSession(wm.workoutSession!)
+            wm.workoutIsActive = true
             playPauseLabel.setText("Pause")
             playPauseIcon.setImageNamed("pause-green")
         } else {
-            wm.healthStore?.pause(wm.workoutSession!)
-            wm.workoutPaused = true
+            // Pause workout
+            wm.pauseDate = Date()
+            wm.timer?.invalidate()
+            wm.healthStore.pause(wm.workoutSession!)
+            wm.workoutIsActive = false
             playPauseLabel.setText("Resume")
             playPauseIcon.setImageNamed("play-green")
         }
     }
     
-    
-    
-//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-//        return activity
-//    }
 }

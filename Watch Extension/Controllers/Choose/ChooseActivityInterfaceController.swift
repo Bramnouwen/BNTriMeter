@@ -24,6 +24,8 @@ class ChooseActivityInterfaceController: WKInterfaceController, ActivityDelegate
         super.awake(withContext: context)
         print("Awake")
         
+        setTitle("Activiteiten")
+        
         // To configure and activate the session
         if WCSession.isSupported() {
             session = WCSession.default

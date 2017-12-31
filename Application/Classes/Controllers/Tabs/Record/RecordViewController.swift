@@ -14,6 +14,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import IBAnimatable
+import HealthKit
 
 class RecordViewController: GradientViewController {
     
@@ -81,6 +82,11 @@ class RecordViewController: GradientViewController {
     // Watch
     fileprivate var session: WCSession!
     
+    private var distanceType: HKQuantityTypeIdentifier = .distanceCycling
+    private let healthStore = HKHealthStore()
+    private var wcSessionActivationCompletion: ((WCSession) -> Void)?
+    private var watchConnectivitySession: WCSession?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -107,7 +113,6 @@ class RecordViewController: GradientViewController {
             session = WCSession.default
             session.delegate = self
             session.activate()
-            sendActivitiesFileIfNotExisting()
         }
         
         // Notification listener
@@ -151,7 +156,9 @@ class RecordViewController: GradientViewController {
     
     @IBAction func startActivityButtonClicked(_ sender: Any) {
         print("Starting activity")
-        sendActivitiesFile()
+        startWatchApp()
+        // TODO: Show activity screen with Apple Watch state and option to stop workout
+        print("*** TODO: Show activity screen with Apple Watch state and option to stop workout ***")
     }
     
     
@@ -334,17 +341,23 @@ extension RecordViewController {
 }
 
 // MARK: - AWatch
+
 import WatchConnectivity
 extension RecordViewController: WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("Activation did complete")
         
-        DispatchQueue.main.async {
-            if activationState == .activated {
-                if session.isWatchAppInstalled {
-                    print("Watch app is installed")
-                }
-            }
+//        DispatchQueue.main.async {
+//            if activationState == .activated {
+//                if session.isWatchAppInstalled {
+//                    print("Watch app is installed")
+//                }
+//            }
+//        }
+        
+        if activationState == .activated, let activationCompletion = wcSessionActivationCompletion {
+            activationCompletion(session)
+            wcSessionActivationCompletion = nil
         }
     }
     
@@ -356,6 +369,8 @@ extension RecordViewController: WCSessionDelegate {
         print("Session did deactivate")
         WCSession.default.activate() // For multiple watches
     }
+    
+    
     
 //    @objc
 //    func sendActivities() {
@@ -405,4 +420,68 @@ extension RecordViewController: WCSessionDelegate {
         }
     }
     
+    // MARK: - Start workout on watch
+    
+    func startWatchApp() {
+        let workoutDistanceType = setDistanceType()
+        
+        // 1 - create a workout configuration()
+        let workoutConfiguration = HKWorkoutConfiguration()
+        workoutConfiguration.activityType = workoutDistanceType
+        workoutConfiguration.locationType = .outdoor // TODO: Select in settings
+        if workoutDistanceType == .swimming {
+            //set open water swimming location if we're swiming
+            workoutConfiguration.swimmingLocationType = .openWater
+        }
+        
+        getActiveWCSession { wcSession in
+            if wcSession.activationState == .activated && wcSession.isWatchAppInstalled {
+                self.healthStore.startWatchApp(with: workoutConfiguration) { (success, error) in
+                    if !success {
+                        print("starting watch app failed with error: \(String(describing: error))")
+                    }
+                }
+            }
+        }
+    }
+    
+    func setDistanceType() -> HKWorkoutActivityType {
+        var hkActivity: HKWorkoutActivityType = .running
+        if activity?.parts?.count == 0 {
+            hkActivity = activity.healthKitWorkoutActivityType()
+        } else {
+            hkActivity = activity.parts![0].healthKitWorkoutActivityType()
+        }
+        
+        switch hkActivity {
+        case .walking, .running:
+            distanceType = .distanceWalkingRunning
+        case .cycling:
+            distanceType = .distanceCycling
+        case .swimming:
+            distanceType = .distanceSwimming
+        default:
+            distanceType = .distanceWheelchair
+        }
+        
+        return hkActivity
+    }
+    
+    private func getActiveWCSession(completion: @escaping (WCSession) -> Void) {
+        guard WCSession.isSupported() else {
+            // TODO: Alert the user that their iOS device does not support watch connectivity
+            fatalError("watch connectivity session not supported")
+        }
+        
+        let wcSession = WCSession.default
+        wcSession.delegate = self
+        
+        switch wcSession.activationState {
+        case .activated:
+            completion(wcSession)
+        case .inactive, .notActivated:
+            wcSession.activate()
+            wcSessionActivationCompletion = completion
+        }
+    }
 }

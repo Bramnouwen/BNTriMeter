@@ -40,7 +40,4 @@ class PartsInterfaceController: WKInterfaceController {
         print("Did deactivate")
     }
     
-//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-//        return activity
-//    }
 }

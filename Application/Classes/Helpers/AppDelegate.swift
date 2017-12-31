@@ -51,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //   Will be used to reach the user at the most optimal time of day.
         // OneSignal.syncHashedEmail(userEmail)
         
+//        requestAuthorization()
+        
         return true
     }
 
@@ -86,6 +88,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let healthStore = HKHealthStore()
         healthStore.handleAuthorizationForExtension { (success, error) in
             
+        }
+    }
+    
+    // Mark: - HealthKit authorization
+    
+    func requestAuthorization() {
+        // Configure all types for writing and reading
+        let allTypes = Set([HKObjectType.workoutType(),
+//                            HKObjectType.activitySummaryType(),
+                            HKSeriesType.workoutRoute(),
+                            HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                            HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                            HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
+                            HKObjectType.quantityType(forIdentifier: .distanceSwimming)!,
+                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                            HKObjectType.quantityType(forIdentifier: .swimmingStrokeCount)!])
+        
+        // Create health store
+        let healthStore = HKHealthStore()
+        
+        // Use it to request authorization for our types
+        healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+            if success {
+                print("Success: authorization granted")
+            } else {
+                print("Error: \(error?.localizedDescription ?? "")")
+            }
         }
     }
 

@@ -133,6 +133,7 @@
 		F972008C1FEE796000A95808 /* OverviewSportRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972008B1FEE796000A95808 /* OverviewSportRowController.swift */; };
 		F972008E1FEE796C00A95808 /* OverviewTransitionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972008D1FEE796C00A95808 /* OverviewTransitionRowController.swift */; };
 		F972008F1FEE7FF500A95808 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964EDF21FDE9B6900675EA4 /* Constants.swift */; };
+		F97ED0011FF6E0D600190CC5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97ED0001FF6E0D500190CC5 /* Utilities.swift */; };
 		F9B0E3141FED6DA50051E2BB /* SharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B0E3131FED6DA50051E2BB /* SharedCode.swift */; };
 		F9B0E3151FED6DA50051E2BB /* SharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B0E3131FED6DA50051E2BB /* SharedCode.swift */; };
 		F9CA32CD1FF541BE00227211 /* DuringInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA32CC1FF541BE00227211 /* DuringInterfaceController.swift */; };
@@ -380,6 +381,7 @@
 		F97200891FEE734400A95808 /* DataRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowController.swift; sourceTree = "<group>"; };
 		F972008B1FEE796000A95808 /* OverviewSportRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSportRowController.swift; sourceTree = "<group>"; };
 		F972008D1FEE796C00A95808 /* OverviewTransitionRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTransitionRowController.swift; sourceTree = "<group>"; };
+		F97ED0001FF6E0D500190CC5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F9B0E3131FED6DA50051E2BB /* SharedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCode.swift; sourceTree = "<group>"; };
 		F9CA32CC1FF541BE00227211 /* DuringInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuringInterfaceController.swift; sourceTree = "<group>"; };
 		F9CA32CE1FF541D400227211 /* DuringPartsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuringPartsInterfaceController.swift; sourceTree = "<group>"; };
@@ -956,6 +958,7 @@
 				F9D5C1371FEC160700C771BF /* ExtensionDelegate.swift */,
 				F9D5C1381FEC160700C771BF /* NotificationController.swift */,
 				F95AC92F1FF65F79003BC4FA /* WorkoutManager.swift */,
+				F97ED0001FF6E0D500190CC5 /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1507,6 +1510,7 @@
 				F972008F1FEE7FF500A95808 /* Constants.swift in Sources */,
 				F97200881FEDB61500A95808 /* SettingsInterfaceController.swift in Sources */,
 				F91E11A01FED25C700D91D04 /* Activity.swift in Sources */,
+				F97ED0011FF6E0D600190CC5 /* Utilities.swift in Sources */,
 				F9CA32CF1FF541D400227211 /* DuringPartsInterfaceController.swift in Sources */,
 				F97200821FEDA22800A95808 /* GoalInterfaceController.swift in Sources */,
 				F9CA32D11FF5420600227211 /* PartsInterfaceController.swift in Sources */,

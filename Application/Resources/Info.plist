@@ -60,6 +60,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We read your health data during workouts.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need to save your completed workouts.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>If you want the app to be able to run in the background we will always need your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -73,6 +77,7 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -82,11 +87,8 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>We read your health data during workouts.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>We need to save your completed workouts.</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>

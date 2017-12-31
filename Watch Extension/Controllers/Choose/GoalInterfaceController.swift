@@ -139,7 +139,7 @@ class GoalInterfaceController: WKInterfaceController {
     @IBAction func startButtonClicked() {
         guard HKHealthStore.isHealthDataAvailable() else { return }
         
-        wm.startWorkout()
+        wm.startWorkout(nil)
         
     }
 }

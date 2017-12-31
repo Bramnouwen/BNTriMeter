@@ -7,11 +7,13 @@
 //
 
 import WatchKit
+import HealthKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        requestAuthorization()
     }
 
     func applicationDidBecomeActive() {
@@ -46,5 +48,41 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
+    
+    func handle(_ workoutConfiguration: HKWorkoutConfiguration) {
+        WorkoutManager.shared.startWorkout(workoutConfiguration)
+    }
 
+    func requestAuthorization() {
+        // Configure write values
+        let writeTypes: Set<HKSampleType> = [.workoutType(),
+                                             HKSampleType.quantityType(forIdentifier: .heartRate)!,
+                                             HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                                             HKSampleType.quantityType(forIdentifier: .stepCount)!,
+                                             HKSampleType.quantityType(forIdentifier: .distanceCycling)!,
+                                             HKSampleType.quantityType(forIdentifier: .distanceSwimming)!,
+                                             HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                             HKSampleType.quantityType(forIdentifier: .swimmingStrokeCount)!]
+        // Configure read values
+        let readTypes: Set<HKObjectType> = [.activitySummaryType(), .workoutType(),
+                                            HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                                            HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                                            HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
+                                            HKObjectType.quantityType(forIdentifier: .distanceSwimming)!,
+                                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                            HKObjectType.quantityType(forIdentifier: .swimmingStrokeCount)!]
+        
+        // Create health store
+        let healthStore = HKHealthStore()
+        
+        // Use it to request authorization for our types
+        healthStore.requestAuthorization(toShare: writeTypes, read: readTypes) { (success, error) in
+            if success {
+                print("Success: authorization granted")
+            } else {
+                print("Error: \(error?.localizedDescription ?? "")")
+            }
+        }
+    }
 }

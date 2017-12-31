@@ -86,6 +86,8 @@ class SettingsTableViewController: IASKAppSettingsViewController, IASKSettingsDe
             alert.addAction(logout)
             
             sender.present(alert, animated: true, completion: nil)
+        } else if specifier.key() == "SyncButtonAction" {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "sendActivitiesFile"), object: self) // AWatch
         }
     }
     

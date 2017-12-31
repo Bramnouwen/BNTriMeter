@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.977113"
+            timestampString = "536270751.544745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409">
+            startingLineNumber = "508"
+            endingLineNumber = "508">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.977282"
+            timestampString = "536270751.544823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409">
+            startingLineNumber = "508"
+            endingLineNumber = "508">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -486,7 +486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Settings/SettingsTableViewController.swift"
-            timestampString = "536159565.99659"
+            timestampString = "536270751.545084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -518,7 +518,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.586717"
+            timestampString = "536255247.625631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "359"
@@ -534,7 +534,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.58679"
+            timestampString = "536255247.625717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "346"
@@ -550,7 +550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.586909"
+            timestampString = "536255247.625785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "329"
@@ -566,7 +566,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.586987"
+            timestampString = "536255247.625847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
@@ -582,7 +582,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587049"
+            timestampString = "536255247.625913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "336"
@@ -598,7 +598,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.5871"
+            timestampString = "536255247.625979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "343"
@@ -662,7 +662,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587234"
+            timestampString = "536255247.626164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -678,11 +678,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.977775"
+            timestampString = "536270751.545424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "RecordViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -694,11 +694,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.977883"
+            timestampString = "536270751.545521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "RecordViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -742,7 +742,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587452"
+            timestampString = "536255247.635615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "558"
@@ -758,7 +758,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587505"
+            timestampString = "536255247.635731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "323"
@@ -774,11 +774,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.978067"
+            timestampString = "536270751.545729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "liveLocationButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -790,7 +790,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587606"
+            timestampString = "536255247.63645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -950,7 +950,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587911"
+            timestampString = "536255247.636838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "398"
@@ -966,7 +966,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.587964"
+            timestampString = "536255247.636935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "418"
@@ -982,7 +982,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588014"
+            timestampString = "536255247.637017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -998,7 +998,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588064"
+            timestampString = "536255247.637092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -1014,11 +1014,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.978381"
+            timestampString = "536270751.546083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1046,7 +1046,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588211"
+            timestampString = "536255247.637891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "310"
@@ -1062,7 +1062,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.58827"
+            timestampString = "536255247.637989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -1078,7 +1078,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588321"
+            timestampString = "536255247.638063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -1173,7 +1173,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588432"
+            timestampString = "536255247.638224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "563"
@@ -1189,7 +1189,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588488"
+            timestampString = "536255247.638309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -1476,7 +1476,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.588695"
+            timestampString = "536255247.638592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "406"
@@ -1988,7 +1988,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.589951"
+            timestampString = "536255247.639763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -2004,7 +2004,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.590081"
+            timestampString = "536255247.639897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "363"
@@ -2068,7 +2068,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.590218"
+            timestampString = "536255247.640022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -2180,11 +2180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.979697"
+            timestampString = "536270751.54753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2484,7 +2484,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.591155"
+            timestampString = "536255247.641578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -2500,7 +2500,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Settings/SettingsTableViewController.swift"
-            timestampString = "536159565.998314"
+            timestampString = "536270751.548009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -2516,7 +2516,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Settings/SettingsTableViewController.swift"
-            timestampString = "536159565.998412"
+            timestampString = "536270751.548055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -2532,7 +2532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Settings/SettingsTableViewController.swift"
-            timestampString = "536159565.998471"
+            timestampString = "536270751.548096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -2564,7 +2564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.591336"
+            timestampString = "536255247.641957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
@@ -2580,7 +2580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.591393"
+            timestampString = "536255247.64203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "409"
@@ -2596,11 +2596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.980328"
+            timestampString = "536270751.548214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2627,28 +2627,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.980436"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "session(_:activationDidCompleteWith:error:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/ChooseActivityInterfaceController.swift"
-            timestampString = "536251722.587416"
+            timestampString = "536335612.236706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "session(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2660,11 +2644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/ChooseActivityInterfaceController.swift"
-            timestampString = "536251722.587511"
+            timestampString = "536335612.236797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "session(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2676,11 +2660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/ChooseActivityInterfaceController.swift"
-            timestampString = "536251722.587568"
+            timestampString = "536335612.236856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "setupTableView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2707,22 +2691,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.980835"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
-            landmarkName = "sendActivitiesFile()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/ActivityRowController.swift"
             timestampString = "536251722.587698"
             startingColumnNumber = "9223372036854775807"
@@ -2740,7 +2708,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/GoalInterfaceController.swift"
-            timestampString = "536251722.587773"
+            timestampString = "536326770.158357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -2772,7 +2740,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/OverviewInterfaceController.swift"
-            timestampString = "536251722.587903"
+            timestampString = "536335612.237005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -2820,7 +2788,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/OverviewInterfaceController.swift"
-            timestampString = "536251722.587956"
+            timestampString = "536335612.237056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -2836,7 +2804,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/OverviewInterfaceController.swift"
-            timestampString = "536251722.588007"
+            timestampString = "536335612.237101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -2852,7 +2820,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/OverviewInterfaceController.swift"
-            timestampString = "536251722.588059"
+            timestampString = "536335612.237145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -2868,7 +2836,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.592432"
+            timestampString = "536255247.644103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -2884,7 +2852,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Helpers/DataManager.swift"
-            timestampString = "535728850.592511"
+            timestampString = "536255247.644219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -2900,7 +2868,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/GoalInterfaceController.swift"
-            timestampString = "536251722.588152"
+            timestampString = "536326770.158582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -2916,11 +2884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.982539"
+            timestampString = "536270751.548761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2932,11 +2900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.982637"
+            timestampString = "536270751.548811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "sendActivitiesFileIfNotExisting()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2948,28 +2916,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.98274"
+            timestampString = "536270751.548862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "sendActivitiesFileIfNotExisting()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.982826"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
-            landmarkName = "sendActivitiesFile()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2980,28 +2932,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.982904"
+            timestampString = "536270751.548926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "sendActivitiesFileIfNotExisting()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/Classes/Controllers/Tabs/Record/RecordViewController.swift"
-            timestampString = "536250790.982992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
-            landmarkName = "sendActivitiesFile()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3012,11 +2948,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/During/MenuInterfaceController.swift"
-            timestampString = "536251722.588365"
+            timestampString = "536335612.237355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "lockButtonClicked()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3028,7 +2964,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/GoalInterfaceController.swift"
-            timestampString = "536251722.588431"
+            timestampString = "536326770.158742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -3044,7 +2980,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/DataInterfaceController.swift"
-            timestampString = "536251722.58849"
+            timestampString = "536270751.549069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -3060,11 +2996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/During/MenuInterfaceController.swift"
-            timestampString = "536251722.58854"
+            timestampString = "536335612.237455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "willActivate()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3075,13 +3011,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Watch Extension/Controllers/During/DuringInterfaceController.swift"
-            timestampString = "536251722.588601"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.237506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "updateLabels()"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "startWorkout(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3092,45 +3028,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
-            timestampString = "536251722.588666"
+            timestampString = "536335612.237577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
-            timestampString = "536251722.589318"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
-            timestampString = "536251722.58972"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "startWorkout(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3140,7 +3044,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Choose/GoalInterfaceController.swift"
-            timestampString = "536251722.590101"
+            timestampString = "536326770.159577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -3156,13 +3060,365 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
-            timestampString = "536252081.360789"
+            timestampString = "536335612.237666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "378"
+            endingLineNumber = "378"
+            landmarkName = "WorkoutManager"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/ExtensionDelegate.swift"
+            timestampString = "536335612.237732"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "handle(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.237776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "startWorkout(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.237837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "startWorkout(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.237895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "WorkoutManager"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/During/DuringInterfaceController.swift"
+            timestampString = "536335612.237955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "updateLabels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/During/DuringInterfaceController.swift"
+            timestampString = "536335612.237999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "startTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.23804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "save(workout:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
+            landmarkName = "WorkoutManager"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238153"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "process(_:type:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/During/MenuInterfaceController.swift"
+            timestampString = "536335612.238212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "playPauseButtonClicked()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/During/DuringInterfaceController.swift"
+            timestampString = "536335612.238254"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "updateLabels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "startQuery(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "startQuery(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "startQuery(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/During/DuringInterfaceController.swift"
+            timestampString = "536335612.238468"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "updateLabels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "startQueries()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "startWorkout(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "startQuery(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238684"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "process(_:type:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "process(_:type:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
+            landmarkName = "workoutSession(_:didChangeTo:from:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Watch Extension/Controllers/Helpers/WorkoutManager.swift"
+            timestampString = "536335612.238834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "workoutSession(_:didChangeTo:from:date:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

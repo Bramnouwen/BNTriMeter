@@ -13,9 +13,12 @@ class AfterInterfaceController: WKInterfaceController {
     
     let wm = WorkoutManager.shared
     
+    var workout: HKWorkout?
+    
     @IBOutlet var goalIcon: WKInterfaceImage!
     @IBOutlet var goalAmountLabel: WKInterfaceLabel!
     @IBOutlet var goalAmountDescriptionLabel: WKInterfaceLabel!
+    var goalDescriptionString = ""
     
     @IBOutlet var map: WKInterfaceMap!
     
@@ -46,6 +49,14 @@ class AfterInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         print("Awake")
         
+        setTitle("Overzicht")
+        
+        guard let activity = wm.activity else { return }
+        setGoal(goalID: activity.goal!.id)
+        
+        workout = wm.createHKWorkout()
+        guard workout != nil else { return }
+        setSummary(with: workout!)
     }
     
     override func willActivate() {
@@ -60,29 +71,54 @@ class AfterInterfaceController: WKInterfaceController {
         print("Did deactivate")
     }
     
+    func setGoal(goalID: Int) {
+        switch goalID {
+        case 0:
+            goalDescriptionString = L10n.Adjust.duration
+        case 1:
+            goalDescriptionString = L10n.Adjust.pace
+        case 2:
+            goalDescriptionString = L10n.Adjust.distance
+        case 3:
+            goalDescriptionString = L10n.Adjust.calories
+        case 4:
+            goalDescriptionString = "Open"
+        default:
+            break
+        }
+        
+        goalIcon.setImageNamed(wm.activity?.iconName)
+        if goalID != 4 {
+            goalAmountLabel.setText(wm.activity?.goal?.amountNoString())
+            goalAmountDescriptionLabel.setText(goalDescriptionString)
+        } else {
+            goalAmountLabel.setText(goalDescriptionString)
+            goalAmountDescriptionLabel.setHidden(true)
+        }
+    }
+    
+    func setSummary(with workout: HKWorkout) {
+        dataLabel1.setText(format(totalDuration: workout.duration))
+        
+        dataLabel2.setText("\(format(totalDistance: workout.totalDistance)) km")
+        
+        dataLabel3.setText("\(format(totalEnergyBurned: workout.totalEnergyBurned)) kcal ")
+        
+        dataLabel4.setText("\(format(lastHeartRate: Int(wm.lastHeartRate)))") //get avg
+        
+        dataLabel5.setText("\(format(totalSteps: wm.totalSteps.doubleValue(for: HKUnit.count())))") //get total from workout object
+    }
+    
     @IBAction func saveButtonClicked() {
-        save(wm.workoutSession!)
+        guard workout != nil else { return }
+        wm.save(workout: workout!)
     }
     
     @IBAction func discardButtonClicked() {
         // TODO: Show alert for confirmation
-        WKInterfaceController.reloadRootControllers(withNamesAndContexts: [("ActivityController", 1 as AnyObject)])
-    }
-    
-    func save(_ workoutSession: HKWorkoutSession) {
-        let config = workoutSession.workoutConfiguration
-        let workout = HKWorkout(activityType: config.activityType,
-                                start: wm.workoutStartDate,
-                                end: wm.workoutEndDate,
-                                workoutEvents: nil,
-                                totalEnergyBurned: wm.totalEnergyBurned,
-                                totalDistance: wm.totalDistance,
-                                metadata: [HKMetadataKeyIndoorWorkout: false])
-        
-        wm.healthStore?.save(workout) { (success, error) in
-            if success {
-                WKInterfaceController.reloadRootControllers(withNamesAndContexts: [("ActivityController", 1 as AnyObject)])
-            }
+        DispatchQueue.main.async {
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [("ActivityController", 1 as AnyObject)])
         }
     }
+    
 }

@@ -33,13 +33,21 @@ class DuringInterfaceController: WKInterfaceController {
     @IBOutlet var dataLabel5: WKInterfaceLabel!
     @IBOutlet var dataAdjLabel5: WKInterfaceLabel!
     
+    
+    var durationString = ""
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         print("Awake")
         
-        // Notification listener
-        NotificationCenter.default.addObserver(self, selector: #selector(DuringInterfaceController.updateLabels), name: NSNotification.Name(rawValue: "updateDataLabels"), object: nil)
+        setTitle(wm.activity?.title)
         
+        // Notification listener
+        NotificationCenter.default.addObserver(self, selector: #selector(DuringInterfaceController.updateLabels), name: NSNotification.Name(rawValue: "updateLabels"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DuringInterfaceController.startTimer), name:
+            NSNotification.Name(rawValue: "startTimer"), object: nil)
+        updateLabels()
+        startTimer()
     }
     
     override func willActivate() {
@@ -55,37 +63,40 @@ class DuringInterfaceController: WKInterfaceController {
         
     }
     
+    // MARK: - Timer
+    @objc
+    func startTimer() {
+        wm.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.durationString = format(totalDuration: calculateTimeIntervalBetween(startDate: self.wm.workoutStartDate + self.wm.cumulativePauseTime, endDate: self.wm.workoutEndDate))
+            self.updateLabels()
+        }
+    }
+    
     @objc
     func updateLabels() {
+        dataLabel1.setText(durationString)
         
         // Distance
         let meters = wm.totalDistance.doubleValue(for: HKUnit.meter())
-        let kilometers = meters / 1000
-        let formattedKilometers = String(format: "%.2f", kilometers)
-        dataLabel2.setText(formattedKilometers)
+        dataLabel2.setText(format(totalDistance: meters))
         dataAdjLabel2.setText("km")
         
         // Calories
         let kiloCalories = wm.totalEnergyBurned.doubleValue(for: HKUnit.kilocalorie())
-        let formattedKiloCalories = String(format: "%.f", kiloCalories)
-        dataLabel3.setText(formattedKiloCalories)
+        dataLabel3.setText(format(totalEnergyBurned: kiloCalories))
         dataAdjLabel3.setText("kcal")
         
         // HeartRate
-        let heartRate = String(Int(wm.lastHeartRate))
-        dataLabel4.setText(heartRate)
+        let heartRate = Int(wm.lastHeartRate)
+        dataLabel4.setText(format(lastHeartRate: heartRate))
         dataAdjLabel4.setText("spm")
         
         // Steps
         let steps = wm.totalSteps.doubleValue(for: HKUnit.count())
-        let formattedSteps = String(format: "%d", steps)
-        dataLabel5.setText(formattedSteps)
+        dataLabel5.setText(format(totalSteps: steps))
         dataAdjLabel5.setText("stappen")
     }
     
     
-//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-//        return self.activity
-//    }
 }
 
