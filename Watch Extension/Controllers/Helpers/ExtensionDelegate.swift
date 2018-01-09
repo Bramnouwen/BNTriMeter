@@ -56,6 +56,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func requestAuthorization() {
         // Configure write values
         let writeTypes: Set<HKSampleType> = [.workoutType(),
+                                             HKSeriesType.workoutRoute(),
                                              HKSampleType.quantityType(forIdentifier: .heartRate)!,
                                              HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!,
                                              HKSampleType.quantityType(forIdentifier: .stepCount)!,
@@ -65,6 +66,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                                              HKSampleType.quantityType(forIdentifier: .swimmingStrokeCount)!]
         // Configure read values
         let readTypes: Set<HKObjectType> = [.activitySummaryType(), .workoutType(),
+                                            HKSeriesType.workoutRoute(),
                                             HKObjectType.quantityType(forIdentifier: .heartRate)!,
                                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                                             HKObjectType.quantityType(forIdentifier: .stepCount)!,

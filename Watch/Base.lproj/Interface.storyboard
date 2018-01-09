@@ -217,7 +217,7 @@
                             </items>
                         </table>
                         <button alignment="center" verticalAlignment="bottom" id="W51-oX-r3s">
-                            <group key="contentGroup" width="1" height="30" alignment="left" radius="15" id="dCM-9n-4AE">
+                            <group key="contentGroup" width="1" height="40" alignment="left" radius="15" id="dCM-9n-4AE">
                                 <items>
                                     <label alignment="center" verticalAlignment="center" text="go" id="hLf-No-zqh">
                                         <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
@@ -288,7 +288,7 @@
                                     </items>
                                 </group>
                                 <button alignment="center" verticalAlignment="bottom" id="6f0-CR-AeV">
-                                    <group key="contentGroup" width="1" height="30" alignment="left" radius="15" id="W1H-La-FFl">
+                                    <group key="contentGroup" width="1" height="40" alignment="left" radius="15" id="W1H-La-FFl">
                                         <items>
                                             <label alignment="center" verticalAlignment="center" text="go" id="6Hd-R9-tP7">
                                                 <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
@@ -352,7 +352,7 @@
                             </items>
                         </table>
                         <button alignment="center" verticalAlignment="bottom" id="t0O-C6-9af">
-                            <group key="contentGroup" width="1" height="30" alignment="left" radius="15" id="D53-tT-5FL">
+                            <group key="contentGroup" width="1" height="40" alignment="left" radius="15" id="D53-tT-5FL">
                                 <items>
                                     <label alignment="center" verticalAlignment="center" text="go" id="Sxz-MK-bPO">
                                         <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
@@ -378,7 +378,7 @@
             <objects>
                 <controller identifier="DuringSingleController" id="Tvv-VU-MC3" customClass="DuringInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="2" id="D5B-Oc-0uj" userLabel="Data group">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="D5B-Oc-0uj" userLabel="Data group">
                             <items>
                                 <group width="1" alignment="left" verticalAlignment="center" spacing="0.0" id="gXZ-Oc-kJy">
                                     <items>
@@ -453,7 +453,7 @@
                                         </group>
                                     </items>
                                 </group>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="9LS-AS-osE">
+                                <group width="1" alignment="left" verticalAlignment="center" hidden="YES" layout="vertical" spacing="0.0" id="9LS-AS-osE">
                                     <items>
                                         <separator alignment="left" id="ktn-gN-mHf">
                                             <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
