@@ -24,7 +24,7 @@ class ChooseActivityInterfaceController: WKInterfaceController, ActivityDelegate
         super.awake(withContext: context)
         print("Awake")
         
-        setTitle("Activiteiten")
+        setTitle(L10n.Watch.Activities.title)
         
         // To configure and activate the session
         if WCSession.isSupported() {

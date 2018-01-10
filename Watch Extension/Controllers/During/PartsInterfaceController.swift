@@ -26,6 +26,43 @@ class PartsInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         print("Awake")
         
+        guard let activity = wm.activity, let parts = activity.parts else { return }
+        
+        let currentPart = parts[wm.currentPart]
+        setTitle(currentPart.title)
+        if let currentGoal = currentPart.goal {
+            //Goal exists
+            currentGoalIcon.setImageNamed(currentPart.iconName)
+            currentGoalAmountLabel.setText(currentGoal.amountNoString())
+            currentGoalAdjLabel.setText(getGoalDescriptionString(goalID: currentGoal.id))
+        } else {
+            //Goal doesn't exist so this should be a transition
+            currentGoalIcon.setHidden(true)
+            currentGoalAmountLabel.setText("T")
+            currentGoalAmountLabel.setTextColor(Colors.bermuda)
+            currentGoalAdjLabel.setHidden(true)
+        }
+        
+        if parts.indices.contains(wm.currentPart + 1) {
+            //Next part exists
+            if let nextGoal = parts[wm.currentPart + 1].goal {
+                //Next goal exists
+                nextGoalIcon.setImageNamed(parts[wm.currentPart + 1].iconName)
+                nextGoalAmountLabel.setText(nextGoal.amountNoString())
+                nextGoalAdjLabel.setText(getGoalDescriptionString(goalID: nextGoal.id))
+            } else {
+                //Goal doesn't exist so this should be a transition
+                nextGoalIcon.setHidden(true)
+                nextGoalAmountLabel.setText("T")
+                nextGoalAmountLabel.setTextColor(Colors.bermuda)
+                nextGoalAdjLabel.setHidden(true)
+            }
+        } else {
+            //Next part doesn't exists, finishing after this
+            nextGoalIcon.setImageNamed("finishFlag")
+            nextGoalAmountLabel.setText("Finish")
+            nextGoalAdjLabel.setHidden(true)
+        }
     }
     
     override func willActivate() {
@@ -40,4 +77,21 @@ class PartsInterfaceController: WKInterfaceController {
         print("Did deactivate")
     }
     
+    func getGoalDescriptionString(goalID: Int) -> String {
+        switch goalID {
+        case 0:
+            return L10n.Adjust.duration
+        case 1:
+            return L10n.Adjust.pace
+        case 2:
+            return L10n.Adjust.distance
+        case 3:
+            return L10n.Adjust.calories
+        case 4:
+            return "Open"
+        default:
+            return ""
+        }
+        
+    }
 }

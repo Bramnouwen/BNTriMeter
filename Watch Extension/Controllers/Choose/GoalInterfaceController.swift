@@ -25,6 +25,7 @@ class GoalInterfaceController: WKInterfaceController {
     @IBOutlet var goalDescription: WKInterfaceLabel!
     
     @IBOutlet var startButton: WKInterfaceButton!
+    @IBOutlet var startButtonLabel: WKInterfaceLabel!
     
     var scrollAmount: Int = 0
     var buttonAmount: Int = 0
@@ -44,7 +45,7 @@ class GoalInterfaceController: WKInterfaceController {
         
         goalId = wm.activity?.goal?.id
         
-        startButton.setTitle(L10n.Tabs.start)
+        startButtonLabel.setText(L10n.Watch.Start.title)
         
         crownSequencer.delegate = self
         
@@ -78,7 +79,7 @@ class GoalInterfaceController: WKInterfaceController {
 //            newAmount = defaults.integer(forKey: "previousCalories")
             goalDescriptionString = L10n.Adjust.calories
         case 4:
-            goalString = "No goal"
+            goalString = L10n.Goal.Nothing.amount
         default: // Countdown
             goalString = L10n.Adjust.Countdown.Title.two
             buttonAmount = 1 //second

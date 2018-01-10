@@ -798,6 +798,16 @@ enum L10n {
 
   enum Watch {
 
+    enum Activities {
+      /// Activities
+      static let title = L10n.tr("Localizable", "Watch.activities.title")
+    }
+
+    enum Continue {
+      /// Continue
+      static let title = L10n.tr("Localizable", "Watch.continue.title")
+    }
+
     enum Goal {
       /// Buttons: %@ | Scrolling: %@
       static func description(_ p1: String, _ p2: String) -> String {
@@ -805,9 +815,30 @@ enum L10n {
       }
     }
 
+    enum Menu {
+      /// Lock
+      static let lock = L10n.tr("Localizable", "Watch.menu.lock")
+      /// Next
+      static let next = L10n.tr("Localizable", "Watch.menu.next")
+      /// Pause
+      static let pause = L10n.tr("Localizable", "Watch.menu.pause")
+      /// Stop
+      static let stop = L10n.tr("Localizable", "Watch.menu.stop")
+    }
+
     enum Nogoal {
       /// No goal? Tap here!
       static let description = L10n.tr("Localizable", "Watch.noGoal.description")
+    }
+
+    enum Overview {
+      /// Overview
+      static let title = L10n.tr("Localizable", "Watch.overview.title")
+    }
+
+    enum Start {
+      /// Let's go!
+      static let title = L10n.tr("Localizable", "Watch.start.title")
     }
   }
 

@@ -10,7 +10,7 @@ import WatchKit
 import HealthKit
 
 class MenuInterfaceController: WKInterfaceController {
-
+    
     let wm = WorkoutManager.shared
     
     @IBOutlet var lockButton: WKInterfaceButton!
@@ -23,11 +23,27 @@ class MenuInterfaceController: WKInterfaceController {
     @IBOutlet var playPauseIcon: WKInterfaceImage!
     @IBOutlet var playPauseLabel: WKInterfaceLabel!
     
+    @IBOutlet var nextButton: WKInterfaceButton!
+    @IBOutlet var nextIcon: WKInterfaceImage!
+    @IBOutlet var nextLabel: WKInterfaceLabel!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         print("Awake")
-        
-        setTitle(wm.activity?.title)
+                
+        if let activity = wm.activity {
+            if !activity.isPreset {
+                nextButton.setHidden(true)
+                setTitle(activity.title)
+            } else if let parts = activity.parts {
+                let indices = parts.indices
+                setTitle(parts[wm.currentPart].title)
+                if !indices.contains(wm.currentPart + 1) {
+                    nextButton.setAlpha(0.5)
+                    nextButton.setEnabled(false)
+                }
+            }
+        }
     }
     
     override func willActivate() {
@@ -54,8 +70,10 @@ class MenuInterfaceController: WKInterfaceController {
     @IBAction func stopButtonClicked() {
         guard wm.workoutSession != nil else { return }
         print("Stop button clicked")
-        wm.timer?.invalidate()
-        wm.healthStore.end(wm.workoutSession!)
+        wm.stopWorkout()
+        DispatchQueue.main.async {
+            WKInterfaceController.reloadRootPageControllers(withNames: ["AfterController"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+        }
     }
     
     @IBAction func playPauseButtonClicked() {
@@ -79,5 +97,14 @@ class MenuInterfaceController: WKInterfaceController {
             playPauseIcon.setImageNamed("play-green")
         }
     }
+    
+    @IBAction func nextButtonClicked() {
+        guard wm.activityHasNextPart() else { return }
+        
+        wm.stopWorkout()
+        wm.currentPart += 1
+        wm.startWorkout(nil)
+    }
+    
     
 }

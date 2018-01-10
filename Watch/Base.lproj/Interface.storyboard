@@ -164,7 +164,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-35" y="526"/>
+            <point key="canvasLocation" x="-17" y="571"/>
         </scene>
         <!--OverviewController-->
         <scene sceneID="iOs-og-Bxt">
@@ -233,6 +233,7 @@
                     <connections>
                         <outlet property="overviewTable" destination="ANc-82-6Uk" id="Pfl-By-SVQ"/>
                         <outlet property="startButton" destination="W51-oX-r3s" id="CwM-FT-Fgw"/>
+                        <outlet property="startButtonLabel" destination="hLf-No-zqh" id="CgB-Sf-up1"/>
                         <outlet property="titleLabel" destination="kcG-Yp-Ccp" id="tgT-nO-J9d"/>
                     </connections>
                 </controller>
@@ -311,6 +312,7 @@
                         <outlet property="minusButton" destination="Tc6-HL-uD5" id="CTa-6G-hxg"/>
                         <outlet property="plusButton" destination="94K-cQ-reb" id="Bpd-Iz-sJO"/>
                         <outlet property="startButton" destination="6f0-CR-AeV" id="pKO-Vm-Nn9"/>
+                        <outlet property="startButtonLabel" destination="6Hd-R9-tP7" id="Jgp-bP-dUH"/>
                     </connections>
                 </controller>
             </objects>
@@ -368,6 +370,7 @@
                     <connections>
                         <outlet property="dataTable" destination="5Vv-hP-0wx" id="NtV-KV-pvD"/>
                         <outlet property="startButton" destination="t0O-C6-9af" id="f7c-bE-2NA"/>
+                        <outlet property="startButtonLabel" destination="Sxz-MK-bPO" id="hfH-rn-jJq"/>
                     </connections>
                 </controller>
             </objects>
@@ -453,7 +456,7 @@
                                         </group>
                                     </items>
                                 </group>
-                                <group width="1" alignment="left" verticalAlignment="center" hidden="YES" layout="vertical" spacing="0.0" id="9LS-AS-osE">
+                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="9LS-AS-osE">
                                     <items>
                                         <separator alignment="left" id="ktn-gN-mHf">
                                             <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -484,8 +487,9 @@
                     <menu key="menu" id="3oE-oG-y66">
                         <items>
                             <menuItem title="Lock" image="lock - green" id="7Ng-m0-k8c"/>
-                            <menuItem title="Stop" image="stop - green" id="WOj-WJ-BY7"/>
-                            <menuItem title="Pause" image="pause - green" id="2gh-rA-piq"/>
+                            <menuItem title="Next" image="next" id="WOj-WJ-BY7"/>
+                            <menuItem title="Stop" image="stop-green" id="2gh-rA-piq"/>
+                            <menuItem title="Pause" image="pause-green" id="PgZ-FM-3qn"/>
                         </items>
                     </menu>
                     <connections>
@@ -653,12 +657,12 @@
                     <items>
                         <group width="1" height="1" alignment="left" verticalAlignment="bottom" layout="overlap" spacing="0.0" id="zlq-Rl-Txf" userLabel="Parts">
                             <items>
-                                <group width="1" height="0.5" alignment="left" id="TCn-lg-QlO" userLabel="Current">
+                                <group width="1" height="0.5" alignment="left" spacing="8" id="TCn-lg-QlO" userLabel="Current">
                                     <items>
                                         <group width="0.40000000000000002" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="Or8-h8-W06" userLabel="Progress">
                                             <items>
                                                 <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="HqX-s6-eGU"/>
-                                                <label alignment="center" text="10" id="dEO-Ea-ksY">
+                                                <label alignment="center" text="10" minimumScaleFactor="0.5" id="dEO-Ea-ksY">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
                                                 </label>
@@ -677,7 +681,7 @@
                                 <separator alignment="left" verticalAlignment="center" id="hoW-cD-L9H">
                                     <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 </separator>
-                                <group width="1" height="0.5" alignment="left" verticalAlignment="bottom" id="rbx-8u-ObP" userLabel="Next">
+                                <group width="1" height="0.5" alignment="left" verticalAlignment="bottom" spacing="8" id="rbx-8u-ObP" userLabel="Next">
                                     <items>
                                         <label alignment="left" verticalAlignment="center" text="Next" id="Y0X-4j-snE">
                                             <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
@@ -685,7 +689,7 @@
                                         <group width="0.40000000000000002" alignment="right" verticalAlignment="center" layout="vertical" spacing="0.0" id="aoi-r0-h0w" userLabel="Progress">
                                             <items>
                                                 <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="igE-hp-FHV"/>
-                                                <label alignment="center" text="10" id="5P0-aD-llh">
+                                                <label alignment="center" text="10" minimumScaleFactor="0.5" id="5P0-aD-llh">
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
                                                 </label>
@@ -702,11 +706,12 @@
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
                     </items>
-                    <menu key="menu" id="YD0-lW-QJb">
+                    <menu key="menu" id="Vux-bu-aDh">
                         <items>
-                            <menuItem title="Lock" image="lock - green" id="vxS-C4-GH1"/>
-                            <menuItem title="Stop" image="stop - green" id="hR7-xG-1F5"/>
-                            <menuItem title="Pause" image="pause - green" id="0EA-f7-B5U"/>
+                            <menuItem title="Lock" image="lock - green" id="vY5-dv-r6c"/>
+                            <menuItem title="Next" image="next" id="2TJ-4g-KUE"/>
+                            <menuItem title="Stop" image="stop-green" id="MPp-TZ-obd"/>
+                            <menuItem title="Pause" image="pause-green" id="RLI-Ul-kcW"/>
                         </items>
                     </menu>
                     <connections>
@@ -728,28 +733,46 @@
             <objects>
                 <controller identifier="MenuController" id="etE-h3-1B7" customClass="MenuInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="9" id="yZB-Fw-KCJ">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="16" id="yZB-Fw-KCJ">
                             <items>
-                                <button alignment="center" id="V9P-Rq-UcU">
-                                    <group key="contentGroup" alignment="left" layout="vertical" spacing="0.0" id="IpB-cW-3cm">
-                                        <items>
-                                            <imageView width="40" height="40" alignment="center" image="lock-green" contentMode="scaleAspectFit" id="G4r-nS-hxh"/>
-                                            <label alignment="center" text="Vergrendel" id="tPV-P7-Bp9">
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
-                                            </label>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <action selector="lockButtonClicked" destination="etE-h3-1B7" id="r2F-bv-ooX"/>
-                                    </connections>
-                                </button>
-                                <group width="1" alignment="left" verticalAlignment="bottom" spacing="15" id="Et3-fJ-Tcm">
+                                <group width="1" alignment="left" id="JYW-Hv-wgE">
+                                    <items>
+                                        <button alignment="center" id="V9P-Rq-UcU">
+                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="IpB-cW-3cm">
+                                                <items>
+                                                    <imageView width="44" height="44" alignment="center" image="lock-green" contentMode="scaleAspectFit" id="G4r-nS-hxh"/>
+                                                    <label alignment="center" text="Vergrendel" id="tPV-P7-Bp9">
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <action selector="lockButtonClicked" destination="etE-h3-1B7" id="r2F-bv-ooX"/>
+                                            </connections>
+                                        </button>
+                                        <button alignment="center" id="Gb8-i6-B0D">
+                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="tkz-EZ-Zq1">
+                                                <items>
+                                                    <imageView width="44" height="44" alignment="center" image="next" contentMode="scaleAspectFit" id="lLa-dj-3by"/>
+                                                    <label alignment="center" text="Volgende" id="hzO-Hj-Cht">
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <action selector="nextButtonClicked" destination="etE-h3-1B7" id="vY6-Ml-kB3"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" verticalAlignment="bottom" id="Et3-fJ-Tcm">
                                     <items>
                                         <button alignment="center" id="gRL-UK-bTf">
-                                            <group key="contentGroup" alignment="left" layout="vertical" spacing="0.0" id="2XC-A0-312">
+                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="2XC-A0-312">
                                                 <items>
-                                                    <imageView width="40" height="40" alignment="left" image="stop-green" contentMode="scaleAspectFit" id="SAm-ZB-7Xi"/>
+                                                    <imageView width="44" height="44" alignment="center" image="stop-green" contentMode="scaleAspectFit" id="SAm-ZB-7Xi"/>
                                                     <label alignment="center" text="Stop" id="TrX-kD-xdZ">
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
@@ -761,9 +784,9 @@
                                             </connections>
                                         </button>
                                         <button alignment="center" id="YnB-dM-XEH">
-                                            <group key="contentGroup" alignment="left" layout="vertical" spacing="0.0" id="jMX-9h-EZE">
+                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="jMX-9h-EZE">
                                                 <items>
-                                                    <imageView width="40" height="40" alignment="left" image="pause-green" contentMode="scaleAspectFit" id="V0D-hV-LBV"/>
+                                                    <imageView width="44" height="44" alignment="center" image="pause-green" contentMode="scaleAspectFit" id="V0D-hV-LBV"/>
                                                     <label alignment="center" text="Pauze" id="C78-mW-23C">
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
@@ -777,15 +800,14 @@
                                     </items>
                                 </group>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="13"/>
-                            <variation key="device=watch42mm">
-                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="23"/>
-                            </variation>
                         </group>
                     </items>
                     <connections>
                         <outlet property="lockButton" destination="V9P-Rq-UcU" id="Ox2-MA-ZZN"/>
                         <outlet property="lockLabel" destination="tPV-P7-Bp9" id="k9c-n4-El1"/>
+                        <outlet property="nextButton" destination="Gb8-i6-B0D" id="BeN-Go-IiO"/>
+                        <outlet property="nextIcon" destination="lLa-dj-3by" id="Vnu-C6-QOZ"/>
+                        <outlet property="nextLabel" destination="hzO-Hj-Cht" id="zxj-QC-q1l"/>
                         <outlet property="playPauseButton" destination="YnB-dM-XEH" id="VuE-Am-v6x"/>
                         <outlet property="playPauseIcon" destination="V0D-hV-LBV" id="rWj-aF-Wpu"/>
                         <outlet property="playPauseLabel" destination="C78-mW-23C" id="bpx-T5-BrP"/>
@@ -872,34 +894,31 @@
                                             </items>
                                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                         </group>
+                                        <group width="1" alignment="left" spacing="5" id="Wyf-MB-hhQ">
+                                            <items>
+                                                <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="steps" contentMode="scaleAspectFit" id="Ey8-ZA-wV3"/>
+                                                <label alignment="left" verticalAlignment="center" text="-" id="eZV-dW-MrY">
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="19"/>
+                                                </label>
+                                            </items>
+                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                        </group>
                                     </items>
                                 </group>
                                 <group width="1" alignment="left" layout="vertical" spacing="4" id="rMD-Tq-2aF">
                                     <items>
-                                        <button alignment="center" verticalAlignment="bottom" id="lq9-Cq-I0S" userLabel="Save">
+                                        <button alignment="center" verticalAlignment="bottom" id="lq9-Cq-I0S" userLabel="Continue">
                                             <group key="contentGroup" width="1" height="40" alignment="left" radius="20" id="Z45-DC-4sF">
                                                 <items>
-                                                    <label alignment="center" verticalAlignment="center" text="Save" id="nDn-Xh-w2H">
+                                                    <label alignment="center" verticalAlignment="center" text="Volgende" id="nDn-Xh-w2H">
                                                         <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                                     </label>
                                                 </items>
                                                 <color key="backgroundColor" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </group>
                                             <connections>
-                                                <action selector="saveButtonClicked" destination="3OZ-qD-eZj" id="9G4-w5-3lD"/>
-                                            </connections>
-                                        </button>
-                                        <button alignment="center" verticalAlignment="bottom" id="2cP-F5-aec" userLabel="Discard">
-                                            <group key="contentGroup" width="1" height="40" alignment="left" radius="20" id="XW7-UI-99f">
-                                                <items>
-                                                    <label alignment="center" verticalAlignment="center" text="Discard" id="vtR-GK-8Du">
-                                                        <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
-                                                    </label>
-                                                </items>
-                                                <color key="backgroundColor" red="0.98823529409999999" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </group>
-                                            <connections>
-                                                <action selector="discardButtonClicked" destination="3OZ-qD-eZj" id="iWF-eO-G6x"/>
+                                                <action selector="continueButtonClicked" destination="3OZ-qD-eZj" id="nMb-2M-WL3"/>
                                             </connections>
                                         </button>
                                     </items>
@@ -908,27 +927,29 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="continueButton" destination="lq9-Cq-I0S" id="GDw-3c-e6V"/>
                         <outlet property="dataGroup1" destination="scU-fC-zgE" id="gm2-OB-zS5"/>
                         <outlet property="dataGroup2" destination="uTJ-gb-lu3" id="F49-qG-UaO"/>
                         <outlet property="dataGroup3" destination="8sa-Oh-1ky" id="7Og-c5-YUz"/>
                         <outlet property="dataGroup4" destination="fth-6q-NPq" id="DwU-Nc-Ghz"/>
                         <outlet property="dataGroup5" destination="fSb-65-vfa" id="eJf-Gi-rzG"/>
+                        <outlet property="dataGroup6" destination="Wyf-MB-hhQ" id="QmS-ur-dd5"/>
                         <outlet property="dataIcon1" destination="1TN-mt-dP5" id="jIu-ev-EnK"/>
                         <outlet property="dataIcon2" destination="u5H-Fm-Lsg" id="zyQ-Nk-3sg"/>
                         <outlet property="dataIcon3" destination="xWl-73-JQr" id="Z89-vn-IQp"/>
                         <outlet property="dataIcon4" destination="Et7-WC-vXO" id="Msk-18-Kjw"/>
                         <outlet property="dataIcon5" destination="1I8-K5-PXG" id="aOG-Yh-Hg8"/>
+                        <outlet property="dataIcon6" destination="Ey8-ZA-wV3" id="5Gd-R4-XK3"/>
                         <outlet property="dataLabel1" destination="PAv-KN-nnx" id="OUW-ne-7Ne"/>
                         <outlet property="dataLabel2" destination="FFN-c7-803" id="KVE-gw-Nw5"/>
                         <outlet property="dataLabel3" destination="0xD-2p-l0V" id="KPJ-tC-E16"/>
                         <outlet property="dataLabel4" destination="aVu-9i-4Tj" id="NgI-vt-0qZ"/>
                         <outlet property="dataLabel5" destination="TZi-IG-XPX" id="Mei-zF-2aC"/>
-                        <outlet property="discardButton" destination="2cP-F5-aec" id="uZT-tO-SRf"/>
+                        <outlet property="dataLabel6" destination="eZV-dW-MrY" id="i6g-J2-7M5"/>
                         <outlet property="goalAmountDescriptionLabel" destination="2R3-1N-t1A" id="zKu-bt-xfp"/>
                         <outlet property="goalAmountLabel" destination="HUc-ES-uSZ" id="Za5-NY-QvT"/>
                         <outlet property="goalIcon" destination="QBU-cx-nl3" id="Gog-9v-GYK"/>
                         <outlet property="map" destination="zPL-rj-sYo" id="BE2-S5-EF3"/>
-                        <outlet property="saveButton" destination="lq9-Cq-I0S" id="Gj5-G9-E2g"/>
                     </connections>
                 </controller>
             </objects>

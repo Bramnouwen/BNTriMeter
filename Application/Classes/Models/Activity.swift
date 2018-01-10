@@ -133,7 +133,15 @@ extension Activity {
         case L10n.Activity.running: return .running
         case L10n.Activity.cycling: return .cycling
         case L10n.Activity.swimming: return .swimming
-        default: return .running
+        default: return .other
+        }
+    }
+    
+    func isTriathlon() -> Bool {
+        if title.lowercased().contains(L10n.Activity.triathlon.lowercased()) {
+            return true
+        } else {
+            return false
         }
     }
 }

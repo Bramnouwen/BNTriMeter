@@ -8,6 +8,14 @@
 // Watch
 "Watch.noGoal.description" = "Geen doel? Druk hier!";
 "Watch.goal.description" = "Knoppen: %@ | Scrollen: %@";
+"Watch.activities.title" = "Activiteiten";
+"Watch.start.title" = "Begin!";
+"Watch.menu.lock" = "Vergrendel";
+"Watch.menu.next" = "Volgende";
+"Watch.menu.stop" = "Stop";
+"Watch.menu.pause" = "Pauze";
+"Watch.overview.title" = "Overzicht";
+"Watch.continue.title" = "Volgende";
 
 // Tabs
 "Tabs.feed" = "Overzicht";

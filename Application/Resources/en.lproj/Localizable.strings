@@ -8,6 +8,14 @@
 // Watch
 "Watch.noGoal.description" = "No goal? Tap here!";
 "Watch.goal.description" = "Buttons: %@ | Scrolling: %@";
+"Watch.activities.title" = "Activities";
+"Watch.start.title" = "Let's go!";
+"Watch.menu.lock" = "Lock";
+"Watch.menu.next" = "Next";
+"Watch.menu.stop" = "Stop";
+"Watch.menu.pause" = "Pause";
+"Watch.overview.title" = "Overview";
+"Watch.continue.title" = "Continue";
 
 // Tabs
 "Tabs.feed" = "Feed";

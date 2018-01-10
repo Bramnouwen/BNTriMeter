@@ -42,21 +42,29 @@ class AfterInterfaceController: WKInterfaceController {
     @IBOutlet var dataLabel5: WKInterfaceLabel!
     @IBOutlet var dataIcon5: WKInterfaceImage!
     
-    @IBOutlet var saveButton: WKInterfaceButton!
-    @IBOutlet var discardButton: WKInterfaceButton!
+    @IBOutlet var dataGroup6: WKInterfaceGroup!
+    @IBOutlet var dataLabel6: WKInterfaceLabel!
+    @IBOutlet var dataIcon6: WKInterfaceImage!
+    
+    @IBOutlet var continueButton: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         print("Awake")
+        wm.currentPart = 0 //reset current part counter
+//        saveAllWorkouts()
         
         setTitle("Overzicht")
         
         guard let activity = wm.activity else { return }
         setGoal(goalID: activity.goal!.id)
         
-        workout = wm.createHKWorkout()
-        guard workout != nil else { return }
-        setSummary(with: workout!)
+        if activity.isTriathlon() {
+            setTriathlonSummary(with: wm.workoutObjects)
+        } else {
+            guard let workoutObject = wm.workoutObject else { return }
+            setSummary(with: workoutObject)
+        }
     }
     
     override func willActivate() {
@@ -72,6 +80,12 @@ class AfterInterfaceController: WKInterfaceController {
     }
     
     func setGoal(goalID: Int) {
+        if wm.activity!.isTriathlon() {
+            goalAmountLabel.setText(L10n.Activity.triathlon)
+            goalAmountDescriptionLabel.setHidden(true)
+            return
+        }
+        
         switch goalID {
         case 0:
             goalDescriptionString = L10n.Adjust.duration
@@ -107,18 +121,81 @@ class AfterInterfaceController: WKInterfaceController {
         dataLabel4.setText("\(format(lastHeartRate: Int(wm.lastHeartRate)))") //get avg
         
         dataLabel5.setText("\(format(totalSteps: wm.totalSteps.doubleValue(for: HKUnit.count())))") //get total from workout object
+        
+        dataGroup6.setHidden(true)
     }
     
-    @IBAction func saveButtonClicked() {
-        guard workout != nil else { return }
-        wm.save(workout: workout!)
+    func setTriathlonSummary(with workouts: [HKWorkout]) {
+//        let indices = workouts.indices
+        var totalDuration: TimeInterval = 0
+        for workout in workouts {
+            totalDuration += workout.duration
+        }
+        
+        dataLabel1.setText(format(totalDuration: totalDuration))
+        
+        dataIcon2.setImageNamed("swimming")
+        dataLabel2.setText(format(totalDuration: workouts[0].duration))
+        
+        dataIcon3.setImageNamed("transition")
+        dataLabel3.setText(format(totalDuration: workouts[1].duration))
+        
+        dataIcon4.setImageNamed("cycling")
+        dataLabel4.setText(format(totalDuration: workouts[2].duration))
+        
+        dataIcon5.setImageNamed("transition")
+        dataLabel5.setText(format(totalDuration: workouts[3].duration))
+        
+        dataIcon6.setImageNamed("running")
+        dataLabel6.setText(format(totalDuration: workouts[4].duration))
     }
     
-    @IBAction func discardButtonClicked() {
-        // TODO: Show alert for confirmation
+    @IBAction func continueButtonClicked() {
         DispatchQueue.main.async {
             WKInterfaceController.reloadRootControllers(withNamesAndContexts: [("ActivityController", 1 as AnyObject)])
         }
     }
     
+//    func saveAllWorkouts() {
+//        for workout in wm.workoutObjects {
+//            wm.save(workout: workout)
+//        }
+//    }
+//    func addAllWorkoutObjects() {
+//        var walkingDistance = HKQuantity(unit: HKUnit.meter(), doubleValue: 0)
+//        var walkingEnergy = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: 0)
+//        var walkingSteps = HKQuantity(unit: HKUnit.count(), doubleValue: 0)
+//        var walkingStartDate = Date()
+//        var walkingEndDate = Date()
+//
+//        let workoutObjects = wm.workoutObjects
+//
+//        for w in workoutObjects {
+//            if w.workoutActivityType == .walking {
+//                walkingDistance = HKQuantity(unit: HKUnit.meter(), doubleValue: walkingDistance + w.totalDistance!)
+//                walkingEnergy = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: walkingEnergy + w.totalEnergyBurned!)
+//                walkingSteps = HKQuantity(unit: HKUnit.count(), doubleValue: walkingSteps + w.st)
+//                if w.startDate < walkingStartDate {
+//                    walkingStartDate = w.startDate
+//                }
+//                if w.endDate >
+//            }
+//        }
+//    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

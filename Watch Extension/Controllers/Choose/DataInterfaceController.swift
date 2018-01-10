@@ -18,6 +18,7 @@ class DataInterfaceController: WKInterfaceController {
     var data: [DataField] = []
     
     @IBOutlet var startButton: WKInterfaceButton!
+    @IBOutlet var startButtonLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -25,7 +26,7 @@ class DataInterfaceController: WKInterfaceController {
         
         goalId = wm.activity?.goal?.id
         
-        startButton.setTitle(L10n.Tabs.start)
+        startButtonLabel.setText(L10n.Watch.Start.title)
         
         setupTableView()
     }

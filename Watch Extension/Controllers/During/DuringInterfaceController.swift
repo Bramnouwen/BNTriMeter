@@ -40,7 +40,22 @@ class DuringInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         print("Awake")
         
-        setTitle(wm.activity?.title)
+        var activityType: HKWorkoutActivityType?
+        
+        if let activity = wm.activity {
+            if !activity.isPreset {
+                setTitle(activity.title)
+                activityType = activity.healthKitWorkoutActivityType()
+            } else if let parts = activity.parts {
+                let currentPart = parts[wm.currentPart]
+                setTitle(currentPart.title)
+                activityType = currentPart.healthKitWorkoutActivityType()
+            }
+        }
+        
+        if let type = activityType, type != .walking || type != .running {
+            dataGroup5.setHidden(true)
+        }
         
         // Notification listener
         NotificationCenter.default.addObserver(self, selector: #selector(DuringInterfaceController.updateLabels), name: NSNotification.Name(rawValue: "updateLabels"), object: nil)

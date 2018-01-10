@@ -20,6 +20,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     static let shared = WorkoutManager()
     
     var activity: Activity?
+    var currentPart = 0
     
     var hkActivity: HKWorkoutActivityType!
     
@@ -27,8 +28,16 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     
     var distanceType: HKQuantityTypeIdentifier = .distanceCycling
     
-    var workoutStartDate = Date()
-    var workoutEndDate = Date()
+    var workoutStartDate = Date() {
+        didSet {
+            print("Start date set: \(workoutStartDate)")
+        }
+    }
+    var workoutEndDate = Date() {
+        didSet {
+            print("End date set: \(workoutEndDate)")
+        }
+    }
     var cumulativePauseTime: TimeInterval = 0.0
     var pauseDate = Date()
     
@@ -47,12 +56,19 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     var lastHeartRate = 0.0
     let countPerMinuteUnit = HKUnit(from: "count/min")
     
+    var workoutObject: HKWorkout? //TODO: Delete, probably
+    var workoutObjects: [HKWorkout] = []
+    
     func resetData() {
         totalEnergyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: 0)
         totalDistance = HKQuantity(unit: HKUnit.meter(), doubleValue: 0)
         totalSteps = HKQuantity(unit: HKUnit.count(), doubleValue: 0)
         lastHeartRate = 0.0
         cumulativePauseTime = 0.0
+        //workoutSession?
+        //workoutIsActive?
+        //workoutRouteBuilder?
+        //locationManager?
     }
     
     var timer: Timer?
@@ -164,7 +180,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     // MARK: - Workout functions
     
     func startWorkout(_ configuration: HKWorkoutConfiguration?) {
-        
+
         var workoutConfiguration = HKWorkoutConfiguration()
         if configuration == nil {
             // 0 - get workout activity type
@@ -196,6 +212,19 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func stopWorkout() {
+        workoutEndDate = Date()
+        timer?.invalidate()
+        healthStore.end(workoutSession!)
+        workoutObject = createHKWorkout()
+        guard let workoutObject = workoutObject else {
+            print("Error creating workoutObject")
+            return
+        }
+        save(workout: workoutObject)
+        workoutObjects.append(workoutObject)
+    }
+    
     func loadControllers() {
         var controllers: [String] = []
         if activity?.parts?.count == 0 {
@@ -207,10 +236,14 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     }
     
     func getActivityType() -> HKWorkoutActivityType {
-        if activity?.parts?.count == 0 {
-            hkActivity = activity?.healthKitWorkoutActivityType()
-        } else {
-            hkActivity = activity?.parts![0].healthKitWorkoutActivityType()
+        if let activity = activity {
+            if !activity.isPreset {
+                //no preset, get the activity type
+                hkActivity = activity.healthKitWorkoutActivityType()
+            } else if let parts = activity.parts {
+                //preset, get activity type of current part
+                hkActivity = parts[currentPart].healthKitWorkoutActivityType()
+            }
         }
         
         // And set distancetype
@@ -226,6 +259,19 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
         }
         
         return hkActivity
+    }
+    
+    func activityHasNextPart() -> Bool {
+        guard let activity = activity, let parts = activity.parts else { return false }
+        let indices = parts.indices
+        
+        if indices.contains(currentPart + 1) {
+            //we have another part
+            return true
+        } else {
+            //we don't
+            return false
+        }
     }
     
     // Create HKWorkout
@@ -251,6 +297,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     // Save activity
     
     func save(workout: HKWorkout) {
+        //var returnBool = false
 //        guard let workoutSession = workoutSession else { return }
 //
 //        let config = workoutSession.workoutConfiguration
@@ -278,13 +325,13 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
         let totalEnergyBurnedSample = HKQuantitySample(type: typeEnergy,
                                                        quantity: totalEnergyBurned,
                                                        start: startDate,
-                                                       end: endDate)
+                                                       end: endDate.addingTimeInterval(1)) //TODO: delete addingTimeInterval
         // Create distance sample
         let typeDistance = HKObjectType.quantityType(forIdentifier: distanceType)!
         let totalDistanceSample = HKQuantitySample(type: typeDistance,
                                                    quantity: totalDistance,
                                                    start: startDate,
-                                                   end: endDate)
+                                                   end: endDate.addingTimeInterval(1)) //TODO: delete addingTimeInterval
         // Create heartrate sample
 //        let typeHeartRAte = HKObjectType.quantityType(forIdentifier: .heartRate)
         
@@ -300,12 +347,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
                 print("Adding workout subsamples failed with error: \(String(describing: error))")
                 return
             }
-            
-            // Samples have been added
-            DispatchQueue.main.async {
-                self.resetData()
-                WKInterfaceController.reloadRootControllers(withNamesAndContexts: [("ActivityController", 1 as AnyObject)])
-            }
+            self.resetData()
         }
         
         // Finish the route with a sync identifier so we can easily update the route later
@@ -414,12 +456,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
             print("Current state: ended")
             workoutIsActive = false
             cleanUpQueries()
-            workoutEndDate = Date()
             
-            DispatchQueue.main.async {
-                print("ReloadRootPageController: AfterController")
-                WKInterfaceController.reloadRootPageControllers(withNames: ["AfterController"], contexts: nil, orientation: .horizontal, pageIndex: 0)
-            }
         default:
             break
         }
