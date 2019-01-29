@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4N-hK-yKe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4N-hK-yKe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,9 +283,7 @@
                         <outlet property="obstructionLabel" destination="1EA-C0-fzb" id="5w2-KK-W6S"/>
                         <outlet property="obstructionView" destination="Z1a-hM-JCT" id="mAE-1u-T2Q"/>
                         <outlet property="tableView" destination="NiB-zR-Usy" id="kgo-le-b15"/>
-                        <segue destination="7MR-TU-wIW" kind="show" identifier="adjustGoal" id="fLJ-Dz-rGQ">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="7MR-TU-wIW" kind="show" identifier="adjustGoal" id="fLJ-Dz-rGQ"/>
                         <segue destination="skq-a9-Oxa" kind="presentation" identifier="createWorkout" modalTransitionStyle="flipHorizontal" id="K6R-Pu-jEc"/>
                         <segue destination="n0F-0a-Rch" kind="show" identifier="toOverview" id="w85-d2-iu9"/>
                     </connections>
@@ -543,9 +541,7 @@
                         <outlet property="obstructionLabel" destination="tMU-lF-jgR" id="yWm-aZ-cyp"/>
                         <outlet property="obstructionView" destination="P9l-Ar-0GS" id="X3e-0a-sru"/>
                         <outlet property="tableView" destination="anO-Tp-Dki" id="efx-lm-C0j"/>
-                        <segue destination="nIM-ww-AWU" kind="show" identifier="changeData" id="Dfm-Pe-Xhn">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="nIM-ww-AWU" kind="show" identifier="changeData" id="Dfm-Pe-Xhn"/>
                         <segue destination="n0F-0a-Rch" kind="show" identifier="toOverview" id="Bp6-4h-3T7"/>
                     </connections>
                 </viewController>
@@ -690,9 +686,7 @@
                         <outlet property="obstructionLabel" destination="tP5-af-N6P" id="pxM-QD-O9Y"/>
                         <outlet property="obstructionView" destination="T2p-eI-lFd" id="jpT-li-CBI"/>
                         <outlet property="tableView" destination="hfO-BN-g1T" id="v1V-Cs-u6G"/>
-                        <segue destination="7MR-TU-wIW" kind="show" identifier="adjustGoal" id="cvF-NV-R4S">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="7MR-TU-wIW" kind="show" identifier="adjustGoal" id="cvF-NV-R4S"/>
                         <segue destination="n0F-0a-Rch" kind="show" identifier="toOverview" id="YWM-ax-Gav"/>
                     </connections>
                 </viewController>

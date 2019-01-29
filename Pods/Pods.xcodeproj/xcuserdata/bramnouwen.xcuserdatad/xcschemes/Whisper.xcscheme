@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CB576D7D67BC01CDB337D0F0DD7E6F81'
-               BlueprintName = 'Whisper'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Whisper.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1329801D4B6C6067D45FBACF43203C5C"
+               BlueprintName = "Whisper"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Whisper.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

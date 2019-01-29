@@ -19,7 +19,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cabin-Regular.ttf</string>
+		<string>Cabin-Bold.ttf</string>
+		<string>Cabin-Medium.ttf</string>
+		<string>Cabin-SemiBold.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -29,12 +36,5 @@
 	<string>be.bramnouwen.TriMeterFW</string>
 	<key>WKWatchKitApp</key>
 	<true/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Cabin-Regular.ttf</string>
-		<string>Cabin-Bold.ttf</string>
-		<string>Cabin-Medium.ttf</string>
-		<string>Cabin-SemiBold.ttf</string>
-	</array>
 </dict>
 </plist>

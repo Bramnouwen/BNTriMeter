@@ -70,9 +70,10 @@ class MenuInterfaceController: WKInterfaceController {
     @IBAction func stopButtonClicked() {
         guard wm.workoutSession != nil else { return }
         print("Stop button clicked")
-        wm.stopWorkout()
-        DispatchQueue.main.async {
-            WKInterfaceController.reloadRootPageControllers(withNames: ["AfterController"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+        if wm.stopWorkout() {
+            DispatchQueue.main.async {
+                WKInterfaceController.reloadRootPageControllers(withNames: ["AfterController"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+            }
         }
     }
     
@@ -101,9 +102,10 @@ class MenuInterfaceController: WKInterfaceController {
     @IBAction func nextButtonClicked() {
         guard wm.activityHasNextPart() else { return }
         
-        wm.stopWorkout()
-        wm.currentPart += 1
-        wm.startWorkout(nil)
+        if wm.stopWorkout() {
+            wm.currentPart += 1
+            wm.startWorkout(nil)
+        }
     }
     
     

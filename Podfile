@@ -20,7 +20,7 @@ target 'TriMeter' do
   pod 'Kingfisher'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'DateToolsSwift'
+  # pod 'DateToolsSwift'
   pod 'Device'
   pod 'InAppSettingsKit', :git => 'https://github.com/Bramnouwen/InAppSettingsKit.git'
   pod 'SugarRecord'

@@ -38,8 +38,8 @@ class PartsInterfaceController: WKInterfaceController {
         } else {
             //Goal doesn't exist so this should be a transition
             currentGoalIcon.setHidden(true)
-            currentGoalAmountLabel.setText("T")
-            currentGoalAmountLabel.setTextColor(Colors.bermuda)
+            currentGoalAmountLabel.setText("T.")
+//            currentGoalAmountLabel.setTextColor(Colors.bermuda)
             currentGoalAdjLabel.setHidden(true)
         }
         
@@ -53,8 +53,8 @@ class PartsInterfaceController: WKInterfaceController {
             } else {
                 //Goal doesn't exist so this should be a transition
                 nextGoalIcon.setHidden(true)
-                nextGoalAmountLabel.setText("T")
-                nextGoalAmountLabel.setTextColor(Colors.bermuda)
+                nextGoalAmountLabel.setText("T.")
+//                nextGoalAmountLabel.setTextColor(Colors.bermuda)
                 nextGoalAdjLabel.setHidden(true)
             }
         } else {

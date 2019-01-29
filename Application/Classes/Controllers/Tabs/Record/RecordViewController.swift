@@ -117,6 +117,7 @@ class RecordViewController: GradientViewController {
         
         // Notification listener
         NotificationCenter.default.addObserver(self, selector: #selector(RecordViewController.sendActivitiesFile), name: NSNotification.Name(rawValue: "sendActivitiesFile"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

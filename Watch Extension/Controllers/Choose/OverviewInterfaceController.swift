@@ -31,6 +31,7 @@ class OverviewInterfaceController: WKInterfaceController {
         
         titleLabel.setText(wm.activity?.title)
         setupTableView()
+        
     }
     
     func setupTableView() {

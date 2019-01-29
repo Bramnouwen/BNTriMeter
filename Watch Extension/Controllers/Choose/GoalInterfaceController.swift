@@ -141,7 +141,6 @@ class GoalInterfaceController: WKInterfaceController {
         guard HKHealthStore.isHealthDataAvailable() else { return }
         
         wm.startWorkout(nil)
-        
     }
 }
 

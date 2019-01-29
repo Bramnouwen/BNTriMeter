@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8C96DC0237F567D9BED1F35E4F1BB81A'
-               BlueprintName = 'FRDStravaClient'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FRDStravaClient.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C96DC0237F567D9BED1F35E4F1BB81A"
+               BlueprintName = "FRDStravaClient"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "FRDStravaClient.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

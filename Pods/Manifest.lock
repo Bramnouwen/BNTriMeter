@@ -35,7 +35,6 @@ PODS:
   - BoringSSL/Interface (9.1)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
-  - DateToolsSwift (2.0.3)
   - Device (3.0.3)
   - Fabric (1.7.2)
   - FBSDKCoreKit (4.29.0):
@@ -60,14 +59,14 @@ PODS:
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseAuth (4.4.0):
     - FirebaseAnalytics (~> 4.0)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.12):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseDatabase (4.1.2):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
@@ -90,13 +89,13 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.3)
     - GoogleToolboxForMac/Defines (= 2.1.3)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
   - gRPC (1.8.0):
     - gRPC-RxLibrary (= 1.8.0)
     - gRPC/Main (= 1.8.0)
@@ -159,10 +158,10 @@ PODS:
   - SCLAlertView (0.7.0)
   - SugarRecord (3.1.2):
     - SugarRecord/CoreData (= 3.1.2)
-    - SugarRecord/CoreData+iCloud (= 3.1.2)
+    - "SugarRecord/CoreData+iCloud (= 3.1.2)"
   - SugarRecord/CoreData (3.1.2):
     - Result (~> 3.0)
-  - SugarRecord/CoreData+iCloud (3.1.2):
+  - "SugarRecord/CoreData+iCloud (3.1.2)":
     - Result (~> 3.0)
   - SwiftGen (5.2.1)
   - SwiftyJSON (4.0.0)
@@ -171,7 +170,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Crashlytics
-  - DateToolsSwift
   - Device
   - Fabric
   - FBSDKCoreKit
@@ -199,6 +197,49 @@ DEPENDENCIES:
   - SwiftyJSON
   - Whisper
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Alamofire
+    - Bolts
+    - BoringSSL
+    - Crashlytics
+    - Device
+    - Fabric
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseFirestore
+    - FirebaseInstanceID
+    - FirebaseStorage
+    - FRDStravaClient
+    - GoogleToolboxForMac
+    - gRPC
+    - gRPC-Core
+    - gRPC-ProtoRPC
+    - gRPC-RxLibrary
+    - GTMSessionFetcher
+    - IBAnimatable
+    - IQKeyboardManager
+    - Kingfisher
+    - leveldb-library
+    - Mantle
+    - MBProgressHUD
+    - nanopb
+    - OneSignal
+    - PromiseKit
+    - Protobuf
+    - Result
+    - Reusable
+    - SugarRecord
+    - SwiftGen
+    - SwiftyJSON
+    - Whisper
+
 EXTERNAL SOURCES:
   InAppSettingsKit:
     :git: https://github.com/Bramnouwen/InAppSettingsKit.git
@@ -219,7 +260,6 @@ SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
   Device: 9a5264ee4e0f392e7153d2c46b10c8df46b7aad2
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
@@ -258,6 +298,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
 
-PODFILE CHECKSUM: 1471cd6d38ad53eca67a7c11ff620f17aebe154d
+PODFILE CHECKSUM: 10186a92f095c82d0ede8ad4ae4c61d591fef15e
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

@@ -54,7 +54,7 @@ class AfterInterfaceController: WKInterfaceController {
         wm.currentPart = 0 //reset current part counter
 //        saveAllWorkouts()
         
-        setTitle("Overzicht")
+        setTitle("Summary")
         
         guard let activity = wm.activity else { return }
         setGoal(goalID: activity.goal!.id)
@@ -77,6 +77,7 @@ class AfterInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         print("Did deactivate")
+        wm.workoutObjects = []
     }
     
     func setGoal(goalID: Int) {
@@ -126,7 +127,8 @@ class AfterInterfaceController: WKInterfaceController {
     }
     
     func setTriathlonSummary(with workouts: [HKWorkout]) {
-//        let indices = workouts.indices
+        let indices = workouts.indices
+        
         var totalDuration: TimeInterval = 0
         for workout in workouts {
             totalDuration += workout.duration
@@ -135,19 +137,40 @@ class AfterInterfaceController: WKInterfaceController {
         dataLabel1.setText(format(totalDuration: totalDuration))
         
         dataIcon2.setImageNamed("swimming")
-        dataLabel2.setText(format(totalDuration: workouts[0].duration))
+        if indices.contains(0) {
+            dataLabel2.setText(format(totalDuration: workouts[0].duration))
+        } else {
+            dataLabel2.setText("-")
+        }
         
         dataIcon3.setImageNamed("transition")
-        dataLabel3.setText(format(totalDuration: workouts[1].duration))
+        if indices.contains(1) {
+            dataLabel3.setText(format(totalDuration: workouts[1].duration))
+        } else {
+            dataLabel3.setText("-")
+        }
         
         dataIcon4.setImageNamed("cycling")
-        dataLabel4.setText(format(totalDuration: workouts[2].duration))
+        if indices.contains(2) {
+            dataLabel4.setText(format(totalDuration: workouts[2].duration))
+        } else {
+            dataLabel4.setText("-")
+        }
         
         dataIcon5.setImageNamed("transition")
-        dataLabel5.setText(format(totalDuration: workouts[3].duration))
+        if indices.contains(3) {
+            dataLabel5.setText(format(totalDuration: workouts[3].duration))
+        } else {
+            dataLabel5.setText("-")
+        }
         
         dataIcon6.setImageNamed("running")
-        dataLabel6.setText(format(totalDuration: workouts[4].duration))
+        if indices.contains(4) {
+            dataLabel6.setText(format(totalDuration: workouts[4].duration))
+        } else {
+            dataLabel6.setText("-")
+        }
+        
     }
     
     @IBAction func continueButtonClicked() {

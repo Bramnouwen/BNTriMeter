@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -252,13 +251,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gZ-61-Vdf">
-                                <rect key="frame" x="172.5" y="262" width="31" height="40.5"/>
+                                <rect key="frame" x="172" y="262" width="31" height="40.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Medium" family="Cabin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-IW-xvf">
-                                <rect key="frame" x="124.5" y="136.5" width="127" height="121.5"/>
+                                <rect key="frame" x="124" y="136.5" width="127" height="121.5"/>
                                 <fontDescription key="fontDescription" name="Cabin-Bold" family="Cabin" pointSize="100"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -275,7 +274,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfP-ln-3S2">
-                                <rect key="frame" x="299.5" y="175" width="44" height="44"/>
+                                <rect key="frame" x="299" y="175" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="L0s-Hi-G4C"/>
                                     <constraint firstAttribute="width" constant="44" id="c4O-Y6-Tcb"/>
@@ -492,7 +491,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Titel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-ga-Q1c" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                <rect key="frame" x="88" y="38" width="200" height="55"/>
+                                <rect key="frame" x="87.5" y="38" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GgA-fc-D8c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nVH-HV-XBI"/>
@@ -521,11 +520,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-dt-SVy">
-                                <rect key="frame" x="0.0" y="155" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="317"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="KYU-zf-ccv"/>
-                                </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHU-e3-wah" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="488" width="343" height="50"/>
@@ -575,6 +571,7 @@
                             <constraint firstItem="zQp-bs-3qh" firstAttribute="bottom" secondItem="dq2-0b-6Wo" secondAttribute="bottom" constant="16" id="Jyv-OA-QyE"/>
                             <constraint firstItem="hiX-dt-SVy" firstAttribute="top" secondItem="i5Z-RK-7RT" secondAttribute="bottom" constant="8" id="Qe4-XO-NrI"/>
                             <constraint firstItem="i5Z-RK-7RT" firstAttribute="top" secondItem="kSo-ga-Q1c" secondAttribute="bottom" constant="32" id="WwE-Pn-MEX"/>
+                            <constraint firstItem="iHU-e3-wah" firstAttribute="top" secondItem="hiX-dt-SVy" secondAttribute="bottom" constant="16" id="ZfR-kd-dIF"/>
                             <constraint firstItem="hiX-dt-SVy" firstAttribute="centerX" secondItem="i5Z-RK-7RT" secondAttribute="centerX" id="cZc-B3-FMv"/>
                             <constraint firstItem="zQp-bs-3qh" firstAttribute="trailing" secondItem="dq2-0b-6Wo" secondAttribute="trailing" constant="16" id="gJx-wy-e04"/>
                             <constraint firstItem="kSo-ga-Q1c" firstAttribute="centerX" secondItem="CC3-cB-K3I" secondAttribute="centerX" id="j9h-Fl-ON3"/>

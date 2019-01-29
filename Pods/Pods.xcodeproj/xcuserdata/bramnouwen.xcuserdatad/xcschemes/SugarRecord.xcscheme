@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '31122F6A8B91A4C883E5E6086858CC66'
-               BlueprintName = 'SugarRecord'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SugarRecord.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3377BC5D0C998E62F4A00051DCEE1DE"
+               BlueprintName = "SugarRecord"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SugarRecord.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

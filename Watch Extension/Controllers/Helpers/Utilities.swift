@@ -25,7 +25,7 @@ func format(totalDuration: TimeInterval) -> String {
     if let string = durationFormatter.string(from: totalDuration) {
         return string
     } else {
-        return ""
+        return "-:-:-"
     }
 }
 

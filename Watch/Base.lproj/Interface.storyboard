@@ -323,7 +323,7 @@
             <objects>
                 <controller identifier="DataController" id="uuZ-Ea-PiC" customClass="DataInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <label width="1" alignment="center" text="De getoonde gegevens" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.5" id="1sE-L6-e3h">
+                        <label width="1" alignment="center" text="Shown data" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.5" id="1sE-L6-e3h">
                             <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="13"/>
                         </label>
                         <table alignment="left" id="5Vv-hP-0wx">
@@ -381,107 +381,130 @@
             <objects>
                 <controller identifier="DuringSingleController" id="Tvv-VU-MC3" customClass="DuringInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="D5B-Oc-0uj" userLabel="Data group">
+                        <group width="1" height="0.90000000000000002" alignment="center" verticalAlignment="center" layout="overlap" id="9Tr-RQ-jcc">
                             <items>
-                                <group width="1" alignment="left" verticalAlignment="center" spacing="0.0" id="gXZ-Oc-kJy">
+                                <group width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" spacing="2" id="D5B-Oc-0uj" userLabel="Data group">
                                     <items>
-                                        <label alignment="center" text="00:00:00" textAlignment="center" id="RL5-ST-qOr">
-                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
-                                            </variation>
-                                        </label>
-                                        <label alignment="right" verticalAlignment="center" hidden="YES" text="d" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="Qhf-Ap-h88" userLabel="d">
-                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                        </label>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="kU4-g6-veN">
-                                    <items>
-                                        <separator alignment="left" id="tQZ-hJ-obw">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" id="w4c-N8-6sW">
+                                        <group width="1" alignment="center" verticalAlignment="center" spacing="0.0" id="gXZ-Oc-kJy">
                                             <items>
-                                                <label alignment="center" text="4,28" textAlignment="center" id="wVb-Wi-UZf">
+                                                <label alignment="center" text="00:00:00" textAlignment="center" id="RL5-ST-qOr">
                                                     <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
                                                     <variation key="device=watch38mm">
                                                         <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
                                                     </variation>
                                                 </label>
-                                                <label alignment="right" verticalAlignment="center" text="km" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="OPh-um-JvY">
+                                                <label alignment="right" verticalAlignment="center" hidden="YES" text="d" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="Qhf-Ap-h88" userLabel="d">
                                                     <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
                                                 </label>
                                             </items>
                                         </group>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="kOW-ME-bAn">
-                                    <items>
-                                        <separator alignment="left" id="pLx-TB-DvX">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" id="whh-4y-Udf">
+                                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="kU4-g6-veN">
                                             <items>
-                                                <label alignment="center" text="234" textAlignment="center" id="45n-bO-1Wt">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                    <variation key="device=watch38mm">
-                                                        <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
-                                                    </variation>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="kcal" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="Uaj-di-yUC">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
+                                                <separator alignment="left" id="tQZ-hJ-obw">
+                                                    <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </separator>
+                                                <group width="1" alignment="left" spacing="4" id="w4c-N8-6sW">
+                                                    <items>
+                                                        <label width="0.59999999999999998" alignment="left" text="4,28" textAlignment="right" id="wVb-Wi-UZf">
+                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label width="0.40000000000000002" alignment="right" verticalAlignment="center" text="km" textAlignment="left" minimumScaleFactor="0.90000000000000002" id="OPh-um-JvY">
+                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
                                             </items>
                                         </group>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="DzF-Uw-NOp">
-                                    <items>
-                                        <separator alignment="left" id="2Hj-Qj-SJc">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" id="aUj-E8-F3L">
+                                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="kOW-ME-bAn">
                                             <items>
-                                                <label alignment="center" text="132" textAlignment="center" id="qFk-pF-ICA">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                    <variation key="device=watch38mm">
-                                                        <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
-                                                    </variation>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="bpm" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="qvY-1B-eJb">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
+                                                <separator alignment="left" id="pLx-TB-DvX">
+                                                    <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </separator>
+                                                <group width="1" alignment="left" spacing="4" id="whh-4y-Udf">
+                                                    <items>
+                                                        <label width="0.59999999999999998" alignment="left" text="234" textAlignment="right" id="45n-bO-1Wt">
+                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label width="0.40000000000000002" alignment="right" verticalAlignment="center" text="kcal" textAlignment="left" minimumScaleFactor="0.90000000000000002" id="Uaj-di-yUC">
+                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
                                             </items>
                                         </group>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="9LS-AS-osE">
-                                    <items>
-                                        <separator alignment="left" id="ktn-gN-mHf">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" id="hsJ-sT-Mpj">
+                                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="DzF-Uw-NOp">
                                             <items>
-                                                <label alignment="center" text="4002" textAlignment="center" id="dTT-7O-Xkd">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                    <variation key="device=watch38mm">
-                                                        <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
-                                                    </variation>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="stappen" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="tQ9-OG-uYR">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
+                                                <separator alignment="left" id="2Hj-Qj-SJc">
+                                                    <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </separator>
+                                                <group width="1" alignment="left" spacing="4" id="aUj-E8-F3L">
+                                                    <items>
+                                                        <label width="0.59999999999999998" alignment="left" text="132" textAlignment="right" id="qFk-pF-ICA">
+                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label width="0.40000000000000002" alignment="right" verticalAlignment="center" text="bpm" textAlignment="left" minimumScaleFactor="0.90000000000000002" id="qvY-1B-eJb">
+                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" spacing="0.0" id="9LS-AS-osE">
+                                            <items>
+                                                <separator alignment="left" id="ktn-gN-mHf">
+                                                    <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </separator>
+                                                <group width="1" alignment="left" spacing="4" id="hsJ-sT-Mpj">
+                                                    <items>
+                                                        <label width="0.59999999999999998" alignment="left" text="4002" textAlignment="right" id="dTT-7O-Xkd">
+                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
+                                                            <variation key="device=watch38mm">
+                                                                <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="22"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label width="0.40000000000000002" alignment="right" verticalAlignment="center" text="steps" textAlignment="left" minimumScaleFactor="0.90000000000000002" id="tQ9-OG-uYR">
+                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
                                             </items>
                                         </group>
                                     </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    <variation key="device=watch38mm" spacing="0.0"/>
+                                    <variation key="device=watch42mm">
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="4"/>
+                                    </variation>
+                                </group>
+                                <group alignment="center" verticalAlignment="center" layout="overlap" spacing="2" id="W7L-wp-kq6" userLabel="Goal group">
+                                    <items>
+                                        <imageView alignment="center" verticalAlignment="center" image="circle" id="GPV-wX-ych"/>
+                                        <group width="0.69999999999999996" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="7D7-jh-5Ky" userLabel="sport">
+                                            <items>
+                                                <imageView alignment="center" verticalAlignment="center" image="running" id="vqF-Wd-Dl3"/>
+                                                <label width="0.80000000000000004" alignment="center" verticalAlignment="center" text="10" textAlignment="center" minimumScaleFactor="0.5" id="WoT-wh-NBo">
+                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="40"/>
+                                                </label>
+                                                <label alignment="center" verticalAlignment="center" text="km" id="NE0-BQ-7gz"/>
+                                            </items>
+                                        </group>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    <variation key="device=watch38mm" spacing="0.0"/>
+                                    <variation key="device=watch42mm">
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="4"/>
+                                    </variation>
                                 </group>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                            <variation key="device=watch38mm" spacing="0.0"/>
-                            <variation key="device=watch42mm">
-                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="4"/>
-                            </variation>
                         </group>
                     </items>
                     <menu key="menu" id="3oE-oG-y66">
@@ -498,6 +521,7 @@
                         <outlet property="dataAdjLabel3" destination="Uaj-di-yUC" id="eQ2-GW-7V8"/>
                         <outlet property="dataAdjLabel4" destination="qvY-1B-eJb" id="5Lu-LU-CKM"/>
                         <outlet property="dataAdjLabel5" destination="tQ9-OG-uYR" id="9Di-Sw-Nyn"/>
+                        <outlet property="dataGroup" destination="D5B-Oc-0uj" id="cLE-U8-Lji"/>
                         <outlet property="dataGroup1" destination="gXZ-Oc-kJy" id="cx4-qE-Xfw"/>
                         <outlet property="dataGroup2" destination="kU4-g6-veN" id="R9e-iX-AOM"/>
                         <outlet property="dataGroup3" destination="kOW-ME-bAn" id="04B-mL-Zj9"/>
@@ -508,147 +532,14 @@
                         <outlet property="dataLabel3" destination="45n-bO-1Wt" id="lj1-hP-6D4"/>
                         <outlet property="dataLabel4" destination="qFk-pF-ICA" id="5Hg-gt-BKt"/>
                         <outlet property="dataLabel5" destination="dTT-7O-Xkd" id="S84-Nc-ZZe"/>
+                        <outlet property="goalAmountLabel" destination="WoT-wh-NBo" id="VbT-uP-6zk"/>
+                        <outlet property="goalDescriptionLabel" destination="NE0-BQ-7gz" id="asD-J0-cMo"/>
+                        <outlet property="goalGroup" destination="W7L-wp-kq6" id="Mwg-57-Cpg"/>
+                        <outlet property="goalIcon" destination="vqF-Wd-Dl3" id="dv2-fQ-gq2"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="1130" y="416"/>
-        </scene>
-        <!--DuringMultiController-->
-        <scene sceneID="WxN-Tp-Yib">
-            <objects>
-                <controller identifier="DuringMultiController" id="gPF-sb-al9" customClass="DuringPartsInterfaceController" customModule="Watch_Extension">
-                    <items>
-                        <group width="1" alignment="left" layout="vertical" id="78F-YW-ULI">
-                            <items>
-                                <group width="1" height="170" alignment="left" layout="vertical" spacing="2" id="Dht-G6-Vgr" userLabel="Data">
-                                    <items>
-                                        <group width="1" alignment="left" spacing="0.0" id="4ls-Fm-XXb">
-                                            <items>
-                                                <label alignment="center" text="00:00:00" textAlignment="center" id="EDk-DV-1fS">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" hidden="YES" text="d" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="XU7-mo-VA5" userLabel="d">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
-                                            </items>
-                                        </group>
-                                        <separator alignment="left" id="NX8-5M-RkM">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" layout="overlap" spacing="0.0" id="2pI-ZM-ZhU">
-                                            <items>
-                                                <label alignment="center" text="4,28" textAlignment="center" id="oug-E3-SCx">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="km" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="uxz-CJ-bxA">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
-                                            </items>
-                                        </group>
-                                        <separator alignment="left" id="3xv-qA-alj">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" spacing="0.0" id="aXV-7F-sHP">
-                                            <items>
-                                                <label alignment="center" text="5:50" textAlignment="center" id="YXi-6a-3lX">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="min/km" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="va3-Mh-1zO">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
-                                            </items>
-                                        </group>
-                                        <separator alignment="left" id="Ws0-LS-xKz">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" spacing="0.0" id="Z1P-J3-rfz">
-                                            <items>
-                                                <label alignment="center" text="132" textAlignment="center" id="clb-cF-eAE">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="bpm" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="nis-dt-giB">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
-                                            </items>
-                                        </group>
-                                        <separator alignment="left" id="XnA-0P-HSB">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" spacing="0.0" id="N01-eZ-anY">
-                                            <items>
-                                                <label alignment="center" text="4002" textAlignment="center" id="RQR-w6-wRo">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="24"/>
-                                                </label>
-                                                <label alignment="right" verticalAlignment="center" text="stappen" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="Nnx-At-DCj">
-                                                    <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                </label>
-                                            </items>
-                                        </group>
-                                    </items>
-                                </group>
-                                <group width="1" height="0.5" alignment="left" layout="vertical" spacing="11" id="8HC-Hw-2FQ" userLabel="Parts">
-                                    <items>
-                                        <group width="1" alignment="left" id="xR5-58-6Pp" userLabel="Current">
-                                            <items>
-                                                <group width="0.40000000000000002" height="55" alignment="left" layout="vertical" spacing="0.0" id="Fcj-Mv-tst" userLabel="Progress">
-                                                    <items>
-                                                        <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="KHj-jp-Qti"/>
-                                                        <label alignment="center" text="10" id="qdI-4D-qJD">
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
-                                                        </label>
-                                                        <label alignment="center" text="km" id="zd2-Qg-RKi">
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                        </label>
-                                                    </items>
-                                                </group>
-                                                <label width="0.80000000000000004" alignment="right" verticalAlignment="center" text="Current" id="PCu-8a-rEg">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
-                                                </label>
-                                            </items>
-                                            <edgeInsets key="margins" left="20" right="20" top="0.0" bottom="0.0"/>
-                                        </group>
-                                        <separator alignment="left" id="5nw-zY-wAC">
-                                            <color key="color" red="0.30196078430000001" green="0.89399999379999995" blue="0.81199997660000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </separator>
-                                        <group width="1" alignment="left" id="SyJ-T6-tuH" userLabel="Next">
-                                            <items>
-                                                <label alignment="left" verticalAlignment="center" text="Next" id="7MB-ha-1P9">
-                                                    <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
-                                                </label>
-                                                <group width="0.40000000000000002" alignment="right" layout="vertical" spacing="0.0" id="QDb-pS-rsk" userLabel="Progress">
-                                                    <items>
-                                                        <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="Cvi-A5-AFu"/>
-                                                        <label alignment="center" text="10" id="S0m-GW-KBh">
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="20"/>
-                                                        </label>
-                                                        <label alignment="center" text="km" id="E2U-pm-h82">
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="font" name="Cabin-Regular" family="Cabin" pointSize="12"/>
-                                                        </label>
-                                                    </items>
-                                                </group>
-                                            </items>
-                                            <edgeInsets key="margins" left="20" right="20" top="0.0" bottom="0.0"/>
-                                        </group>
-                                    </items>
-                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                                </group>
-                            </items>
-                        </group>
-                    </items>
-                    <menu key="menu" id="1qd-Ye-O21">
-                        <items>
-                            <menuItem title="Lock" image="lock - green" id="QOY-ws-Tkz"/>
-                            <menuItem title="Stop" image="stop - green" id="gnX-jE-gpj"/>
-                            <menuItem title="Pause" image="pause - green" id="G8j-fq-MJF"/>
-                        </items>
-                    </menu>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="1130" y="801"/>
         </scene>
         <!--PartsController-->
         <scene sceneID="gcx-8J-nVc">
@@ -828,7 +719,7 @@
                                 <group width="1" alignment="center" layout="vertical" spacing="0.0" id="xlo-Ba-8KK" userLabel="Progress">
                                     <items>
                                         <imageView width="15" height="15" alignment="center" image="running" contentMode="scaleAspectFit" id="QBU-cx-nl3"/>
-                                        <label width="1" alignment="center" text="10" textAlignment="center" id="HUc-ES-uSZ">
+                                        <label width="1" alignment="center" text="10" textAlignment="center" minimumScaleFactor="0.5" id="HUc-ES-uSZ">
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="50"/>
                                         </label>
@@ -911,7 +802,7 @@
                                         <button alignment="center" verticalAlignment="bottom" id="lq9-Cq-I0S" userLabel="Continue">
                                             <group key="contentGroup" width="1" height="40" alignment="left" radius="20" id="Z45-DC-4sF">
                                                 <items>
-                                                    <label alignment="center" verticalAlignment="center" text="Volgende" id="nDn-Xh-w2H">
+                                                    <label alignment="center" verticalAlignment="center" text="Continue" id="nDn-Xh-w2H">
                                                         <fontDescription key="font" name="Cabin-Bold" family="Cabin" pointSize="18"/>
                                                     </label>
                                                 </items>

@@ -157,7 +157,9 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
         }
         activeDataQueries.removeAll()
         // and location
-        locationManager.stopUpdatingLocation()
+        if locationManager != nil {
+            locationManager.stopUpdatingLocation()
+        }
     }
     
     func startQueries() {
@@ -180,7 +182,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
     // MARK: - Workout functions
     
     func startWorkout(_ configuration: HKWorkoutConfiguration?) {
-
+        resetData()
         var workoutConfiguration = HKWorkoutConfiguration()
         if configuration == nil {
             // 0 - get workout activity type
@@ -212,17 +214,18 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func stopWorkout() {
+    func stopWorkout() -> Bool {
         workoutEndDate = Date()
         timer?.invalidate()
         healthStore.end(workoutSession!)
         workoutObject = createHKWorkout()
         guard let workoutObject = workoutObject else {
             print("Error creating workoutObject")
-            return
+            return false
         }
         save(workout: workoutObject)
         workoutObjects.append(workoutObject)
+        return true
     }
     
     func loadControllers() {
@@ -347,7 +350,7 @@ class WorkoutManager: NSObject, CLLocationManagerDelegate {
                 print("Adding workout subsamples failed with error: \(String(describing: error))")
                 return
             }
-            self.resetData()
+//            self.resetData()
         }
         
         // Finish the route with a sync identifier so we can easily update the route later
@@ -462,4 +465,29 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         }
     }
     
+    func workoutSession(_ workoutSession: HKWorkoutSession, didGenerate event: HKWorkoutEvent) {
+        if event.type == .pauseOrResumeRequest {
+            print("Starting next part")
+            guard activityHasNextPart() else {
+                if stopWorkout() {
+                    DispatchQueue.main.async {
+                        WKInterfaceController.reloadRootPageControllers(withNames: ["AfterController"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+                    }
+                }
+                return
+            }
+            
+            if stopWorkout() {
+                currentPart += 1
+                startWorkout(nil)
+            }
+        }
+    }
+    
 }
+/*
+ Ik ga gewoon een paar zinnen schrijven
+ seffens nog de wieleroutfit en koersfiets halen bij tom
+ absoluut geen zin in, kan wel een safke roken dan
+ zaterdag
+ */
